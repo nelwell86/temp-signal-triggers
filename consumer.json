@@ -1,0 +1,112 @@
+[
+  {
+    "id": "CON-001",
+    "industry": "consumer",
+    "entity": "restaurants and patios",
+    "condition": { "metric": "temp_anomaly_f", "op": ">=", "value": 10, "consecutive_days": 3 },
+    "business_impact": "Anomaly trigger: Unseasonably warm weekends drive massive spikes in outdoor dining and patio revenue.",
+    "story_seed": "Unseasonable warmth expected to pack {metro} restaurant patios this weekend",
+    "audiences": ["restaurant trade press", "local TV news"],
+    "seasonality_window": ["Mar", "May"],
+    "base_weight": 0.8
+  },
+  {
+    "id": "CON-002",
+    "industry": "consumer",
+    "entity": "rideshare platforms",
+    "condition": { "metric": "precip_in", "op": ">=", "value": 0.25, "consecutive_days": 1 },
+    "business_impact": "Rain during morning or evening commutes drives massive surge pricing and demand for rideshares.",
+    "story_seed": "Rainy commute expected to drive rideshare surge pricing across {metro}",
+    "audiences": ["tech press", "local news"],
+    "seasonality_window": ["Jan", "Dec"],
+    "base_weight": 0.7
+  },
+  {
+    "id": "CON-003",
+    "industry": "consumer",
+    "entity": "utilities and power",
+    "condition": { "metric": "max_temp_f", "op": ">=", "value": 98, "consecutive_days": 5 },
+    "business_impact": "Streak trigger: 5+ days of extreme heat push residential power grids to maximum capacity, threatening rolling blackouts.",
+    "story_seed": "Five-day heat streak pushes {metro} power grid to the brink",
+    "audiences": ["energy trade press", "local TV news"],
+    "seasonality_window": ["Jun", "Sep"],
+    "base_weight": 1.0
+  },
+  {
+    "id": "CON-004",
+    "industry": "consumer",
+    "entity": "landscaping and lawn care",
+    "condition": { "metric": "precip_in", "op": "==", "value": 0, "consecutive_days": 14 },
+    "business_impact": "Second-order effect: Extended dry streaks trigger municipal watering bans, halting professional landscaping services.",
+    "story_seed": "Extended dry streak in {metro} triggers watering bans, impacting local landscapers",
+    "audiences": ["local business press"],
+    "seasonality_window": ["Jun", "Sep"],
+    "base_weight": 0.8
+  },
+  {
+    "id": "CON-005",
+    "industry": "consumer",
+    "entity": "grocery delivery",
+    "condition": { "metric": "snow_in", "op": ">=", "value": 4, "consecutive_days": 1 },
+    "business_impact": "Calendar-aware (Super Bowl): Heavy snow right before the big game drives massive panic spikes in grocery delivery apps.",
+    "story_seed": "Pre-Super Bowl snowstorm in {metro} expected to crash grocery delivery apps",
+    "audiences": ["retail trade press", "tech press"],
+    "seasonality_window": ["Feb", "Feb"],
+    "base_weight": 0.9
+  },
+  {
+    "id": "CON-006",
+    "industry": "consumer",
+    "entity": "movie theaters",
+    "condition": { "metric": "precip_in", "op": ">=", "value": 0.5, "consecutive_days": 3 },
+    "business_impact": "Streak trigger: A multi-day washout on a holiday weekend drives massive surges in spontaneous movie theater ticket sales.",
+    "story_seed": "Washout weekend drives massive box office boost at {metro} theaters",
+    "audiences": ["entertainment press", "local news"],
+    "seasonality_window": ["May", "Sep"],
+    "base_weight": 0.8
+  },
+  {
+    "id": "CON-007",
+    "industry": "consumer",
+    "entity": "family entertainment centers",
+    "condition": { "metric": "aqi", "op": ">=", "value": 150, "consecutive_days": 1 },
+    "business_impact": "Second-order effect: Hazardous air quality keeps kids off playgrounds, driving parents to pack indoor arcades and trampoline parks.",
+    "story_seed": "Dangerous AQI pushes {metro} families indoors, packing local entertainment centers",
+    "audiences": ["leisure trade press", "social"],
+    "seasonality_window": ["Jun", "Sep"],
+    "base_weight": 0.8
+  },
+  {
+    "id": "CON-008",
+    "industry": "consumer",
+    "entity": "home services and window washing",
+    "condition": { "metric": "max_wind_mph", "op": ">=", "value": 40, "consecutive_days": 1 },
+    "business_impact": "Second-order effect: High winds scatter debris and dirt, prompting an immediate spike in calls for window washing and gutter cleaning.",
+    "story_seed": "High winds leave a mess in {metro}, driving up demand for home cleaning services",
+    "audiences": ["small business press"],
+    "seasonality_window": ["Mar", "May"],
+    "base_weight": 0.6
+  },
+  {
+    "id": "CON-009",
+    "industry": "consumer",
+    "entity": "specialty foods and ice cream",
+    "condition": { "metric": "temp_anomaly_f", "op": ">=", "value": 15, "consecutive_days": 2 },
+    "business_impact": "Whiplash trigger: A sudden early warm weekend in spring drives outsized crowds to ice cream shops before traditional summer peaks.",
+    "story_seed": "Early spring heat wave drives mid-summer lines at {metro} ice cream shops",
+    "audiences": ["restaurant trade press", "social"],
+    "seasonality_window": ["Mar", "May"],
+    "base_weight": 0.7
+  },
+  {
+    "id": "CON-010",
+    "industry": "consumer",
+    "entity": "utilities and winter prep",
+    "condition": { "metric": "min_temp_f", "op": "<=", "value": 32, "consecutive_days": 1 },
+    "business_impact": "Calendar-aware (First Freeze): The first freeze of the season always triggers a massive localized surge in HVAC tune-up requests and furnace filters.",
+    "story_seed": "First freeze sends {metro} residents scrambling for HVAC tune-ups",
+    "audiences": ["home services press", "local TV news"],
+    "seasonality_window": ["Oct", "Dec"],
+    "base_weight": 0.8
+  }
+]

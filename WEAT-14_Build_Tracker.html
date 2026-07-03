@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WEAT-14 Build Checklist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0f1317; --panel:#161c22; --panel2:#1c242c; --line:#2a343e;
+  --ink:#e8ecef; --dim:#8b96a0; --amber:#f2b33d; --green:#4cc38a; --red:#e5645a;
+  --mono:'IBM Plex Mono',monospace; --disp:'Barlow Condensed',sans-serif; --body:'Inter',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:14px;line-height:1.5}
+header{border-bottom:1px solid var(--line);padding:18px 22px;display:flex;flex-wrap:wrap;gap:14px;align-items:baseline;position:sticky;top:0;background:var(--bg);z-index:5}
+header h1{font-family:var(--disp);font-weight:700;font-size:26px;letter-spacing:.04em;text-transform:uppercase}
+header h1 span{color:var(--amber)}
+#stamp{font-family:var(--mono);font-size:12px;color:var(--dim);margin-left:auto}
+#totalbar{height:3px;background:var(--line);width:100%;position:relative}
+#totalfill{height:3px;background:var(--amber);width:0%;transition:width .3s}
+main{max-width:900px;margin:0 auto;padding:20px 22px 80px}
+.phase{border:1px solid var(--line);background:var(--panel);border-radius:6px;margin-bottom:16px;overflow:hidden}
+.phead{display:flex;align-items:center;gap:12px;padding:12px 16px;cursor:pointer;user-select:none}
+.phead:hover{background:var(--panel2)}
+.pnum{font-family:var(--mono);font-size:11px;color:var(--amber);border:1px solid var(--amber);border-radius:3px;padding:2px 6px;white-space:nowrap}
+.ptitle{font-family:var(--disp);font-weight:600;font-size:19px;letter-spacing:.03em;text-transform:uppercase}
+.pcount{font-family:var(--mono);font-size:12px;color:var(--dim);margin-left:auto;white-space:nowrap}
+.pdone .pnum{color:var(--green);border-color:var(--green)}
+.pdone .ptitle{color:var(--green)}
+.pbody{display:none;border-top:1px solid var(--line)}
+.phase.open .pbody{display:block}
+.step{border-bottom:1px solid var(--line)}
+.step:last-child{border-bottom:none}
+.srow{display:flex;align-items:center;gap:12px;padding:11px 16px;cursor:pointer}
+.srow:hover{background:var(--panel2)}
+.chk{width:18px;height:18px;min-width:18px;border:1.5px solid var(--dim);border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--bg);font-weight:700}
+.step.done .chk{background:var(--green);border-color:var(--green)}
+.sid{font-family:var(--mono);font-size:11px;color:var(--amber);min-width:44px}
+.sname{flex:1}
+.leader{flex:1;border-bottom:1px dotted var(--line);margin:0 8px;min-width:20px;align-self:flex-end;position:relative;top:-5px}
+.status{font-family:var(--mono);font-size:11px;color:var(--dim);white-space:nowrap}
+.step.done .status{color:var(--green)}
+.step.done .sname{color:var(--dim);text-decoration:line-through;text-decoration-color:var(--line)}
+.expand{font-family:var(--mono);color:var(--dim);font-size:12px;padding:0 4px;background:none;border:none;cursor:pointer}
+.detail{display:none;padding:4px 16px 16px 46px;color:var(--dim);font-size:13px}
+.step.exp .detail{display:block}
+.detail b{color:var(--ink);font-weight:600}
+.prompt{margin-top:10px;background:#0b0e11;border:1px solid var(--line);border-radius:4px}
+.ptop{display:flex;justify-content:space-between;align-items:center;padding:6px 10px;border-bottom:1px solid var(--line)}
+.plabel{font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--amber);text-transform:uppercase}
+.copy{font-family:var(--mono);font-size:11px;background:none;border:1px solid var(--line);color:var(--ink);border-radius:3px;padding:3px 9px;cursor:pointer}
+.copy:hover{border-color:var(--amber);color:var(--amber)}
+.prompt pre{padding:10px;font-family:var(--mono);font-size:11.5px;white-space:pre-wrap;color:#c9d1d9;max-height:260px;overflow:auto}
+#reset{position:fixed;bottom:16px;right:16px;font-family:var(--mono);font-size:11px;background:var(--panel);border:1px solid var(--line);color:var(--dim);border-radius:4px;padding:6px 12px;cursor:pointer}
+#reset:hover{color:var(--red);border-color:var(--red)}
+.chk:focus-visible,.srow:focus-visible,.phead:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+@media(max-width:600px){.leader{display:none}.status{display:none}header h1{font-size:20px}}
+</style>
+</head>
+<body>
+<header>
+  <h1>WEAT-14 <span>//</span> Signal Room Build Checklist</h1>
+  <div id="stamp">LOADING…</div>
+</header>
+<div id="totalbar"><div id="totalfill"></div></div>
+<main id="app"></main>
+<button id="reset">RESET ALL PROGRESS</button>
+
+<script>
+const PLAN = [
+{id:"AC",title:"Access Requests — Do Today",steps:[
+ {id:"A.1",name:"Request n8n access via Okta",d:"Search n8n in Okta and request access. John flagged this in Slack. Approvals can take days and Phase 2 is blocked without it."},
+ {id:"A.2",name:"Get a Gemini API key",d:"Ask your admin/IT how business Gemini exposes an API key: Google AI Studio (aistudio.google.com → Get API key) if permitted, otherwise a Vertex AI key from your Cloud admin. You need a key string for v0 env vars and n8n Credentials. <b>Never paste the key into any chat prompt.</b>"},
+ {id:"A.3",name:"Confirm TWC daypart API key for n8n use",d:"You need a TWC API key that can live in n8n Credentials. If comms needs its own key provisioned, request it now."}
+]},
+{id:"P0",title:"Phase 0 — Trigger Library (Gemini chat)",steps:[
+ {id:"0.1",name:"Generate retail triggers in Gemini",d:"Open Gemini and paste the schema prompt. Target 40 triggers.",prompt:`You are a business-of-weather analyst for The Weather Company. Generate a JSON array of "story triggers" for the RETAIL industry. Each trigger must follow this exact schema:
+{
+  "id": "RET-001",
+  "industry": "retail",
+  "entity": "the type of business affected (e.g. big-box home improvement)",
+  "condition": { "metric": "max_temp_f", "op": ">=", "value": 90, "consecutive_days": 3 },
+  "business_impact": "one sentence on what happens to that business",
+  "story_seed": "a headline template with {metro} placeholder",
+  "audiences": ["retail trade press", "local TV business desks", "social"],
+  "seasonality_window": ["May", "Sep"],
+  "base_weight": 0.8
+}
+Allowed metric values: max_temp_f, min_temp_f, precip_in, snow_in, max_wind_mph, humidity_pct, uv_index, aqi, severe_risk (0-5), temp_anomaly_f. Allowed op values: >=, <=, ==. Cover temperature both directions, rain, snow, wind, humidity, UV, air quality, severe weather, and multi-day streaks. Output valid JSON only, no commentary. Target 40 triggers.`},
+ {id:"0.2",name:"Iterate: 'not extensive enough'",d:"Ben's doctrine. Reply with the expansion prompt at least twice.",prompt:`Not extensive enough. Double it. Add second-order effects (e.g. rain drives movie theaters, streaming, food delivery), streak triggers (5+ consecutive days), anomaly triggers (temp_anomaly_f >= 15), whiplash triggers (big 48-hour swings), and calendar-aware triggers tied to July 4th, back-to-school, Black Friday.`},
+ {id:"0.3",name:"Validate JSON at jsonlint.com",d:"Paste the output into jsonlint.com. If it errors, paste the error back to Gemini: <b>\"fix this JSON error, output the full corrected array.\"</b>"},
+ {id:"0.4",name:"Save as retail.json",d:"Save the validated array locally as retail.json."},
+ {id:"0.5",name:"Repeat for the other 6 industries",d:"Same 0.1→0.4 loop for: health.json (HLT-), travel.json (TRV-), supplychain.json (SUP-), sports.json (SPT-), insurance.json (INS-), consumer.json (CON-). For health, get Melissa's Claude Code framework notes and feed her trigger ideas into the Gemini session."},
+ {id:"0.6",name:"Upload /triggers/ folder to the AIWS GitHub repo",d:"When John's team repo exists: Add file → Upload files → all 7 JSONs under /triggers/. Until then keep them local."}
+]},
+{id:"1A",title:"Phase 1A — Signal Room in v0 (sample data)",steps:[
+ {id:"1.1",name:"Create v0 project 'signal-room'",d:"New project in v0."},
+ {id:"1.2",name:"Paste the master prompt (Appendix A)",d:"Paste the full Appendix A prompt from the build plan into v0. It specifies all 4 views, the Story Composer, the Signal Agent, both schemas, and sample data. (Full text in the plan doc — keep it open beside this checklist.)"},
+ {id:"1.3",name:"Iterate visually, one change at a time",d:"Single small instructions only: <b>\"Make the score breakdown expandable on click\"</b>, then the next. Big multi-part asks break v0 builds. Use version history to roll back."},
+ {id:"1.4",name:"Load real retail triggers",d:"Tell v0: <b>\"Here is the real retail trigger library, replace the placeholder triggers in the Trigger Library view with this\"</b> and paste retail.json."}
+]},
+{id:"1B",title:"Phase 1B — Wire in Gemini",steps:[
+ {id:"1.5",name:"Add GEMINI_API_KEY env var in v0",d:"Project settings → Environment Variables → name GEMINI_API_KEY, value = your key. Server-side only; never in client code."},
+ {id:"1.6",name:"Build /api/generate-story route",d:"Paste this into v0:",prompt:`Add a serverless API route at /api/generate-story. It receives a signal object and a format name ("pitch" | "social" | "article" | "sme"). It calls the Gemini API (model gemini-2.5-pro, or the latest pro model available) using GEMINI_API_KEY from env, with a format-specific system prompt, and returns the generated text. Wire the Story Composer's four tabs to this route with loading states. Every output must end with: "Draft generated from TWC forecast data -- meteorologist review required before external use."`},
+ {id:"1.7",name:"Build /api/agent chat route",d:"Paste this into v0:",prompt:`Add a second route at /api/agent for the Signal Agent chat. It sends the user's question + the full current signals JSON + the trigger library to Gemini and instructs it to answer ONLY from that data and refuse anything outside it. Wire the right-rail chat to this route, keeping conversation history in the request.`},
+ {id:"1.8",name:"Test Composer + Agent end to end",d:"Generate all 4 formats on one signal; ask the agent \"what are the top priorities this week?\" On errors, paste the exact error into v0 and say <b>\"fix this.\"</b> ✅ Demo-ready for John's July 20 AI day."}
+]},
+{id:"P2",title:"Phase 2 — n8n Signal Engine",steps:[
+ {id:"2.1",name:"Create workflow 'Signal Engine'",d:"n8n → Workflows → Add workflow. Core skill: add a node, fill fields, click <b>Execute step</b> to test with real data before adding the next node."},
+ {id:"2.2",name:"Schedule Trigger node — 06:15 & 18:15 UTC",d:"Add node → search \"Schedule\" → Cron, twice daily just after forecast model updates."},
+ {id:"2.3",name:"Metro list Code node (~25 DMAs)",d:"Add a Code node. Ask Gemini: <b>\"give me a JS array of the top 25 US DMAs with lat, lon, population, formatted for an n8n Code node using return items conventions.\"</b> One output item per metro."},
+ {id:"2.4",name:"HTTP Request node → TWC daypart API",d:"Daypart narratives to day 15 (Ben's rec), not hourly. Use expressions {{ $json.lat }} / {{ $json.lon }} in the URL so it runs per metro. TWC key goes in Credentials → Header Auth, never the URL. You know the daypart endpoints — pick the one you already use."},
+ {id:"2.5",name:"(Optional) almanac/normals fetch",d:"Second HTTP Request node for temp anomaly triggers. Can wait, but it's cheap now."},
+ {id:"2.6",name:"Load triggers from GitHub raw URLs",d:"HTTP Request node pointing at raw.githubusercontent.com/... trigger files. Editing a trigger in GitHub then updates the engine with zero n8n changes."},
+ {id:"2.7",name:"Trigger Engine Code node (Gemini writes it)",d:"The big one — do NOT hand-write. Give Gemini: your trigger schema, one real daypart response (run node 2.4 once, copy output), the signals schema, and the scoring formula (severity 0-30, reach 0-25, lead time 0-15, news hook 0-15, seasonality 0-10). Then:",prompt:`Write the complete n8n Code node JavaScript that evaluates every trigger against every metro's forecast and returns matched signal objects as n8n items. Follow the trigger schema, sample daypart API response, signal schema, and scoring formula I provided above. Use n8n's "return items" conventions. Handle consecutive_days streak conditions and seasonality windows.`},
+ {id:"2.8",name:"Rank & cap Code node",d:"Sort by score, keep top ~25, assemble the final signals.json shape."},
+ {id:"2.9",name:"Gemini enrichment node",d:"Native Google Gemini node (add key under Credentials). Per top signal: headline, two-sentence angle, one-line \"why it matters this week.\" Gemini can also write the merge Code node."},
+ {id:"2.10",name:"Publish → POST to v0 /api/ingest-signals",d:"HTTP Request node POSTing final JSON to the app. First tell v0: <b>\"add a POST route /api/ingest-signals protected by a shared secret header, store the payload in Vercel Blob or KV, and make Live mode read from it.\"</b> Same secret on both sides."},
+ {id:"2.11",name:"Slack digest node — top 5 signals per run",d:"Proves the pipeline runs even when nobody opens the app."},
+ {id:"2.12",name:"Activate workflow + flip app to Live",d:"Toggle top-right in n8n. Signal Room now refreshes itself twice daily with zero weather keys in the front end."},
+ {id:"2.13",name:"Workflow 2: Met Review (one-way v1)",d:"Webhook node (v0's Request Met Review button POSTs here) → Slack node posting the draft to #comms-met-review. Two-way ✅/❌ status later."}
+]},
+{id:"P3",title:"Phase 3 — News-Cycle Layer",steps:[
+ {id:"3.1",name:"RSS Read nodes per industry",d:"Google News RSS, free and keyless, e.g. https://news.google.com/rss/search?q=flight+cancellations+OR+holiday+travel+forecast — ask Gemini to generate keyword sets per industry."},
+ {id:"3.2",name:"Gemini news-hook matcher node",d:"\"Here are today's headlines per industry and today's weather signals. For each signal, if a headline gives it a live news peg, return a news_hook object {summary, outlets}; else null.\""},
+ {id:"3.3",name:"Score boost + 🔥 badge in v0",d:"Add news-hook points in the ranking node. Tell v0: <b>\"Show an 'In the cycle now' badge on any signal where news_hook is non-null, and surface news_hook.summary on the card.\"</b>"}
+]},
+{id:"P4",title:"Phase 4 — Feedback Loop & Polish",steps:[
+ {id:"4.1",name:"👍/👎 + Pitched/Placed/Passed buttons",d:"v0 buttons POST to an n8n Webhook node → Google Sheets node (append row)."},
+ {id:"4.2",name:"Weekly weight-nudge workflow",d:"Schedule workflow reads the sheet, nudges trigger base_weight (+0.05 placed, −0.05 repeated passes, clamp 0.5–1.5). Flag for manual GitHub edits at first."},
+ {id:"4.3",name:"Expand: metros, Europe toggle, prompt tuning",d:"Refine story prompts based on what comms actually copies and places."}
+]}
+];
+
+const KEY='weat14-progress';
+let state={done:{},open:{AC:true},exp:{}};
+let store='memory';
+
+async function loadState(){
+  try{ if(window.storage){const r=await window.storage.get(KEY);if(r&&r.value){state=JSON.parse(r.value);}store='claude';return;} }catch(e){ if(window.storage){store='claude';return;} }
+  try{const v=localStorage.getItem(KEY);if(v)state=JSON.parse(v);store='local';}catch(e){store='memory';}
+}
+async function saveState(){
+  const v=JSON.stringify(state);
+  try{ if(store==='claude'){await window.storage.set(KEY,v);return;} }catch(e){}
+  try{ if(store==='local'){localStorage.setItem(KEY,v);} }catch(e){}
+}
+function totals(){let d=0,t=0;PLAN.forEach(p=>p.steps.forEach(s=>{t++;if(state.done[s.id])d++;}));return[d,t];}
+function render(){
+  const app=document.getElementById('app');app.innerHTML='';
+  PLAN.forEach(p=>{
+    const done=p.steps.filter(s=>state.done[s.id]).length;
+    const ph=document.createElement('section');
+    ph.className='phase'+(state.open[p.id]?' open':'')+(done===p.steps.length?' pdone':'');
+    const head=document.createElement('div');head.className='phead';head.tabIndex=0;
+    head.innerHTML=`<span class="pnum">${p.id}</span><span class="ptitle">${p.title}</span><span class="pcount">${done}/${p.steps.length}</span>`;
+    head.onclick=()=>{state.open[p.id]=!state.open[p.id];saveState();render();};
+    head.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();head.onclick();}};
+    ph.appendChild(head);
+    const body=document.createElement('div');body.className='pbody';
+    p.steps.forEach(s=>{
+      const st=document.createElement('div');
+      st.className='step'+(state.done[s.id]?' done':'')+(state.exp[s.id]?' exp':'');
+      const row=document.createElement('div');row.className='srow';row.tabIndex=0;
+      row.innerHTML=`<span class="chk">${state.done[s.id]?'✓':''}</span><span class="sid">${s.id}</span><span class="sname">${s.name}</span><span class="leader"></span><span class="status">${state.done[s.id]?'COMPLETE':'PENDING'}</span><button class="expand" aria-label="details">${state.exp[s.id]?'−':'+'}</button>`;
+      row.onclick=e=>{
+        if(e.target.classList.contains('expand')){state.exp[s.id]=!state.exp[s.id];}
+        else{state.done[s.id]=!state.done[s.id];}
+        saveState();render();
+      };
+      row.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();state.done[s.id]=!state.done[s.id];saveState();render();}};
+      st.appendChild(row);
+      const det=document.createElement('div');det.className='detail';det.innerHTML=s.d;
+      if(s.prompt){
+        const pr=document.createElement('div');pr.className='prompt';
+        pr.innerHTML=`<div class="ptop"><span class="plabel">Copy-paste prompt</span><button class="copy">COPY</button></div><pre></pre>`;
+        pr.querySelector('pre').textContent=s.prompt;
+        pr.querySelector('.copy').onclick=e=>{e.stopPropagation();navigator.clipboard.writeText(s.prompt).then(()=>{e.target.textContent='COPIED ✓';setTimeout(()=>e.target.textContent='COPY',1500);});};
+        det.appendChild(pr);
+      }
+      st.appendChild(det);body.appendChild(st);
+    });
+    ph.appendChild(body);app.appendChild(ph);
+  });
+  const [d,t]=totals();
+  document.getElementById('totalfill').style.width=(t?100*d/t:0)+'%';
+  document.getElementById('stamp').textContent=`${d}/${t} COMPLETE · ${store==='memory'?'⚠ PROGRESS NOT SAVED':'PROGRESS SAVED'}`;
+}
+document.getElementById('reset').onclick=()=>{
+  if(confirm('Clear all progress? This cannot be undone.')){state={done:{},open:{AC:true},exp:{}};saveState();render();}
+};
+loadState().then(render);
+</script>
+</body>
+</html>

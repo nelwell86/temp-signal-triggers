@@ -1,0 +1,112 @@
+[
+  {
+    "id": "SUP-001",
+    "industry": "supplychain",
+    "entity": "last-mile logistics",
+    "condition": { "metric": "snow_in", "op": ">=", "value": 3, "consecutive_days": 1 },
+    "business_impact": "Snow accumulations heavily delay local delivery routes and force rerouting.",
+    "story_seed": "Winter storm expected to severly delay last-mile deliveries across {metro}",
+    "audiences": ["logistics trade press", "local TV business desks"],
+    "seasonality_window": ["Nov", "Mar"],
+    "base_weight": 0.9
+  },
+  {
+    "id": "SUP-002",
+    "industry": "supplychain",
+    "entity": "freight and trucking",
+    "condition": { "metric": "max_wind_mph", "op": ">=", "value": 50, "consecutive_days": 1 },
+    "business_impact": "High winds create blow-over risks for high-profile vehicles, halting freight on major interstates.",
+    "story_seed": "High wind warnings threaten to stall heavy freight corridors through {metro}",
+    "audiences": ["trucking trade press"],
+    "seasonality_window": ["Jan", "Dec"],
+    "base_weight": 0.8
+  },
+  {
+    "id": "SUP-003",
+    "industry": "supplychain",
+    "entity": "cold chain logistics",
+    "condition": { "metric": "max_temp_f", "op": ">=", "value": 100, "consecutive_days": 3 },
+    "business_impact": "Streak trigger: Extreme heat stresses refrigerated transport and warehouse cooling systems.",
+    "story_seed": "Triple-digit streak stresses {metro} cold chain infrastructure",
+    "audiences": ["logistics trade press"],
+    "seasonality_window": ["Jun", "Sep"],
+    "base_weight": 0.7
+  },
+  {
+    "id": "SUP-004",
+    "industry": "supplychain",
+    "entity": "construction logistics",
+    "condition": { "metric": "precip_in", "op": ">=", "value": 0.5, "consecutive_days": 4 },
+    "business_impact": "Second-order effect: Prolonged muddy conditions halt heavy equipment operation, backing up material delivery schedules.",
+    "story_seed": "Prolonged mud halts {metro} construction sites, backing up material supply chains",
+    "audiences": ["construction trade press"],
+    "seasonality_window": ["Mar", "Nov"],
+    "base_weight": 0.8
+  },
+  {
+    "id": "SUP-005",
+    "industry": "supplychain",
+    "entity": "e-commerce fulfillment",
+    "condition": { "metric": "snow_in", "op": ">=", "value": 1, "consecutive_days": 1 },
+    "business_impact": "Calendar-aware (December): Minor winter weather during peak holiday shipping causes exponential compounding delays.",
+    "story_seed": "Holiday shipping crunch meets winter weather in {metro}, threatening delivery deadlines",
+    "audiences": ["national business press", "retail trade press"],
+    "seasonality_window": ["Dec", "Dec"],
+    "base_weight": 1.0
+  },
+  {
+    "id": "SUP-006",
+    "industry": "supplychain",
+    "entity": "barge and river transport",
+    "condition": { "metric": "precip_in", "op": "==", "value": 0, "consecutive_days": 21 },
+    "business_impact": "Second-order effect: Prolonged regional dry spells lower river levels, reducing barge weight limits and stranding agricultural exports.",
+    "story_seed": "Extended dry streak threatens {metro} river freight capacity as water levels drop",
+    "audiences": ["agricultural trade press", "logistics press"],
+    "seasonality_window": ["Jul", "Oct"],
+    "base_weight": 0.9
+  },
+  {
+    "id": "SUP-007",
+    "industry": "supplychain",
+    "entity": "freight and trucking",
+    "condition": { "metric": "min_temp_f", "op": "<=", "value": 0, "consecutive_days": 2 },
+    "business_impact": "Deep freeze causes diesel fuel gelling and battery failures, sidelining massive portions of regional trucking fleets.",
+    "story_seed": "Deep freeze forces {metro} trucking fleets off the road due to equipment failures",
+    "audiences": ["trucking trade press", "national business press"],
+    "seasonality_window": ["Dec", "Feb"],
+    "base_weight": 0.9
+  },
+  {
+    "id": "SUP-008",
+    "industry": "supplychain",
+    "entity": "warehousing and distribution",
+    "condition": { "metric": "severe_risk", "op": ">=", "value": 4, "consecutive_days": 1 },
+    "business_impact": "Imminent severe threat forces warehouses to suspend loading dock operations to protect workers, creating outbound fulfillment bottlenecks.",
+    "story_seed": "Severe weather threat forces {metro} distribution centers to halt loading operations",
+    "audiences": ["logistics trade press", "local news"],
+    "seasonality_window": ["Mar", "Sep"],
+    "base_weight": 0.8
+  },
+  {
+    "id": "SUP-009",
+    "industry": "supplychain",
+    "entity": "grocery supply chain",
+    "condition": { "metric": "humidity_pct", "op": ">=", "value": 90, "consecutive_days": 5 },
+    "business_impact": "Streak trigger: Relentless high humidity accelerates spoilage in cross-docking of fresh produce, demanding increased climate-control spend.",
+    "story_seed": "Oppressive humidity streak challenges {metro} fresh food supply chains",
+    "audiences": ["grocery trade press"],
+    "seasonality_window": ["Jun", "Sep"],
+    "base_weight": 0.7
+  },
+  {
+    "id": "SUP-010",
+    "industry": "supplychain",
+    "entity": "retail distribution",
+    "condition": { "metric": "precip_in", "op": ">=", "value": 2, "consecutive_days": 1 },
+    "business_impact": "Calendar-aware (Back-to-School): A washout during peak back-to-school stocking windows snarls local deliveries, leading to temporary shelf gaps.",
+    "story_seed": "Timing of heavy rains threatens to snarl {metro} back-to-school retail deliveries",
+    "audiences": ["retail trade press"],
+    "seasonality_window": ["Jul", "Aug"],
+    "base_weight": 0.7
+  }
+]

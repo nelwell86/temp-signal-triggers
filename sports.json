@@ -1,0 +1,112 @@
+[
+  {
+    "id": "SPT-001",
+    "industry": "sports",
+    "entity": "golf courses",
+    "condition": { "metric": "temp_anomaly_f", "op": ">=", "value": 15, "consecutive_days": 2 },
+    "business_impact": "Anomaly trigger: Unseasonably warm spring weekends drive fully booked tee times and pro shop sales.",
+    "story_seed": "Record warmth expected to pack {metro} golf courses this weekend",
+    "audiences": ["local sports press", "golf trade press"],
+    "seasonality_window": ["Mar", "May"],
+    "base_weight": 0.8
+  },
+  {
+    "id": "SPT-002",
+    "industry": "sports",
+    "entity": "youth sports leagues",
+    "condition": { "metric": "precip_in", "op": ">=", "value": 1, "consecutive_days": 2 },
+    "business_impact": "Second-order effect: Washout weekends drive massive revenue losses for tournament organizers and local hospitality.",
+    "story_seed": "Washout forecast threatens massive revenue loss for {metro} youth sports tournaments",
+    "audiences": ["local TV news", "sports business press"],
+    "seasonality_window": ["Apr", "Oct"],
+    "base_weight": 0.9
+  },
+  {
+    "id": "SPT-003",
+    "industry": "sports",
+    "entity": "ski resorts",
+    "condition": { "metric": "snow_in", "op": ">=", "value": 8, "consecutive_days": 1 },
+    "business_impact": "Major snowfalls drive immediate booking spikes for local winter sports destinations.",
+    "story_seed": "Major powder dump expected to drive massive weekend crowds to resorts near {metro}",
+    "audiences": ["winter sports press", "local TV news"],
+    "seasonality_window": ["Dec", "Mar"],
+    "base_weight": 0.9
+  },
+  {
+    "id": "SPT-004",
+    "industry": "sports",
+    "entity": "outdoor endurance events",
+    "condition": { "metric": "aqi", "op": ">=", "value": 100, "consecutive_days": 1 },
+    "business_impact": "Poor air quality forces cancellation or modification of marathons, cycling events, and outdoor training.",
+    "story_seed": "Poor air quality threatens weekend endurance events across {metro}",
+    "audiences": ["health and wellness press", "local sports press"],
+    "seasonality_window": ["May", "Oct"],
+    "base_weight": 0.8
+  },
+  {
+    "id": "SPT-005",
+    "industry": "sports",
+    "entity": "stadium concessions",
+    "condition": { "metric": "max_temp_f", "op": ">=", "value": 90, "consecutive_days": 1 },
+    "business_impact": "Calendar-aware (Opening Day/Early Season): Extreme heat at exposed stadiums drives massive spikes in bottled water and cold beverage sales.",
+    "story_seed": "Scorcher forecast for {metro} stadium expected to drive record beverage sales",
+    "audiences": ["sports business press"],
+    "seasonality_window": ["Apr", "Sep"],
+    "base_weight": 0.7
+  },
+  {
+    "id": "SPT-006",
+    "industry": "sports",
+    "entity": "outdoor racquet clubs and golf",
+    "condition": { "metric": "max_wind_mph", "op": ">=", "value": 35, "consecutive_days": 1 },
+    "business_impact": "High winds ruin playability for precision sports, leading to mass cancellations of tee times and outdoor court bookings.",
+    "story_seed": "High winds set to blow out weekend bookings at {metro} golf and tennis clubs",
+    "audiences": ["golf trade press", "local sports press"],
+    "seasonality_window": ["Mar", "Nov"],
+    "base_weight": 0.7
+  },
+  {
+    "id": "SPT-007",
+    "industry": "sports",
+    "entity": "stadium operations",
+    "condition": { "metric": "severe_risk", "op": ">=", "value": 3, "consecutive_days": 1 },
+    "business_impact": "Second-order effect: Severe thunderstorm risk triggers complex stadium evacuation protocols and massive event insurance concerns.",
+    "story_seed": "Severe weather threat forces {metro} stadiums to prepare evacuation protocols",
+    "audiences": ["stadium operations press", "local news"],
+    "seasonality_window": ["Apr", "Oct"],
+    "base_weight": 0.9
+  },
+  {
+    "id": "SPT-008",
+    "industry": "sports",
+    "entity": "youth and high school sports",
+    "condition": { "metric": "max_temp_f", "op": ">=", "value": 95, "consecutive_days": 3 },
+    "business_impact": "Streak trigger: Multi-day heat waves push artificial turf temperatures to dangerous levels, forcing mandates to move practices to early morning or indoors.",
+    "story_seed": "Dangerous turf temperatures force {metro} high schools to overhaul practice schedules",
+    "audiences": ["local sports press", "education press"],
+    "seasonality_window": ["Aug", "Sep"],
+    "base_weight": 0.9
+  },
+  {
+    "id": "SPT-009",
+    "industry": "sports",
+    "entity": "parks and recreation",
+    "condition": { "metric": "temp_anomaly_f", "op": "<=", "value": -15, "consecutive_days": 2 },
+    "business_impact": "Whiplash trigger: Sudden deep freezes force municipal courses and parks to prematurely winterize irrigation systems, closing facilities early.",
+    "story_seed": "Sudden deep freeze forces early closure of {metro} municipal golf courses",
+    "audiences": ["golf trade press", "local news"],
+    "seasonality_window": ["Oct", "Nov"],
+    "base_weight": 0.8
+  },
+  {
+    "id": "SPT-010",
+    "industry": "sports",
+    "entity": "indoor sports complexes",
+    "condition": { "metric": "precip_in", "op": ">=", "value": 0.5, "consecutive_days": 3 },
+    "business_impact": "Streak trigger: Rainouts for outdoor leagues drive a massive surge in spontaneous bookings for indoor batting cages and soccer facilities.",
+    "story_seed": "Outdoor rainouts drive booking surge at {metro} indoor sports complexes",
+    "audiences": ["sports business press"],
+    "seasonality_window": ["Mar", "May"],
+    "base_weight": 0.8
+  }
+]

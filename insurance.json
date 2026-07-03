@@ -1,0 +1,112 @@
+[
+  {
+    "id": "INS-001",
+    "industry": "insurance",
+    "entity": "property and casualty",
+    "condition": { "metric": "severe_risk", "op": ">=", "value": 3, "consecutive_days": 1 },
+    "business_impact": "Enhanced severe risk (hail/wind) triggers proactive mobile response team deployment to affected areas.",
+    "story_seed": "Insurers stage response teams in {metro} ahead of severe hail threat",
+    "audiences": ["insurance trade press", "local TV news"],
+    "seasonality_window": ["Mar", "Aug"],
+    "base_weight": 1.0
+  },
+  {
+    "id": "INS-002",
+    "industry": "insurance",
+    "entity": "auto insurers",
+    "condition": { "metric": "snow_in", "op": ">=", "value": 1, "consecutive_days": 1 },
+    "business_impact": "Second-order effect: The very first minor snow event of the year historically drives the highest volume of minor collision claims.",
+    "story_seed": "First snow of the season expected to drive spike in fender-bender claims across {metro}",
+    "audiences": ["insurance trade press", "local TV news"],
+    "seasonality_window": ["Nov", "Jan"],
+    "base_weight": 0.9
+  },
+  {
+    "id": "INS-003",
+    "industry": "insurance",
+    "entity": "homeowners insurance",
+    "condition": { "metric": "min_temp_f", "op": "<=", "value": 20, "consecutive_days": 3 },
+    "business_impact": "Streak trigger: Prolonged deep freezes lead to catastrophic burst pipe claims in regions unaccustomed to extreme cold.",
+    "story_seed": "Prolonged freeze leaves {metro} insurers bracing for wave of burst pipe claims",
+    "audiences": ["insurance trade press", "real estate press"],
+    "seasonality_window": ["Dec", "Feb"],
+    "base_weight": 0.9
+  },
+  {
+    "id": "INS-004",
+    "industry": "insurance",
+    "entity": "commercial property",
+    "condition": { "metric": "max_wind_mph", "op": ">=", "value": 60, "consecutive_days": 1 },
+    "business_impact": "Damaging wind gusts trigger immediate roof damage claims and business interruption assessments.",
+    "story_seed": "Damaging winds in {metro} expected to trigger wave of commercial roof claims",
+    "audiences": ["insurance trade press"],
+    "seasonality_window": ["Jan", "Dec"],
+    "base_weight": 0.8
+  },
+  {
+    "id": "INS-005",
+    "industry": "insurance",
+    "entity": "restoration services",
+    "condition": { "metric": "precip_in", "op": ">=", "value": 4, "consecutive_days": 2 },
+    "business_impact": "Second-order effect: Heavy rain accumulation overwhelms municipal drainage, driving massive spikes in basement flooding mitigation.",
+    "story_seed": "Heavy rains push {metro} drainage to the limit, driving surge in basement flooding",
+    "audiences": ["construction trade press", "local TV news"],
+    "seasonality_window": ["Mar", "Oct"],
+    "base_weight": 0.9
+  },
+  {
+    "id": "INS-006",
+    "industry": "insurance",
+    "entity": "property and casualty",
+    "condition": { "metric": "aqi", "op": ">=", "value": 200, "consecutive_days": 2 },
+    "business_impact": "Second-order effect: Wildfire proximity causing extreme AQI triggers 'Additional Living Expense' claims as residents voluntarily evacuate.",
+    "story_seed": "Hazardous smoke in {metro} expected to trigger influx of living expense claims",
+    "audiences": ["insurance trade press", "national business press"],
+    "seasonality_window": ["Jun", "Nov"],
+    "base_weight": 0.9
+  },
+  {
+    "id": "INS-007",
+    "industry": "insurance",
+    "entity": "homeowners insurance",
+    "condition": { "metric": "snow_in", "op": ">=", "value": 6, "consecutive_days": 1 },
+    "business_impact": "Heavy snowfall followed by freezing temps leads directly to ice dam formations on roofs, creating massive interior water damage claims.",
+    "story_seed": "Heavy snow leaves {metro} homeowners battling damaging ice dams",
+    "audiences": ["insurance trade press", "local TV news"],
+    "seasonality_window": ["Dec", "Mar"],
+    "base_weight": 0.8
+  },
+  {
+    "id": "INS-008",
+    "industry": "insurance",
+    "entity": "insurance brokers",
+    "condition": { "metric": "severe_risk", "op": ">=", "value": 4, "consecutive_days": 1 },
+    "business_impact": "Calendar-aware (Hurricane Season): Imminent severe threat triggers automated moratoriums on binding any new property policies in the strike zone.",
+    "story_seed": "Severe weather threat triggers freeze on new property policies across {metro}",
+    "audiences": ["real estate press", "insurance trade press"],
+    "seasonality_window": ["Aug", "Oct"],
+    "base_weight": 1.0
+  },
+  {
+    "id": "INS-009",
+    "industry": "insurance",
+    "entity": "home warranty providers",
+    "condition": { "metric": "temp_anomaly_f", "op": ">=", "value": 15, "consecutive_days": 3 },
+    "business_impact": "Whiplash trigger: Unseasonably early spring warmth melts snowpack fast while rain falls, overwhelming sump pumps and triggering warranty claims.",
+    "story_seed": "Rapid spring thaw in {metro} overwhelms sump pumps, triggering warranty claims",
+    "audiences": ["insurance trade press", "social"],
+    "seasonality_window": ["Feb", "Apr"],
+    "base_weight": 0.8
+  },
+  {
+    "id": "INS-010",
+    "industry": "insurance",
+    "entity": "auto insurers and roadside assistance",
+    "condition": { "metric": "max_temp_f", "op": ">=", "value": 98, "consecutive_days": 4 },
+    "business_impact": "Streak trigger: Sustained extreme heat causes mass automotive overheating and blowout events, swamping roadside assistance networks.",
+    "story_seed": "Heat wave swamps {metro} roadside assistance networks as vehicles overheat",
+    "audiences": ["automotive press", "insurance trade press"],
+    "seasonality_window": ["Jun", "Sep"],
+    "base_weight": 0.9
+  }
+]
