@@ -3,110 +3,221 @@
     "id": "RET-041",
     "industry": "retail",
     "entity": "food delivery services",
-    "condition": { "metric": "precip_in", "op": ">=", "value": 0.5, "consecutive_days": 1 },
+    "condition": {
+      "metric": "precip_in",
+      "op": ">=",
+      "value": 0.5,
+      "consecutive_days": 1
+    },
     "business_impact": "Second-order effect: consumers stay home, driving a massive spike in localized food delivery orders.",
     "story_seed": "Rainy night in {metro} expected to drive record food delivery volumes",
-    "audiences": ["retail trade press", "tech press", "social"],
-    "seasonality_window": ["Jan", "Dec"],
+    "audiences": [
+      "retail trade press",
+      "tech press",
+      "social"
+    ],
+    "seasonality_window": [
+      "Jan",
+      "Dec"
+    ],
     "base_weight": 0.9
   },
   {
     "id": "RET-042",
     "industry": "retail",
     "entity": "streaming and home entertainment",
-    "condition": { "metric": "min_temp_f", "op": "<=", "value": 15, "consecutive_days": 3 },
+    "condition": {
+      "metric": "min_temp_f",
+      "op": "<=",
+      "value": 15,
+      "consecutive_days": 3
+    },
     "business_impact": "Second-order effect: deep freeze locks consumers indoors, spiking digital movie rentals and streaming hardware impulse buys.",
     "story_seed": "Deep freeze keeps {metro} indoors, spiking home entertainment spending",
-    "audiences": ["consumer tech press", "retail trade press"],
-    "seasonality_window": ["Nov", "Mar"],
+    "audiences": [
+      "consumer tech press",
+      "retail trade press"
+    ],
+    "seasonality_window": [
+      "Nov",
+      "Mar"
+    ],
     "base_weight": 0.8
   },
   {
     "id": "RET-043",
     "industry": "retail",
     "entity": "HVAC and home repair",
-    "condition": { "metric": "max_temp_f", "op": ">=", "value": 95, "consecutive_days": 5 },
+    "condition": {
+      "metric": "max_temp_f",
+      "op": ">=",
+      "value": 95,
+      "consecutive_days": 5
+    },
     "business_impact": "Streak trigger: 5+ days of extreme heat causes widespread residential AC failures, emptying shelves of portable units.",
     "story_seed": "Five-day heat streak in {metro} pushes AC grids and retail inventory to the brink",
-    "audiences": ["local TV business desks", "social"],
-    "seasonality_window": ["Jun", "Sep"],
-    "base_weight": 1.0
+    "audiences": [
+      "local TV business desks",
+      "social"
+    ],
+    "seasonality_window": [
+      "Jun",
+      "Sep"
+    ],
+    "base_weight": 1.05
   },
   {
     "id": "RET-044",
     "industry": "retail",
     "entity": "big-box home improvement",
-    "condition": { "metric": "precip_in", "op": ">=", "value": 0.25, "consecutive_days": 5 },
+    "condition": {
+      "metric": "precip_in",
+      "op": ">=",
+      "value": 0.25,
+      "consecutive_days": 5
+    },
     "business_impact": "Streak trigger: Relentless daily rain halts outdoor construction, driving contractors to indoor remodel supplies.",
     "story_seed": "Relentless rain delays {metro} exterior builds, shifting contractor spending indoors",
-    "audiences": ["construction trade press", "retail trade press"],
-    "seasonality_window": ["Mar", "Nov"],
+    "audiences": [
+      "construction trade press",
+      "retail trade press"
+    ],
+    "seasonality_window": [
+      "Mar",
+      "Nov"
+    ],
     "base_weight": 0.8
   },
   {
     "id": "RET-045",
     "industry": "retail",
     "entity": "apparel retailers",
-    "condition": { "metric": "temp_anomaly_f", "op": ">=", "value": 15, "consecutive_days": 2 },
+    "condition": {
+      "metric": "temp_anomaly_f",
+      "op": ">=",
+      "value": 15,
+      "consecutive_days": 2
+    },
     "business_impact": "Anomaly trigger: Massive warm deviation from normal completely halts seasonal winter outerwear sales.",
     "story_seed": "Unseasonable warmth in {metro} leaves winter coats sitting on store shelves",
-    "audiences": ["retail trade press", "fashion press"],
-    "seasonality_window": ["Nov", "Feb"],
+    "audiences": [
+      "retail trade press",
+      "fashion press"
+    ],
+    "seasonality_window": [
+      "Nov",
+      "Feb"
+    ],
     "base_weight": 0.9
   },
   {
     "id": "RET-046",
     "industry": "retail",
     "entity": "grocery and supermarkets",
-    "condition": { "metric": "temp_anomaly_f", "op": "<=", "value": -15, "consecutive_days": 2 },
+    "condition": {
+      "metric": "temp_anomaly_f",
+      "op": "<=",
+      "value": -15,
+      "consecutive_days": 2
+    },
     "business_impact": "Anomaly trigger: Sudden extreme cold relative to normal drives panic buying of comfort foods and hot beverages.",
     "story_seed": "Sudden temperature crash in {metro} drives run on winter comfort foods",
-    "audiences": ["local TV business desks", "retail trade press"],
-    "seasonality_window": ["Sep", "Nov"],
+    "audiences": [
+      "local TV business desks",
+      "retail trade press"
+    ],
+    "seasonality_window": [
+      "Sep",
+      "Nov"
+    ],
     "base_weight": 0.9
   },
   {
     "id": "RET-047",
     "industry": "retail",
     "entity": "grocery and party supply",
-    "condition": { "metric": "max_temp_f", "op": ">=", "value": 85, "consecutive_days": 1 },
+    "condition": {
+      "metric": "max_temp_f",
+      "op": ">=",
+      "value": 85,
+      "consecutive_days": 1
+    },
     "business_impact": "Calendar-aware (July 4th): Perfect BBQ weather right around Independence Day maximizes meat and outdoor party supply sales.",
     "story_seed": "Ideal forecast for July 4th expected to break BBQ spending records in {metro}",
-    "audiences": ["retail trade press", "local TV business desks"],
-    "seasonality_window": ["Jun", "Jul"],
+    "audiences": [
+      "retail trade press",
+      "local TV business desks"
+    ],
+    "seasonality_window": [
+      "Jun",
+      "Jul"
+    ],
     "base_weight": 0.9
   },
   {
     "id": "RET-048",
     "industry": "retail",
     "entity": "apparel and department stores",
-    "condition": { "metric": "min_temp_f", "op": "<=", "value": 55, "consecutive_days": 2 },
+    "condition": {
+      "metric": "min_temp_f",
+      "op": "<=",
+      "value": 55,
+      "consecutive_days": 2
+    },
     "business_impact": "Calendar-aware (Back-to-School): A perfectly timed late-summer chill reminds parents to buy fall wardrobes for the school year.",
     "story_seed": "Late summer chill in {metro} perfectly timed to boost back-to-school fall apparel sales",
-    "audiences": ["retail trade press", "social"],
-    "seasonality_window": ["Aug", "Sep"],
+    "audiences": [
+      "retail trade press",
+      "social"
+    ],
+    "seasonality_window": [
+      "Aug",
+      "Sep"
+    ],
     "base_weight": 0.8
   },
   {
     "id": "RET-049",
     "industry": "retail",
     "entity": "big-box retail and malls",
-    "condition": { "metric": "temp_anomaly_f", "op": ">=", "value": 10, "consecutive_days": 1 },
+    "condition": {
+      "metric": "temp_anomaly_f",
+      "op": ">=",
+      "value": 10,
+      "consecutive_days": 1
+    },
     "business_impact": "Calendar-aware (Black Friday): Unseasonably mild weather for late November drives higher in-store foot traffic vs online shopping.",
     "story_seed": "Mild Black Friday forecast in {metro} could shift shoppers from screens to storefronts",
-    "audiences": ["national business press", "retail trade press"],
-    "seasonality_window": ["Nov", "Nov"],
+    "audiences": [
+      "national business press",
+      "retail trade press"
+    ],
+    "seasonality_window": [
+      "Nov",
+      "Nov"
+    ],
     "base_weight": 0.9
   },
   {
     "id": "RET-050",
     "industry": "retail",
     "entity": "hardware and auto",
-    "condition": { "metric": "snow_in", "op": ">=", "value": 0.1, "consecutive_days": 1 },
+    "condition": {
+      "metric": "snow_in",
+      "op": ">=",
+      "value": 0.1,
+      "consecutive_days": 1
+    },
     "business_impact": "Calendar-aware (Black Friday): Even a dusting of snow puts shoppers in the 'holiday spirit', boosting early seasonal decor sales.",
     "story_seed": "Timely holiday snowfall in {metro} expected to drive early seasonal decor sales",
-    "audiences": ["retail trade press", "local TV business desks"],
-    "seasonality_window": ["Nov", "Dec"],
+    "audiences": [
+      "retail trade press",
+      "local TV business desks"
+    ],
+    "seasonality_window": [
+      "Nov",
+      "Dec"
+    ],
     "base_weight": 0.7
   }
 ]
