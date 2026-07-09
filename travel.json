@@ -2,111 +2,445 @@
   {
     "id": "TRV-001",
     "industry": "travel",
-    "entity": "airlines and airports",
-    "condition": { "metric": "precip_in", "op": ">=", "value": 2, "consecutive_days": 1 },
-    "business_impact": "Heavy rain and low visibility cause cascading ground stops and flight cancellations.",
-    "story_seed": "Heavy rain forecast threatens major flight disruptions out of {metro} hubs",
-    "audiences": ["travel trade press", "local TV news"],
-    "seasonality_window": ["Jan", "Dec"],
-    "base_weight": 0.9
+    "entity": "airlines and commercial aviation hubs",
+    "condition": {
+      "metric": "severe_risk",
+      "op": ">=",
+      "value": 4,
+      "consecutive_days": 1
+    },
+    "business_impact": "Second-order effect: Severe thunderstorm risks during peak summer holiday weekends result in rolling tarmac delays and immediate hub-and-spoke routing cancellations.",
+    "story_seed": "Holiday travel rush gridlocked in {metro} as severe storm threats trigger rolling airport cancellations",
+    "audiences": [
+      "aviation travel press",
+      "national business press",
+      "local news desks"
+    ],
+    "seasonality_window": [
+      "05-20",
+      "07-06"
+    ],
+    "base_weight": 1.3
   },
   {
     "id": "TRV-002",
     "industry": "travel",
-    "entity": "hotels and hospitality",
-    "condition": { "metric": "snow_in", "op": ">=", "value": 4, "consecutive_days": 1 },
-    "business_impact": "Second-order effect: Cancelled flights drive a massive localized spike in immediate hotel bookings for stranded passengers.",
-    "story_seed": "Stranded {metro} travelers expected to sell out airport hotels as winter storm grounds flights",
-    "audiences": ["hospitality press", "business desks"],
-    "seasonality_window": ["Nov", "Mar"],
-    "base_weight": 0.8
+    "entity": "hotels and regional drive-to tourism",
+    "condition": {
+      "metric": "precip_in",
+      "op": ">=",
+      "value": 0.75,
+      "consecutive_days": 3
+    },
+    "business_impact": "Streak trigger: Relentless holiday weekend washouts completely kill drive-to regional leisure tourism, driving immediate motel and short-term rental cancellation peaks.",
+    "story_seed": "Labor Day weekend washout anchors travelers at home, denting {metro} tourism revenue",
+    "audiences": [
+      "hospitality trade press",
+      "local economy desks",
+      "social"
+    ],
+    "seasonality_window": [
+      "08-25",
+      "09-07"
+    ],
+    "base_weight": 0.9
   },
   {
     "id": "TRV-003",
     "industry": "travel",
-    "entity": "theme parks",
-    "condition": { "metric": "max_temp_f", "op": ">=", "value": 98, "consecutive_days": 3 },
-    "business_impact": "Streak trigger: Extreme heat streaks crash midday park attendance but drive massive spikes in evening/water park add-ons.",
-    "story_seed": "Relentless heat wave forces {metro} theme parks to pivot to night-time events",
-    "audiences": ["leisure trade press", "local TV news"],
-    "seasonality_window": ["Jun", "Sep"],
-    "base_weight": 0.8
+    "entity": "intercity rail networks and interstate transit",
+    "condition": {
+      "metric": "snow_in",
+      "op": ">=",
+      "value": 4.0,
+      "consecutive_days": 1
+    },
+    "business_impact": "Calendar-aware: Major pre-Thanksgiving winter storms paralyze regional rail and road networks during the absolute heaviest travel transit days of the year.",
+    "story_seed": "Pre-Thanksgiving snow disaster threatens to freeze regional rail corridors out of {metro}",
+    "audiences": [
+      "national news platforms",
+      "transportation trade press"
+    ],
+    "seasonality_window": [
+      "11-18",
+      "11-28"
+    ],
+    "base_weight": 1.4
   },
   {
     "id": "TRV-004",
     "industry": "travel",
-    "entity": "car rental agencies",
-    "condition": { "metric": "severe_risk", "op": ">=", "value": 3, "consecutive_days": 2 },
-    "business_impact": "Second-order effect: Severe hail threats prompt agencies to move inventory indoors, restricting available rentals.",
-    "story_seed": "Severe hail threat forces {metro} rental agencies to shelter fleets, limiting availability",
-    "audiences": ["travel trade press"],
-    "seasonality_window": ["Mar", "Aug"],
-    "base_weight": 0.7
+    "entity": "rideshare platforms and city transport",
+    "condition": {
+      "metric": "precip_in",
+      "op": ">=",
+      "value": 0.5,
+      "consecutive_days": 1
+    },
+    "business_impact": "Calendar-aware: Heavy rainfall or freezing drizzle on New Year's Eve breaks urban walking profiles, spiking localized rideshare demand and surge multi-pricing to records.",
+    "story_seed": "NYE downpour in {metro} triggers historic rideshare price surges as partygoers flee the streets",
+    "audiences": [
+      "tech press",
+      "local urban lifestyle desks",
+      "social"
+    ],
+    "seasonality_window": [
+      "12-29",
+      "01-01"
+    ],
+    "base_weight": 1.1
   },
   {
     "id": "TRV-005",
     "industry": "travel",
-    "entity": "airlines and airports",
-    "condition": { "metric": "snow_in", "op": ">=", "value": 2, "consecutive_days": 1 },
-    "business_impact": "Calendar-aware (Thanksgiving): Even minor snow during peak holiday travel causes catastrophic systemic delays.",
-    "story_seed": "Minor snow forecast threatens major Thanksgiving travel headaches at {metro} airports",
-    "audiences": ["national news", "travel trade press"],
-    "seasonality_window": ["Nov", "Nov"],
-    "base_weight": 1.0
+    "entity": "ski resorts and alpine mountain lodging",
+    "condition": {
+      "metric": "snow_in",
+      "op": ">=",
+      "value": 6.0,
+      "consecutive_days": 2
+    },
+    "business_impact": "Calendar-aware: A massive multi-day powder layout right before Presidents' Day weekend triggers an immediate surge in premium ski chalet bookings and equipment rentals.",
+    "story_seed": "Perfect Presidents' Day powder dump sets up {metro} mountain resorts for record revenues",
+    "audiences": [
+      "travel lifestyle press",
+      "regional tourism boards"
+    ],
+    "seasonality_window": [
+      "02-08",
+      "02-22"
+    ],
+    "base_weight": 1.05
   },
   {
     "id": "TRV-006",
     "industry": "travel",
-    "entity": "indoor attractions and museums",
-    "condition": { "metric": "temp_anomaly_f", "op": "<=", "value": -20, "consecutive_days": 2 },
-    "business_impact": "Whiplash trigger: Sudden bitter cold forces tourists to abandon outdoor itineraries, packing indoor attractions and museums.",
-    "story_seed": "Bitter cold snap in {metro} drives tourists indoors, packing local museums",
-    "audiences": ["tourism boards", "local TV news"],
-    "seasonality_window": ["Oct", "Mar"],
+    "entity": "theme parks and outdoor attractions",
+    "condition": {
+      "metric": "max_temp_f",
+      "op": ">=",
+      "value": 95,
+      "consecutive_days": 3
+    },
+    "business_impact": "Streak trigger: Prolonged triple-digit midsummer heat waves hit outdoor theme park attendance thresholds, forcing operators to pivot to indoor theater promotions.",
+    "story_seed": "Three-day extreme heat block deflates {metro} outdoor theme park traffic",
+    "audiences": [
+      "amusement industry trade",
+      "consumer travel desks"
+    ],
+    "seasonality_window": [
+      "06-15",
+      "08-15"
+    ],
     "base_weight": 0.8
   },
   {
     "id": "TRV-007",
     "industry": "travel",
-    "entity": "outdoor tour operators",
-    "condition": { "metric": "aqi", "op": ">=", "value": 150, "consecutive_days": 2 },
-    "business_impact": "Second-order effect: Unhealthy AQI forces mass cancellations of walking tours, boat rentals, and sightseeing excursions.",
-    "story_seed": "Dangerous air quality forces {metro} outdoor tour operators to halt operations",
-    "audiences": ["travel trade press", "small business press"],
-    "seasonality_window": ["May", "Oct"],
-    "base_weight": 0.9
+    "entity": "business travel booking platforms",
+    "condition": {
+      "metric": "temp_anomaly_f",
+      "op": "<=",
+      "value": -15,
+      "consecutive_days": 2
+    },
+    "business_impact": "Anomaly trigger: Severe unseasonable deep freezes trigger immediate cancellations of corporate flights, freezing Q1 regional sales conventions.",
+    "story_seed": "Historic midwinter temperature anomaly cancels {metro} corporate conventions, freezing business travel",
+    "audiences": [
+      "corporate travel networks",
+      "national business columns"
+    ],
+    "seasonality_window": [
+      "12-01",
+      "02-28"
+    ],
+    "base_weight": 1.15
   },
   {
     "id": "TRV-008",
     "industry": "travel",
-    "entity": "cruise ports and marinas",
-    "condition": { "metric": "max_wind_mph", "op": ">=", "value": 45, "consecutive_days": 1 },
-    "business_impact": "High winds create dangerous docking conditions, forcing cruise reroutes and delaying departures.",
-    "story_seed": "High winds threaten to delay cruise departures out of {metro} ports",
-    "audiences": ["cruise industry press", "local business desks"],
-    "seasonality_window": ["Jan", "Dec"],
-    "base_weight": 0.8
+    "entity": "beachfront resorts and coastal rentals",
+    "condition": {
+      "metric": "max_wind_mph",
+      "op": ">=",
+      "value": 40,
+      "consecutive_days": 1
+    },
+    "business_impact": "High late-summer tropical wind gust thresholds force beach closures, prompting immediate premature checkouts and localized resort revenue losses.",
+    "story_seed": "High wind boundaries force early beach checkout peak, disrupting coastal {metro} lodgings",
+    "audiences": [
+      "hospitality business press",
+      "regional real estate desks"
+    ],
+    "seasonality_window": [
+      "08-01",
+      "10-15"
+    ],
+    "base_weight": 0.95
   },
   {
-    "id": "TRV-009",
+    "id": "TRV-001",
     "industry": "travel",
-    "entity": "resorts and country clubs",
-    "condition": { "metric": "temp_anomaly_f", "op": ">=", "value": 15, "consecutive_days": 2 },
-    "business_impact": "Calendar-aware (Spring Break): Unseasonable warmth during peak spring travel drives maximum capacity at resort pools and outdoor venues.",
-    "story_seed": "Record spring break warmth pushes {metro} resort capacities to the limit",
-    "audiences": ["hospitality press", "social"],
-    "seasonality_window": ["Mar", "Apr"],
-    "base_weight": 0.7
+    "entity": "car rental agencies and road trip providers",
+    "condition": {
+      "metric": "temp_anomaly_f",
+      "op": ">=",
+      "value": 15,
+      "consecutive_days": 3
+    },
+    "business_impact": "Anomaly trigger: Severe pre-summer heat deviations prompt an unseasonably early surge in regional rental bookings and premium convertible/SUV fleet upgrades.",
+    "story_seed": "Pre-summer heat anomaly triggers unprecedented road trip car rental run across {metro}",
+    "audiences": [
+      "automotive travel trade",
+      "consumer finance press"
+    ],
+    "seasonality_window": [
+      "05-01",
+      "06-15"
+    ],
+    "base_weight": 0.85
   },
   {
     "id": "TRV-010",
     "industry": "travel",
-    "entity": "regional rail and bus lines",
-    "condition": { "metric": "precip_in", "op": ">=", "value": 1, "consecutive_days": 3 },
-    "business_impact": "Streak trigger: Prolonged heavy rain causes localized track flooding, shifting commuter and tourist traffic to buses or rideshares.",
-    "story_seed": "Lingering heavy rains threaten {metro} regional rail networks, driving up bus demand",
-    "audiences": ["transit trade press", "local news"],
-    "seasonality_window": ["Mar", "Nov"],
+    "entity": "cruise lines and port operators",
+    "condition": {
+      "metric": "max_wind_mph",
+      "op": ">=",
+      "value": 35,
+      "consecutive_days": 2
+    },
+    "business_impact": "Sustained high wind vectors across key shipping lanes force cruise operators into immediate, high-cost itinerary changes and missed port stops.",
+    "story_seed": "Persistent autumn wind fronts force emergency cruise re-routing out of {metro} ports",
+    "audiences": [
+      "cruise industry press",
+      "maritime business news"
+    ],
+    "seasonality_window": [
+      "09-01",
+      "11-15"
+    ],
+    "base_weight": 1.0
+  },
+  {
+    "id": "TRV-011",
+    "industry": "travel",
+    "entity": "eco-tourism and national park lodgings",
+    "condition": {
+      "metric": "precip_in",
+      "op": ">=",
+      "value": 0.25,
+      "consecutive_days": 5
+    },
+    "business_impact": "Streak trigger: 5+ days of relentless rain saturation ruins trail networks, instantly shifting weekend traveler volume to urban museum ticketing arrays.",
+    "story_seed": "Five-day rain saturation sidelines {metro} trail networks, shifts tourist dollars indoors",
+    "audiences": [
+      "outdoor recreation press",
+      "local tourism boards"
+    ],
+    "seasonality_window": [
+      "04-01",
+      "05-31"
+    ],
+    "base_weight": 0.75
+  },
+  {
+    "id": "TRV-012",
+    "industry": "travel",
+    "entity": "urban boutique hotels and weekend city tours",
+    "condition": {
+      "metric": "max_temp_f",
+      "op": ">=",
+      "value": 90,
+      "consecutive_days": 1
+    },
+    "business_impact": "Calendar-aware: High heat profiles over the Juneteenth holiday completely stop walking tour profiles, funneling booking traffic directly into air-conditioned hospitality indoor footprints.",
+    "story_seed": "Juneteenth holiday heat wave alters {metro} tourist traffic patterns toward indoor properties",
+    "audiences": [
+      "local urban travel desks",
+      "hospitality trade press"
+    ],
+    "seasonality_window": [
+      "06-12",
+      "06-20"
+    ],
+    "base_weight": 0.95
+  },
+  {
+    "id": "TRV-013",
+    "industry": "travel",
+    "entity": "corporate retreat venues and conference properties",
+    "condition": {
+      "metric": "snow_in",
+      "op": ">=",
+      "value": 1.0,
+      "consecutive_days": 1
+    },
+    "business_impact": "Calendar-aware: MLK Day weekend early snowfalls completely derail executive retreats, forcing corporate hospitality properties to issue instant virtual event re-bookings.",
+    "story_seed": "MLK holiday weekend winter storm shifts {metro} corporate summits to virtual arrays",
+    "audiences": [
+      "corporate events industry",
+      "business travel press"
+    ],
+    "seasonality_window": [
+      "01-10",
+      "01-22"
+    ],
     "base_weight": 0.8
+  },
+  {
+    "id": "TRV-014",
+    "industry": "travel",
+    "entity": "campground networks and RV rental operators",
+    "condition": {
+      "metric": "min_temp_f",
+      "op": "<=",
+      "value": 40,
+      "consecutive_days": 2
+    },
+    "business_impact": "Calendar-aware: Sudden freeze lines over the Columbus/Indigenous Peoples' Day long weekend prompt mass cancellations of outdoor recreational site and glamping reservations.",
+    "story_seed": "Holiday weekend frost line triggers mass cancellations across {metro} RV and campground sites",
+    "audiences": [
+      "outdoor hospitality press",
+      "consumer leisure trends"
+    ],
+    "seasonality_window": [
+      "10-05",
+      "10-15"
+    ],
+    "base_weight": 0.85
+  },
+  {
+    "id": "TRV-015",
+    "industry": "travel",
+    "entity": "airport parking structures and valet logistics",
+    "condition": {
+      "metric": "snow_in",
+      "op": ">=",
+      "value": 3.0,
+      "consecutive_days": 1
+    },
+    "business_impact": "Calendar-aware: High-volume pre-Christmas winter storms block open-air airport parking structures, trapping outbound vehicles and gridlocking holiday shuttle operations.",
+    "story_seed": "Pre-Christmas snow dump traps vehicles, paralyzes {metro} airport parking logistics",
+    "audiences": [
+      "aviation logistics trade",
+      "local transport news"
+    ],
+    "seasonality_window": [
+      "12-18",
+      "12-25"
+    ],
+    "base_weight": 1.1
+  },
+  {
+    "id": "TRV-016",
+    "industry": "travel",
+    "entity": "luggage retailers and premium travel accessories",
+    "condition": {
+      "metric": "temp_anomaly_f",
+      "op": ">=",
+      "value": 10,
+      "consecutive_days": 2
+    },
+    "business_impact": "Anomaly trigger: Sustained unseasonable winter warm spells trigger rapid consumer daydreams, provoking a premature spike in spring-break resort bookings and luggage gear sales.",
+    "story_seed": "Midwinter warm anomaly sparks early Spring Break travel booking wave across {metro}",
+    "audiences": [
+      "consumer retail trends",
+      "travel accessories trade",
+      "social"
+    ],
+    "seasonality_window": [
+      "01-15",
+      "02-28"
+    ],
+    "base_weight": 0.9
+  },
+  {
+    "id": "TRV-017",
+    "industry": "travel",
+    "entity": "casino resorts and destination complexes",
+    "condition": {
+      "metric": "precip_in",
+      "op": ">=",
+      "value": 0.5,
+      "consecutive_days": 2
+    },
+    "business_impact": "Calendar-aware: Continuous rainy weather over Veterans Day weekend ruins outdoor civic observations, funneling holiday foot traffic directly into casino floors.",
+    "story_seed": "Veterans Day weather washouts steer drive-to crowds straight onto {metro} resort floors",
+    "audiences": [
+      "gaming hospitality trade",
+      "local entertainment desks"
+    ],
+    "seasonality_window": [
+      "11-04",
+      "11-11"
+    ],
+    "base_weight": 1.0
+  },
+  {
+    "id": "TRV-018",
+    "industry": "travel",
+    "entity": "summer camp networks and youth group tours",
+    "condition": {
+      "metric": "humidity_pct",
+      "op": ">=",
+      "value": 80,
+      "consecutive_days": 3
+    },
+    "business_impact": "Streak trigger: Continuous oppressive summer humidity metrics launch mandatory heat-safety activity freezes, forcing operators to pivot to costly indoor entertainment alternatives.",
+    "story_seed": "Oppressive midsummer humidity streak forces {metro} youth tours completely indoors",
+    "audiences": [
+      "youth travel management",
+      "consumer safety columns"
+    ],
+    "seasonality_window": [
+      "07-15",
+      "08-10"
+    ],
+    "base_weight": 0.85
+  },
+  {
+    "id": "TRV-019",
+    "industry": "travel",
+    "entity": "staycation hotel operators and city retreats",
+    "condition": {
+      "metric": "precip_in",
+      "op": ">=",
+      "value": 0.3,
+      "consecutive_days": 4
+    },
+    "business_impact": "Streak trigger: Unrelenting spring rain blocks regional flight infrastructure, driving a massive local run on high-end urban staycation hotel booking packages.",
+    "story_seed": "Persistent spring rains drive record local 'staycation' luxury room bookings in {metro}",
+    "audiences": [
+      "hospitality marketing press",
+      "local lifestyle editors"
+    ],
+    "seasonality_window": [
+      "04-01",
+      "05-15"
+    ],
+    "base_weight": 0.9
+  },
+  {
+    "id": "TRV-020",
+    "industry": "travel",
+    "entity": "holiday tour companies and booking portals",
+    "condition": {
+      "metric": "max_wind_mph",
+      "op": ">=",
+      "value": 45,
+      "consecutive_days": 1
+    },
+    "business_impact": "Calendar-aware: High pre-Christmas wind velocity limits hit primary air corridors, instantly triggering global connecting flight failures and emergency hotel re-booking spikes.",
+    "story_seed": "Pre-Christmas high wind front fractures national flight corridors out of {metro} hub",
+    "audiences": [
+      "aviation industry analysts",
+      "national consumer press"
+    ],
+    "seasonality_window": [
+      "12-15",
+      "12-24"
+    ],
+    "base_weight": 1.25
   }
 ]
