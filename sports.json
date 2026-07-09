@@ -2,219 +2,452 @@
   {
     "id": "SPT-001",
     "industry": "sports",
-    "entity": "golf courses",
+    "entity": "professional baseball franchises and stadium venues",
     "condition": {
-      "metric": "temp_anomaly_f",
+      "metric": "precip_in",
       "op": ">=",
-      "value": 15,
-      "consecutive_days": 2
+      "value": 0.4,
+      "consecutive_days": 1
     },
-    "business_impact": "Anomaly trigger: Unseasonably warm spring weekends drive fully booked tee times and pro shop sales.",
-    "story_seed": "Record warmth expected to pack {metro} golf courses this weekend",
+    "business_impact": "Second-order effect: Persistent opening week spring washouts trigger immediate multi-game postponements, fracturing localized concession supply lines and gate auxiliary revenues.",
+    "story_seed": "Early season baseball washouts in {metro} threaten opening week stadium gate and vendor revenue loops",
     "audiences": [
-      "local sports press",
-      "golf trade press"
+      "sports business press",
+      "local sports desks",
+      "stadium concession trade"
     ],
     "seasonality_window": [
-      "Mar",
-      "May"
+      "03-25",
+      "04-15"
     ],
-    "base_weight": 0.8
+    "base_weight": 1.1
   },
   {
     "id": "SPT-002",
     "industry": "sports",
-    "entity": "youth sports leagues",
+    "entity": "outdoor athletic stadiums and concession networks",
     "condition": {
-      "metric": "precip_in",
+      "metric": "max_temp_f",
       "op": ">=",
-      "value": 1,
-      "consecutive_days": 2
+      "value": 95,
+      "consecutive_days": 1
     },
-    "business_impact": "Second-order effect: Washout weekends drive massive revenue losses for tournament organizers and local hospitality.",
-    "story_seed": "Washout forecast threatens massive revenue loss for {metro} youth sports tournaments",
+    "business_impact": "Calendar-aware: Midsummer holiday twin-bills tracking extreme heat boundaries force immediate stadium cooling protocols and cause fan concession demand to pivot entirely to ice and hydration over alcohol.",
+    "story_seed": "Holiday stadium doubleheaders in {metro} force urgent cooling deployments as fan hydration metrics spike",
     "audiences": [
-      "local TV news",
-      "sports business press"
+      "sports facility venue press",
+      "concession distribution logs",
+      "social"
     ],
     "seasonality_window": [
-      "Apr",
-      "Oct"
+      "06-12",
+      "07-06"
     ],
-    "base_weight": 0.9
+    "base_weight": 1.0
   },
   {
     "id": "SPT-003",
     "industry": "sports",
-    "entity": "ski resorts",
-    "condition": {
-      "metric": "snow_in",
-      "op": ">=",
-      "value": 8,
-      "consecutive_days": 1
-    },
-    "business_impact": "Major snowfalls drive immediate booking spikes for local winter sports destinations.",
-    "story_seed": "Major powder dump expected to drive massive weekend crowds to resorts near {metro}",
-    "audiences": [
-      "winter sports press",
-      "local TV news"
-    ],
-    "seasonality_window": [
-      "Dec",
-      "Mar"
-    ],
-    "base_weight": 0.9
-  },
-  {
-    "id": "SPT-004",
-    "industry": "sports",
-    "entity": "outdoor endurance events",
-    "condition": {
-      "metric": "aqi",
-      "op": ">=",
-      "value": 100,
-      "consecutive_days": 1
-    },
-    "business_impact": "Poor air quality forces cancellation or modification of marathons, cycling events, and outdoor training.",
-    "story_seed": "Poor air quality threatens weekend endurance events across {metro}",
-    "audiences": [
-      "health and wellness press",
-      "local sports press"
-    ],
-    "seasonality_window": [
-      "May",
-      "Oct"
-    ],
-    "base_weight": 0.8
-  },
-  {
-    "id": "SPT-005",
-    "industry": "sports",
-    "entity": "stadium concessions",
-    "condition": {
-      "metric": "max_temp_f",
-      "op": ">=",
-      "value": 90,
-      "consecutive_days": 1
-    },
-    "business_impact": "Calendar-aware (Opening Day/Early Season): Extreme heat at exposed stadiums drives massive spikes in bottled water and cold beverage sales.",
-    "story_seed": "Scorcher forecast for {metro} stadium expected to drive record beverage sales",
-    "audiences": [
-      "sports business press"
-    ],
-    "seasonality_window": [
-      "Apr",
-      "Sep"
-    ],
-    "base_weight": 0.7
-  },
-  {
-    "id": "SPT-006",
-    "industry": "sports",
-    "entity": "outdoor racquet clubs and golf",
-    "condition": {
-      "metric": "max_wind_mph",
-      "op": ">=",
-      "value": 35,
-      "consecutive_days": 1
-    },
-    "business_impact": "High winds ruin playability for precision sports, leading to mass cancellations of tee times and outdoor court bookings.",
-    "story_seed": "High winds set to blow out weekend bookings at {metro} golf and tennis clubs",
-    "audiences": [
-      "golf trade press",
-      "local sports press"
-    ],
-    "seasonality_window": [
-      "Mar",
-      "Nov"
-    ],
-    "base_weight": 0.7
-  },
-  {
-    "id": "SPT-007",
-    "industry": "sports",
-    "entity": "stadium operations",
+    "entity": "live event management and collegiate athletic networks",
     "condition": {
       "metric": "severe_risk",
       "op": ">=",
       "value": 3,
       "consecutive_days": 1
     },
-    "business_impact": "Second-order effect: Severe thunderstorm risk triggers complex stadium evacuation protocols and massive event insurance concerns.",
-    "story_seed": "Severe weather threat forces {metro} stadiums to prepare evacuation protocols",
+    "business_impact": "Calendar-aware: Convective lightning hazards during high-volume Labor Day opening weekend football matchups spark mandatory premium tier stadium evacuations and live broadcast delays.",
+    "story_seed": "Labor Day football openers in {metro} under critical convective lighting evacuation profiles",
     "audiences": [
-      "stadium operations press",
-      "local news"
+      "collegiate sports desks",
+      "sports broadcast media",
+      "local emergency news"
     ],
     "seasonality_window": [
-      "Apr",
-      "Oct"
+      "08-28",
+      "09-07"
     ],
-    "base_weight": 0.9
+    "base_weight": 1.25
   },
   {
-    "id": "SPT-008",
+    "id": "SPT-004",
     "industry": "sports",
-    "entity": "youth and high school sports",
+    "entity": "amateur sports leagues and community park systems",
     "condition": {
-      "metric": "max_temp_f",
-      "op": ">=",
-      "value": 95,
-      "consecutive_days": 3
-    },
-    "business_impact": "Streak trigger: Multi-day heat waves push artificial turf temperatures to dangerous levels, forcing mandates to move practices to early morning or indoors.",
-    "story_seed": "Dangerous turf temperatures force {metro} high schools to overhaul practice schedules",
-    "audiences": [
-      "local sports press",
-      "education press"
-    ],
-    "seasonality_window": [
-      "Aug",
-      "Sep"
-    ],
-    "base_weight": 0.9
-  },
-  {
-    "id": "SPT-009",
-    "industry": "sports",
-    "entity": "parks and recreation",
-    "condition": {
-      "metric": "temp_anomaly_f",
+      "metric": "min_temp_f",
       "op": "<=",
-      "value": -15,
-      "consecutive_days": 2
+      "value": 32,
+      "consecutive_days": 1
     },
-    "business_impact": "Whiplash trigger: Sudden deep freezes force municipal courses and parks to prematurely winterize irrigation systems, closing facilities early.",
-    "story_seed": "Sudden deep freeze forces early closure of {metro} municipal golf courses",
+    "business_impact": "Calendar-aware: Frigid morning baseline temperatures cancel traditional local Thanksgiving Turkey Bowl community matches, driving down local sports retail merchandising metrics.",
+    "story_seed": "Thanksgiving morning deep freeze threatens to sideline traditional community turf matches across {metro}",
     "audiences": [
-      "golf trade press",
-      "local news"
+      "local sports desks",
+      "community wellness logs",
+      "social"
     ],
     "seasonality_window": [
-      "Oct",
-      "Nov"
+      "11-20",
+      "11-28"
     ],
     "base_weight": 0.8
   },
   {
-    "id": "SPT-010",
+    "id": "SPT-005",
     "industry": "sports",
-    "entity": "indoor sports complexes",
+    "entity": "endurance sports organizations and marathon coordinators",
+    "condition": {
+      "metric": "temp_anomaly_f",
+      "op": ">=",
+      "value": 15,
+      "consecutive_days": 1
+    },
+    "business_impact": "Anomaly trigger: Severe autumn heat deviations prompt race officials to issue emergency medical warnings or execute outright race cancellations to prevent mass participant heat stroke.",
+    "story_seed": "Unseasonable autumn heat anomaly forces emergency medical scaling for {metro} marathon grids",
+    "audiences": [
+      "endurance sports media",
+      "public safety columns",
+      "running industry trade"
+    ],
+    "seasonality_window": [
+      "09-15",
+      "11-15"
+    ],
+    "base_weight": 1.2
+  },
+  {
+    "id": "SPT-006",
+    "industry": "sports",
+    "entity": "outdoor ice hockey operations and arena management",
+    "condition": {
+      "metric": "temp_anomaly_f",
+      "op": ">=",
+      "value": 12,
+      "consecutive_days": 2
+    },
+    "business_impact": "Calendar-aware: Unseasonable winter warm anomalies compromise surface configurations for New Year's Winter Classic style outdoor games, melting ice sheet infrastructures.",
+    "story_seed": "Winter warm wave anomaly threatens structure of {metro} outdoor holiday hockey ice sheets",
+    "audiences": [
+      "sports engineering trade",
+      "national sports press",
+      "hockey network feeds"
+    ],
+    "seasonality_window": [
+      "12-24",
+      "01-05"
+    ],
+    "base_weight": 1.15
+  },
+  {
+    "id": "SPT-007",
+    "industry": "sports",
+    "entity": "professional golf tournaments and country clubs",
     "condition": {
       "metric": "precip_in",
       "op": ">=",
       "value": 0.5,
       "consecutive_days": 3
     },
-    "business_impact": "Streak trigger: Rainouts for outdoor leagues drive a massive surge in spontaneous bookings for indoor batting cages and soccer facilities.",
-    "story_seed": "Outdoor rainouts drive booking surge at {metro} indoor sports complexes",
+    "business_impact": "Streak trigger: 3+ days of continuous downpours oversaturate putting greens, triggering rolling play extensions into Monday and destroying weekend hospitality tent revenues.",
+    "story_seed": "Three-day rain saturation forces high-stakes {metro} golf tournament into costly Monday finish",
     "audiences": [
-      "sports business press"
+      "golf business trade",
+      "sports marketing networks",
+      "local luxury hospitality media"
     ],
     "seasonality_window": [
-      "Mar",
-      "May"
+      "04-01",
+      "08-31"
+    ],
+    "base_weight": 0.95
+  },
+  {
+    "id": "SPT-008",
+    "industry": "sports",
+    "entity": "live event operators and stadium tailgate complexes",
+    "condition": {
+      "metric": "precip_in",
+      "op": ">=",
+      "value": 1.0,
+      "consecutive_days": 1
+    },
+    "business_impact": "Torrential single-day downpours submerge open-air venue parking matrices, obliterating pre-game tailgating activities and dropping auxiliary team store merchandise loops.",
+    "story_seed": "Flash flooding downpour submerges stadium tailgate fields in {metro}, slicing auxiliary gate revenues",
+    "audiences": [
+      "sports marketing media",
+      "stadium ops trade logs",
+      "local news traffic hubs"
+    ],
+    "seasonality_window": [
+      "09-01",
+      "11-30"
+    ],
+    "base_weight": 0.9
+  },
+  {
+    "id": "SPT-009",
+    "industry": "sports",
+    "entity": "collegiate track and field events and sports complexes",
+    "condition": {
+      "metric": "max_wind_mph",
+      "op": ">=",
+      "value": 45,
+      "consecutive_days": 1
+    },
+    "business_impact": "Extreme spring wind velocity thresholds render precision timing and field event records invalid, forcing athletic directors to postpone critical qualifying meets.",
+    "story_seed": "Severe wind gusts in {metro} invalidate athletic safety bounds, forcing meet postponements",
+    "audiences": [
+      "collegiate athletic trade press",
+      "regional sports logistics"
+    ],
+    "seasonality_window": [
+      "03-15",
+      "05-30"
     ],
     "base_weight": 0.8
+  },
+  {
+    "id": "SPT-010",
+    "industry": "sports",
+    "entity": "youth sports organizations and regional soccer complexes",
+    "condition": {
+      "metric": "humidity_pct",
+      "op": ">=",
+      "value": 85,
+      "consecutive_days": 3
+    },
+    "business_impact": "Streak trigger: 3+ days of oppressive humidity paired with high baseline heat zones creates critical wet-bulb globe temperature limits, shutting down outdoor multi-state youth tournaments.",
+    "story_seed": "Oppressive midsummer humidity streak forces safety-mandated closures of {metro} youth tournament fields",
+    "audiences": [
+      "youth sports management press",
+      "regional public health desks",
+      "social"
+    ],
+    "seasonality_window": [
+      "07-01",
+      "08-31"
+    ],
+    "base_weight": 1.05
+  },
+  {
+    "id": "SPT-011",
+    "industry": "sports",
+    "entity": "outdoor tennis championships and summer tournaments",
+    "condition": {
+      "metric": "uv_index",
+      "op": ">=",
+      "value": 9,
+      "consecutive_days": 2
+    },
+    "business_impact": "Extreme ultraviolet index thresholds reached over multi-day tournament finals require mandatory player court surface temperature health breaks and drive record on-site sunscreen merchandising loops.",
+    "story_seed": "Blistering UV index profiles over {metro} tennis finals trigger player safety thermal protocols",
+    "audiences": [
+      "tennis media channels",
+      "consumer goods retail trade"
+    ],
+    "seasonality_window": [
+      "06-01",
+      "08-15"
+    ],
+    "base_weight": 0.85
+  },
+  {
+    "id": "SPT-012",
+    "industry": "sports",
+    "entity": "indoor sports arenas and professional basketball complexes",
+    "condition": {
+      "metric": "min_temp_f",
+      "op": "<=",
+      "value": 10,
+      "consecutive_days": 2
+    },
+    "business_impact": "Second-order effect: Sustained sub-zero multi-day deep freezes spike utility HVAC consumption profiles for major indoor arenas, altering venue baseline maintenance overhead parameters.",
+    "story_seed": "Severe sub-zero deep freeze spikes arena heating overhead profiles across {metro} industrial venues",
+    "audiences": [
+      "venue management trade press",
+      "commercial real estate logs"
+    ],
+    "seasonality_window": [
+      "12-01",
+      "02-15"
+    ],
+    "base_weight": 0.75
+  },
+  {
+    "id": "SPT-013",
+    "industry": "sports",
+    "entity": "holiday basketball classics and indoor tournament platforms",
+    "condition": {
+      "metric": "snow_in",
+      "op": ">=",
+      "value": 5.0,
+      "consecutive_days": 1
+    },
+    "business_impact": "Calendar-aware: Major winter storm drops during Black Friday holiday classic invitations paralyze team hotel-to-arena transits, forcing sudden schedule truncations and digital streaming format adjustments.",
+    "story_seed": "Black Friday blizzard gridlocks team transits for {metro} holiday basketball invitationals",
+    "audiences": [
+      "sports tournament organizers",
+      "digital streaming network trade"
+    ],
+    "seasonality_window": [
+      "11-20",
+      "11-30"
+    ],
+    "base_weight": 1.0
+  },
+  {
+    "id": "SPT-014",
+    "industry": "sports",
+    "entity": "spring training facilities and vendor spaces",
+    "condition": {
+      "metric": "max_temp_f",
+      "op": ">=",
+      "value": 90,
+      "consecutive_days": 2
+    },
+    "business_impact": "Anomaly trigger: Premature unseasonable heat anomalies across early spring training profiles cause sudden spikes in branded athletic performance gear and performance apparel merchandising matrices.",
+    "story_seed": "Unseasonable spring training heat anomaly accelerates apparel merchandising demand vectors in {metro}",
+    "audiences": [
+      "sports licensing retail trade",
+      "consumer apparel desks",
+      "social"
+    ],
+    "seasonality_window": [
+      "02-20",
+      "03-20"
+    ],
+    "base_weight": 0.95
+  },
+  {
+    "id": "SPT-015",
+    "industry": "sports",
+    "entity": "stadium field turf providers and arena operations",
+    "condition": {
+      "metric": "max_temp_f",
+      "op": ">=",
+      "value": 100,
+      "consecutive_days": 3
+    },
+    "business_impact": "Streak trigger: 3+ days of consecutive extreme heat blocks cause hazardous core temperature retention profiles on synthetic field turf systems, requiring venue operations to apply synthetic field irrigation cooling lines.",
+    "story_seed": "Three-day triple-digit heat block raises synthetic field surface risks across {metro} complexes",
+    "audiences": [
+      "sports turf engineering press",
+      "athletic facility safety boards"
+    ],
+    "seasonality_window": [
+      "07-01",
+      "08-31"
+    ],
+    "base_weight": 1.1
+  },
+  {
+    "id": "SPT-016",
+    "industry": "sports",
+    "entity": "interscholastic athletic networks and high school championships",
+    "condition": {
+      "metric": "precip_in",
+      "op": ">=",
+      "value": 0.2,
+      "consecutive_days": 1
+    },
+    "business_impact": "Calendar-aware: Chilly freezing rain fronts sweeping through late autumn high school sports championship schedules cause rapid surface glaze, forcing statewide athletic associations to issue immediate play cancellations.",
+    "story_seed": "Freezing rain front severs late autumn school athletic tournament schedules around {metro}",
+    "audiences": [
+      "local sports desks",
+      "interscholastic athletic boards",
+      "parent consumer networks"
+    ],
+    "seasonality_window": [
+      "11-05",
+      "11-20"
+    ],
+    "base_weight": 0.85
+  },
+  {
+    "id": "SPT-017",
+    "industry": "sports",
+    "entity": "marime racing operations and sailing clubs",
+    "condition": {
+      "metric": "max_wind_mph",
+      "op": ">=",
+      "value": 35,
+      "consecutive_days": 1
+    },
+    "business_impact": "High wind boundaries cross safety configurations for coastal regattas, prompting organizers to cancel water access arrays to prevent capsizing safety events.",
+    "story_seed": "Severe autumn wind boundary forces immediate cancellations of {metro} water regattas",
+    "audiences": [
+      "maritime racing press",
+      "coastal recreational safety logs"
+    ],
+    "seasonality_window": [
+      "09-01",
+      "10-31"
+    ],
+    "base_weight": 0.9
+  },
+  {
+    "id": "SPT-018",
+    "industry": "sports",
+    "entity": "winter sport operations and mountain resorts",
+    "condition": {
+      "metric": "temp_anomaly_f",
+      "op": ">=",
+      "value": 15,
+      "consecutive_days": 4
+    },
+    "business_impact": "Anomaly trigger: Unseasonable winter warmth blocks commercial snowmaking infrastructure operations, degrading mountain trail layouts ahead of lucrative holiday weekend bookings.",
+    "story_seed": "Severe multi-day warm anomaly breaks alpine snowmaking capabilities near {metro} domains",
+    "audiences": [
+      "ski resort management media",
+      "regional winter lifestyle desks"
+    ],
+    "seasonality_window": [
+      "12-10",
+      "01-15"
+    ],
+    "base_weight": 1.2
+  },
+  {
+    "id": "SPT-019",
+    "industry": "sports",
+    "entity": "professional football franchises and open-air stadiums",
+    "condition": {
+      "metric": "min_temp_f",
+      "op": "<=",
+      "value": 15,
+      "consecutive_days": 1
+    },
+    "business_impact": "Calendar-aware: Severe sub-freezing morning parameters on late December game days degrade open-air stadium seat comfort profiles, forcing a massive volume shift toward indoor club level suite access requests.",
+    "story_seed": "Late December sub-freezing grid shifts fan traffic to premium indoor stadium suites across {metro}",
+    "audiences": [
+      "sports ticket brokerage trade",
+      "premium venue marketing press"
+    ],
+    "seasonality_window": [
+      "12-15",
+      "12-30"
+    ],
+    "base_weight": 1.1
+  },
+  {
+    "id": "SPT-020",
+    "industry": "sports",
+    "entity": "community athletic complexes and soccer venues",
+    "condition": {
+      "metric": "precip_in",
+      "op": ">=",
+      "value": 0.3,
+      "consecutive_days": 4
+    },
+    "business_impact": "Streak trigger: 4+ consecutive days of heavy spring downpours cause extensive field waterlogging, rendering natural grass athletic surfaces unplayable for regional league play lines.",
+    "story_seed": "Four-day downpour streak waterlogs grass fields, gridlocking community sports play in {metro}",
+    "audiences": [
+      "local sports networks",
+      "community parks management trade"
+    ],
+    "seasonality_window": [
+      "03-15",
+      "05-15"
+    ],
+    "base_weight": 1.0
   }
 ]
