@@ -2,219 +2,461 @@
   {
     "id": "CON-001",
     "industry": "consumer",
-    "entity": "restaurants and patios",
+    "entity": "beverage brands and packaged ice manufacturers",
     "condition": {
-      "metric": "temp_anomaly_f",
+      "metric": "max_temp_f",
       "op": ">=",
-      "value": 10,
-      "consecutive_days": 3
+      "value": 90,
+      "consecutive_days": 1
     },
-    "business_impact": "Anomaly trigger: Unseasonably warm weekends drive massive spikes in outdoor dining and patio revenue.",
-    "story_seed": "Unseasonable warmth expected to pack {metro} restaurant patios this weekend",
+    "business_impact": "Calendar-aware: Perfect clear, hot holiday weather configurations over Memorial Day and July 4th maximize immediate outdoor beverage consumption and volume velocity runs.",
+    "story_seed": "Clear hot holiday weather maps set {metro} up for record-breaking cold beverage demand vectors",
     "audiences": [
-      "restaurant trade press",
-      "local TV news"
+      "beverage trade press",
+      "consumer goods marketing media",
+      "local TV business desks"
     ],
     "seasonality_window": [
-      "Mar",
-      "May"
+      "05-20",
+      "07-06"
     ],
-    "base_weight": 0.8
+    "base_weight": 1.2
   },
   {
     "id": "CON-002",
     "industry": "consumer",
-    "entity": "rideshare platforms",
+    "entity": "apparel labels and volume distribution footprints",
     "condition": {
-      "metric": "precip_in",
+      "metric": "temp_anomaly_f",
       "op": ">=",
-      "value": 0.25,
-      "consecutive_days": 1
+      "value": 12,
+      "consecutive_days": 4
     },
-    "business_impact": "Rain during morning or evening commutes drives massive surge pricing and demand for rideshares.",
-    "story_seed": "Rainy commute expected to drive rideshare surge pricing across {metro}",
+    "business_impact": "Calendar-aware: An unseasonable late-summer heat block lingering over Back-to-School and Labor Day weeks completely derails early autumn fleece and denim consumer demand cycles.",
+    "story_seed": "Relentless late-summer heat anomaly stalls back-to-school fall wardrobe loops in {metro}",
     "audiences": [
-      "tech press",
-      "local news"
+      "fashion retail trends press",
+      "consumer behavior news",
+      "national macroeconomics desks"
     ],
     "seasonality_window": [
-      "Jan",
-      "Dec"
-    ],
-    "base_weight": 0.7
-  },
-  {
-    "id": "CON-003",
-    "industry": "consumer",
-    "entity": "utilities and power",
-    "condition": {
-      "metric": "max_temp_f",
-      "op": ">=",
-      "value": 98,
-      "consecutive_days": 5
-    },
-    "business_impact": "Streak trigger: 5+ days of extreme heat push residential power grids to maximum capacity, threatening rolling blackouts.",
-    "story_seed": "Five-day heat streak pushes {metro} power grid to the brink",
-    "audiences": [
-      "energy trade press",
-      "local TV news"
-    ],
-    "seasonality_window": [
-      "Jun",
-      "Sep"
-    ],
-    "base_weight": 1
-  },
-  {
-    "id": "CON-004",
-    "industry": "consumer",
-    "entity": "landscaping and lawn care",
-    "condition": {
-      "metric": "precip_in",
-      "op": "==",
-      "value": 0,
-      "consecutive_days": 14
-    },
-    "business_impact": "Second-order effect: Extended dry streaks trigger municipal watering bans, halting professional landscaping services.",
-    "story_seed": "Extended dry streak in {metro} triggers watering bans, impacting local landscapers",
-    "audiences": [
-      "local business press"
-    ],
-    "seasonality_window": [
-      "Jun",
-      "Sep"
-    ],
-    "base_weight": 0.8
-  },
-  {
-    "id": "CON-005",
-    "industry": "consumer",
-    "entity": "grocery delivery",
-    "condition": {
-      "metric": "snow_in",
-      "op": ">=",
-      "value": 4,
-      "consecutive_days": 1
-    },
-    "business_impact": "Calendar-aware (Super Bowl): Heavy snow right before the big game drives massive panic spikes in grocery delivery apps.",
-    "story_seed": "Pre-Super Bowl snowstorm in {metro} expected to crash grocery delivery apps",
-    "audiences": [
-      "retail trade press",
-      "tech press"
-    ],
-    "seasonality_window": [
-      "Feb",
-      "Feb"
+      "08-01",
+      "09-10"
     ],
     "base_weight": 0.9
   },
   {
-    "id": "CON-006",
+    "id": "CON-003",
     "industry": "consumer",
-    "entity": "movie theaters",
+    "entity": "brick-and-mortar retail and commercial corridors",
     "condition": {
-      "metric": "precip_in",
+      "metric": "snow_in",
       "op": ">=",
-      "value": 0.5,
-      "consecutive_days": 3
-    },
-    "business_impact": "Streak trigger: A multi-day washout on a holiday weekend drives massive surges in spontaneous movie theater ticket sales.",
-    "story_seed": "Washout weekend drives massive box office boost at {metro} theaters",
-    "audiences": [
-      "entertainment press",
-      "local news"
-    ],
-    "seasonality_window": [
-      "May",
-      "Sep"
-    ],
-    "base_weight": 0.8
-  },
-  {
-    "id": "CON-007",
-    "industry": "consumer",
-    "entity": "family entertainment centers",
-    "condition": {
-      "metric": "aqi",
-      "op": ">=",
-      "value": 150,
+      "value": 3.0,
       "consecutive_days": 1
     },
-    "business_impact": "Second-order effect: Hazardous air quality keeps kids off playgrounds, driving parents to pack indoor arcades and trampoline parks.",
-    "story_seed": "Dangerous AQI pushes {metro} families indoors, packing local entertainment centers",
+    "business_impact": "Calendar-aware: Significant snow accumulation on high-volume Black Friday or Cyber Monday shopping windows forces consumer vectors off main sidewalks and shifts spending directly to e-commerce networks.",
+    "story_seed": "Black Friday snowstorm dumps on storefront foot traffic in {metro}, forcing consumers online",
     "audiences": [
-      "leisure trade press",
+      "retail market analysis",
+      "national business press",
+      "e-commerce logistics trends"
+    ],
+    "seasonality_window": [
+      "11-20",
+      "11-30"
+    ],
+    "base_weight": 1.15
+  },
+  {
+    "id": "CON-004",
+    "industry": "consumer",
+    "entity": "athletic apparel brands and fitness gear distributors",
+    "condition": {
+      "metric": "min_temp_f",
+      "op": "<=",
+      "value": 20,
+      "consecutive_days": 3
+    },
+    "business_impact": "Calendar-aware: Frigid sub-freezing morning parameters lingering through the New Year holiday block derail outdoor fitness resolution loops, causing an immediate consumer run on home gym equipment.",
+    "story_seed": "Bitter cold snap over {metro} alters New Year fitness trends toward home workout gear",
+    "audiences": [
+      "fitness industry trade",
+      "consumer health lifestyle press",
       "social"
     ],
     "seasonality_window": [
-      "Jun",
-      "Sep"
+      "12-26",
+      "01-10"
     ],
-    "base_weight": 0.8
+    "base_weight": 0.95
   },
   {
-    "id": "CON-008",
+    "id": "CON-005",
     "industry": "consumer",
-    "entity": "home services and window washing",
+    "entity": "packaged comfort foods and hot beverage labels",
     "condition": {
-      "metric": "max_wind_mph",
+      "metric": "snow_in",
       "op": ">=",
-      "value": 40,
+      "value": 4.0,
       "consecutive_days": 1
     },
-    "business_impact": "Second-order effect: High winds scatter debris and dirt, prompting an immediate spike in calls for window washing and gutter cleaning.",
-    "story_seed": "High winds leave a mess in {metro}, driving up demand for home cleaning services",
+    "business_impact": "Calendar-aware: Major snowstorms over MLK Day holiday long weekends lock families indoors, causing instant inventory grocery runs on shelf-stable soup, hot cocoa, and comfort pantry products.",
+    "story_seed": "MLK holiday weekend snowstorms prompt massive runoff on packaged comfort foods across {metro}",
     "audiences": [
-      "small business press"
+      "packaged food trade press",
+      "grocery supply news",
+      "local consumer spending logs"
     ],
     "seasonality_window": [
-      "Mar",
-      "May"
+      "01-10",
+      "01-22"
     ],
-    "base_weight": 0.6
+    "base_weight": 1.1
   },
   {
-    "id": "CON-009",
+    "id": "CON-006",
     "industry": "consumer",
-    "entity": "specialty foods and ice cream",
+    "entity": "lawn care, seed brands, and DIY garden supplies",
     "condition": {
       "metric": "temp_anomaly_f",
       "op": ">=",
       "value": 15,
       "consecutive_days": 2
     },
-    "business_impact": "Whiplash trigger: A sudden early warm weekend in spring drives outsized crowds to ice cream shops before traditional summer peaks.",
-    "story_seed": "Early spring heat wave drives mid-summer lines at {metro} ice cream shops",
+    "business_impact": "Calendar-aware: Severe early spring warmth anomalies over Presidents' Day long weekend awaken premature consumer gardening impulses, triggering early shelf clearouts of lawn prep lines.",
+    "story_seed": "Early spring heat anomaly sparks premature home lawn and garden rush across {metro}",
     "audiences": [
-      "restaurant trade press",
+      "home improvement media",
+      "diy consumer trends",
+      "local retail updates"
+    ],
+    "seasonality_window": [
+      "02-10",
+      "02-22"
+    ],
+    "base_weight": 1.05
+  },
+  {
+    "id": "CON-007",
+    "industry": "consumer",
+    "entity": "premium confectionery brands and holiday candy suppliers",
+    "condition": {
+      "metric": "precip_in",
+      "op": ">=",
+      "value": 0.5,
+      "consecutive_days": 2
+    },
+    "business_impact": "Streak trigger: Multi-day spring rainy washouts over key pre-Easter distribution matrices halt physical mall corridors, forcing immediate conversions toward online gift basket order fulfillment channels.",
+    "story_seed": "Pre-Easter rainy washout in {metro} shifts holiday confectionery spending online",
+    "audiences": [
+      "confectionery trade press",
+      "gift retail trends",
       "social"
     ],
     "seasonality_window": [
-      "Mar",
-      "May"
+      "03-15",
+      "04-15"
     ],
-    "base_weight": 0.7
+    "base_weight": 0.85
+  },
+  {
+    "id": "CON-008",
+    "industry": "consumer",
+    "entity": "skincare lines and sun protection brands",
+    "condition": {
+      "metric": "uv_index",
+      "op": ">=",
+      "value": 9,
+      "consecutive_days": 1
+    },
+    "business_impact": "Calendar-aware: Extreme UV index measurements coinciding with Juneteenth park gatherings ignite immediate, localized purchasing runs on high-SPF skin safety and hydration matrices.",
+    "story_seed": "High UV index during Juneteenth celebrations sparks urgent demand for skin protection arrays in {metro}",
+    "audiences": [
+      "beauty cosmetics trade",
+      "consumer product safety logs",
+      "local family columns"
+    ],
+    "seasonality_window": [
+      "06-12",
+      "06-22"
+    ],
+    "base_weight": 1.0
+  },
+  {
+    "id": "CON-009",
+    "industry": "consumer",
+    "entity": "insect repellents and pest management brands",
+    "condition": {
+      "metric": "humidity_pct",
+      "op": ">=",
+      "value": 85,
+      "consecutive_days": 3
+    },
+    "business_impact": "Streak trigger: 3+ days of intense, muggy humidity arrays accelerate midsummer pest reproduction cycles, driving rapid consumer runs on protective sprays and residential bug traps.",
+    "story_seed": "Oppressive midsummer humidity streak triggers explosion in pest activity and repellent demand around {metro}",
+    "audiences": [
+      "household chemical trade press",
+      "consumer home care logs",
+      "local health tips"
+    ],
+    "seasonality_window": [
+      "06-01",
+      "08-15"
+    ],
+    "base_weight": 1.25
   },
   {
     "id": "CON-010",
     "industry": "consumer",
-    "entity": "utilities and winter prep",
+    "entity": "seasonal goods and backyard clearance inventory",
+    "condition": {
+      "metric": "max_temp_f",
+      "op": ">=",
+      "value": 92,
+      "consecutive_days": 3
+    },
+    "business_impact": "Calendar-aware: An intense heat wave trailing into Labor Day weekend forces a fast, final consumer clearance liquidation run on summer backyard lines like pools, floats, and grills.",
+    "story_seed": "Labor Day weekend scorcher clears out remaining summer patio and pool inventory in {metro}",
+    "audiences": [
+      "consumer merchandise trade",
+      "retail volume analysts",
+      "national economy columns"
+    ],
+    "seasonality_window": [
+      "08-25",
+      "09-07"
+    ],
+    "base_weight": 1.1
+  },
+  {
+    "id": "CON-011",
+    "industry": "consumer",
+    "entity": "seasonal party supplies and costume operators",
+    "condition": {
+      "metric": "precip_in",
+      "op": ">=",
+      "value": 0.4,
+      "consecutive_days": 1
+    },
+    "business_impact": "Calendar-aware: Heavy rain or freezing downpours directly on Halloween afternoon dampen outdoor trick-or-treating profiles, instantly shifting candy consumption dynamics from streets to indoor family footprints.",
+    "story_seed": "Halloween afternoon washout in {metro} forces trick-or-treat behavior completely indoors",
+    "audiences": [
+      "seasonal retail trade press",
+      "local family community channels",
+      "social"
+    ],
+    "seasonality_window": [
+      "10-25",
+      "10-31"
+    ],
+    "base_weight": 0.8
+  },
+  {
+    "id": "CON-012",
+    "industry": "consumer",
+    "entity": "baking supply brands and grocery retail chains",
+    "condition": {
+      "metric": "snow_in",
+      "op": ">=",
+      "value": 2.0,
+      "consecutive_days": 1
+    },
+    "business_impact": "Calendar-aware: A winter storm layout hitting right before Thanksgiving triggers intense grocery panic buying, causing an immediate consumer run on essential baking commodities, turkeys, and pie components.",
+    "story_seed": "Pre-Thanksgiving winter storm triggers baking supply and grocery panic buying across {metro}",
+    "audiences": [
+      "grocery industry trade",
+      "consumer food spending press",
+      "local TV news food desks"
+    ],
+    "seasonality_window": [
+      "11-18",
+      "11-28"
+    ],
+    "base_weight": 1.3
+  },
+  {
+    "id": "CON-013",
+    "industry": "consumer",
+    "entity": "brick-and-mortar storefronts and open-air centers",
+    "condition": {
+      "metric": "min_temp_f",
+      "op": "<=",
+      "value": 15,
+      "consecutive_days": 2
+    },
+    "business_impact": "Calendar-aware: Extreme pre-Christmas cold waves ruin the final critical weekend shopping footprint, instantly shifting high-volume, last-minute gift runs onto immediate digital gift card solutions.",
+    "story_seed": "Bitter pre-Christmas arctic front freezes out last-minute {metro} street shopping traffic",
+    "audiences": [
+      "national retail business media",
+      "consumer payment trends press",
+      "e-commerce platforms"
+    ],
+    "seasonality_window": [
+      "12-15",
+      "12-24"
+    ],
+    "base_weight": 1.2
+  },
+  {
+    "id": "CON-014",
+    "industry": "consumer",
+    "entity": "indoor entertainment venues and shopping malls",
+    "condition": {
+      "metric": "precip_in",
+      "op": ">=",
+      "value": 0.5,
+      "consecutive_days": 2
+    },
+    "business_impact": "Calendar-aware: Heavy multi-day post-Christmas rain washouts funnel consumers looking to redeem holiday gift cards away from parks and outdoor plazas and straight into large indoor entertainment complexes.",
+    "story_seed": "Post-holiday rain washouts steer gift card redemption traffic indoors across {metro}",
+    "audiences": [
+      "commercial entertainment trade",
+      "shopping center operations media",
+      "local entertainment desks"
+    ],
+    "seasonality_window": [
+      "12-26",
+      "01-05"
+    ],
+    "base_weight": 1.05
+  },
+  {
+    "id": "CON-015",
+    "industry": "consumer",
+    "entity": "over-the-counter allergy medications and health lines",
+    "condition": {
+      "metric": "temp_anomaly_f",
+      "op": ">=",
+      "value": 10,
+      "consecutive_days": 3
+    },
+    "business_impact": "Anomaly trigger: Continuous unseasonable spring warmth anomalies accelerate tree and grass biological cycles, initiating severe, early-season consumer purchasing runs on allergy relief medicines.",
+    "story_seed": "Late spring warmth anomaly triggers premature surge in {metro} allergy relief purchasing",
+    "audiences": [
+      "pharma consumer trade journals",
+      "otc marketplace analysis",
+      "local health tips"
+    ],
+    "seasonality_window": [
+      "04-15",
+      "05-15"
+    ],
+    "base_weight": 1.15
+  },
+  {
+    "id": "CON-016",
+    "industry": "consumer",
+    "entity": "personal hydration systems and specialized cooler brands",
+    "condition": {
+      "metric": "max_temp_f",
+      "op": ">=",
+      "value": 95,
+      "consecutive_days": 2
+    },
+    "business_impact": "Streak trigger: An intense multi-day early summer heat wave pushes consumer comfort indicators past key thresholds, sparking rapid runs on insulated drinkware and cooling gear.",
+    "story_seed": "Early summer heat spike causes instant run on premium insulation and cooling gear in {metro}",
+    "audiences": [
+      "consumer hardware trends",
+      "outdoor gear trade press",
+      "social"
+    ],
+    "seasonality_window": [
+      "06-01",
+      "06-30"
+    ],
+    "base_weight": 0.9
+  },
+  {
+    "id": "CON-017",
+    "industry": "consumer",
+    "entity": "residential hardware, roofing, and DIY property supplies",
+    "condition": {
+      "metric": "max_wind_mph",
+      "op": ">=",
+      "value": 45,
+      "consecutive_days": 1
+    },
+    "business_impact": "Severe high wind gust thresholds cause minor widespread residential damage, prompting a large consumer spike in DIY fence, shingle, and emergency repair supply purchases.",
+    "story_seed": "Severe spring wind gusts trigger immediate DIY residential repair material run across {metro}",
+    "audiences": [
+      "diy home improvement trade",
+      "consumer hardware media",
+      "local housing protection logs"
+    ],
+    "seasonality_window": [
+      "03-01",
+      "05-31"
+    ],
+    "base_weight": 1.1
+  },
+  {
+    "id": "CON-018",
+    "industry": "consumer",
+    "entity": "automotive maintenance lines and winterization chemicals",
     "condition": {
       "metric": "min_temp_f",
       "op": "<=",
       "value": 32,
-      "consecutive_days": 1
+      "consecutive_days": 2
     },
-    "business_impact": "Calendar-aware (First Freeze): The first freeze of the season always triggers a massive localized surge in HVAC tune-up requests and furnace filters.",
-    "story_seed": "First freeze sends {metro} residents scrambling for HVAC tune-ups",
+    "business_impact": "Calendar-aware: The first major freeze line crossing late autumn calendars triggers widespread panic auto winterization, causing runs on anti-freeze, wiper fluids, and car batteries.",
+    "story_seed": "First late autumn hard freeze sparks massive automotive winterization product run across {metro}",
     "audiences": [
-      "home services press",
-      "local TV news"
+      "automotive aftermarket press",
+      "consumer product velocity logs",
+      "local transit updates"
     ],
     "seasonality_window": [
-      "Oct",
-      "Dec"
+      "10-15",
+      "11-15"
     ],
-    "base_weight": 0.8
+    "base_weight": 1.2
+  },
+  {
+    "id": "CON-019",
+    "industry": "consumer",
+    "entity": "home fragrance brands, candles, and interior comfort goods",
+    "condition": {
+      "metric": "precip_in",
+      "op": ">=",
+      "value": 0.1,
+      "consecutive_days": 5
+    },
+    "business_impact": "Streak trigger: 5+ consecutive days of gloomy, wet winter overcast confine people to their homes, accelerating consumer spending vectors on home scents, candles, and comfort decor.",
+    "story_seed": "Five-day gloomy rain stretch drives home comfort and scent spending run in {metro}",
+    "audiences": [
+      "home decor trade press",
+      "consumer CPG market trends",
+      "social"
+    ],
+    "seasonality_window": [
+      "01-01",
+      "02-28"
+    ],
+    "base_weight": 0.85
+  },
+  {
+    "id": "CON-020",
+    "industry": "consumer",
+    "entity": "portable power banks and emergency preparation consumer products",
+    "condition": {
+      "metric": "severe_risk",
+      "op": ">=",
+      "value": 4,
+      "consecutive_days": 1
+    },
+    "business_impact": "Severe convective summer storm warnings spike local consumer electrical blackout anxieties, driving rapid buying loops for battery backups, flashlights, and immediate emergency gear.",
+    "story_seed": "Severe summer storm risk sparks quick run on emergency power and lighting units in {metro}",
+    "audiences": [
+      "consumer electronics trade",
+      "emergency prep media columns",
+      "local public safety desks"
+    ],
+    "seasonality_window": [
+      "06-01",
+      "08-31"
+    ],
+    "base_weight": 1.0
   }
 ]
