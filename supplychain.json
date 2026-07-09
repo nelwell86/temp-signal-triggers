@@ -2,111 +2,446 @@
   {
     "id": "SUP-001",
     "industry": "supplychain",
-    "entity": "last-mile logistics",
-    "condition": { "metric": "snow_in", "op": ">=", "value": 3, "consecutive_days": 1 },
-    "business_impact": "Snow accumulations heavily delay local delivery routes and force rerouting.",
-    "story_seed": "Winter storm expected to severly delay last-mile deliveries across {metro}",
-    "audiences": ["logistics trade press", "local TV business desks"],
-    "seasonality_window": ["Nov", "Mar"],
-    "base_weight": 0.9
+    "entity": "cold-chain and grocery refrigerated logistics",
+    "condition": {
+      "metric": "max_temp_f",
+      "op": ">=",
+      "value": 95,
+      "consecutive_days": 1
+    },
+    "business_impact": "Second-order effect: Extreme holiday heat waves cause massive thermal load spikes on vehicle cooling units, driving reefer mechanical failures and instant cargo spoilage right before peak holiday cookouts.",
+    "story_seed": "July 4th heat wave strains {metro} cold-chain networks, sparking logistics spoilage warnings",
+    "audiences": [
+      "logistics and supply chain press",
+      "grocery retail trade media",
+      "national economy desks"
+    ],
+    "seasonality_window": [
+      "06-25",
+      "07-05"
+    ],
+    "base_weight": 1.2
   },
   {
     "id": "SUP-002",
     "industry": "supplychain",
-    "entity": "freight and trucking",
-    "condition": { "metric": "max_wind_mph", "op": ">=", "value": 50, "consecutive_days": 1 },
-    "business_impact": "High winds create blow-over risks for high-profile vehicles, halting freight on major interstates.",
-    "story_seed": "High wind warnings threaten to stall heavy freight corridors through {metro}",
-    "audiences": ["trucking trade press"],
-    "seasonality_window": ["Jan", "Dec"],
-    "base_weight": 0.8
+    "entity": "last-mile courier and holiday parcel networks",
+    "condition": {
+      "metric": "snow_in",
+      "op": ">=",
+      "value": 2.0,
+      "consecutive_days": 1
+    },
+    "business_impact": "Calendar-aware: Early season winter systems blanketing high-density metro centers cause rapid drop-shipping center bottlenecks right as Black Friday and Cyber Monday volumes peak.",
+    "story_seed": "Cyber Week snow disruptions in {metro} threaten to delay high-volume holiday parcel sorting",
+    "audiences": [
+      "e-commerce shipping press",
+      "retail supply chain trade",
+      "local business desks"
+    ],
+    "seasonality_window": [
+      "11-20",
+      "11-30"
+    ],
+    "base_weight": 1.25
   },
   {
     "id": "SUP-003",
     "industry": "supplychain",
-    "entity": "cold chain logistics",
-    "condition": { "metric": "max_temp_f", "op": ">=", "value": 100, "consecutive_days": 3 },
-    "business_impact": "Streak trigger: Extreme heat stresses refrigerated transport and warehouse cooling systems.",
-    "story_seed": "Triple-digit streak stresses {metro} cold chain infrastructure",
-    "audiences": ["logistics trade press"],
-    "seasonality_window": ["Jun", "Sep"],
-    "base_weight": 0.7
+    "entity": "freight forwarding and cross-dock distribution centers",
+    "condition": {
+      "metric": "max_wind_mph",
+      "op": ">=",
+      "value": 40,
+      "consecutive_days": 1
+    },
+    "business_impact": "Streak trigger: High regional wind gusts force open-air freight cross-docks to lock down trailer loading activities, freezing peak autumn inventory replenishment flows.",
+    "story_seed": "Labor Day wind barriers force {metro} freight hubs to freeze terminal distribution loops",
+    "audiences": [
+      "industrial logistics press",
+      "freight transport media"
+    ],
+    "seasonality_window": [
+      "08-25",
+      "09-07"
+    ],
+    "base_weight": 1.1
   },
   {
     "id": "SUP-004",
     "industry": "supplychain",
-    "entity": "construction logistics",
-    "condition": { "metric": "precip_in", "op": ">=", "value": 0.5, "consecutive_days": 4 },
-    "business_impact": "Second-order effect: Prolonged muddy conditions halt heavy equipment operation, backing up material delivery schedules.",
-    "story_seed": "Prolonged mud halts {metro} construction sites, backing up material supply chains",
-    "audiences": ["construction trade press"],
-    "seasonality_window": ["Mar", "Nov"],
-    "base_weight": 0.8
+    "entity": "air freight carriers and premium cargo hubs",
+    "condition": {
+      "metric": "min_temp_f",
+      "op": "<=",
+      "value": 5,
+      "consecutive_days": 2
+    },
+    "business_impact": "Anomaly trigger: Sustained sub-zero multi-day freezes freeze hydraulic airport sorting systems and tarmac support vehicles during the absolute final cutoff window for holiday delivery guarantees.",
+    "story_seed": "Polar vortex locks up air cargo machinery at {metro} hubs during peak holiday shipping countdown",
+    "audiences": [
+      "air cargo transport press",
+      "national business press",
+      "supply chain executive media"
+    ],
+    "seasonality_window": [
+      "12-15",
+      "12-24"
+    ],
+    "base_weight": 1.35
   },
   {
     "id": "SUP-005",
     "industry": "supplychain",
-    "entity": "e-commerce fulfillment",
-    "condition": { "metric": "snow_in", "op": ">=", "value": 1, "consecutive_days": 1 },
-    "business_impact": "Calendar-aware (December): Minor winter weather during peak holiday shipping causes exponential compounding delays.",
-    "story_seed": "Holiday shipping crunch meets winter weather in {metro}, threatening delivery deadlines",
-    "audiences": ["national business press", "retail trade press"],
-    "seasonality_window": ["Dec", "Dec"],
-    "base_weight": 1.0
+    "entity": "urban grocery delivery fleets and food wholesalers",
+    "condition": {
+      "metric": "precip_in",
+      "op": ">=",
+      "value": 0.5,
+      "consecutive_days": 1
+    },
+    "business_impact": "Calendar-aware: Heavy downpours or freezing rain networks on New Year's Eve delay urban box-truck fleets, stranding inventory and breaking localized retail shelf restock arrays.",
+    "story_seed": "New Year's Eve deluge gridlocks wholesale grocery transit across {metro} corridors",
+    "audiences": [
+      "wholesale food trade press",
+      "local city business editors"
+    ],
+    "seasonality_window": [
+      "12-26",
+      "01-02"
+    ],
+    "base_weight": 1.05
   },
   {
     "id": "SUP-006",
     "industry": "supplychain",
-    "entity": "barge and river transport",
-    "condition": { "metric": "precip_in", "op": "==", "value": 0, "consecutive_days": 21 },
-    "business_impact": "Second-order effect: Prolonged regional dry spells lower river levels, reducing barge weight limits and stranding agricultural exports.",
-    "story_seed": "Extended dry streak threatens {metro} river freight capacity as water levels drop",
-    "audiences": ["agricultural trade press", "logistics press"],
-    "seasonality_window": ["Jul", "Oct"],
-    "base_weight": 0.9
+    "entity": "heavy overland trucking and regional flatbed carriers",
+    "condition": {
+      "metric": "precip_in",
+      "op": ">=",
+      "value": 0.25,
+      "consecutive_days": 5
+    },
+    "business_impact": "Streak trigger: 5+ consecutive days of rain trigger spring thaw road subgrade saturations, forcing local jurisdictions to enact immediate heavy-axle freight weight restrictions.",
+    "story_seed": "Persistent five-day rain streak prompts regional trucking weight limits around {metro}",
+    "audiences": [
+      "trucking industry trade press",
+      "infrastructure logistics media"
+    ],
+    "seasonality_window": [
+      "03-01",
+      "04-30"
+    ],
+    "base_weight": 0.85
   },
   {
     "id": "SUP-007",
     "industry": "supplychain",
-    "entity": "freight and trucking",
-    "condition": { "metric": "min_temp_f", "op": "<=", "value": 0, "consecutive_days": 2 },
-    "business_impact": "Deep freeze causes diesel fuel gelling and battery failures, sidelining massive portions of regional trucking fleets.",
-    "story_seed": "Deep freeze forces {metro} trucking fleets off the road due to equipment failures",
-    "audiences": ["trucking trade press", "national business press"],
-    "seasonality_window": ["Dec", "Feb"],
-    "base_weight": 0.9
+    "entity": "maritime container ports and intermodal terminals",
+    "condition": {
+      "metric": "max_wind_mph",
+      "op": ">=",
+      "value": 45,
+      "consecutive_days": 1
+    },
+    "business_impact": "High wind thresholds instantly halt ship-to-shore gantry crane container operations, sparking widespread drayage container queue backlogs at major oceanic gateways.",
+    "story_seed": "High wind velocities ground port gantry crane operations at {metro} marine terminals",
+    "audiences": [
+      "maritime shipping trade press",
+      "global supply chain groups",
+      "national macroeconomics desks"
+    ],
+    "seasonality_window": [
+      "09-01",
+      "11-15"
+    ],
+    "base_weight": 1.2
   },
   {
     "id": "SUP-008",
     "industry": "supplychain",
-    "entity": "warehousing and distribution",
-    "condition": { "metric": "severe_risk", "op": ">=", "value": 4, "consecutive_days": 1 },
-    "business_impact": "Imminent severe threat forces warehouses to suspend loading dock operations to protect workers, creating outbound fulfillment bottlenecks.",
-    "story_seed": "Severe weather threat forces {metro} distribution centers to halt loading operations",
-    "audiences": ["logistics trade press", "local news"],
-    "seasonality_window": ["Mar", "Sep"],
-    "base_weight": 0.8
+    "entity": "intermodal rail networks and bulk class-1 carriers",
+    "condition": {
+      "metric": "temp_anomaly_f",
+      "op": ">=",
+      "value": 15,
+      "consecutive_days": 2
+    },
+    "business_impact": "Anomaly trigger: Severe unseasonable summer heat anomalies trigger extreme steel rail expansions, causing high risks of track buckling and forcing mandatory freight rail speed reductions.",
+    "story_seed": "Severe heat wave anomaly forces immediate train speed caps across {metro} rail networks",
+    "audiences": [
+      "rail transportation trade",
+      "industrial industrial media"
+    ],
+    "seasonality_window": [
+      "06-01",
+      "08-31"
+    ],
+    "base_weight": 1.15
   },
   {
     "id": "SUP-009",
     "industry": "supplychain",
-    "entity": "grocery supply chain",
-    "condition": { "metric": "humidity_pct", "op": ">=", "value": 90, "consecutive_days": 5 },
-    "business_impact": "Streak trigger: Relentless high humidity accelerates spoilage in cross-docking of fresh produce, demanding increased climate-control spend.",
-    "story_seed": "Oppressive humidity streak challenges {metro} fresh food supply chains",
-    "audiences": ["grocery trade press"],
-    "seasonality_window": ["Jun", "Sep"],
-    "base_weight": 0.7
+    "entity": "fulfillment center fulfillment infrastructure and warehouse operations",
+    "condition": {
+      "metric": "max_temp_f",
+      "op": ">=",
+      "value": 98,
+      "consecutive_days": 3
+    },
+    "business_impact": "Streak trigger: 3+ days of intense triple-digit heat runs strain localized warehouse HVAC systems, triggering safety-mandated shift pacing drops and slower box sorting throughput.",
+    "story_seed": "Extended midsummer heat block degrades fulfillment center processing speeds in {metro}",
+    "audiences": [
+      "e-commerce logistics media",
+      "occupational safety trade press"
+    ],
+    "seasonality_window": [
+      "07-01",
+      "08-31"
+    ],
+    "base_weight": 1.0
   },
   {
     "id": "SUP-010",
     "industry": "supplychain",
-    "entity": "retail distribution",
-    "condition": { "metric": "precip_in", "op": ">=", "value": 2, "consecutive_days": 1 },
-    "business_impact": "Calendar-aware (Back-to-School): A washout during peak back-to-school stocking windows snarls local deliveries, leading to temporary shelf gaps.",
-    "story_seed": "Timing of heavy rains threatens to snarl {metro} back-to-school retail deliveries",
-    "audiences": ["retail trade press"],
-    "seasonality_window": ["Jul", "Aug"],
-    "base_weight": 0.7
+    "entity": "inland river barge operators and agricultural shippers",
+    "condition": {
+      "metric": "humidity_pct",
+      "op": ">=",
+      "value": 90,
+      "consecutive_days": 3
+    },
+    "business_impact": "Streak trigger: Prolonged dense morning humidity loops trap heavy river fog configurations, blinding barge towboats and completely halting grain river movements for days.",
+    "story_seed": "Persistent autumn fog corridors halt river barge traffic, trapping grain freight near {metro}",
+    "audiences": [
+      "agricultural shipping press",
+      "inland maritime trade columns"
+    ],
+    "seasonality_window": [
+      "10-01",
+      "12-31"
+    ],
+    "base_weight": 0.9
+  },
+  {
+    "id": "SUP-011",
+    "industry": "supplychain",
+    "entity": "perishable produce distributors and cold-storage operations",
+    "condition": {
+      "metric": "humidity_pct",
+      "op": ">=",
+      "value": 85,
+      "consecutive_days": 2
+    },
+    "business_impact": "Calendar-aware: High ambient humidity during Memorial Day peak distribution weeks accelerates fungal spore propagation in fresh produce cross-docks, causing instant scrap rate peaks.",
+    "story_seed": "Memorial Day produce staging hit by high humidity arrays, spiking cross-dock scrap metrics around {metro}",
+    "audiences": [
+      "fresh produce industry news",
+      "food logistics trade press"
+    ],
+    "seasonality_window": [
+      "05-20",
+      "05-31"
+    ],
+    "base_weight": 0.95
+  },
+  {
+    "id": "SUP-012",
+    "industry": "supplychain",
+    "entity": "regional less-than-truckload (LTL) carriers",
+    "condition": {
+      "metric": "severe_risk",
+      "op": ">=",
+      "value": 4,
+      "consecutive_days": 1
+    },
+    "business_impact": "Calendar-aware: High-severity convective storm fronts over Juneteenth halt terminal cross-dock operations, splitting regional multi-stop freight consolidation schedules.",
+    "story_seed": "Juneteenth severe weather fronts freeze LTL freight sorting matrices across {metro} hubs",
+    "audiences": [
+      "trucking logistics press",
+      "local industrial distribution desks"
+    ],
+    "seasonality_window": [
+      "06-12",
+      "06-20"
+    ],
+    "base_weight": 1.0
+  },
+  {
+    "id": "SUP-013",
+    "industry": "supplychain",
+    "entity": "consumer electronic component supply chains",
+    "condition": {
+      "metric": "max_wind_mph",
+      "op": ">=",
+      "value": 35,
+      "consecutive_days": 1
+    },
+    "business_impact": "Calendar-aware: Unexpected high wind gust lines during peak Back-to-School restocking weeks ground precision air freight feeder loops, delaying electronics distribution.",
+    "story_seed": "Back-to-school component pipelines disrupted by high wind lines sweeping {metro} airport networks",
+    "audiences": [
+      "consumer tech supply trade",
+      "aviation commerce press"
+    ],
+    "seasonality_window": [
+      "08-01",
+      "08-31"
+    ],
+    "base_weight": 0.8
+  },
+  {
+    "id": "SUP-014",
+    "industry": "supplychain",
+    "entity": "fresh poultry and protein distributors",
+    "condition": {
+      "metric": "temp_anomaly_f",
+      "op": "<=",
+      "value": -15,
+      "consecutive_days": 2
+    },
+    "business_impact": "Calendar-aware: Unseasonable freezing anomalies right before Thanksgiving freeze poultry transport livestock vehicle routes, throwing massive delivery curveballs at processing operations.",
+    "story_seed": "Historic pre-Thanksgiving arctic blast disrupts livestock transport lanes into {metro}",
+    "audiences": [
+      "meat industry trade journals",
+      "agricultural business press"
+    ],
+    "seasonality_window": [
+      "11-15",
+      "11-25"
+    ],
+    "base_weight": 1.15
+  },
+  {
+    "id": "SUP-015",
+    "industry": "supplychain",
+    "entity": "bulk commercial fuel transport providers",
+    "condition": {
+      "metric": "min_temp_f",
+      "op": "<=",
+      "value": 0,
+      "consecutive_days": 2
+    },
+    "business_impact": "Calendar-aware: Extreme sub-zero temperatures over MLK Day weekend lead to diesel fuel gelling in delivery fleets, stranding critical heating fuel transport networks.",
+    "story_seed": "MLK holiday freeze triggers fleet fuel gelling risks, delaying bulk transit around {metro}",
+    "audiences": [
+      "energy transport logistics press",
+      "petroleum marketing media"
+    ],
+    "seasonality_window": [
+      "01-10",
+      "01-22"
+    ],
+    "base_weight": 1.2
+  },
+  {
+    "id": "SUP-016",
+    "industry": "supplychain",
+    "entity": "intermodal rail and shipping line networks",
+    "condition": {
+      "metric": "snow_in",
+      "op": ">=",
+      "value": 4.0,
+      "consecutive_days": 2
+    },
+    "business_impact": "Calendar-aware: Heavy multi-day snow accumulations over Presidents' Day long weekend freeze track switching systems, gridlocking intermodal rail-to-truck container transfers.",
+    "story_seed": "Presidents' Day multi-day snow dump gridlocks rail yards and container transfer spaces in {metro}",
+    "audiences": [
+      "intermodal transport media",
+      "railway operations press"
+    ],
+    "seasonality_window": [
+      "02-10",
+      "02-22"
+    ],
+    "base_weight": 1.1
+  },
+  {
+    "id": "SUP-017",
+    "industry": "supplychain",
+    "entity": "overland regional parcel freight carriers",
+    "condition": {
+      "metric": "precip_in",
+      "op": ">=",
+      "value": 1.0,
+      "consecutive_days": 1
+    },
+    "business_impact": "Calendar-aware: Flash flooding downpours over Columbus Day close major interstate freight lanes, cutting off regional sorting centers from outbound hub transfers.",
+    "story_seed": "Columbus Day torrential flash flooding severs key trucking corridors feeding {metro} hubs",
+    "audiences": [
+      "overland freight trade press",
+      "local business shipping logs"
+    ],
+    "seasonality_window": [
+      "10-05",
+      "10-15"
+    ],
+    "base_weight": 1.0
+  },
+  {
+    "id": "SUP-018",
+    "industry": "supplychain",
+    "entity": "pharmaceutical and clinical product logistics",
+    "condition": {
+      "metric": "temp_anomaly_f",
+      "op": "<=",
+      "value": -10,
+      "consecutive_days": 2
+    },
+    "business_impact": "Calendar-aware: Early season winter blast anomalies during Veterans Day break sensitive temperature envelopes inside last-mile medical transport networks, forcing vaccine batch line scraps.",
+    "story_seed": "Early winter blast anomaly breaches pharmaceutical transit temperature parameters across {metro}",
+    "audiences": [
+      "pharmaceutical supply chain trade",
+      "biotech logistics press"
+    ],
+    "seasonality_window": [
+      "11-04",
+      "11-11"
+    ],
+    "base_weight": 1.25
+  },
+  {
+    "id": "SUP-019",
+    "industry": "supplychain",
+    "entity": "reverse logistics portals and product return infrastructure",
+    "condition": {
+      "metric": "snow_in",
+      "op": ">=",
+      "value": 3.0,
+      "consecutive_days": 1
+    },
+    "business_impact": "Second-order effect: Massive post-Christmas snowstorms jam reverse logistics loops, delaying holiday return inventories from reaching warehouse resale classification status.",
+    "story_seed": "Post-holiday return loop paralyzed by heavy winter weather dumping on {metro} sorting nodes",
+    "audiences": [
+      "reverse logistics trade press",
+      "retail retail inventory managers",
+      "social"
+    ],
+    "seasonality_window": [
+      "12-26",
+      "01-15"
+    ],
+    "base_weight": 0.95
+  },
+  {
+    "id": "SUP-020",
+    "industry": "supplychain",
+    "entity": "agricultural milling supply and grain bulk transport",
+    "condition": {
+      "metric": "severe_risk",
+      "op": ">=",
+      "value": 3,
+      "consecutive_days": 3
+    },
+    "business_impact": "Streak trigger: 3+ days of severe weather convective risks damage silo elevators and halt loading arrays during critical early summer harvest shipping rushes.",
+    "story_seed": "Three-day severe storm cluster breaks early grain harvest bulk loading speeds near {metro}",
+    "audiences": [
+      "agricultural milling trade",
+      "bulk transport business press"
+    ],
+    "seasonality_window": [
+      "04-01",
+      "06-30"
+    ],
+    "base_weight": 1.0
   }
 ]
