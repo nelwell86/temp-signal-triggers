@@ -2,81 +2,443 @@
   {
     "id": "HLT-001",
     "industry": "health",
-    "entity": "urgent care and pharmacies",
+    "entity": "pharmacies and over-the-counter brands",
     "condition": {
       "metric": "min_temp_f",
       "op": "<=",
-      "value": 20,
+      "value": 32,
       "consecutive_days": 3
     },
-    "business_impact": "Calendar-aware (New Year's / MLK Day): Deep mid-winter freeze spikes slips, falls, and immediate demand for respiratory OTC treatments over holiday weekends.",
-    "story_seed": "Holiday freeze across {metro} triggers massive spike in urgent care visits and OTC cold remedy runs",
-    "audiences": ["health medical press", "local TV business desks"],
-    "seasonality_window": ["12-20", "01-25"],
+    "business_impact": "Second-order effect: Sustained freezing temperatures drive people indoors, causing a rapid acceleration in viral transmission and a run on OTC cold/flu treatments.",
+    "story_seed": "Three-day freeze in {metro} accelerates winter virus transmission, strains pharmacy inventory",
+    "audiences": [
+      "health medical press",
+      "retail pharmacy trade",
+      "local TV business desks"
+    ],
+    "seasonality_window": [
+      "11-01",
+      "03-15"
+    ],
     "base_weight": 1.1
   },
   {
     "id": "HLT-002",
     "industry": "health",
-    "entity": "walk-in clinics and dermatologists",
+    "entity": "physical therapy and orthopedic clinics",
     "condition": {
-      "metric": "uv_index",
+      "metric": "precip_in",
       "op": ">=",
-      "value": 8,
-      "consecutive_days": 2
+      "value": 0.25,
+      "consecutive_days": 3
     },
-    "business_impact": "Calendar-aware (Memorial Day): First major holiday weekend sun exposure spikes acute sunburn care and allergy clinic inquiries.",
-    "story_seed": "Memorial Day sun blast catches {metro} unprepared, spiking sunburn clinic volumes",
-    "audiences": ["consumer health desks", "social"],
-    "seasonality_window": ["05-20", "05-31worldwide"],
-    "base_weight": 0.95
+    "business_impact": "Sustained damp conditions and sudden pressure drops aggravate chronic joint inflammation, leading to a measurable spike in immediate physical therapy inquiries.",
+    "story_seed": "Relentless rainy stretch in {metro} triggers measurable surge in chronic joint pain complaints",
+    "audiences": [
+      "medical trade press",
+      "local health lifestyle desks"
+    ],
+    "seasonality_window": [
+      "09-01",
+      "05-31"
+    ],
+    "base_weight": 0.85
   },
   {
     "id": "HLT-003",
     "industry": "health",
-    "entity": "emergency rooms and EMS",
+    "entity": "urgent care centers and emergency rooms",
     "condition": {
       "metric": "max_temp_f",
       "op": ">=",
-      "value": 95,
-      "consecutive_days": 1
+      "value": 98,
+      "consecutive_days": 2
     },
-    "business_impact": "Calendar-aware (Juneteenth / July 4th): High heat indices during outdoor holiday block parties cause immediate heat exhaustion and dehydration surges.",
-    "story_seed": "Holiday weekend scorcher in {metro} puts emergency medical responders on high dehydration alert",
-    "audiences": ["local news desks", "health press"],
-    "seasonality_window": ["06-12", "07-06"],
-    "base_weight": 1.2
+    "business_impact": "Streak trigger: Consecutive days of extreme heat push vulnerable urban populations past heat-index coping thresholds, causing severe heat exhaustion spikes.",
+    "story_seed": "Dangerous heat streak in {metro} pushes urgent care facilities into emergency staffing protocols",
+    "audiences": [
+      "national health press",
+      "local news emergency desks"
+    ],
+    "seasonality_window": [
+      "06-01",
+      "09-05"
+    ],
+    "base_weight": 1.3
   },
   {
     "id": "HLT-004",
     "industry": "health",
-    "entity": "allergy clinics and telehealth",
+    "entity": "respiratory clinics and inhaler manufacturers",
     "condition": {
-      "metric": "temp_anomaly_f",
+      "metric": "humidity_pct",
       "op": ">=",
-      "value": 10,
-      "consecutive_days": 3
+      "value": 85,
+      "consecutive_days": 2
     },
-    "business_impact": "Calendar-aware (Labor Day / Late Summer): Unseasonable late summer warmth combined with high winds accelerates ragweed pollen release.",
-    "story_seed": "Late summer heat anomaly in {metro} triggers early fall allergy misery surge",
-    "audiences": ["medical trade press", "social"],
-    "seasonality_window": ["08-20", "09-15"],
-    "base_weight": 0.85
+    "business_impact": "Sustained high humidity combined with stagnant summer air traps airborne molds and particulates, driving emergency respiratory treatments.",
+    "story_seed": "Stagnant humidity blanket over {metro} triggers dangerous atmospheric triggers for asthma sufferers",
+    "audiences": [
+      "medical trade press",
+      "consumer health advocates"
+    ],
+    "seasonality_window": [
+      "06-15",
+      "08-31"
+    ],
+    "base_weight": 1.0
   },
   {
     "id": "HLT-005",
     "industry": "health",
-    "entity": "hospitals and pharmacies",
+    "entity": "dermatology practices and skincare brands",
+    "condition": {
+      "metric": "uv_index",
+      "op": ">=",
+      "value": 9,
+      "consecutive_days": 1
+    },
+    "business_impact": "Extreme UV thresholds reached early in the season catch consumers unprotected, leading to immediate spikes in acute sunburn clinic visits.",
+    "story_seed": "Extreme UV index blast in {metro} catches outdoor enthusiasts unprotected, spiking skin safety alerts",
+    "audiences": [
+      "lifestyle health desks",
+      "consumer press",
+      "social"
+    ],
+    "seasonality_window": [
+      "04-15",
+      "08-30"
+    ],
+    "base_weight": 0.9
+  },
+  {
+    "id": "HLT-006",
+    "industry": "health",
+    "entity": "telehealth mental health platforms",
+    "condition": {
+      "metric": "precip_in",
+      "op": ">=",
+      "value": 0.1,
+      "consecutive_days": 5
+    },
+    "business_impact": "Streak trigger: 5+ days of relentless overcast or precipitation severely curtails outdoor movement, causing a sharp rise in virtual mental health visits.",
+    "story_seed": "Five days of grey skies in {metro} drives measurable surge in digital mental health consultations",
+    "audiences": [
+      "mental health advocacy press",
+      "tech health press"
+    ],
+    "seasonality_window": [
+      "10-01",
+      "04-30"
+    ],
+    "base_weight": 0.95
+  },
+  {
+    "id": "HLT-007",
+    "industry": "health",
+    "entity": "allergy specialists and immunotherapy brands",
+    "condition": {
+      "metric": "temp_anomaly_f",
+      "op": ">=",
+      "value": 12,
+      "consecutive_days": 3
+    },
+    "business_impact": "Anomaly trigger: Severe unseasonable spring warmth prompts vegetation to bloom prematurely, dropping an immediate pollen bomb on residents.",
+    "story_seed": "Unseasonable spring heat anomaly drops an early, aggressive pollen bomb on {metro}",
+    "audiences": [
+      "medical trade press",
+      "local TV news health desks"
+    ],
+    "seasonality_window": [
+      "03-01",
+      "04-30"
+    ],
+    "base_weight": 1.15
+  },
+  {
+    "id": "HLT-008",
+    "industry": "health",
+    "entity": "cardiology departments and stroke centers",
     "condition": {
       "metric": "temp_anomaly_f",
       "op": "<=",
       "value": -15,
       "consecutive_days": 2
     },
-    "business_impact": "Calendar-aware (Christmas Holiday): Sudden extreme pre-holiday temperature drops confine families indoors, accelerating flu and respiratory transmission rates.",
-    "story_seed": "Extreme pre-Christmas temperature crash in {metro} accelerates winter virus transmission",
-    "audiences": ["national health press", "local TV"],
-    "seasonality_window": ["12-10", "12-25"],
+    "business_impact": "Anomaly trigger: Extreme sudden temperature drops cause immediate peripheral vasoconstriction, measurably raising acute cardiac event rates.",
+    "story_seed": "Sudden temperature crash in {metro} puts regional cardiology units on high advisory alert",
+    "audiences": [
+      "cardiovascular medical journals",
+      "national health press"
+    ],
+    "seasonality_window": [
+      "12-01",
+      "02-28"
+    ],
+    "base_weight": 1.2
+  },
+  {
+    "id": "HLT-009",
+    "industry": "health",
+    "entity": "orthopedic emergency surgery units",
+    "condition": {
+      "metric": "snow_in",
+      "op": ">=",
+      "value": 0.5,
+      "consecutive_days": 1
+    },
+    "business_impact": "Even a light dusting of snow or freezing drizzle creating black ice results in immediate, severe surges in slip-and-fall fracture presentations.",
+    "story_seed": "Slick winter road surfaces in {metro} trigger immediate surge in emergency orthopedic surgeries",
+    "audiences": [
+      "hospital management media",
+      "local traffic and emergency news"
+    ],
+    "seasonality_window": [
+      "11-15",
+      "03-31"
+    ],
+    "base_weight": 1.25
+  },
+  {
+    "id": "HLT-010",
+    "industry": "health",
+    "entity": "pediatric practices and family clinics",
+    "condition": {
+      "metric": "max_temp_f",
+      "op": ">=",
+      "value": 92,
+      "consecutive_days": 4
+    },
+    "business_impact": "Streak trigger: Extended stagnant heat locks urban air quality into dangerous ozone compliance bands, driving pediatric asthma interventions.",
+    "story_seed": "Four-day stagnation heat block in {metro} drives alarming spike in pediatric respiratory admissions",
+    "audiences": [
+      "environmental health press",
+      "parenting health media"
+    ],
+    "seasonality_window": [
+      "06-01",
+      "08-31"
+    ],
+    "base_weight": 1.05
+  },
+  {
+    "id": "HLT-011",
+    "industry": "health",
+    "entity": "chiropractic and medical wellness clinics",
+    "condition": {
+      "metric": "min_temp_f",
+      "op": "<=",
+      "value": 15,
+      "consecutive_days": 1
+    },
+    "business_impact": "Calendar-aware (New Year's Day): Bitter holiday cold snaps disrupt outdoor fitness resolutions, causing immediate runs on indoor treatment plans.",
+    "story_seed": "Frigid New Year's launch across {metro} pushes health and wellness consumer metrics completely indoors",
+    "audiences": [
+      "wellness industry press",
+      "social"
+    ],
+    "seasonality_window": [
+      "12-28",
+      "01-05"
+    ],
+    "base_weight": 0.8
+  },
+  {
+    "id": "HLT-012",
+    "industry": "health",
+    "entity": "sports medicine and urgent trauma units",
+    "condition": {
+      "metric": "snow_in",
+      "op": ">=",
+      "value": 4,
+      "consecutive_days": 1
+    },
+    "business_impact": "Calendar-aware (MLK Day): Heavy snowfall during the long weekend triggers widespread acute holiday recreational and winter sports injury spikes.",
+    "story_seed": "MLK holiday weekend snow dumps correlate with immediate surge in regional sports trauma triage",
+    "audiences": [
+      "sports medicine press",
+      "regional health authorities"
+    ],
+    "seasonality_window": [
+      "01-10",
+      "01-22"
+    ],
+    "base_weight": 0.9
+  },
+  {
+    "id": "HLT-013",
+    "industry": "health",
+    "entity": "allergy clinics and telemedicine providers",
+    "condition": {
+      "metric": "temp_anomaly_f",
+      "op": ">=",
+      "value": 10,
+      "consecutive_days": 2
+    },
+    "business_impact": "Calendar-aware (Presidents' Day): Unseasonably mild holiday weekend weather draws people outdoors early, initiating winter tree pollen misery spikes.",
+    "story_seed": "Mild Presidents' Day weekend anomaly accelerates tree pollen reactions across {metro}",
+    "audiences": [
+      "clinical allergy press",
+      "telehealth business trends"
+    ],
+    "seasonality_window": [
+      "02-10",
+      "02-22"
+    ],
+    "base_weight": 0.85
+  },
+  {
+    "id": "HLT-014",
+    "industry": "health",
+    "entity": "travel clinics and vector-borne illness groups",
+    "condition": {
+      "metric": "precip_in",
+      "op": ">=",
+      "value": 0.5,
+      "consecutive_days": 1
+    },
+    "business_impact": "Calendar-aware (Memorial Day): Wet, warm holiday baseline parameters exponentially expand standing water configurations, triggering severe tick and mosquito warnings.",
+    "story_seed": "Rainy Memorial Day baseline setup in {metro} accelerates seasonal vector-borne disease parameters",
+    "audiences": [
+      "infectious disease trade media",
+      "public safety columns"
+    ],
+    "seasonality_window": [
+      "05-20",
+      "05-31"
+    ],
+    "base_weight": 0.95
+  },
+  {
+    "id": "HLT-015",
+    "industry": "health",
+    "entity": "occupational health and industrial clinics",
+    "condition": {
+      "metric": "max_temp_f",
+      "op": ">=",
+      "value": 95,
+      "consecutive_days": 1
+    },
+    "business_impact": "Calendar-aware (Juneteenth): High extreme heat boundaries hit community celebration workforces, prompting emergency field hydration interventions.",
+    "story_seed": "Juneteenth outdoor event grids in {metro} put under immediate critical heat-stress safety protocols",
+    "audiences": [
+      "occupational health safety media",
+      "local community desks"
+    ],
+    "seasonality_window": [
+      "06-12",
+      "06-20"
+    ],
+    "base_weight": 1.0
+  },
+  {
+    "id": "HLT-016",
+    "industry": "health",
+    "entity": "emergency medical dispatch systems",
+    "condition": {
+      "metric": "max_temp_f",
+      "op": ">=",
+      "value": 88,
+      "consecutive_days": 1
+    },
+    "business_impact": "Calendar-aware (July 4th): High baseline temperatures mixed with alcohol over Independence Day spikes acute heat stroke calls to localized emergency response grids.",
+    "story_seed": "July 4th beach and party grids in {metro} place immediate high strain on ambulance dispatch systems",
+    "audiences": [
+      "public health emergency services",
+      "local news desks"
+    ],
+    "seasonality_window": [
+      "06-25",
+      "07-05"
+    ],
+    "base_weight": 1.2
+  },
+  {
+    "id": "HLT-017",
+    "industry": "health",
+    "entity": "pediatric networks and clinical care groups",
+    "condition": {
+      "metric": "precip_in",
+      "op": ">=",
+      "value": 0.4,
+      "consecutive_days": 2
+    },
+    "business_impact": "Calendar-aware (Back-to-School): Rainy, chilly late summer setups during school reopening weeks lock students indoors, causing an unseasonably early spike in school respiratory spreads.",
+    "story_seed": "Back-to-school rainy washout in {metro} triggers early surge in classroom viral transmission metrics",
+    "audiences": [
+      "pediatric healthcare journals",
+      "parent consumer networks"
+    ],
+    "seasonality_window": [
+      "08-15",
+      "09-10"
+    ],
+    "base_weight": 0.9
+  },
+  {
+    "id": "HLT-018",
+    "industry": "health",
+    "entity": "hydration brands and beach health management",
+    "condition": {
+      "metric": "max_temp_f",
+      "op": ">=",
+      "value": 90,
+      "consecutive_days": 2
+    },
+    "business_impact": "Calendar-aware (Labor Day): Last-gasp summer heat wave hitting packed holiday travel outdoor venues exhausts water safety infrastructure arrays.",
+    "story_seed": "Labor Day heat wave in {metro} stresses outdoor venue cooling arrays, spikes hydration demand",
+    "audiences": [
+      "consumer product trade press",
+      "local public safety desks"
+    ],
+    "seasonality_window": [
+      "08-25",
+      "09-07"
+    ],
     "base_weight": 1.1
+  },
+  {
+    "id": "HLT-019",
+    "industry": "health",
+    "entity": "senior care facilities and clinical networks",
+    "condition": {
+      "metric": "min_temp_f",
+      "op": "<=",
+      "value": 25,
+      "consecutive_days": 2
+    },
+    "business_impact": "Calendar-aware (Thanksgiving Holiday): Early severe holiday cold snaps severely impact multi-generational travelers, spiking elder clinical assistance requests.",
+    "story_seed": "Pre-Thanksgiving holiday deep freeze in {metro} hits high-risk senior travelers, forcing clinic alerts",
+    "audiences": [
+      "geriatric care trade media",
+      "national health platforms"
+    ],
+    "seasonality_window": [
+      "11-18",
+      "11-28"
+    ],
+    "base_weight": 1.15
+  },
+  {
+    "id": "HLT-020",
+    "industry": "health",
+    "entity": "hospital bed management and telemetry groups",
+    "condition": {
+      "metric": "temp_anomaly_f",
+      "op": "<=",
+      "value": -12,
+      "consecutive_days": 3
+    },
+    "business_impact": "Calendar-aware (Christmas Holiday): Severe multi-day cold anomaly blocks holiday discharge capabilities, driving maximum healthcare facility optimization issues.",
+    "story_seed": "Severe pre-Christmas arctic anomaly across {metro} forces critical containment protocols in local clinics",
+    "audiences": [
+      "hospital systems business trade",
+      "national news healthcare columns"
+    ],
+    "seasonality_window": [
+      "12-15",
+      "12-25"
+    ],
+    "base_weight": 1.2
   }
 ]
