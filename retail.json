@@ -17,8 +17,8 @@
       "social"
     ],
     "seasonality_window": [
-      "Jan",
-      "Dec"
+      "01-01",
+      "12-31"
     ],
     "base_weight": 0.9
   },
@@ -39,8 +39,8 @@
       "retail trade press"
     ],
     "seasonality_window": [
-      "Nov",
-      "Mar"
+      "11-01",
+      "03-31"
     ],
     "base_weight": 0.8
   },
@@ -61,8 +61,8 @@
       "social"
     ],
     "seasonality_window": [
-      "Jun",
-      "Sep"
+      "06-01",
+      "09-30"
     ],
     "base_weight": 1.15
   },
@@ -83,8 +83,8 @@
       "retail trade press"
     ],
     "seasonality_window": [
-      "Mar",
-      "Nov"
+      "03-01",
+      "11-30"
     ],
     "base_weight": 0.8
   },
@@ -105,8 +105,8 @@
       "fashion press"
     ],
     "seasonality_window": [
-      "Nov",
-      "Feb"
+      "11-01",
+      "02-28"
     ],
     "base_weight": 0.9
   },
@@ -127,8 +127,8 @@
       "retail trade press"
     ],
     "seasonality_window": [
-      "Sep",
-      "Nov"
+      "09-01",
+      "11-30"
     ],
     "base_weight": 0.9
   },
@@ -149,8 +149,8 @@
       "local TV business desks"
     ],
     "seasonality_window": [
-      "Jun",
-      "Jul"
+      "06-25",
+      "07-04"
     ],
     "base_weight": 0.9
   },
@@ -171,8 +171,8 @@
       "social"
     ],
     "seasonality_window": [
-      "Aug",
-      "Sep"
+      "08-01",
+      "09-15"
     ],
     "base_weight": 0.8
   },
@@ -193,8 +193,8 @@
       "retail trade press"
     ],
     "seasonality_window": [
-      "Nov",
-      "Nov"
+      "11-20",
+      "11-30"
     ],
     "base_weight": 0.9
   },
@@ -215,9 +215,228 @@
       "local TV business desks"
     ],
     "seasonality_window": [
-      "Nov",
-      "Dec"
+      "11-20",
+      "12-25"
     ],
     "base_weight": 0.7
+  },
+  {
+    "id": "RET-051",
+    "industry": "retail",
+    "entity": "convenience and liquor stores",
+    "condition": {
+      "metric": "min_temp_f",
+      "op": "<=",
+      "value": 10,
+      "consecutive_days": 1
+    },
+    "business_impact": "Calendar-aware (New Year's Day): Frigid New Year's Eve drives alcohol and party supply delivery over in-store pickup.",
+    "story_seed": "Bitter cold New Year's Eve in {metro} expected to push party supply delivery to capacity",
+    "audiences": [
+      "retail trade press",
+      "local TV business desks"
+    ],
+    "seasonality_window": [
+      "12-26",
+      "01-01"
+    ],
+    "base_weight": 0.8
+  },
+  {
+    "id": "RET-052",
+    "industry": "retail",
+    "entity": "neighborhood retail and grocery",
+    "condition": {
+      "metric": "snow_in",
+      "op": ">=",
+      "value": 3,
+      "consecutive_days": 1
+    },
+    "business_impact": "Calendar-aware (MLK Day): Long weekend travel disrupted by snow, boosting local neighborhood retail over big-box malls.",
+    "story_seed": "MLK Day snowstorm grounds {metro} travelers, shifting holiday weekend spend locally",
+    "audiences": [
+      "retail trade press",
+      "social"
+    ],
+    "seasonality_window": [
+      "01-10",
+      "01-22"
+    ],
+    "base_weight": 0.8
+  },
+  {
+    "id": "RET-053",
+    "industry": "retail",
+    "entity": "mattress and furniture stores",
+    "condition": {
+      "metric": "max_temp_f",
+      "op": ">=",
+      "value": 60,
+      "consecutive_days": 2
+    },
+    "business_impact": "Calendar-aware (Presidents' Day): Mild long weekend drives early spring home-improvement and mattress sale foot traffic.",
+    "story_seed": "Mild Presidents' Day weekend in {metro} to drive foot traffic for mattress and furniture blowouts",
+    "audiences": [
+      "retail trade press"
+    ],
+    "seasonality_window": [
+      "02-10",
+      "02-22"
+    ],
+    "base_weight": 0.8
+  },
+  {
+    "id": "RET-054",
+    "industry": "retail",
+    "entity": "indoor dining and entertainment",
+    "condition": {
+      "metric": "precip_in",
+      "op": ">=",
+      "value": 0.5,
+      "consecutive_days": 1
+    },
+    "business_impact": "Calendar-aware (Memorial Day): Rainy holiday weekend ruins outdoor plans, shifting spend from BBQ/outdoor to indoor entertainment.",
+    "story_seed": "Memorial Day washout in {metro} threatens outdoor retail, boosts indoor dining",
+    "audiences": [
+      "local TV business desks",
+      "retail trade press"
+    ],
+    "seasonality_window": [
+      "05-20",
+      "05-31"
+    ],
+    "base_weight": 0.9
+  },
+  {
+    "id": "RET-055",
+    "industry": "retail",
+    "entity": "grocery and convenience",
+    "condition": {
+      "metric": "max_temp_f",
+      "op": ">=",
+      "value": 95,
+      "consecutive_days": 1
+    },
+    "business_impact": "Calendar-aware (Juneteenth): Extreme heat during Juneteenth block parties drives massive spikes in ice, hydration, and portable fan sales.",
+    "story_seed": "Juneteenth heat wave in {metro} triggers run on ice and hydration supplies",
+    "audiences": [
+      "retail trade press",
+      "social"
+    ],
+    "seasonality_window": [
+      "06-12",
+      "06-19"
+    ],
+    "base_weight": 0.9
+  },
+  {
+    "id": "RET-056",
+    "industry": "retail",
+    "entity": "apparel and seasonal goods",
+    "condition": {
+      "metric": "max_temp_f",
+      "op": ">=",
+      "value": 90,
+      "consecutive_days": 3
+    },
+    "business_impact": "Calendar-aware (Labor Day): End-of-summer heat wave clears out remaining summer clearance inventory like swimwear and ACs.",
+    "story_seed": "Labor Day heat wave in {metro} expected to clear out remaining summer retail inventory",
+    "audiences": [
+      "retail trade press",
+      "national business press"
+    ],
+    "seasonality_window": [
+      "08-25",
+      "09-07"
+    ],
+    "base_weight": 0.8
+  },
+  {
+    "id": "RET-057",
+    "industry": "retail",
+    "entity": "apparel and home goods",
+    "condition": {
+      "metric": "min_temp_f",
+      "op": "<=",
+      "value": 40,
+      "consecutive_days": 2
+    },
+    "business_impact": "Calendar-aware (Columbus/Indigenous Peoples' Day): First major fall chill during the long weekend accelerates winter coat and heater purchases.",
+    "story_seed": "Holiday weekend cold snap in {metro} accelerates winter apparel purchasing",
+    "audiences": [
+      "retail trade press",
+      "fashion press"
+    ],
+    "seasonality_window": [
+      "10-05",
+      "10-15"
+    ],
+    "base_weight": 0.8
+  },
+  {
+    "id": "RET-058",
+    "industry": "retail",
+    "entity": "malls and indoor retail",
+    "condition": {
+      "metric": "precip_in",
+      "op": ">=",
+      "value": 0.5,
+      "consecutive_days": 1
+    },
+    "business_impact": "Calendar-aware (Veterans Day): Heavy rain halts civic parades, driving consumers to take advantage of indoor retail promotions instead.",
+    "story_seed": "Rainy Veterans Day in {metro} expected to drive crowds indoors for retail promotions",
+    "audiences": [
+      "local TV business desks",
+      "retail trade press"
+    ],
+    "seasonality_window": [
+      "11-04",
+      "11-11"
+    ],
+    "base_weight": 0.8
+  },
+  {
+    "id": "RET-059",
+    "industry": "retail",
+    "entity": "grocery and supermarkets",
+    "condition": {
+      "metric": "snow_in",
+      "op": ">=",
+      "value": 2,
+      "consecutive_days": 1
+    },
+    "business_impact": "Calendar-aware (Thanksgiving): Pre-Thanksgiving snowstorm triggers panic buying at grocery stores for turkey and staples.",
+    "story_seed": "Pre-Thanksgiving snow in {metro} triggers grocery panic buying ahead of the holiday",
+    "audiences": [
+      "retail trade press",
+      "local TV business desks"
+    ],
+    "seasonality_window": [
+      "11-18",
+      "11-28"
+    ],
+    "base_weight": 1.0
+  },
+  {
+    "id": "RET-060",
+    "industry": "retail",
+    "entity": "e-commerce and logistics",
+    "condition": {
+      "metric": "temp_anomaly_f",
+      "op": "<=",
+      "value": -15,
+      "consecutive_days": 2
+    },
+    "business_impact": "Calendar-aware (Christmas): Bitter cold in the final shopping days shifts last-minute gift buying entirely to e-commerce and gift cards.",
+    "story_seed": "Bitter pre-Christmas cold in {metro} shifts last-minute shoppers online",
+    "audiences": [
+      "national business press",
+      "retail trade press"
+    ],
+    "seasonality_window": [
+      "12-15",
+      "12-24"
+    ],
+    "base_weight": 0.9
   }
 ]
