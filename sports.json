@@ -43,7 +43,7 @@
       "06-12",
       "07-06"
     ],
-    "base_weight": 1.0
+    "base_weight": 1
   },
   {
     "id": "SPT-003",
@@ -167,7 +167,7 @@
     "condition": {
       "metric": "precip_in",
       "op": ">=",
-      "value": 1.0,
+      "value": 1,
       "consecutive_days": 1
     },
     "business_impact": "Torrential single-day downpours submerge open-air venue parking matrices, obliterating pre-game tailgating activities and dropping auxiliary team store merchandise loops.",
@@ -279,7 +279,7 @@
     "condition": {
       "metric": "snow_in",
       "op": ">=",
-      "value": 5.0,
+      "value": 5,
       "consecutive_days": 1
     },
     "business_impact": "Calendar-aware: Major winter storm drops during Black Friday holiday classic invitations paralyze team hotel-to-arena transits, forcing sudden schedule truncations and digital streaming format adjustments.",
@@ -292,7 +292,7 @@
       "11-20",
       "11-30"
     ],
-    "base_weight": 1.0
+    "base_weight": 1
   },
   {
     "id": "SPT-014",
@@ -448,6 +448,6 @@
       "03-15",
       "05-15"
     ],
-    "base_weight": 1.0
+    "base_weight": 1
   }
 ]
