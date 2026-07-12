@@ -29,7 +29,7 @@
     "condition": {
       "metric": "snow_in",
       "op": ">=",
-      "value": 2.0,
+      "value": 2,
       "consecutive_days": 1
     },
     "business_impact": "Calendar-aware: Early season winter systems blanketing high-density metro centers cause rapid drop-shipping center bottlenecks right as Black Friday and Cyber Monday volumes peak.",
@@ -199,7 +199,7 @@
       "07-01",
       "08-31"
     ],
-    "base_weight": 1.0
+    "base_weight": 1
   },
   {
     "id": "SUP-010",
@@ -265,7 +265,7 @@
       "06-12",
       "06-20"
     ],
-    "base_weight": 1.0
+    "base_weight": 1
   },
   {
     "id": "SUP-013",
@@ -340,7 +340,7 @@
     "condition": {
       "metric": "snow_in",
       "op": ">=",
-      "value": 4.0,
+      "value": 4,
       "consecutive_days": 2
     },
     "business_impact": "Calendar-aware: Heavy multi-day snow accumulations over Presidents' Day long weekend freeze track switching systems, gridlocking intermodal rail-to-truck container transfers.",
@@ -362,7 +362,7 @@
     "condition": {
       "metric": "precip_in",
       "op": ">=",
-      "value": 1.0,
+      "value": 1,
       "consecutive_days": 1
     },
     "business_impact": "Calendar-aware: Flash flooding downpours over Columbus Day close major interstate freight lanes, cutting off regional sorting centers from outbound hub transfers.",
@@ -375,7 +375,7 @@
       "10-05",
       "10-15"
     ],
-    "base_weight": 1.0
+    "base_weight": 1
   },
   {
     "id": "SUP-018",
@@ -406,7 +406,7 @@
     "condition": {
       "metric": "snow_in",
       "op": ">=",
-      "value": 3.0,
+      "value": 3,
       "consecutive_days": 1
     },
     "business_impact": "Second-order effect: Massive post-Christmas snowstorms jam reverse logistics loops, delaying holiday return inventories from reaching warehouse resale classification status.",
@@ -442,6 +442,6 @@
       "04-01",
       "06-30"
     ],
-    "base_weight": 1.0
+    "base_weight": 1
   }
 ]
