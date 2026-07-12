@@ -52,7 +52,7 @@
     "condition": {
       "metric": "snow_in",
       "op": ">=",
-      "value": 3.0,
+      "value": 3,
       "consecutive_days": 1
     },
     "business_impact": "Calendar-aware: Significant snow accumulation on high-volume Black Friday or Cyber Monday shopping windows forces consumer vectors off main sidewalks and shifts spending directly to e-commerce networks.",
@@ -98,7 +98,7 @@
     "condition": {
       "metric": "snow_in",
       "op": ">=",
-      "value": 4.0,
+      "value": 4,
       "consecutive_days": 1
     },
     "business_impact": "Calendar-aware: Major snowstorms over MLK Day holiday long weekends lock families indoors, causing instant inventory grocery runs on shelf-stable soup, hot cocoa, and comfort pantry products.",
@@ -181,7 +181,7 @@
       "06-12",
       "06-22"
     ],
-    "base_weight": 1.0
+    "base_weight": 1
   },
   {
     "id": "CON-009",
@@ -259,7 +259,7 @@
     "condition": {
       "metric": "snow_in",
       "op": ">=",
-      "value": 2.0,
+      "value": 2,
       "consecutive_days": 1
     },
     "business_impact": "Calendar-aware: A winter storm layout hitting right before Thanksgiving triggers intense grocery panic buying, causing an immediate consumer run on essential baking commodities, turkeys, and pie components.",
@@ -457,6 +457,6 @@
       "06-01",
       "08-31"
     ],
-    "base_weight": 1.0
+    "base_weight": 1
   }
 ]
