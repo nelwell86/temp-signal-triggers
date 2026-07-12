@@ -52,7 +52,7 @@
     "condition": {
       "metric": "snow_in",
       "op": ">=",
-      "value": 4.0,
+      "value": 4,
       "consecutive_days": 1
     },
     "business_impact": "Calendar-aware: Major pre-Thanksgiving winter storms paralyze regional rail and road networks during the absolute heaviest travel transit days of the year.",
@@ -97,7 +97,7 @@
     "condition": {
       "metric": "snow_in",
       "op": ">=",
-      "value": 6.0,
+      "value": 6,
       "consecutive_days": 2
     },
     "business_impact": "Calendar-aware: A massive multi-day powder layout right before Presidents' Day weekend triggers an immediate surge in premium ski chalet bookings and equipment rentals.",
@@ -220,7 +220,7 @@
       "09-01",
       "11-15"
     ],
-    "base_weight": 1.0
+    "base_weight": 1
   },
   {
     "id": "TRV-011",
@@ -273,7 +273,7 @@
     "condition": {
       "metric": "snow_in",
       "op": ">=",
-      "value": 1.0,
+      "value": 1,
       "consecutive_days": 1
     },
     "business_impact": "Calendar-aware: MLK Day weekend early snowfalls completely derail executive retreats, forcing corporate hospitality properties to issue instant virtual event re-bookings.",
@@ -317,7 +317,7 @@
     "condition": {
       "metric": "snow_in",
       "op": ">=",
-      "value": 3.0,
+      "value": 3,
       "consecutive_days": 1
     },
     "business_impact": "Calendar-aware: High-volume pre-Christmas winter storms block open-air airport parking structures, trapping outbound vehicles and gridlocking holiday shuttle operations.",
@@ -375,7 +375,7 @@
       "11-04",
       "11-11"
     ],
-    "base_weight": 1.0
+    "base_weight": 1
   },
   {
     "id": "TRV-018",
