@@ -75,7 +75,7 @@
     "condition": {
       "metric": "snow_in",
       "op": ">=",
-      "value": 3.0,
+      "value": 3,
       "consecutive_days": 1
     },
     "business_impact": "The first major accumulating winter storm of the season catches motorists unaccustomed to slick surfaces, triggering widespread multi-car accidents and overwhelming local claims adjustments.",
@@ -98,7 +98,7 @@
     "condition": {
       "metric": "precip_in",
       "op": ">=",
-      "value": 1.0,
+      "value": 1,
       "consecutive_days": 1
     },
     "business_impact": "Calendar-aware: Torrential tropical downpours during Juneteenth travel peaks flood regional transport underpasses, damaging stranded freight trailers and spiking inland marine cargo claims.",
@@ -273,7 +273,7 @@
       "03-15",
       "05-31"
     ],
-    "base_weight": 1.0
+    "base_weight": 1
   },
   {
     "id": "INS-013",
@@ -351,7 +351,7 @@
     "condition": {
       "metric": "snow_in",
       "op": ">=",
-      "value": 6.0,
+      "value": 6,
       "consecutive_days": 1
     },
     "business_impact": "Calendar-aware: Heavy single-day snow dumps over Presidents' Day weekend catch holiday travelers on mountain passes, forcing an immediate spike in recreational collision filings.",
@@ -420,7 +420,7 @@
     "condition": {
       "metric": "precip_in",
       "op": ">=",
-      "value": 2.0,
+      "value": 2,
       "consecutive_days": 1
     },
     "business_impact": "Severe single-day cloudbursts overwhelm city storm sewers, causing widespread street backups that prompt a wave of public liability property claims against municipal risk pools.",
