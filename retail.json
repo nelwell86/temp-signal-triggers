@@ -438,5 +438,53 @@
       "12-24"
     ],
     "base_weight": 0.9
+  },
+  {
+    "id": "RET-061",
+    "industry": "retail",
+    "entity": "big box and grocery",
+    "condition": {
+      "metric": "severe_risk",
+      "op": ">=",
+      "value": 60,
+      "consecutive_days": 1
+    },
+    "business_impact": "High risk of severe thunderstorms drives immediate emergency pre-storm pantry loading, spiking sales of bottled water, flashlights, and non-perishables.",
+    "story_seed": "Severe storm threat in {metro} triggers pre-storm retail surge",
+    "audiences": ["retail trade press", "local business desks"],
+    "seasonality_window": ["03-01", "10-31"],
+    "base_weight": 1.2
+  },
+  {
+    "id": "RET-062",
+    "industry": "retail",
+    "entity": "e-commerce and delivery",
+    "condition": {
+      "metric": "humidity_pct",
+      "op": ">=",
+      "value": 85,
+      "consecutive_days": 2
+    },
+    "business_impact": "Multi-day oppressive humidity stifles outdoor foot traffic, accelerating consumer shifts to e-commerce and local delivery platforms for everyday essentials.",
+    "story_seed": "Oppressive humidity drives shoppers indoors, spiking local delivery demand in {metro}",
+    "audiences": ["e-commerce trade press", "retail analysts"],
+    "seasonality_window": ["05-01", "09-30"],
+    "base_weight": 1.05
+  },
+  {
+    "id": "RET-063",
+    "industry": "retail",
+    "entity": "pharmacy and outdoor living",
+    "condition": {
+      "metric": "uv_index",
+      "op": ">=",
+      "value": 10,
+      "consecutive_days": 1
+    },
+    "business_impact": "Extreme UV indexes push immediate localized sales spikes in sun care, UPF apparel, and patio shade solutions.",
+    "story_seed": "Extreme UV index of 10+ in {metro} drives run on sun care and shade products",
+    "audiences": ["CPG trade press"],
+    "seasonality_window": ["04-01", "09-30"],
+    "base_weight": 1.1
   }
 ]
