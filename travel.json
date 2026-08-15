@@ -179,7 +179,7 @@
     "base_weight": 0.95
   },
   {
-    "id": "TRV-001",
+    "id": "TRV-009",
     "industry": "travel",
     "entity": "car rental agencies and road trip providers",
     "condition": {
@@ -442,5 +442,70 @@
       "12-24"
     ],
     "base_weight": 1.25
+  },
+  {
+    "id": "TRV-021",
+    "industry": "travel",
+    "entity": "airlines and regional transit",
+    "condition": {
+      "metric": "severe_risk",
+      "op": ">=",
+      "value": 80,
+      "consecutive_days": 1
+    },
+    "business_impact": "High-confidence severe storm outbreaks threaten major regional airport hubs, causing preemptive ground stops and cascading flight cancellations.",
+    "story_seed": "Severe storm outbreak threatens major flight disruptions through {metro}",
+    "audiences": [
+      "travel trade press",
+      "consumer travel reporters"
+    ],
+    "seasonality_window": [
+      "03-01",
+      "10-31"
+    ],
+    "base_weight": 1.4
+  },
+  {
+    "id": "TRV-022",
+    "industry": "travel",
+    "entity": "theme parks and outdoor tourism",
+    "condition": {
+      "metric": "humidity_pct",
+      "op": ">=",
+      "value": 85,
+      "consecutive_days": 3
+    },
+    "business_impact": "Stifling multi-day humidity severely depresses outdoor walking tours and theme park day-pass sales, forcing operators to aggressively pivot marketing to indoor/water attractions.",
+    "story_seed": "Oppressive humidity forces {metro} tourism operators to pivot to indoor attractions",
+    "audiences": [
+      "hospitality trade press"
+    ],
+    "seasonality_window": [
+      "05-01",
+      "09-30"
+    ],
+    "base_weight": 1.1
+  },
+  {
+    "id": "TRV-023",
+    "industry": "travel",
+    "entity": "beachfront resorts and outdoor excursions",
+    "condition": {
+      "metric": "uv_index",
+      "op": ">=",
+      "value": 10,
+      "consecutive_days": 2
+    },
+    "business_impact": "Extreme UV indexes over consecutive days force travel operators to limit midday outdoor excursions and increase complimentary shade/hydration amenities, straining operational budgets.",
+    "story_seed": "Extreme UV index blast alters {metro} midday tourist excursions",
+    "audiences": [
+      "hospitality trade press",
+      "travel lifestyle press"
+    ],
+    "seasonality_window": [
+      "05-01",
+      "09-30"
+    ],
+    "base_weight": 1.0
   }
 ]
