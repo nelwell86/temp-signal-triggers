@@ -6,7 +6,7 @@
     "condition": {
       "metric": "severe_risk",
       "op": ">=",
-      "value": 4,
+      "value": 80,
       "consecutive_days": 1
     },
     "business_impact": "Second-order effect: Severe convective storms dropping large hail over high-density metropolitan areas during peak holiday travel windows trigger immediate, historic spikes in comprehensive auto claims.",
@@ -213,7 +213,7 @@
     "condition": {
       "metric": "severe_risk",
       "op": ">=",
-      "value": 3,
+      "value": 60,
       "consecutive_days": 3
     },
     "business_impact": "Streak trigger: Multiple days of convective storm networks dropping lightning strikes over dry urban fringes spike residential power surge and localized wildfire lightning damage claims.",
@@ -236,7 +236,7 @@
     "condition": {
       "metric": "severe_risk",
       "op": ">=",
-      "value": 4,
+      "value": 80,
       "consecutive_days": 2
     },
     "business_impact": "Calendar-aware: Convective thunderstorm blocks lingering over Fourth of July travel corridors prompt widespread flight cancellations, spiking travel insurance trip-interruption claims.",
@@ -458,5 +458,71 @@
       "08-31"
     ],
     "base_weight": 0.85
+  },
+  {
+    "id": "INS-021",
+    "industry": "insurance",
+    "entity": "commercial fleet and trucking underwriters",
+    "condition": {
+      "metric": "severe_risk",
+      "op": ">=",
+      "value": 80,
+      "consecutive_days": 1
+    },
+    "business_impact": "High severe storm probabilities trigger immediate alerts for commercial fleet rerouting, sparking pre-claim advisories for trucking underwriters.",
+    "story_seed": "Severe storm risks force commercial fleets to reroute across {metro}, elevating transit liability alerts",
+    "audiences": [
+      "commercial auto insurance journals",
+      "logistics liability press"
+    ],
+    "seasonality_window": [
+      "03-01",
+      "10-31"
+    ],
+    "base_weight": 1.15
+  },
+  {
+    "id": "INS-022",
+    "industry": "insurance",
+    "entity": "residential mold and water damage underwriters",
+    "condition": {
+      "metric": "humidity_pct",
+      "op": ">=",
+      "value": 90,
+      "consecutive_days": 3
+    },
+    "business_impact": "Sustained extreme humidity without relief accelerates residential mold growth and HVAC condensation failures, prompting a spike in water damage claims.",
+    "story_seed": "Relentless humidity forces {metro} HVAC systems to fail, driving a wave of residential water damage claims",
+    "audiences": [
+      "property underwriting trade",
+      "residential risk analysts"
+    ],
+    "seasonality_window": [
+      "05-01",
+      "09-30"
+    ],
+    "base_weight": 1.1
+  },
+  {
+    "id": "INS-023",
+    "industry": "insurance",
+    "entity": "workers compensation and occupational risk managers",
+    "condition": {
+      "metric": "uv_index",
+      "op": ">=",
+      "value": 10,
+      "consecutive_days": 2
+    },
+    "business_impact": "Consecutive days of extreme UV exposure for outdoor laborers significantly raises the risk of acute radiation burns and heat syncope, driving workers comp claims.",
+    "story_seed": "Extreme UV conditions trigger safety protocols for outdoor workers in {metro} as comp claims rise",
+    "audiences": [
+      "occupational health media",
+      "labor risk platforms"
+    ],
+    "seasonality_window": [
+      "05-01",
+      "09-30"
+    ],
+    "base_weight": 1.05
   }
 ]
