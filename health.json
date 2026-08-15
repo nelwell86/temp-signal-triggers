@@ -440,5 +440,70 @@
       "12-25"
     ],
     "base_weight": 1.2
+  },
+  {
+    "id": "HLT-021",
+    "industry": "health",
+    "entity": "home health networks",
+    "condition": {
+      "metric": "severe_risk",
+      "op": ">=",
+      "value": 80,
+      "consecutive_days": 1
+    },
+    "business_impact": "Imminent severe weather and high power outage risk forces home health networks to rapidly evacuate or secure electrically-dependent and oxygen-dependent patients.",
+    "story_seed": "High outage risk from severe storms forces patient relocations in {metro}",
+    "audiences": [
+      "healthcare administration press",
+      "local news"
+    ],
+    "seasonality_window": [
+      "03-01",
+      "11-30"
+    ],
+    "base_weight": 1.5
+  },
+  {
+    "id": "HLT-022",
+    "industry": "health",
+    "entity": "urgent care centers",
+    "condition": {
+      "metric": "humidity_pct",
+      "op": ">=",
+      "value": 90,
+      "consecutive_days": 2
+    },
+    "business_impact": "Sustained extreme humidity spikes wet-bulb temperatures, triggering severe respiratory distress and asthma exacerbations at local urgent cares.",
+    "story_seed": "Extreme humidity drives respiratory emergencies in {metro}",
+    "audiences": [
+      "medical trade press",
+      "local health reporters"
+    ],
+    "seasonality_window": [
+      "05-01",
+      "09-30"
+    ],
+    "base_weight": 1.25
+  },
+  {
+    "id": "HLT-023",
+    "industry": "health",
+    "entity": "dermatology and primary care",
+    "condition": {
+      "metric": "uv_index",
+      "op": ">=",
+      "value": 11,
+      "consecutive_days": 2
+    },
+    "business_impact": "Consecutive days of extreme UV index 11+ trigger an influx of severe sunburn, sun poisoning, and localized dehydration cases at walk-in clinics.",
+    "story_seed": "Consecutive days of Extreme UV 11+ in {metro} prompts health warnings",
+    "audiences": [
+      "local news health desks"
+    ],
+    "seasonality_window": [
+      "05-01",
+      "08-31"
+    ],
+    "base_weight": 1.15
   }
 ]
