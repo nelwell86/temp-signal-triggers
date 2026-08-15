@@ -52,7 +52,7 @@
     "condition": {
       "metric": "severe_risk",
       "op": ">=",
-      "value": 3,
+      "value": 60,
       "consecutive_days": 1
     },
     "business_impact": "Calendar-aware: Convective lightning hazards during high-volume Labor Day opening weekend football matchups spark mandatory premium tier stadium evacuations and live broadcast delays.",
@@ -365,7 +365,7 @@
   {
     "id": "SPT-017",
     "industry": "sports",
-    "entity": "marime racing operations and sailing clubs",
+    "entity": "maritime racing operations and sailing clubs",
     "condition": {
       "metric": "max_wind_mph",
       "op": ">=",
@@ -453,14 +453,14 @@
   {
     "id": "SPT-021",
     "industry": "sports",
-    "entity": "stadium operations and outdoor events",
+    "entity": "professional soccer and outdoor track venues",
     "condition": {
       "metric": "severe_risk",
       "op": ">=",
       "value": 60,
       "consecutive_days": 1
     },
-    "business_impact": "High probability of severe thunderstorms forces preemptive delays or cancellations of outdoor stadium events and regional youth tournaments to ensure attendee safety.",
+    "business_impact": "High probability of severe thunderstorms forces preemptive delays or cancellations of outdoor stadium events to ensure attendee safety, disrupting gate revenues.",
     "story_seed": "Severe storm threat in {metro} forces outdoor sports facilities into preemptive delay and evacuation protocols",
     "audiences": [
       "sports facility venue press",
@@ -475,7 +475,7 @@
   {
     "id": "SPT-022",
     "industry": "sports",
-    "entity": "youth and collegiate athletics",
+    "entity": "municipal golf courses and country clubs",
     "condition": {
       "metric": "humidity_pct",
       "op": ">=",
