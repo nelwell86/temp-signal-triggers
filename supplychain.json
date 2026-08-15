@@ -443,5 +443,71 @@
       "06-30"
     ],
     "base_weight": 1
+  },
+  {
+    "id": "SUP-021",
+    "industry": "supplychain",
+    "entity": "last-mile delivery logistics",
+    "condition": {
+      "metric": "severe_risk",
+      "op": ">=",
+      "value": 60,
+      "consecutive_days": 1
+    },
+    "business_impact": "Severe convective storms disrupt last-mile routing, delaying intermodal freight transfers and forcing drivers off the road due to zero-visibility and hail threats.",
+    "story_seed": "Severe storms threaten last-mile delivery networks across {metro}",
+    "audiences": [
+      "logistics trade press",
+      "supply chain analysts"
+    ],
+    "seasonality_window": [
+      "03-01",
+      "11-30"
+    ],
+    "base_weight": 1.3
+  },
+  {
+    "id": "SUP-022",
+    "industry": "supplychain",
+    "entity": "cold chain and warehousing",
+    "condition": {
+      "metric": "humidity_pct",
+      "op": ">=",
+      "value": 90,
+      "consecutive_days": 3
+    },
+    "business_impact": "Prolonged high humidity heavily strains cold-chain logistics and warehouse climate control systems, risking perishable spoilage and spiking facility energy costs.",
+    "story_seed": "Sustained high humidity tests cold chain resilience in {metro}",
+    "audiences": [
+      "cold chain trade press",
+      "food logistics reporters"
+    ],
+    "seasonality_window": [
+      "05-01",
+      "09-30"
+    ],
+    "base_weight": 1.2
+  },
+  {
+    "id": "SUP-023",
+    "industry": "supplychain",
+    "entity": "open-air intermodal yards",
+    "condition": {
+      "metric": "uv_index",
+      "op": ">=",
+      "value": 10,
+      "consecutive_days": 2
+    },
+    "business_impact": "Extreme UV indexes over consecutive days trigger mandatory heat-safety breaks for outdoor loading crews, slowing drayage turnaround and intermodal transfers.",
+    "story_seed": "Extreme UV and heat-safety protocols slow shipping turnaround at {metro} intermodal yards",
+    "audiences": [
+      "freight transport media",
+      "occupational safety trade press"
+    ],
+    "seasonality_window": [
+      "05-01",
+      "09-30"
+    ],
+    "base_weight": 1.05
   }
 ]
