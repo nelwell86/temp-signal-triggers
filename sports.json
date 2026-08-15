@@ -449,5 +449,71 @@
       "05-15"
     ],
     "base_weight": 1
+  },
+  {
+    "id": "SPT-021",
+    "industry": "sports",
+    "entity": "stadium operations and outdoor events",
+    "condition": {
+      "metric": "severe_risk",
+      "op": ">=",
+      "value": 60,
+      "consecutive_days": 1
+    },
+    "business_impact": "High probability of severe thunderstorms forces preemptive delays or cancellations of outdoor stadium events and regional youth tournaments to ensure attendee safety.",
+    "story_seed": "Severe storm threat in {metro} forces outdoor sports facilities into preemptive delay and evacuation protocols",
+    "audiences": [
+      "sports facility venue press",
+      "local sports desks"
+    ],
+    "seasonality_window": [
+      "03-01",
+      "10-31"
+    ],
+    "base_weight": 1.2
+  },
+  {
+    "id": "SPT-022",
+    "industry": "sports",
+    "entity": "youth and collegiate athletics",
+    "condition": {
+      "metric": "humidity_pct",
+      "op": ">=",
+      "value": 85,
+      "consecutive_days": 2
+    },
+    "business_impact": "Sustained high humidity suppresses evaporative cooling, creating dangerous wet-bulb temperatures that trigger mandatory hydration breaks and practice cancellations for outdoor athletics.",
+    "story_seed": "Oppressive humidity in {metro} triggers mandatory safety cancellations for outdoor athletic practices",
+    "audiences": [
+      "youth sports management press",
+      "local health desks"
+    ],
+    "seasonality_window": [
+      "05-01",
+      "09-30"
+    ],
+    "base_weight": 1.15
+  },
+  {
+    "id": "SPT-023",
+    "industry": "sports",
+    "entity": "outdoor endurance sports and marathons",
+    "condition": {
+      "metric": "uv_index",
+      "op": ">=",
+      "value": 10,
+      "consecutive_days": 1
+    },
+    "business_impact": "Extreme UV index thresholds during midday outdoor endurance events necessitate emergency shade deployments and prompt massive spikes in on-site sun protection sales.",
+    "story_seed": "Extreme UV blast alters {metro} midday athletic endurance events",
+    "audiences": [
+      "endurance sports media",
+      "sports marketing networks"
+    ],
+    "seasonality_window": [
+      "05-01",
+      "09-30"
+    ],
+    "base_weight": 1.0
   }
 ]
