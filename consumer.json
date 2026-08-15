@@ -443,7 +443,7 @@
     "condition": {
       "metric": "severe_risk",
       "op": ">=",
-      "value": 4,
+      "value": 80,
       "consecutive_days": 1
     },
     "business_impact": "Severe convective summer storm warnings spike local consumer electrical blackout anxieties, driving rapid buying loops for battery backups, flashlights, and immediate emergency gear.",
@@ -458,5 +458,72 @@
       "08-31"
     ],
     "base_weight": 1
+  },
+  {
+    "id": "CON-021",
+    "industry": "consumer",
+    "entity": "home backup power and generator brands",
+    "condition": {
+      "metric": "severe_risk",
+      "op": ">=",
+      "value": 60,
+      "consecutive_days": 1
+    },
+    "business_impact": "Elevated severe storm risks prompt high anxiety around prolonged power outages, driving pre-storm surges in purchases for portable generators and backup power grids.",
+    "story_seed": "Approaching severe storm systems trigger consumer run on backup power solutions in {metro}",
+    "audiences": [
+      "consumer hardware media",
+      "home improvement trade",
+      "local news desks"
+    ],
+    "seasonality_window": [
+      "04-01",
+      "10-31"
+    ],
+    "base_weight": 1.15
+  },
+  {
+    "id": "CON-022",
+    "industry": "consumer",
+    "entity": "indoor HVAC and dehumidifier brands",
+    "condition": {
+      "metric": "humidity_pct",
+      "op": ">=",
+      "value": 90,
+      "consecutive_days": 2
+    },
+    "business_impact": "Sustained high indoor humidity discomfort drives immediate consumer searches and purchasing spikes for smart thermostats, portable AC units, and room dehumidifiers.",
+    "story_seed": "Oppressive humidity drives immediate indoor climate-control appliance sales spike in {metro}",
+    "audiences": [
+      "appliance retail trade",
+      "consumer electronics trends"
+    ],
+    "seasonality_window": [
+      "05-15",
+      "09-15"
+    ],
+    "base_weight": 1.05
+  },
+  {
+    "id": "CON-023",
+    "industry": "consumer",
+    "entity": "outdoor recreation gear and canopy brands",
+    "condition": {
+      "metric": "uv_index",
+      "op": ">=",
+      "value": 10,
+      "consecutive_days": 1
+    },
+    "business_impact": "Extreme UV index during peak summer weekends drives immediate up-sells for pop-up shade canopies, beach umbrellas, and UPF-rated protective apparel.",
+    "story_seed": "Extreme UV warnings across {metro} spike rapid weekend sales for portable shade and UPF gear",
+    "audiences": [
+      "outdoor gear trade press",
+      "consumer lifestyle media"
+    ],
+    "seasonality_window": [
+      "05-01",
+      "09-01"
+    ],
+    "base_weight": 1.1
   }
 ]
