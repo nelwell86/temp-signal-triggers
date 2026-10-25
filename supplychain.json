@@ -165,7 +165,12 @@
       "metric": "temp_anomaly_f",
       "op": ">=",
       "value": 15,
-      "consecutive_days": 2
+      "consecutive_days": 2,
+      "also": {
+        "metric": "max_temp_f",
+        "op": ">=",
+        "value": 90
+      }
     },
     "business_impact": "Anomaly trigger: Severe unseasonable summer heat anomalies trigger extreme steel rail expansions, causing high risks of track buckling and forcing mandatory freight rail speed reductions.",
     "story_seed": "Severe heat wave anomaly forces immediate train speed caps across {metro} rail networks",
@@ -252,7 +257,7 @@
     "condition": {
       "metric": "severe_risk",
       "op": ">=",
-      "value": 4,
+      "value": 80,
       "consecutive_days": 1
     },
     "business_impact": "Calendar-aware: High-severity convective storm fronts over Juneteenth halt terminal cross-dock operations, splitting regional multi-stop freight consolidation schedules.",
@@ -297,7 +302,12 @@
       "metric": "temp_anomaly_f",
       "op": "<=",
       "value": -15,
-      "consecutive_days": 2
+      "consecutive_days": 2,
+      "also": {
+        "metric": "min_temp_f",
+        "op": "<=",
+        "value": 28
+      }
     },
     "business_impact": "Calendar-aware: Unseasonable freezing anomalies right before Thanksgiving freeze poultry transport livestock vehicle routes, throwing massive delivery curveballs at processing operations.",
     "story_seed": "Historic pre-Thanksgiving arctic blast disrupts livestock transport lanes into {metro}",
@@ -385,7 +395,12 @@
       "metric": "temp_anomaly_f",
       "op": "<=",
       "value": -10,
-      "consecutive_days": 2
+      "consecutive_days": 2,
+      "also": {
+        "metric": "min_temp_f",
+        "op": "<=",
+        "value": 32
+      }
     },
     "business_impact": "Calendar-aware: Early season winter blast anomalies during Veterans Day break sensitive temperature envelopes inside last-mile medical transport networks, forcing vaccine batch line scraps.",
     "story_seed": "Early winter blast anomaly breaches pharmaceutical transit temperature parameters across {metro}",
@@ -429,7 +444,7 @@
     "condition": {
       "metric": "severe_risk",
       "op": ">=",
-      "value": 3,
+      "value": 60,
       "consecutive_days": 3
     },
     "business_impact": "Streak trigger: 3+ days of severe weather convective risks damage silo elevators and halt loading arrays during critical early summer harvest shipping rushes.",
