@@ -118,7 +118,12 @@
       "metric": "temp_anomaly_f",
       "op": "<=",
       "value": -15,
-      "consecutive_days": 2
+      "consecutive_days": 2,
+      "also": {
+        "metric": "max_temp_f",
+        "op": "<=",
+        "value": 45
+      }
     },
     "business_impact": "Anomaly trigger: Sudden extreme cold relative to normal drives panic buying of comfort foods and hot beverages.",
     "story_seed": "Sudden temperature crash in {metro} drives run on winter comfort foods",
@@ -425,7 +430,12 @@
       "metric": "temp_anomaly_f",
       "op": "<=",
       "value": -15,
-      "consecutive_days": 2
+      "consecutive_days": 2,
+      "also": {
+        "metric": "max_temp_f",
+        "op": "<=",
+        "value": 32
+      }
     },
     "business_impact": "Calendar-aware (Christmas): Bitter cold in the final shopping days shifts last-minute gift buying entirely to e-commerce and gift cards.",
     "story_seed": "Bitter pre-Christmas cold in {metro} shifts last-minute shoppers online",
