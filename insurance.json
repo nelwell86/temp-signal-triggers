@@ -122,7 +122,12 @@
       "metric": "temp_anomaly_f",
       "op": "<=",
       "value": -10,
-      "consecutive_days": 2
+      "consecutive_days": 2,
+      "also": {
+        "metric": "min_temp_f",
+        "op": "<=",
+        "value": 32
+      }
     },
     "business_impact": "Anomaly trigger: Severe unseasonable spring freeze anomalies hitting vulnerable regional crops post-budding trigger immediate multi-million dollar crop reinsurance payouts.",
     "story_seed": "Late spring hard freeze anomaly devastates agricultural zones surrounding {metro}, triggering reinsurance alerts",
