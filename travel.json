@@ -6,7 +6,7 @@
     "condition": {
       "metric": "severe_risk",
       "op": ">=",
-      "value": 4,
+      "value": 80,
       "consecutive_days": 1
     },
     "business_impact": "Second-order effect: Severe thunderstorm risks during peak summer holiday weekends result in rolling tarmac delays and immediate hub-and-spoke routing cancellations.",
@@ -142,7 +142,12 @@
       "metric": "temp_anomaly_f",
       "op": "<=",
       "value": -15,
-      "consecutive_days": 2
+      "consecutive_days": 2,
+      "also": {
+        "metric": "min_temp_f",
+        "op": "<=",
+        "value": 15
+      }
     },
     "business_impact": "Anomaly trigger: Severe unseasonable deep freezes trigger immediate cancellations of corporate flights, freezing Q1 regional sales conventions.",
     "story_seed": "Historic midwinter temperature anomaly cancels {metro} corporate conventions, freezing business travel",
@@ -186,7 +191,12 @@
       "metric": "temp_anomaly_f",
       "op": ">=",
       "value": 15,
-      "consecutive_days": 3
+      "consecutive_days": 3,
+      "also": {
+        "metric": "max_temp_f",
+        "op": ">=",
+        "value": 85
+      }
     },
     "business_impact": "Anomaly trigger: Severe pre-summer heat deviations prompt an unseasonably early surge in regional rental bookings and premium convertible/SUV fleet upgrades.",
     "story_seed": "Pre-summer heat anomaly triggers unprecedented road trip car rental run across {metro}",
