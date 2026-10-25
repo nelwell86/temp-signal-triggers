@@ -30,7 +30,12 @@
       "metric": "temp_anomaly_f",
       "op": ">=",
       "value": 12,
-      "consecutive_days": 4
+      "consecutive_days": 4,
+      "also": {
+        "metric": "max_temp_f",
+        "op": ">=",
+        "value": 85
+      }
     },
     "business_impact": "Calendar-aware: An unseasonable late-summer heat block lingering over Back-to-School and Labor Day weeks completely derails early autumn fleece and denim consumer demand cycles.",
     "story_seed": "Relentless late-summer heat anomaly stalls back-to-school fall wardrobe loops in {metro}",
