@@ -99,7 +99,12 @@
       "metric": "temp_anomaly_f",
       "op": ">=",
       "value": 15,
-      "consecutive_days": 1
+      "consecutive_days": 1,
+      "also": {
+        "metric": "max_temp_f",
+        "op": ">=",
+        "value": 80
+      }
     },
     "business_impact": "Anomaly trigger: Severe autumn heat deviations prompt race officials to issue emergency medical warnings or execute outright race cancellations to prevent mass participant heat stroke.",
     "story_seed": "Unseasonable autumn heat anomaly forces emergency medical scaling for {metro} marathon grids",
