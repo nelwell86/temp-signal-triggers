@@ -6,65 +6,89 @@
     "condition": {
       "metric": "precip_in",
       "op": ">=",
-      "value": 0.5,
+      "value": 1.0,
       "consecutive_days": 1
     },
-    "business_impact": "Second-order effect: consumers stay home, driving a massive spike in localized food delivery orders.",
-    "story_seed": "Rainy night in {metro} expected to drive record food delivery volumes",
+    "business_impact": "Heavy rain tends to keep people home and raise demand for food delivery, while fewer drivers are willing to work in it, which platforms typically answer with incentive pay.",
+    "story_seed": "Heavy rain is on the way for {metro} — a Weather Company meteorologist on the timing, for anyone planning around delivery and takeout",
     "audiences": [
       "retail trade press",
       "tech press",
-      "social"
+      "local TV business desks"
     ],
     "seasonality_window": [
       "01-01",
       "12-31"
     ],
-    "base_weight": 0.9
+    "base_weight": 0.8,
+    "evidence": {
+      "source": "DoorDash, Inc., Form 10-K for fiscal 2025, Item 1A (seasonality and weather)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1792789/000179278926000013/dash-20251231.htm"
+    }
   },
   {
     "id": "RET-042",
     "industry": "retail",
-    "entity": "streaming and home entertainment",
+    "entity": "streaming and TV networks",
     "condition": {
-      "metric": "min_temp_f",
+      "metric": "temp_anomaly_f",
       "op": "<=",
-      "value": 15,
-      "consecutive_days": 3
+      "value": -15,
+      "consecutive_days": 3,
+      "also": {
+        "metric": "max_temp_f",
+        "op": "<=",
+        "value": 32
+      }
     },
-    "business_impact": "Second-order effect: deep freeze locks consumers indoors, spiking digital movie rentals and streaming hardware impulse buys.",
-    "story_seed": "Deep freeze keeps {metro} indoors, spiking home entertainment spending",
+    "business_impact": "A run of colder-than-usual days tends to keep people home, and TV and streaming viewing typically rises when winter weather turns unusually cold.",
+    "story_seed": "A multi-day deep freeze is forecast for {metro} — a Weather Company meteorologist on how long the cold lasts",
     "audiences": [
       "consumer tech press",
-      "retail trade press"
+      "media trade press",
+      "local TV business desks"
     ],
     "seasonality_window": [
-      "11-01",
-      "03-31"
+      "12-01",
+      "02-28"
     ],
-    "base_weight": 0.8
+    "base_weight": 0.75,
+    "evidence": {
+      "source": "Nielsen, \"Colder weather and NFL playoffs drive increased TV usage in January\" (February 2024)",
+      "url": "https://www.nielsen.com/insights/2024/colder-weather-and-nfl-playoffs-drive-increased-tv-usage-in-january/"
+    }
   },
   {
     "id": "RET-043",
     "industry": "retail",
     "entity": "HVAC and home repair",
     "condition": {
-      "metric": "max_temp_f",
+      "metric": "temp_anomaly_f",
       "op": ">=",
-      "value": 95,
-      "consecutive_days": 5
+      "value": 10,
+      "consecutive_days": 3,
+      "also": {
+        "metric": "max_temp_f",
+        "op": ">=",
+        "value": 90
+      }
     },
-    "business_impact": "Streak trigger: 5+ days of extreme heat causes widespread residential AC failures, emptying shelves of portable units.",
-    "story_seed": "Five-day heat streak in {metro} pushes AC grids and retail inventory to the brink",
+    "business_impact": "Hotter-than-normal summer weather tends to lift demand for air conditioning replacement and service, which manufacturers describe as strongly weather-driven.",
+    "story_seed": "A multi-day stretch of unusual heat is forecast for {metro} — a Weather Company meteorologist on how long it lasts and when relief arrives",
     "audiences": [
       "local TV business desks",
+      "home services trade press",
       "social"
     ],
     "seasonality_window": [
-      "06-01",
-      "09-30"
+      "05-15",
+      "09-15"
     ],
-    "base_weight": 1.15
+    "base_weight": 1.1,
+    "evidence": {
+      "source": "Lennox International, Form 10-K for fiscal 2019, Item 1A and Business overview (weather and replacement air conditioning demand)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1069202/000106920220000004/lii-20191231x10k.htm"
+    }
   },
   {
     "id": "RET-044",
@@ -73,20 +97,30 @@
     "condition": {
       "metric": "precip_in",
       "op": ">=",
-      "value": 0.25,
-      "consecutive_days": 5
+      "value": 0.1,
+      "consecutive_days": 3,
+      "also": {
+        "metric": "max_temp_f",
+        "op": "<=",
+        "value": 65
+      }
     },
-    "business_impact": "Streak trigger: Relentless daily rain halts outdoor construction, driving contractors to indoor remodel supplies.",
-    "story_seed": "Relentless rain delays {metro} exterior builds, shifting contractor spending indoors",
+    "business_impact": "A cold, wet stretch in spring tends to hold back sales of outdoor and garden products in the busiest season for home improvement, while items like sump pumps and dehumidifiers can sell better.",
+    "story_seed": "A raw, wet stretch is forecast for {metro} in the middle of spring planting season — a Weather Company meteorologist on when it dries out",
     "audiences": [
-      "construction trade press",
-      "retail trade press"
+      "retail trade press",
+      "local TV business desks",
+      "home and garden press"
     ],
     "seasonality_window": [
-      "03-01",
-      "11-30"
+      "03-15",
+      "06-15"
     ],
-    "base_weight": 0.8
+    "base_weight": 0.8,
+    "evidence": {
+      "source": "Lowe's Companies, Form 10-K for fiscal 2006, Item 1A (weather risk factor)",
+      "url": "https://www.sec.gov/Archives/edgar/data/0000060667/000006066707000052/lowesform10k02022007.htm"
+    }
   },
   {
     "id": "RET-045",
@@ -96,19 +130,29 @@
       "metric": "temp_anomaly_f",
       "op": ">=",
       "value": 15,
-      "consecutive_days": 2
+      "consecutive_days": 3,
+      "also": {
+        "metric": "max_temp_f",
+        "op": ">=",
+        "value": 60
+      }
     },
-    "business_impact": "Anomaly trigger: Massive warm deviation from normal completely halts seasonal winter outerwear sales.",
-    "story_seed": "Unseasonable warmth in {metro} leaves winter coats sitting on store shelves",
+    "business_impact": "A warm spell in the cold-weather selling season tends to slow sales of coats and other winter apparel, and retailers often clear the stock later at a discount.",
+    "story_seed": "What an unseasonably warm stretch in {metro} means for the winter clothing on store shelves",
     "audiences": [
       "retail trade press",
-      "fashion press"
+      "fashion press",
+      "national business press"
     ],
     "seasonality_window": [
-      "11-01",
-      "02-28"
+      "10-15",
+      "03-01"
     ],
-    "base_weight": 0.9
+    "base_weight": 1.0,
+    "evidence": {
+      "source": "Federal Reserve Beige Book, January 2016 (New York, Cleveland, Richmond districts)",
+      "url": "https://www.federalreserve.gov/monetarypolicy/beigebook/beigebook201601.htm"
+    }
   },
   {
     "id": "RET-046",
@@ -122,64 +166,25 @@
       "also": {
         "metric": "max_temp_f",
         "op": "<=",
-        "value": 45
+        "value": 40
       }
     },
-    "business_impact": "Anomaly trigger: Sudden extreme cold relative to normal drives panic buying of comfort foods and hot beverages.",
-    "story_seed": "Sudden temperature crash in {metro} drives run on winter comfort foods",
+    "business_impact": "Soup is a cold-season staple: demand peaks in fall and winter, and a sharp cold snap tends to bring that kind of warm-meal shopping forward.",
+    "story_seed": "A cold snap is coming to {metro} — a Weather Company meteorologist on the forecast behind the shift to comfort food",
     "audiences": [
+      "retail trade press",
       "local TV business desks",
-      "retail trade press"
+      "CPG trade press"
     ],
     "seasonality_window": [
-      "09-01",
-      "11-30"
+      "09-15",
+      "12-31"
     ],
-    "base_weight": 0.9
-  },
-  {
-    "id": "RET-047",
-    "industry": "retail",
-    "entity": "grocery and party supply",
-    "condition": {
-      "metric": "max_temp_f",
-      "op": ">=",
-      "value": 85,
-      "consecutive_days": 1
-    },
-    "business_impact": "Calendar-aware (July 4th): Perfect BBQ weather right around Independence Day maximizes meat and outdoor party supply sales.",
-    "story_seed": "Ideal forecast for July 4th expected to break BBQ spending records in {metro}",
-    "audiences": [
-      "retail trade press",
-      "local TV business desks"
-    ],
-    "seasonality_window": [
-      "06-25",
-      "07-04"
-    ],
-    "base_weight": 0.9
-  },
-  {
-    "id": "RET-048",
-    "industry": "retail",
-    "entity": "apparel and department stores",
-    "condition": {
-      "metric": "min_temp_f",
-      "op": "<=",
-      "value": 55,
-      "consecutive_days": 2
-    },
-    "business_impact": "Calendar-aware (Back-to-School): A perfectly timed late-summer chill reminds parents to buy fall wardrobes for the school year.",
-    "story_seed": "Late summer chill in {metro} perfectly timed to boost back-to-school fall apparel sales",
-    "audiences": [
-      "retail trade press",
-      "social"
-    ],
-    "seasonality_window": [
-      "08-01",
-      "09-15"
-    ],
-    "base_weight": 0.8
+    "base_weight": 0.85,
+    "evidence": {
+      "source": "Campbell Soup Company, FY2017 Form 10-K (seasonality of soup demand)",
+      "url": "https://www.sec.gov/Archives/edgar/data/16732/000001673217000058/cpb-7302017x10xk.htm"
+    }
   },
   {
     "id": "RET-049",
@@ -189,238 +194,176 @@
       "metric": "temp_anomaly_f",
       "op": ">=",
       "value": 10,
-      "consecutive_days": 1
+      "consecutive_days": 1,
+      "also": {
+        "metric": "max_temp_f",
+        "op": ">=",
+        "value": 55
+      }
     },
-    "business_impact": "Calendar-aware (Black Friday): Unseasonably mild weather for late November drives higher in-store foot traffic vs online shopping.",
-    "story_seed": "Mild Black Friday forecast in {metro} could shift shoppers from screens to storefronts",
+    "business_impact": "Mild weather over Thanksgiving weekend is good shopping weather, and Federal Reserve research finds that weather good for store shopping tends to lift online sales too, rather than pulling them down.",
+    "story_seed": "A mild Thanksgiving weekend forecast for {metro} — a Weather Company meteorologist on what shoppers can expect",
     "audiences": [
       "national business press",
       "retail trade press"
     ],
     "seasonality_window": [
-      "11-20",
-      "11-30"
+      "11-22",
+      "12-02"
     ],
-    "base_weight": 0.9
-  },
-  {
-    "id": "RET-050",
-    "industry": "retail",
-    "entity": "hardware and auto",
-    "condition": {
-      "metric": "snow_in",
-      "op": ">=",
-      "value": 0.1,
-      "consecutive_days": 1
-    },
-    "business_impact": "Calendar-aware (Black Friday): Even a dusting of snow puts shoppers in the 'holiday spirit', boosting early seasonal decor sales.",
-    "story_seed": "Timely holiday snowfall in {metro} expected to drive early seasonal decor sales",
-    "audiences": [
-      "retail trade press",
-      "local TV business desks"
-    ],
-    "seasonality_window": [
-      "11-20",
-      "12-25"
-    ],
-    "base_weight": 0.7
-  },
-  {
-    "id": "RET-051",
-    "industry": "retail",
-    "entity": "convenience and liquor stores",
-    "condition": {
-      "metric": "min_temp_f",
-      "op": "<=",
-      "value": 10,
-      "consecutive_days": 1
-    },
-    "business_impact": "Calendar-aware (New Year's Day): Frigid New Year's Eve drives alcohol and party supply delivery over in-store pickup.",
-    "story_seed": "Bitter cold New Year's Eve in {metro} expected to push party supply delivery to capacity",
-    "audiences": [
-      "retail trade press",
-      "local TV business desks"
-    ],
-    "seasonality_window": [
-      "12-26",
-      "01-01"
-    ],
-    "base_weight": 0.8
-  },
-  {
-    "id": "RET-052",
-    "industry": "retail",
-    "entity": "neighborhood retail and grocery",
-    "condition": {
-      "metric": "snow_in",
-      "op": ">=",
-      "value": 3,
-      "consecutive_days": 1
-    },
-    "business_impact": "Calendar-aware (MLK Day): Long weekend travel disrupted by snow, boosting local neighborhood retail over big-box malls.",
-    "story_seed": "MLK Day snowstorm grounds {metro} travelers, shifting holiday weekend spend locally",
-    "audiences": [
-      "retail trade press",
-      "social"
-    ],
-    "seasonality_window": [
-      "01-10",
-      "01-22"
-    ],
-    "base_weight": 0.8
+    "base_weight": 0.75,
+    "evidence": {
+      "source": "Brigitte Roth Tran, \"The Impact of Weather on Retail Sales,\" FRBSF Economic Letter 2022-23",
+      "url": "https://www.frbsf.org/research-and-insights/publications/economic-letter/2022/08/impact-of-weather-on-retail-sales/"
+    }
   },
   {
     "id": "RET-053",
     "industry": "retail",
-    "entity": "mattress and furniture stores",
+    "entity": "brick-and-mortar retailers",
     "condition": {
-      "metric": "max_temp_f",
+      "metric": "temp_anomaly_f",
       "op": ">=",
-      "value": 60,
-      "consecutive_days": 2
+      "value": 15,
+      "consecutive_days": 2,
+      "also": {
+        "metric": "max_temp_f",
+        "op": ">=",
+        "value": 60
+      }
     },
-    "business_impact": "Calendar-aware (Presidents' Day): Mild long weekend drives early spring home-improvement and mattress sale foot traffic.",
-    "story_seed": "Mild Presidents' Day weekend in {metro} to drive foot traffic for mattress and furniture blowouts",
+    "business_impact": "Unusually mild February weather has tended to support retail spending in some regions.",
+    "story_seed": "An unusually mild Presidents' Day weekend is forecast for {metro} — a Weather Company meteorologist on how warm it gets",
     "audiences": [
-      "retail trade press"
+      "retail trade press",
+      "local TV business desks"
     ],
     "seasonality_window": [
-      "02-10",
-      "02-22"
+      "02-13",
+      "02-21"
     ],
-    "base_weight": 0.8
+    "base_weight": 0.7,
+    "evidence": {
+      "source": "Federal Reserve Beige Book, March 17, 1999 (national summary; New York and Richmond districts)",
+      "url": "https://www.federalreserve.gov/FOMC/BeigeBook/1999/19990317/FullReport.htm"
+    }
   },
   {
     "id": "RET-054",
-    "industry": "retail",
-    "entity": "indoor dining and entertainment",
-    "condition": {
-      "metric": "precip_in",
-      "op": ">=",
-      "value": 0.5,
-      "consecutive_days": 1
-    },
-    "business_impact": "Calendar-aware (Memorial Day): Rainy holiday weekend ruins outdoor plans, shifting spend from BBQ/outdoor to indoor entertainment.",
-    "story_seed": "Memorial Day washout in {metro} threatens outdoor retail, boosts indoor dining",
-    "audiences": [
-      "local TV business desks",
-      "retail trade press"
-    ],
-    "seasonality_window": [
-      "05-20",
-      "05-31"
-    ],
-    "base_weight": 0.9
-  },
-  {
-    "id": "RET-055",
-    "industry": "retail",
-    "entity": "grocery and convenience",
-    "condition": {
-      "metric": "max_temp_f",
-      "op": ">=",
-      "value": 95,
-      "consecutive_days": 1
-    },
-    "business_impact": "Calendar-aware (Juneteenth): Extreme heat during Juneteenth block parties drives massive spikes in ice, hydration, and portable fan sales.",
-    "story_seed": "Juneteenth heat wave in {metro} triggers run on ice and hydration supplies",
-    "audiences": [
-      "retail trade press",
-      "social"
-    ],
-    "seasonality_window": [
-      "06-12",
-      "06-19"
-    ],
-    "base_weight": 0.9
-  },
-  {
-    "id": "RET-056",
-    "industry": "retail",
-    "entity": "apparel and seasonal goods",
-    "condition": {
-      "metric": "max_temp_f",
-      "op": ">=",
-      "value": 90,
-      "consecutive_days": 3
-    },
-    "business_impact": "Calendar-aware (Labor Day): End-of-summer heat wave clears out remaining summer clearance inventory like swimwear and ACs.",
-    "story_seed": "Labor Day heat wave in {metro} expected to clear out remaining summer retail inventory",
-    "audiences": [
-      "retail trade press",
-      "national business press"
-    ],
-    "seasonality_window": [
-      "08-25",
-      "09-07"
-    ],
-    "base_weight": 0.8
-  },
-  {
-    "id": "RET-057",
-    "industry": "retail",
-    "entity": "apparel and home goods",
-    "condition": {
-      "metric": "min_temp_f",
-      "op": "<=",
-      "value": 40,
-      "consecutive_days": 2
-    },
-    "business_impact": "Calendar-aware (Columbus/Indigenous Peoples' Day): First major fall chill during the long weekend accelerates winter coat and heater purchases.",
-    "story_seed": "Holiday weekend cold snap in {metro} accelerates winter apparel purchasing",
-    "audiences": [
-      "retail trade press",
-      "fashion press"
-    ],
-    "seasonality_window": [
-      "10-05",
-      "10-15"
-    ],
-    "base_weight": 0.8
-  },
-  {
-    "id": "RET-058",
     "industry": "retail",
     "entity": "malls and indoor retail",
     "condition": {
       "metric": "precip_in",
       "op": ">=",
-      "value": 0.5,
-      "consecutive_days": 1
+      "value": 0.25,
+      "consecutive_days": 2
     },
-    "business_impact": "Calendar-aware (Veterans Day): Heavy rain halts civic parades, driving consumers to take advantage of indoor retail promotions instead.",
-    "story_seed": "Rainy Veterans Day in {metro} expected to drive crowds indoors for retail promotions",
+    "business_impact": "A wet stretch over the Memorial Day weekend tends to move some shopping from open-air stores to enclosed malls, according to Federal Reserve research, though bad weather lowers store sales overall.",
+    "story_seed": "Rain in the forecast for {metro} around the Memorial Day weekend — a Weather Company meteorologist on timing and which days stay dry",
     "audiences": [
       "local TV business desks",
       "retail trade press"
     ],
     "seasonality_window": [
-      "11-04",
-      "11-11"
+      "05-23",
+      "05-31"
     ],
-    "base_weight": 0.8
+    "base_weight": 0.8,
+    "evidence": {
+      "source": "Brigitte Roth Tran, \"The Impact of Weather on Retail Sales,\" FRBSF Economic Letter 2022-23",
+      "url": "https://www.frbsf.org/research-and-insights/publications/economic-letter/2022/08/impact-of-weather-on-retail-sales/"
+    }
+  },
+  {
+    "id": "RET-056",
+    "industry": "retail",
+    "entity": "apparel retailers",
+    "condition": {
+      "metric": "temp_anomaly_f",
+      "op": ">=",
+      "value": 8,
+      "consecutive_days": 2,
+      "also": {
+        "metric": "max_temp_f",
+        "op": ">=",
+        "value": 90
+      }
+    },
+    "business_impact": "Unseasonable heat around Labor Day tends to slow sales of fall clothing just as it reaches stores; retailers have described hotter-than-normal weather as damping fall apparel sales.",
+    "story_seed": "Summer heat lingers in {metro} past Labor Day — a Weather Company meteorologist on when fall weather finally arrives",
+    "audiences": [
+      "retail trade press",
+      "fashion press",
+      "local TV business desks"
+    ],
+    "seasonality_window": [
+      "08-30",
+      "09-15"
+    ],
+    "base_weight": 0.8,
+    "evidence": {
+      "source": "Federal Reserve Beige Book, September 11, 2002 (New York, Philadelphia, Cleveland districts)",
+      "url": "https://www.federalreserve.gov/FOMC/BeigeBook/2002/20020911/FullReport.htm"
+    }
+  },
+  {
+    "id": "RET-057",
+    "industry": "retail",
+    "entity": "apparel and seasonal goods retailers",
+    "condition": {
+      "metric": "temp_anomaly_f",
+      "op": "<=",
+      "value": -10,
+      "consecutive_days": 2,
+      "also": {
+        "metric": "max_temp_f",
+        "op": "<=",
+        "value": 55
+      }
+    },
+    "business_impact": "The first real chill of the fall tends to bring forward purchases of coats, heaters and other cold-weather goods, which retailers stock for the season.",
+    "story_seed": "{metro}'s first taste of real fall cold is on the way — a Weather Company meteorologist on how cold it gets and how long it stays",
+    "audiences": [
+      "retail trade press",
+      "fashion press",
+      "local TV business desks"
+    ],
+    "seasonality_window": [
+      "09-20",
+      "11-15"
+    ],
+    "base_weight": 0.85,
+    "evidence": {
+      "source": "Tractor Supply Company, Form 10-K for fiscal 2025, Item 1 (seasonality and the cold-weather selling season)",
+      "url": "https://www.sec.gov/Archives/edgar/data/916365/000091636526000014/tsco-20251227.htm"
+    }
   },
   {
     "id": "RET-059",
     "industry": "retail",
-    "entity": "grocery and supermarkets",
+    "entity": "grocery and holiday retail",
     "condition": {
       "metric": "snow_in",
       "op": ">=",
-      "value": 2,
+      "value": 1,
       "consecutive_days": 1
     },
-    "business_impact": "Calendar-aware (Thanksgiving): Pre-Thanksgiving snowstorm triggers panic buying at grocery stores for turkey and staples.",
-    "story_seed": "Pre-Thanksgiving snow in {metro} triggers grocery panic buying ahead of the holiday",
+    "business_impact": "Snow over the Thanksgiving holiday period tends to cut store sales on the snowy days themselves, at a time of year when shopping is concentrated into a few days.",
+    "story_seed": "Snow is in the forecast for {metro} over the Thanksgiving holiday period — a Weather Company meteorologist on timing, for shoppers and travelers",
     "audiences": [
       "retail trade press",
-      "local TV business desks"
+      "local TV business desks",
+      "national business press"
     ],
     "seasonality_window": [
-      "11-18",
-      "11-28"
+      "11-19",
+      "12-02"
     ],
-    "base_weight": 1
+    "base_weight": 1.0,
+    "evidence": {
+      "source": "Brigitte Roth Tran (2019), \"Sellin' in the Rain,\" FEDS 2019-067, Federal Reserve Board",
+      "url": "https://www.federalreserve.gov/econres/feds/files/2019067pap.pdf"
+    }
   },
   {
     "id": "RET-060",
@@ -437,17 +380,22 @@
         "value": 32
       }
     },
-    "business_impact": "Calendar-aware (Christmas): Bitter cold in the final shopping days shifts last-minute gift buying entirely to e-commerce and gift cards.",
-    "story_seed": "Bitter pre-Christmas cold in {metro} shifts last-minute shoppers online",
+    "business_impact": "Bitter cold in the last shopping days before Christmas tends to hold down store sales, and Federal Reserve research finds bad weather does not push those lost store sales online.",
+    "story_seed": "Bitter cold forecast for {metro} in the final shopping days — a Weather Company meteorologist on the conditions delivery crews face",
     "audiences": [
       "national business press",
-      "retail trade press"
+      "retail trade press",
+      "logistics trade press"
     ],
     "seasonality_window": [
       "12-15",
       "12-24"
     ],
-    "base_weight": 0.9
+    "base_weight": 0.8,
+    "evidence": {
+      "source": "Brigitte Roth Tran (2019), \"Sellin' in the Rain,\" FEDS 2019-067, Federal Reserve Board",
+      "url": "https://www.federalreserve.gov/econres/feds/files/2019067pap.pdf"
+    }
   },
   {
     "id": "RET-061",
@@ -456,62 +404,245 @@
     "condition": {
       "metric": "severe_risk",
       "op": ">=",
-      "value": 60,
+      "value": 80,
       "consecutive_days": 1
     },
-    "business_impact": "High risk of severe thunderstorms drives immediate emergency pre-storm pantry loading, spiking sales of bottled water, flashlights, and non-perishables.",
-    "story_seed": "Severe storm threat in {metro} triggers pre-storm retail surge",
+    "business_impact": "When severe thunderstorms are likely, shopping trips and store operations can be disrupted while the storms pass through.",
+    "story_seed": "Severe thunderstorms are likely in {metro} — a Weather Company meteorologist on timing and which hours carry the highest risk",
     "audiences": [
-      "retail trade press",
-      "local business desks"
+      "local TV business desks",
+      "retail trade press"
     ],
     "seasonality_window": [
       "03-01",
       "10-31"
     ],
-    "base_weight": 1.2
+    "base_weight": 0.9
   },
   {
-    "id": "RET-062",
+    "id": "RET-064",
     "industry": "retail",
-    "entity": "e-commerce and delivery",
+    "entity": "auto parts retailers",
     "condition": {
-      "metric": "humidity_pct",
-      "op": ">=",
-      "value": 85,
-      "consecutive_days": 2
+      "metric": "temp_anomaly_f",
+      "op": "<=",
+      "value": -15,
+      "consecutive_days": 2,
+      "also": {
+        "metric": "min_temp_f",
+        "op": "<=",
+        "value": 20
+      }
     },
-    "business_impact": "Multi-day oppressive humidity stifles outdoor foot traffic, accelerating consumer shifts to e-commerce and local delivery platforms for everyday essentials.",
-    "story_seed": "Oppressive humidity drives shoppers indoors, spiking local delivery demand in {metro}",
+    "business_impact": "An unusually hard freeze tends to raise demand for car batteries and other auto parts, because extreme cold makes parts fail.",
+    "story_seed": "A hard freeze is forecast for {metro} — a Weather Company meteorologist on overnight lows and how long the cold holds",
     "audiences": [
-      "e-commerce trade press",
-      "retail analysts"
+      "local TV business desks",
+      "retail trade press",
+      "automotive press"
     ],
     "seasonality_window": [
-      "05-01",
-      "09-30"
+      "10-15",
+      "02-28"
     ],
-    "base_weight": 1.05
+    "base_weight": 1.0,
+    "evidence": {
+      "source": "AutoZone, Inc., Form 10-K for fiscal 2024, Item 1 (seasonality) and Item 1A (weather and parts failure rates)",
+      "url": "https://www.sec.gov/Archives/edgar/data/866787/000155837024013758/azo-20240831x10k.htm"
+    }
   },
   {
-    "id": "RET-063",
+    "id": "RET-065",
     "industry": "retail",
-    "entity": "pharmacy and outdoor living",
+    "entity": "brick-and-mortar retailers",
     "condition": {
-      "metric": "uv_index",
       "op": ">=",
-      "value": 10,
+      "value": 3,
       "consecutive_days": 1
     },
-    "business_impact": "Extreme UV indexes push immediate localized sales spikes in sun care, UPF apparel, and patio shade solutions.",
-    "story_seed": "Extreme UV index of 10+ in {metro} drives run on sun care and shade products",
+    "business_impact": "Snowfall tends to cut store sales on the day it falls, and Federal Reserve research finds the effect is large even in places used to snow.",
+    "story_seed": "Several inches of snow are forecast for {metro} — a Weather Company meteorologist on timing and how much falls",
+    "audiences": [
+      "retail trade press",
+      "local TV business desks"
+    ],
+    "seasonality_window": [
+      "12-03",
+      "03-31"
+    ],
+    "base_weight": 0.9,
+    "evidence": {
+      "source": "Brigitte Roth Tran (2019), \"Sellin' in the Rain,\" FEDS 2019-067, Federal Reserve Board",
+      "url": "https://www.federalreserve.gov/econres/feds/files/2019067pap.pdf"
+    }
+  },
+  {
+    "id": "RET-066",
+    "industry": "retail",
+    "entity": "brick-and-mortar retailers",
+    "condition": {
+      "metric": "snow_in",
+      "op": ">=",
+      "value": 1,
+      "consecutive_days": 1,
+      "also": {
+        "metric": "snow_in",
+        "op": "<",
+        "value": 3
+      }
+    },
+    "business_impact": "Even a light snowfall can hold down store visits on the day it falls.",
+    "story_seed": "Light snow is in the forecast for {metro} — a Weather Company meteorologist on timing and road conditions",
+    "audiences": [
+      "local TV business desks"
+    ],
+    "seasonality_window": [
+      "12-03",
+      "03-31"
+    ],
+    "base_weight": 0.5
+  },
+  {
+    "id": "RET-067",
+    "industry": "retail",
+    "entity": "home improvement and garden retailers",
+    "condition": {
+      "metric": "temp_anomaly_f",
+      "op": ">=",
+      "value": 10,
+      "consecutive_days": 3,
+      "also": {
+        "metric": "max_temp_f",
+        "op": ">=",
+        "value": 65
+      }
+    },
+    "business_impact": "Mild, above-average spring temperatures have tended to lift sales at hardware and garden stores and of home improvement items and building materials.",
+    "story_seed": "An early taste of spring warmth is forecast for {metro} — a Weather Company meteorologist on how long it lasts",
+    "audiences": [
+      "retail trade press",
+      "home and garden press",
+      "local TV business desks"
+    ],
+    "seasonality_window": [
+      "03-01",
+      "04-30"
+    ],
+    "base_weight": 0.75,
+    "evidence": {
+      "source": "Federal Reserve Beige Book, April 19, 2017 (Richmond and Chicago districts)",
+      "url": "https://www.federalreserve.gov/monetarypolicy/beigebook201704.htm"
+    }
+  },
+  {
+    "id": "RET-068",
+    "industry": "retail",
+    "entity": "shopping malls and indoor retail",
+    "condition": {
+      "metric": "precip_in",
+      "op": ">=",
+      "value": 0.5,
+      "consecutive_days": 1,
+      "also": {
+        "metric": "precip_in",
+        "op": "<",
+        "value": 1.0
+      }
+    },
+    "business_impact": "A rainy day can move some shopping from open-air stores to enclosed malls, even though rain tends to lower store traffic overall.",
+    "story_seed": "A rainy day is ahead for {metro} — a Weather Company meteorologist on when the heaviest rain falls",
+    "audiences": [
+      "retail trade press",
+      "commercial real estate press"
+    ],
+    "seasonality_window": [
+      "01-01",
+      "12-31"
+    ],
+    "base_weight": 0.45
+  },
+  {
+    "id": "RET-069",
+    "industry": "retail",
+    "entity": "HVAC and home repair",
+    "condition": {
+      "metric": "temp_anomaly_f",
+      "op": "<=",
+      "value": -10,
+      "consecutive_days": 3,
+      "also": {
+        "metric": "max_temp_f",
+        "op": "<=",
+        "value": 75
+      }
+    },
+    "business_impact": "Cooler-than-normal summer weather tends to hold down demand for replacement air conditioning and related service, which manufacturers describe as strongly weather-driven.",
+    "story_seed": "A cool stretch is forecast for {metro} in the middle of summer — a Weather Company meteorologist on how long it lasts",
+    "audiences": [
+      "home services trade press",
+      "local TV business desks"
+    ],
+    "seasonality_window": [
+      "06-10",
+      "08-15"
+    ],
+    "base_weight": 0.7,
+    "evidence": {
+      "source": "Lennox International, Form 10-K for fiscal 2019, Item 1A (cooler than normal summers)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1069202/000106920220000004/lii-20191231x10k.htm"
+    }
+  },
+  {
+    "id": "RET-070",
+    "industry": "retail",
+    "entity": "sun care and pharmacy",
+    "condition": {
+      "metric": "temp_anomaly_f",
+      "op": "<=",
+      "value": -10,
+      "consecutive_days": 3,
+      "also": {
+        "metric": "max_temp_f",
+        "op": "<=",
+        "value": 75
+      }
+    },
+    "business_impact": "A cool stretch in the middle of summer may weigh on sales of sun care products, which makers describe as sensitive to summer weather.",
+    "story_seed": "A cool stretch is forecast for {metro} in the middle of summer — a Weather Company meteorologist on when summer weather returns",
     "audiences": [
       "CPG trade press"
     ],
     "seasonality_window": [
-      "04-01",
-      "09-30"
+      "06-10",
+      "08-15"
     ],
-    "base_weight": 1.1
+    "base_weight": 0.45
+  },
+  {
+    "id": "RET-071",
+    "industry": "retail",
+    "entity": "seasonal and summer goods retailers",
+    "condition": {
+      "metric": "temp_anomaly_f",
+      "op": "<=",
+      "value": -8,
+      "consecutive_days": 3,
+      "also": {
+        "metric": "max_temp_f",
+        "op": "<=",
+        "value": 78
+      }
+    },
+    "business_impact": "A cool spell in midsummer can slow sales of summer merchandise such as fans, pool supplies and warm-weather clothing.",
+    "story_seed": "Summer takes a break in {metro} — a Weather Company meteorologist on the cool stretch ahead and when the heat returns",
+    "audiences": [
+      "retail trade press",
+      "local TV business desks"
+    ],
+    "seasonality_window": [
+      "06-10",
+      "08-15"
+    ],
+    "base_weight": 0.4
   }
 ]
