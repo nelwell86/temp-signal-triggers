@@ -193,12 +193,12 @@
     "condition": {
       "metric": "temp_anomaly_f",
       "op": ">=",
-      "value": 10,
+      "value": 15,
       "consecutive_days": 1,
       "also": {
         "metric": "max_temp_f",
         "op": ">=",
-        "value": 55
+        "value": 60
       }
     },
     "business_impact": "Mild weather over Thanksgiving weekend is good shopping weather, and Federal Reserve research finds that weather good for store shopping tends to lift online sales too, rather than pulling them down.",
@@ -622,7 +622,7 @@
   {
     "id": "RET-071",
     "industry": "retail",
-    "entity": "seasonal and summer goods retailers",
+    "entity": "beverage and grocery retailers",
     "condition": {
       "metric": "temp_anomaly_f",
       "op": "<=",
@@ -634,15 +634,287 @@
         "value": 78
       }
     },
-    "business_impact": "A cool spell in midsummer can slow sales of summer merchandise such as fans, pool supplies and warm-weather clothing.",
+    "business_impact": "Unusually cool weather in summer tends to reduce demand for cold beverages, which beverage makers describe as a risk to their sales.",
     "story_seed": "Summer takes a break in {metro} — a Weather Company meteorologist on the cool stretch ahead and when the heat returns",
+    "audiences": [
+      "CPG trade press",
+      "retail trade press"
+    ],
+    "seasonality_window": [
+      "06-10",
+      "08-15"
+    ],
+    "base_weight": 0.6,
+    "evidence": {
+      "source": "Keurig Dr Pepper Inc., Form 10-K for fiscal 2019, Item 1 (seasonality) and Item 1A (weather)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1418135/000141813520000007/kdp-10kx12312019.htm"
+    }
+  },
+  {
+    "id": "RET-072",
+    "industry": "retail",
+    "entity": "apparel and winter goods retailers",
+    "condition": {
+      "metric": "temp_change_f",
+      "op": "<=",
+      "value": -20,
+      "consecutive_days": 1,
+      "also": {
+        "metric": "max_temp_f",
+        "op": "<=",
+        "value": 55
+      }
+    },
+    "business_impact": "An early cold snap in the fall has helped move winter apparel and other winter-weather products, according to retailers' reports to the Federal Reserve.",
+    "story_seed": "Temperatures in {metro} are forecast to drop sharply in a single day — a Weather Company meteorologist on how cold it gets and how long it lasts",
+    "audiences": [
+      "retail trade press",
+      "fashion press",
+      "local TV business desks"
+    ],
+    "seasonality_window": [
+      "09-15",
+      "11-30"
+    ],
+    "base_weight": 0.8,
+    "evidence": {
+      "source": "Federal Reserve Beige Book, December 3, 2014 (national summary; Philadelphia, Cleveland, Chicago, Kansas City districts)",
+      "url": "https://www.federalreserve.gov/monetarypolicy/beigebook/beigebook201412.htm"
+    }
+  },
+  {
+    "id": "RET-073",
+    "industry": "retail",
+    "entity": "brick-and-mortar retailers",
+    "condition": {
+      "metric": "temp_change_f",
+      "op": ">=",
+      "value": 20,
+      "consecutive_days": 1,
+      "also": {
+        "metric": "max_temp_f",
+        "op": ">=",
+        "value": 65
+      }
+    },
+    "business_impact": "A sudden jump to spring-like warmth after cold weather can bring shoppers out and give an early lift to spring merchandise.",
+    "story_seed": "Temperatures in {metro} are forecast to jump sharply in a single day — a Weather Company meteorologist on the warm-up and whether it lasts",
     "audiences": [
       "retail trade press",
       "local TV business desks"
     ],
     "seasonality_window": [
-      "06-10",
-      "08-15"
+      "02-15",
+      "04-30"
+    ],
+    "base_weight": 0.45
+  },
+  {
+    "id": "RET-074",
+    "industry": "retail",
+    "entity": "lawn and garden retailers",
+    "condition": {
+      "metric": "precip_in",
+      "op": "<=",
+      "value": 0.01,
+      "consecutive_days": 7,
+      "also": {
+        "metric": "max_temp_f",
+        "op": ">=",
+        "value": 85
+      }
+    },
+    "business_impact": "A hot, dry stretch ahead in early summer can shift lawn and garden spending, with watering supplies in demand while lawn treatment may be put off.",
+    "story_seed": "A hot, dry week is forecast for {metro} — a Weather Company meteorologist on when rain might return",
+    "audiences": [
+      "home and garden press",
+      "local TV business desks"
+    ],
+    "seasonality_window": [
+      "05-15",
+      "07-15"
+    ],
+    "base_weight": 0.4
+  },
+  {
+    "id": "RET-075",
+    "industry": "retail",
+    "entity": "high-street and open-air retailers",
+    "condition": {
+      "metric": "max_wind_mph",
+      "op": ">=",
+      "value": 20,
+      "consecutive_days": 1
+    },
+    "business_impact": "Windy days tend to lower sales at high-street stores; research on a large retailer found wind the most influential weather condition for daily sales.",
+    "story_seed": "A windy day is forecast for {metro} — a Weather Company meteorologist on the strongest winds and when they ease",
+    "audiences": [
+      "retail trade press",
+      "local TV business desks"
+    ],
+    "seasonality_window": [
+      "03-01",
+      "09-30"
+    ],
+    "base_weight": 0.7,
+    "evidence": {
+      "source": "Natalie Rose and Les Dolega (2022), \"It's the Weather: Quantifying the Impact of Weather on Retail Sales,\" Applied Spatial Analysis and Policy 15:189–214",
+      "url": "https://d-nb.info/1245506234/34"
+    }
+  },
+  {
+    "id": "RET-076",
+    "industry": "retail",
+    "entity": "high-street and open-air retailers",
+    "condition": {
+      "metric": "max_wind_mph",
+      "op": ">=",
+      "value": 16,
+      "consecutive_days": 1,
+      "also": {
+        "metric": "max_wind_mph",
+        "op": "<",
+        "value": 20
+      }
+    },
+    "business_impact": "A breezy day can keep some shoppers away from open-air stores and outdoor shopping streets.",
+    "story_seed": "A breezy day is ahead for {metro} — a Weather Company meteorologist on wind and how it will feel outside",
+    "audiences": [
+      "local TV business desks"
+    ],
+    "seasonality_window": [
+      "03-01",
+      "09-30"
+    ],
+    "base_weight": 0.4
+  },
+  {
+    "id": "RET-077",
+    "industry": "retail",
+    "entity": "brick-and-mortar retailers",
+    "condition": {
+      "metric": "cloud_cover_pct",
+      "op": ">=",
+      "value": 75,
+      "consecutive_days": 5
+    },
+    "business_impact": "A long stretch of gray winter skies may dampen consumers' mood, and research links less sunlight with lower willingness to spend.",
+    "story_seed": "A long gray stretch is forecast for {metro} — a Weather Company meteorologist on when the sun might return",
+    "audiences": [
+      "local TV business desks",
+      "social"
+    ],
+    "seasonality_window": [
+      "11-01",
+      "02-28"
+    ],
+    "base_weight": 0.4
+  },
+  {
+    "id": "RET-078",
+    "industry": "retail",
+    "entity": "convenience stores and fuel retailers",
+    "condition": {
+      "metric": "temp_anomaly_f",
+      "op": ">=",
+      "value": 10,
+      "consecutive_days": 2,
+      "also": {
+        "metric": "max_temp_f",
+        "op": ">=",
+        "value": 90
+      }
+    },
+    "business_impact": "Hot weather tends to lift convenience-store sales of cold drinks, water, beer and ice, along with fuel, according to convenience retailers.",
+    "story_seed": "A stretch of unusual heat is forecast for {metro} — a Weather Company meteorologist on how hot it gets and when it breaks",
+    "audiences": [
+      "convenience store trade press",
+      "local TV business desks",
+      "CPG trade press"
+    ],
+    "seasonality_window": [
+      "05-15",
+      "09-15"
+    ],
+    "base_weight": 0.8,
+    "evidence": {
+      "source": "Casey's General Stores, Form 10-K for fiscal 2019, Item 1 and Item 7 (seasonality)",
+      "url": "https://www.sec.gov/Archives/edgar/data/726958/000072695819000078/casy-2019430x10k.htm"
+    }
+  },
+  {
+    "id": "RET-079",
+    "industry": "retail",
+    "entity": "convenience stores and grocery",
+    "condition": {
+      "metric": "heat_index_f",
+      "op": ">=",
+      "value": 105,
+      "consecutive_days": 2
+    },
+    "business_impact": "Dangerous humid heat can send shoppers and outdoor workers to convenience stores for ice, water and cold drinks.",
+    "story_seed": "Dangerous heat index values are forecast for {metro} — a Weather Company meteorologist on the hottest hours and any relief ahead",
+    "audiences": [
+      "local TV business desks",
+      "convenience store trade press"
+    ],
+    "seasonality_window": [
+      "06-01",
+      "09-15"
+    ],
+    "base_weight": 0.45
+  },
+  {
+    "id": "RET-080",
+    "industry": "retail",
+    "entity": "restaurants",
+    "condition": {
+      "metric": "max_temp_f",
+      "op": ">=",
+      "value": 68,
+      "consecutive_days": 3,
+      "also": {
+        "metric": "max_temp_f",
+        "op": "<=",
+        "value": 82
+      }
+    },
+    "business_impact": "A run of pleasant spring days can draw diners to patios and outdoor seating as the outdoor dining season gets going.",
+    "story_seed": "A run of pleasant spring days is forecast for {metro} — a Weather Company meteorologist on how long the nice weather lasts",
+    "audiences": [
+      "restaurant trade press",
+      "local TV business desks"
+    ],
+    "seasonality_window": [
+      "04-15",
+      "06-15"
+    ],
+    "base_weight": 0.4
+  },
+  {
+    "id": "RET-081",
+    "industry": "retail",
+    "entity": "restaurants",
+    "condition": {
+      "metric": "precip_in",
+      "op": ">=",
+      "value": 0.5,
+      "consecutive_days": 1,
+      "also": {
+        "metric": "max_temp_f",
+        "op": ">=",
+        "value": 65
+      }
+    },
+    "business_impact": "A heavy rain day in the warm season can keep diners away from restaurants and outdoor seating.",
+    "story_seed": "A soaking rain is in the forecast for {metro} — a Weather Company meteorologist on which hours stay dry",
+    "audiences": [
+      "restaurant trade press",
+      "local TV business desks"
+    ],
+    "seasonality_window": [
+      "05-01",
+      "09-30"
     ],
     "base_weight": 0.4
   }
