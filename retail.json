@@ -456,6 +456,7 @@
     "industry": "retail",
     "entity": "brick-and-mortar retailers",
     "condition": {
+      "metric": "snow_in",
       "op": ">=",
       "value": 3,
       "consecutive_days": 1
