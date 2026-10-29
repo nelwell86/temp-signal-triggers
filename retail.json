@@ -9,8 +9,8 @@
       "value": 1.0,
       "consecutive_days": 1
     },
-    "business_impact": "Heavy rain tends to keep people home and raise demand for food delivery, while fewer drivers are willing to work in it, which platforms typically answer with incentive pay.",
-    "story_seed": "Heavy rain is on the way for {metro} — a Weather Company meteorologist on the timing, for anyone planning around delivery and takeout",
+    "business_impact": "Heavy rain or snow tends to keep people home and raise demand for food delivery, while fewer drivers are willing to work in it, which platforms typically answer with incentive pay.",
+    "story_seed": "Heavy rain or snow is on the way for {metro} — a Weather Company meteorologist on the timing, for anyone planning around delivery and takeout",
     "audiences": [
       "retail trade press",
       "tech press",
@@ -434,7 +434,7 @@
         "value": 20
       }
     },
-    "business_impact": "An unusually hard freeze tends to raise demand for car batteries and other auto parts, because extreme cold makes parts fail.",
+    "business_impact": "An unusually hard freeze can raise demand for car batteries and other auto parts, because extreme cold makes parts fail, according to auto parts retailers.",
     "story_seed": "A hard freeze is forecast for {metro} — a Weather Company meteorologist on overnight lows and how long the cold holds",
     "audiences": [
       "local TV business desks",
@@ -557,8 +557,8 @@
       "commercial real estate press"
     ],
     "seasonality_window": [
-      "01-01",
-      "12-31"
+      "04-15",
+      "10-31"
     ],
     "base_weight": 0.45
   },
@@ -917,5 +917,144 @@
       "09-30"
     ],
     "base_weight": 0.4
+  },
+  {
+    "id": "RET-082",
+    "industry": "retail",
+    "entity": "hardware and home improvement retailers",
+    "condition": {
+      "metric": "snow_in",
+      "op": ">=",
+      "value": 4,
+      "consecutive_days": 1
+    },
+    "business_impact": "Ahead of a season's first significant snowstorm, a hardware retailer reported to the Federal Reserve that sales of cold-weather items turned brisk after a sluggish, mild start.",
+    "story_seed": "The first significant snow of the season may be on the way for {metro} — a Weather Company meteorologist on timing and totals",
+    "audiences": [
+      "retail trade press",
+      "home and garden press",
+      "local TV business desks"
+    ],
+    "seasonality_window": [
+      "11-01",
+      "01-15"
+    ],
+    "base_weight": 0.8,
+    "evidence": {
+      "source": "Federal Reserve Beige Book, January 13, 2016 (Boston district)",
+      "url": "https://www.federalreserve.gov/monetarypolicy/beigebook/beigebook201601.htm"
+    }
+  },
+  {
+    "id": "RET-083",
+    "industry": "retail",
+    "entity": "home, farm and rural lifestyle retailers",
+    "condition": {
+      "metric": "temp_anomaly_f",
+      "op": "<=",
+      "value": -12,
+      "consecutive_days": 5,
+      "also": {
+        "metric": "max_temp_f",
+        "op": "<=",
+        "value": 32
+      }
+    },
+    "business_impact": "Extended cold weather tends to lift sales of winter seasonal merchandise, most notably heating products, and to clear winter goods with fewer markdowns.",
+    "story_seed": "An extended cold spell is forecast for {metro} — a Weather Company meteorologist on how long the cold holds",
+    "audiences": [
+      "retail trade press",
+      "local TV business desks",
+      "rural and farm press"
+    ],
+    "seasonality_window": [
+      "11-15",
+      "02-28"
+    ],
+    "base_weight": 0.85,
+    "evidence": {
+      "source": "Tractor Supply Company, first-quarter 2014 earnings release (Form 8-K exhibit, April 23, 2014)",
+      "url": "https://www.sec.gov/Archives/edgar/data/0000916365/000091636514000083/q12014earningsrelease.htm"
+    }
+  },
+  {
+    "id": "RET-084",
+    "industry": "retail",
+    "entity": "auto parts retailers",
+    "condition": {
+      "metric": "temp_anomaly_f",
+      "op": ">=",
+      "value": 10,
+      "consecutive_days": 3,
+      "also": {
+        "metric": "max_temp_f",
+        "op": ">=",
+        "value": 95
+      }
+    },
+    "business_impact": "Extremely hot weather can raise demand for auto parts, because heat makes parts fail, according to auto parts retailers.",
+    "story_seed": "A multi-day stretch of extreme heat is forecast for {metro} — a Weather Company meteorologist on peak temperatures and when relief arrives",
+    "audiences": [
+      "automotive press",
+      "local TV business desks"
+    ],
+    "seasonality_window": [
+      "06-01",
+      "08-31"
+    ],
+    "base_weight": 0.8,
+    "evidence": {
+      "source": "AutoZone, Inc., Form 10-K for fiscal 2024, Item 1 (seasonality) and Item 1A (weather and parts failure rates)",
+      "url": "https://www.sec.gov/Archives/edgar/data/866787/000155837024013758/azo-20240831x10k.htm"
+    }
+  },
+  {
+    "id": "RET-085",
+    "industry": "retail",
+    "entity": "food delivery services",
+    "condition": {
+      "metric": "precip_in",
+      "op": ">=",
+      "value": 0.5,
+      "consecutive_days": 1,
+      "also": {
+        "metric": "precip_in",
+        "op": "<",
+        "value": 1.0
+      }
+    },
+    "business_impact": "A steady rain or snow day can nudge more people to order food delivery instead of going out.",
+    "story_seed": "A wet day is ahead for {metro} — a Weather Company meteorologist on timing, for anyone planning around delivery and takeout",
+    "audiences": [
+      "tech press",
+      "local TV business desks"
+    ],
+    "seasonality_window": [
+      "01-01",
+      "12-31"
+    ],
+    "base_weight": 0.4
+  },
+  {
+    "id": "RET-086",
+    "industry": "retail",
+    "entity": "grocery and party supply",
+    "condition": {
+      "metric": "precip_in",
+      "op": ">=",
+      "value": 0.25,
+      "consecutive_days": 1
+    },
+    "business_impact": "Rain around the Fourth of July can disrupt cookouts, fireworks and other outdoor plans on a holiday built around celebrating outside.",
+    "story_seed": "Rain is in the forecast for {metro} around the Fourth of July — a Weather Company meteorologist on timing and which hours stay dry",
+    "audiences": [
+      "local TV business desks",
+      "retail trade press"
+    ],
+    "seasonality_window": [
+      "07-03",
+      "07-05"
+    ],
+    "base_weight": 0.45
   }
 ]
