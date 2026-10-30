@@ -211,6 +211,13 @@
       "11-22",
       "12-02"
     ],
+    "anchor": {
+      "holiday": "thanksgiving",
+      "days": [
+        0,
+        4
+      ]
+    },
     "base_weight": 0.75,
     "evidence": {
       "source": "Brigitte Roth Tran, \"The Impact of Weather on Retail Sales,\" FRBSF Economic Letter 2022-23",
@@ -242,6 +249,13 @@
       "02-13",
       "02-21"
     ],
+    "anchor": {
+      "holiday": "presidents_day",
+      "days": [
+        -2,
+        0
+      ]
+    },
     "base_weight": 0.7,
     "evidence": {
       "source": "Federal Reserve Beige Book, March 17, 1999 (national summary; New York and Richmond districts)",
@@ -268,6 +282,13 @@
       "05-23",
       "05-31"
     ],
+    "anchor": {
+      "holiday": "memorial_day",
+      "days": [
+        -2,
+        0
+      ]
+    },
     "base_weight": 0.8,
     "evidence": {
       "source": "Brigitte Roth Tran, \"The Impact of Weather on Retail Sales,\" FRBSF Economic Letter 2022-23",
@@ -300,6 +321,13 @@
       "08-30",
       "09-15"
     ],
+    "anchor": {
+      "holiday": "labor_day",
+      "days": [
+        -2,
+        8
+      ]
+    },
     "base_weight": 0.8,
     "evidence": {
       "source": "Federal Reserve Beige Book, September 11, 2002 (New York, Philadelphia, Cleveland districts)",
@@ -359,6 +387,13 @@
       "11-19",
       "12-02"
     ],
+    "anchor": {
+      "holiday": "thanksgiving",
+      "days": [
+        -3,
+        4
+      ]
+    },
     "base_weight": 1.0,
     "evidence": {
       "source": "Brigitte Roth Tran (2019), \"Sellin' in the Rain,\" FEDS 2019-067, Federal Reserve Board",
@@ -391,6 +426,13 @@
       "12-15",
       "12-24"
     ],
+    "anchor": {
+      "holiday": "christmas",
+      "days": [
+        -10,
+        -1
+      ]
+    },
     "base_weight": 0.8,
     "evidence": {
       "source": "Brigitte Roth Tran (2019), \"Sellin' in the Rain,\" FEDS 2019-067, Federal Reserve Board",
@@ -1055,6 +1097,13 @@
       "07-03",
       "07-05"
     ],
+    "anchor": {
+      "holiday": "independence_day",
+      "days": [
+        -1,
+        1
+      ]
+    },
     "base_weight": 0.45
   },
   {
