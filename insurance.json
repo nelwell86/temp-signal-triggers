@@ -53,7 +53,8 @@
       "metric": "precip_in",
       "op": ">=",
       "value": 0.2,
-      "consecutive_days": 1
+      "consecutive_days": 1,
+      "also": { "metric": "min_temp_f", "op": "<=", "value": 32 }
     },
     "business_impact": "Calendar-aware: Freezing drizzle or light ice glaze on high-volume Black Friday shopping mornings triggers a severe cluster of slip-and-fall commercial liability claims in crowded retail parking matrices.",
     "story_seed": "Black Friday freezing drizzle triggers holiday shopping parking footprint liability claims across {metro}",
