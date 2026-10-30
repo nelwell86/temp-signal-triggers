@@ -1056,5 +1056,84 @@
       "07-05"
     ],
     "base_weight": 0.45
+  },
+  {
+    "id": "RET-087",
+    "industry": "retail",
+    "entity": "auto parts retailers",
+    "condition": {
+      "metric": "precip_in",
+      "op": ">=",
+      "value": 0.1,
+      "consecutive_days": 5
+    },
+    "business_impact": "An extended stretch of rain or winter precipitation can hold down auto parts store traffic and lead drivers to put off elective maintenance, according to auto parts retailers.",
+    "story_seed": "A long wet stretch is forecast for {metro} — a Weather Company meteorologist on when it finally dries out",
+    "audiences": [
+      "automotive press",
+      "local TV business desks"
+    ],
+    "seasonality_window": [
+      "01-01",
+      "12-31"
+    ],
+    "base_weight": 0.7,
+    "evidence": {
+      "source": "AutoZone, Inc., Form 10-K for fiscal 2024, Item 1 (seasonality) and Item 1A (weather)",
+      "url": "https://www.sec.gov/Archives/edgar/data/866787/000155837024013758/azo-20240831x10k.htm"
+    }
+  },
+  {
+    "id": "RET-088",
+    "industry": "retail",
+    "entity": "sporting goods and outdoor retailers",
+    "condition": {
+      "metric": "temp_anomaly_f",
+      "op": ">=",
+      "value": 10,
+      "consecutive_days": 3,
+      "also": {
+        "metric": "max_temp_f",
+        "op": ">=",
+        "value": 65
+      }
+    },
+    "business_impact": "An unusually warm spell in early spring has brought sporting goods sales forward, a retailer reported to the Federal Reserve.",
+    "story_seed": "An early taste of spring warmth is forecast for {metro} — a Weather Company meteorologist on how long it lasts",
+    "audiences": [
+      "sporting goods trade press",
+      "retail trade press"
+    ],
+    "seasonality_window": [
+      "03-01",
+      "04-30"
+    ],
+    "base_weight": 0.65,
+    "evidence": {
+      "source": "Federal Reserve Beige Book, April 11, 2012 (Richmond district)",
+      "url": "https://www.federalreserve.gov/monetarypolicy/beigebook/beigebook201204.htm"
+    }
+  },
+  {
+    "id": "RET-089",
+    "industry": "retail",
+    "entity": "brick-and-mortar retailers",
+    "condition": {
+      "metric": "wind_chill_f",
+      "op": "<=",
+      "value": -20,
+      "consecutive_days": 1
+    },
+    "business_impact": "Dangerously cold wind chills can keep shoppers home and off the streets.",
+    "story_seed": "Dangerous wind chills are forecast for {metro} — a Weather Company meteorologist on the coldest hours and how to stay safe",
+    "audiences": [
+      "local TV business desks",
+      "social"
+    ],
+    "seasonality_window": [
+      "12-01",
+      "02-28"
+    ],
+    "base_weight": 0.4
   }
 ]
