@@ -352,7 +352,8 @@
       "metric": "precip_in",
       "op": ">=",
       "value": 0.2,
-      "consecutive_days": 1
+      "consecutive_days": 1,
+      "also": { "metric": "min_temp_f", "op": "<=", "value": 32 }
     },
     "business_impact": "Calendar-aware: Chilly freezing rain fronts sweeping through late autumn high school sports championship schedules cause rapid surface glaze, forcing statewide athletic associations to issue immediate play cancellations.",
     "story_seed": "Freezing rain front severs late autumn school athletic tournament schedules around {metro}",
