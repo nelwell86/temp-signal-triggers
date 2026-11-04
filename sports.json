@@ -2,99 +2,136 @@
   {
     "id": "SPT-001",
     "industry": "sports",
-    "entity": "professional baseball franchises and stadium venues",
+    "entity": "baseball and open-air spring sports",
     "condition": {
       "metric": "precip_in",
       "op": ">=",
-      "value": 0.4,
-      "consecutive_days": 1
+      "value": 0.75,
+      "consecutive_days": 1,
+      "also": {
+        "metric": "max_temp_f",
+        "op": "<=",
+        "value": 55
+      }
     },
-    "business_impact": "Second-order effect: Persistent opening week spring washouts trigger immediate multi-game postponements, fracturing localized concession supply lines and gate auxiliary revenues.",
-    "story_seed": "Early season baseball washouts in {metro} threaten opening week stadium gate and vendor revenue loops",
+    "business_impact": "Research on professional football attendance found that rainy game days reduce fan turnout, and that the effect is stronger when it is cold, which is the kind of day early-season baseball in northern cities often gets.",
+    "story_seed": "Cold rain or wet snow in the {metro} forecast early in the baseball season — a Weather Company meteorologist on which days stay dry enough to play",
     "audiences": [
-      "sports business press",
       "local sports desks",
-      "stadium concession trade"
+      "sports business press"
     ],
     "seasonality_window": [
       "03-25",
-      "04-15"
+      "05-15"
     ],
-    "base_weight": 1.1
+    "base_weight": 0.7,
+    "evidence": {
+      "source": "Welki & Zlatoper, \"U.S. professional football game-day attendance,\" Atlantic Economic Journal 27(3):285–298, 1999",
+      "url": "https://ideas.repec.org/a/kap/atlecj/v27y1999i3p285-298.html"
+    }
   },
   {
     "id": "SPT-002",
     "industry": "sports",
-    "entity": "outdoor athletic stadiums and concession networks",
+    "entity": "open-air stadiums and outdoor events",
     "condition": {
-      "metric": "max_temp_f",
+      "metric": "temp_anomaly_f",
       "op": ">=",
-      "value": 95,
-      "consecutive_days": 1
+      "value": 10,
+      "consecutive_days": 1,
+      "also": {
+        "metric": "max_temp_f",
+        "op": ">=",
+        "value": 95
+      }
     },
-    "business_impact": "Calendar-aware: Midsummer holiday twin-bills tracking extreme heat boundaries force immediate stadium cooling protocols and cause fan concession demand to pivot entirely to ice and hydration over alcohol.",
-    "story_seed": "Holiday stadium doubleheaders in {metro} force urgent cooling deployments as fan hydration metrics spike",
+    "business_impact": "Economists studying 50 years of professional baseball found that attendance at games declines on very hot days, a sign of how much fans dislike sitting out in extreme heat.",
+    "story_seed": "Unusual heat in {metro} on the days of outdoor games — a Weather Company meteorologist on how hot it gets in the stands and when it eases",
     "audiences": [
-      "sports facility venue press",
-      "concession distribution logs",
-      "social"
+      "sports business press",
+      "local sports desks",
+      "stadium and venue trade"
     ],
     "seasonality_window": [
-      "06-12",
-      "07-06"
+      "05-15",
+      "09-15"
     ],
-    "base_weight": 1
+    "base_weight": 0.9,
+    "evidence": {
+      "source": "Kuruc, LoPalo & O'Connor, \"The Willingness to Pay for a Cooler Day: Evidence from 50 Years of Major League Baseball Games,\" American Economic Journal: Applied Economics 17(1):126–59, 2025",
+      "url": "https://www.aeaweb.org/articles?id=10.1257/app.20220606"
+    }
   },
   {
     "id": "SPT-003",
     "industry": "sports",
-    "entity": "live event management and collegiate athletic networks",
+    "entity": "football and fall outdoor sports",
     "condition": {
       "metric": "severe_risk",
       "op": ">=",
-      "value": 60,
+      "value": 40,
       "consecutive_days": 1
     },
-    "business_impact": "Calendar-aware: Convective lightning hazards during high-volume Labor Day opening weekend football matchups spark mandatory premium tier stadium evacuations and live broadcast delays.",
-    "story_seed": "Labor Day football openers in {metro} under critical convective lighting evacuation profiles",
+    "business_impact": "Athletic trainers' lightning-safety guidance says that if thunder can be heard, lightning is close enough to be a hazard, that activities should be suspended until 30 minutes after the last thunder, and that large venues should plan how to keep spectators safe during a suspension.",
+    "story_seed": "Thunderstorms are expected in {metro} during football season — a Weather Company meteorologist on storm timing around practices and games",
     "audiences": [
-      "collegiate sports desks",
-      "sports broadcast media",
-      "local emergency news"
+      "local sports desks",
+      "college sports press",
+      "local news"
     ],
     "seasonality_window": [
-      "08-28",
-      "09-07"
+      "08-15",
+      "11-15"
     ],
-    "base_weight": 1.25
+    "base_weight": 0.9,
+    "evidence": {
+      "source": "Walsh et al., \"National Athletic Trainers' Association Position Statement: Lightning Safety for Athletics and Recreation,\" Journal of Athletic Training 48(2):258–270, 2013",
+      "url": "https://www.nata.org/sites/default/files/2025-08/lightning_safety_for_athletics_and_recreation.pdf"
+    }
   },
   {
     "id": "SPT-004",
     "industry": "sports",
-    "entity": "amateur sports leagues and community park systems",
+    "entity": "Thanksgiving morning races and community games",
     "condition": {
-      "metric": "min_temp_f",
+      "metric": "wind_chill_f",
       "op": "<=",
-      "value": 32,
-      "consecutive_days": 1
+      "value": 15,
+      "consecutive_days": 1,
+      "also": {
+        "metric": "temp_anomaly_f",
+        "op": "<=",
+        "value": -5
+      }
     },
-    "business_impact": "Calendar-aware: Frigid morning baseline temperatures cancel traditional local Thanksgiving Turkey Bowl community matches, driving down local sports retail merchandising metrics.",
-    "story_seed": "Thanksgiving morning deep freeze threatens to sideline traditional community turf matches across {metro}",
+    "business_impact": "Athletic trainers' cold-safety guidance recommends considering shorter outdoor activity or more chances to warm up at a wind chill of 15°F or below, which matters for the races and community games held outdoors on Thanksgiving morning.",
+    "story_seed": "An unusually cold Thanksgiving morning is forecast for {metro} — a Weather Company meteorologist on wind chills at race and game time",
     "audiences": [
-      "local sports desks",
-      "community wellness logs",
-      "social"
+      "local news",
+      "running and fitness media",
+      "local sports desks"
     ],
     "seasonality_window": [
-      "11-20",
+      "11-22",
       "11-28"
     ],
-    "base_weight": 0.8
+    "anchor": {
+      "holiday": "thanksgiving",
+      "days": [
+        0,
+        0
+      ]
+    },
+    "base_weight": 0.7,
+    "evidence": {
+      "source": "Cappaert et al., \"National Athletic Trainers' Association Position Statement: Environmental Cold Injuries,\" Journal of Athletic Training 43(6):640–658, 2008",
+      "url": "https://www.nata.org/sites/default/files/EnvironmentalColdInjuries.pdf"
+    }
   },
   {
     "id": "SPT-005",
     "industry": "sports",
-    "entity": "endurance sports organizations and marathon coordinators",
+    "entity": "endurance events and road races",
     "condition": {
       "metric": "temp_anomaly_f",
       "op": ">=",
@@ -106,424 +143,294 @@
         "value": 80
       }
     },
-    "business_impact": "Anomaly trigger: Severe autumn heat deviations prompt race officials to issue emergency medical warnings or execute outright race cancellations to prevent mass participant heat stroke.",
-    "story_seed": "Unseasonable autumn heat anomaly forces emergency medical scaling for {metro} marathon grids",
+    "business_impact": "Unexpectedly hot race days in autumn, well above the seasonal average, are linked to more medical cases and more runners failing to finish, because runners who trained in cooler weather are not acclimatized; several races in such conditions have been stopped partway through.",
+    "story_seed": "Unseasonable heat in the {metro} forecast during autumn race season — a Weather Company meteorologist on how warm and humid race mornings could get",
     "audiences": [
       "endurance sports media",
-      "public safety columns",
+      "local health desks",
       "running industry trade"
     ],
     "seasonality_window": [
       "09-15",
       "11-15"
     ],
-    "base_weight": 1.2
+    "base_weight": 1.0,
+    "evidence": {
+      "source": "William O. Roberts, \"Determining a 'Do Not Start' Temperature for a Marathon on the Basis of Adverse Outcomes,\" Medicine & Science in Sports & Exercise 42(2):226–232, 2010",
+      "url": "https://experts.umn.edu/en/publications/determining-a-do-not-start-temperature-for-a-marathon-on-the-basi/"
+    }
   },
   {
     "id": "SPT-006",
     "industry": "sports",
-    "entity": "outdoor ice hockey operations and arena management",
+    "entity": "community outdoor rinks and pond hockey",
     "condition": {
       "metric": "temp_anomaly_f",
       "op": ">=",
       "value": 12,
-      "consecutive_days": 2
+      "consecutive_days": 2,
+      "also": {
+        "metric": "max_temp_f",
+        "op": "<=",
+        "value": 55
+      }
     },
-    "business_impact": "Calendar-aware: Unseasonable winter warm anomalies compromise surface configurations for New Year's Winter Classic style outdoor games, melting ice sheet infrastructures.",
-    "story_seed": "Winter warm wave anomaly threatens structure of {metro} outdoor holiday hockey ice sheets",
+    "business_impact": "Natural outdoor rinks need several consecutive days with highs well below freezing to build and keep their ice, so a midwinter thaw can soften the ice and shorten the outdoor skating season.",
+    "story_seed": "A midwinter thaw is forecast for {metro} — a Weather Company meteorologist on how many days run above freezing and when the cold returns",
     "audiences": [
-      "sports engineering trade",
-      "national sports press",
-      "hockey network feeds"
+      "local news desks",
+      "community recreation press",
+      "hockey media"
     ],
     "seasonality_window": [
-      "12-24",
-      "01-05"
+      "12-15",
+      "02-28"
     ],
-    "base_weight": 1.15
+    "base_weight": 0.7,
+    "evidence": {
+      "source": "Damyanov, Matthews & Mysak, \"Observed decreases in the Canadian outdoor skating season due to recent winter warming,\" Environmental Research Letters 7:014028, 2012",
+      "url": "https://iopscience.iop.org/article/10.1088/1748-9326/7/1/014028"
+    }
   },
   {
     "id": "SPT-007",
     "industry": "sports",
-    "entity": "professional golf tournaments and country clubs",
+    "entity": "golf courses",
     "condition": {
       "metric": "precip_in",
       "op": ">=",
-      "value": 0.5,
-      "consecutive_days": 3
+      "value": 0.25,
+      "consecutive_days": 3,
+      "also": {
+        "metric": "max_temp_f",
+        "op": ">=",
+        "value": 50
+      }
     },
-    "business_impact": "Streak trigger: 3+ days of continuous downpours oversaturate putting greens, triggering rolling play extensions into Monday and destroying weekend hospitality tent revenues.",
-    "story_seed": "Three-day rain saturation forces high-stakes {metro} golf tournament into costly Monday finish",
+    "business_impact": "Several wet days in a row can cut the number of rounds golf courses host, since golf industry reports find wetter months tend to bring less play.",
+    "story_seed": "Three wet days in a row are forecast for {metro} — a Weather Company meteorologist on when the rain lets up for the weekend",
     "audiences": [
-      "golf business trade",
-      "sports marketing networks",
-      "local luxury hospitality media"
+      "golf industry trade",
+      "local business desks"
     ],
     "seasonality_window": [
-      "04-01",
-      "08-31"
+      "03-15",
+      "10-31"
     ],
-    "base_weight": 0.95
+    "base_weight": 0.5
   },
   {
     "id": "SPT-008",
     "industry": "sports",
-    "entity": "live event operators and stadium tailgate complexes",
+    "entity": "football and open-air stadiums",
     "condition": {
       "metric": "precip_in",
       "op": ">=",
-      "value": 1,
-      "consecutive_days": 1
+      "value": 0.75,
+      "consecutive_days": 1,
+      "also": {
+        "metric": "max_temp_f",
+        "op": "<=",
+        "value": 50
+      }
     },
-    "business_impact": "Torrential single-day downpours submerge open-air venue parking matrices, obliterating pre-game tailgating activities and dropping auxiliary team store merchandise loops.",
-    "story_seed": "Flash flooding downpour submerges stadium tailgate fields in {metro}, slicing auxiliary gate revenues",
+    "business_impact": "Research on professional football found that rainy game days reduce fan turnout, and that warmer weather softens the effect, so a cold, wet game day is the kind most likely to keep fans home.",
+    "story_seed": "A cold, soaking day of rain or snow in the {metro} forecast during football season — a Weather Company meteorologist on timing around kickoff and tailgating hours",
     "audiences": [
-      "sports marketing media",
-      "stadium ops trade logs",
-      "local news traffic hubs"
+      "local sports desks",
+      "sports business press",
+      "local news"
     ],
     "seasonality_window": [
       "09-01",
-      "11-30"
+      "01-15"
     ],
-    "base_weight": 0.9
-  },
-  {
-    "id": "SPT-009",
-    "industry": "sports",
-    "entity": "collegiate track and field events and sports complexes",
-    "condition": {
-      "metric": "max_wind_mph",
-      "op": ">=",
-      "value": 45,
-      "consecutive_days": 1
-    },
-    "business_impact": "Extreme spring wind velocity thresholds render precision timing and field event records invalid, forcing athletic directors to postpone critical qualifying meets.",
-    "story_seed": "Severe wind gusts in {metro} invalidate athletic safety bounds, forcing meet postponements",
-    "audiences": [
-      "collegiate athletic trade press",
-      "regional sports logistics"
-    ],
-    "seasonality_window": [
-      "03-15",
-      "05-30"
-    ],
-    "base_weight": 0.8
+    "base_weight": 0.8,
+    "evidence": {
+      "source": "Welki & Zlatoper, \"U.S. professional football game-day attendance,\" Atlantic Economic Journal 27(3):285–298, 1999",
+      "url": "https://ideas.repec.org/a/kap/atlecj/v27y1999i3p285-298.html"
+    }
   },
   {
     "id": "SPT-010",
     "industry": "sports",
-    "entity": "youth sports organizations and regional soccer complexes",
+    "entity": "high school and youth sports",
     "condition": {
-      "metric": "humidity_pct",
-      "op": ">=",
-      "value": 85,
-      "consecutive_days": 3
-    },
-    "business_impact": "Streak trigger: 3+ days of oppressive humidity paired with high baseline heat zones creates critical wet-bulb globe temperature limits, shutting down outdoor multi-state youth tournaments.",
-    "story_seed": "Oppressive midsummer humidity streak forces safety-mandated closures of {metro} youth tournament fields",
-    "audiences": [
-      "youth sports management press",
-      "regional public health desks",
-      "social"
-    ],
-    "seasonality_window": [
-      "07-01",
-      "08-31"
-    ],
-    "base_weight": 1.05
-  },
-  {
-    "id": "SPT-011",
-    "industry": "sports",
-    "entity": "outdoor tennis championships and summer tournaments",
-    "condition": {
-      "metric": "uv_index",
-      "op": ">=",
-      "value": 9,
-      "consecutive_days": 2
-    },
-    "business_impact": "Extreme ultraviolet index thresholds reached over multi-day tournament finals require mandatory player court surface temperature health breaks and drive record on-site sunscreen merchandising loops.",
-    "story_seed": "Blistering UV index profiles over {metro} tennis finals trigger player safety thermal protocols",
-    "audiences": [
-      "tennis media channels",
-      "consumer goods retail trade"
-    ],
-    "seasonality_window": [
-      "06-01",
-      "08-15"
-    ],
-    "base_weight": 0.85
-  },
-  {
-    "id": "SPT-012",
-    "industry": "sports",
-    "entity": "indoor sports arenas and professional basketball complexes",
-    "condition": {
-      "metric": "min_temp_f",
-      "op": "<=",
-      "value": 10,
-      "consecutive_days": 2
-    },
-    "business_impact": "Second-order effect: Sustained sub-zero multi-day deep freezes spike utility HVAC consumption profiles for major indoor arenas, altering venue baseline maintenance overhead parameters.",
-    "story_seed": "Severe sub-zero deep freeze spikes arena heating overhead profiles across {metro} industrial venues",
-    "audiences": [
-      "venue management trade press",
-      "commercial real estate logs"
-    ],
-    "seasonality_window": [
-      "12-01",
-      "02-15"
-    ],
-    "base_weight": 0.75
-  },
-  {
-    "id": "SPT-013",
-    "industry": "sports",
-    "entity": "holiday basketball classics and indoor tournament platforms",
-    "condition": {
-      "metric": "snow_in",
-      "op": ">=",
-      "value": 5,
-      "consecutive_days": 1
-    },
-    "business_impact": "Calendar-aware: Major winter storm drops during Black Friday holiday classic invitations paralyze team hotel-to-arena transits, forcing sudden schedule truncations and digital streaming format adjustments.",
-    "story_seed": "Black Friday blizzard gridlocks team transits for {metro} holiday basketball invitationals",
-    "audiences": [
-      "sports tournament organizers",
-      "digital streaming network trade"
-    ],
-    "seasonality_window": [
-      "11-20",
-      "11-30"
-    ],
-    "base_weight": 1
-  },
-  {
-    "id": "SPT-014",
-    "industry": "sports",
-    "entity": "spring training facilities and vendor spaces",
-    "condition": {
-      "metric": "max_temp_f",
-      "op": ">=",
-      "value": 90,
-      "consecutive_days": 2
-    },
-    "business_impact": "Anomaly trigger: Premature unseasonable heat anomalies across early spring training profiles cause sudden spikes in branded athletic performance gear and performance apparel merchandising matrices.",
-    "story_seed": "Unseasonable spring training heat anomaly accelerates apparel merchandising demand vectors in {metro}",
-    "audiences": [
-      "sports licensing retail trade",
-      "consumer apparel desks",
-      "social"
-    ],
-    "seasonality_window": [
-      "02-20",
-      "03-20"
-    ],
-    "base_weight": 0.95
-  },
-  {
-    "id": "SPT-015",
-    "industry": "sports",
-    "entity": "stadium field turf providers and arena operations",
-    "condition": {
-      "metric": "max_temp_f",
+      "metric": "heat_index_f",
       "op": ">=",
       "value": 100,
-      "consecutive_days": 3
-    },
-    "business_impact": "Streak trigger: 3+ days of consecutive extreme heat blocks cause hazardous core temperature retention profiles on synthetic field turf systems, requiring venue operations to apply synthetic field irrigation cooling lines.",
-    "story_seed": "Three-day triple-digit heat block raises synthetic field surface risks across {metro} complexes",
-    "audiences": [
-      "sports turf engineering press",
-      "athletic facility safety boards"
-    ],
-    "seasonality_window": [
-      "07-01",
-      "08-31"
-    ],
-    "base_weight": 1.1
-  },
-  {
-    "id": "SPT-016",
-    "industry": "sports",
-    "entity": "interscholastic athletic networks and high school championships",
-    "condition": {
-      "metric": "precip_in",
-      "op": ">=",
-      "value": 0.2,
       "consecutive_days": 1,
       "also": {
-        "metric": "min_temp_f",
-        "op": "<=",
-        "value": 32
+        "metric": "temp_anomaly_f",
+        "op": ">=",
+        "value": 8
       }
     },
-    "business_impact": "Calendar-aware: Chilly freezing rain fronts sweeping through late autumn high school sports championship schedules cause rapid surface glaze, forcing statewide athletic associations to issue immediate play cancellations.",
-    "story_seed": "Freezing rain front severs late autumn school athletic tournament schedules around {metro}",
+    "business_impact": "Exertional heatstroke is the leading cause of preventable death in high school sports, and national high school sports guidance calls for lighter practices, more rest breaks and closer monitoring of athletes as heat and humidity rise, especially when the weather turns hotter than in the previous few days.",
+    "story_seed": "A heat index near or above 100 is forecast for {metro} during fall practice season — a Weather Company meteorologist on the hottest hours and when it cools off",
     "audiences": [
       "local sports desks",
-      "interscholastic athletic boards",
-      "parent consumer networks"
+      "local health desks",
+      "parents and education press"
     ],
     "seasonality_window": [
-      "11-05",
-      "11-20"
+      "07-20",
+      "09-30"
     ],
-    "base_weight": 0.85
-  },
-  {
-    "id": "SPT-017",
-    "industry": "sports",
-    "entity": "maritime racing operations and sailing clubs",
-    "condition": {
-      "metric": "max_wind_mph",
-      "op": ">=",
-      "value": 35,
-      "consecutive_days": 1
-    },
-    "business_impact": "High wind boundaries cross safety configurations for coastal regattas, prompting organizers to cancel water access arrays to prevent capsizing safety events.",
-    "story_seed": "Severe autumn wind boundary forces immediate cancellations of {metro} water regattas",
-    "audiences": [
-      "maritime racing press",
-      "coastal recreational safety logs"
-    ],
-    "seasonality_window": [
-      "09-01",
-      "10-31"
-    ],
-    "base_weight": 0.9
+    "base_weight": 1.0,
+    "evidence": {
+      "source": "National Federation of State High School Associations, Sports Medicine Advisory Committee, \"Heat Acclimatization and Heat Illness Prevention Position Statement,\" April 2022",
+      "url": "https://assets.nfhs.org/umbraco/media/5919613/nfhs-heat-acclimatization-april-2022-final.pdf"
+    }
   },
   {
     "id": "SPT-018",
     "industry": "sports",
-    "entity": "winter sport operations and mountain resorts",
+    "entity": "ski areas and snow sports",
     "condition": {
       "metric": "temp_anomaly_f",
       "op": ">=",
-      "value": 15,
-      "consecutive_days": 4
+      "value": 12,
+      "consecutive_days": 3,
+      "also": {
+        "metric": "max_temp_f",
+        "op": "<=",
+        "value": 65
+      }
     },
-    "business_impact": "Anomaly trigger: Unseasonable winter warmth blocks commercial snowmaking infrastructure operations, degrading mountain trail layouts ahead of lucrative holiday weekend bookings.",
-    "story_seed": "Severe multi-day warm anomaly breaks alpine snowmaking capabilities near {metro} domains",
+    "business_impact": "Many ski areas depend on making snow before they can open, which needs below-freezing conditions for hundreds of hours, and opening before the Christmas and New Year holidays is critical to their profits, so an unusually warm stretch in the weeks before the holidays comes at a sensitive time.",
+    "story_seed": "An unusually warm stretch is forecast around {metro} before the holidays — a Weather Company meteorologist on when colder air returns to the region",
     "audiences": [
-      "ski resort management media",
-      "regional winter lifestyle desks"
+      "ski and outdoor industry press",
+      "regional business desks",
+      "travel press"
     ],
     "seasonality_window": [
-      "12-10",
-      "01-15"
+      "11-15",
+      "12-24"
     ],
-    "base_weight": 1.2
+    "base_weight": 0.8,
+    "evidence": {
+      "source": "Wobus et al., \"Projected climate change impacts on skiing and snowmobiling: A case study of the United States,\" Global Environmental Change 45:1–14, 2017",
+      "url": "http://geode.colorado.edu/~small/docs/wobus_etal.pdf"
+    }
   },
   {
     "id": "SPT-019",
     "industry": "sports",
-    "entity": "professional football franchises and open-air stadiums",
+    "entity": "outdoor winter sports and football",
     "condition": {
-      "metric": "min_temp_f",
+      "metric": "wind_chill_f",
       "op": "<=",
-      "value": 15,
-      "consecutive_days": 1
+      "value": 0,
+      "consecutive_days": 1,
+      "also": {
+        "metric": "temp_anomaly_f",
+        "op": "<=",
+        "value": -15
+      }
     },
-    "business_impact": "Calendar-aware: Severe sub-freezing morning parameters on late December game days degrade open-air stadium seat comfort profiles, forcing a massive volume shift toward indoor club level suite access requests.",
-    "story_seed": "Late December sub-freezing grid shifts fan traffic to premium indoor stadium suites across {metro}",
+    "business_impact": "Athletic trainers' cold-safety guidance sets activity planning by wind chill, recommending that organizers consider stopping or rescheduling outdoor activity at a wind chill of 0°F or below, and noting that running and biking add their own wind to the chill.",
+    "story_seed": "Wind chills at or below zero are forecast for {metro} — a Weather Company meteorologist on the coldest hours and what game day and practice times look like",
     "audiences": [
-      "sports ticket brokerage trade",
-      "premium venue marketing press"
+      "local sports desks",
+      "local health desks",
+      "parents and education press"
     ],
     "seasonality_window": [
-      "12-15",
-      "12-30"
+      "12-01",
+      "01-31"
     ],
-    "base_weight": 1.1
+    "base_weight": 0.9,
+    "evidence": {
+      "source": "Cappaert et al., \"National Athletic Trainers' Association Position Statement: Environmental Cold Injuries,\" Journal of Athletic Training 43(6):640–658, 2008",
+      "url": "https://www.nata.org/sites/default/files/EnvironmentalColdInjuries.pdf"
+    }
   },
   {
     "id": "SPT-020",
     "industry": "sports",
-    "entity": "community athletic complexes and soccer venues",
+    "entity": "community fields and youth leagues",
     "condition": {
       "metric": "precip_in",
       "op": ">=",
-      "value": 0.3,
-      "consecutive_days": 4
+      "value": 0.75,
+      "consecutive_days": 2,
+      "also": {
+        "metric": "max_temp_f",
+        "op": ">=",
+        "value": 45
+      }
     },
-    "business_impact": "Streak trigger: 4+ consecutive days of heavy spring downpours cause extensive field waterlogging, rendering natural grass athletic surfaces unplayable for regional league play lines.",
-    "story_seed": "Four-day downpour streak waterlogs grass fields, gridlocking community sports play in {metro}",
+    "business_impact": "Parks departments close natural grass athletic fields during rain to prevent damage to the playing surface and injuries to players, and the fields can stay closed for several days while they dry out, while artificial turf fields usually stay open.",
+    "story_seed": "Two soaking days of rain in a row are forecast for {metro} — a Weather Company meteorologist on rain totals and how long the ground stays wet",
     "audiences": [
-      "local sports networks",
-      "community parks management trade"
+      "local news",
+      "community sports and parks press",
+      "parents and education press"
     ],
     "seasonality_window": [
       "03-15",
-      "05-15"
+      "11-15"
     ],
-    "base_weight": 1
+    "base_weight": 0.7,
+    "evidence": {
+      "source": "District of Columbia Department of Parks and Recreation, \"Athletic Fields Inclement Weather Closure Policy\"",
+      "url": "https://dpr.dc.gov/sites/default/files/dc/sites/dpr/publication/attachments/DPR%20Athletic%20FIelds%20Inclement%20Weather%20Closure%20Policy%20.pdf"
+    }
   },
   {
     "id": "SPT-021",
     "industry": "sports",
-    "entity": "professional soccer and outdoor track venues",
+    "entity": "outdoor school and youth sports",
     "condition": {
       "metric": "severe_risk",
       "op": ">=",
-      "value": 60,
+      "value": 40,
       "consecutive_days": 1
     },
-    "business_impact": "High probability of severe thunderstorms forces preemptive delays or cancellations of outdoor stadium events to ensure attendee safety, disrupting gate revenues.",
-    "story_seed": "Severe storm threat in {metro} forces outdoor sports facilities into preemptive delay and evacuation protocols",
+    "business_impact": "High school sports guidance says postponing games and practices should be strongly considered when a thunderstorm is predicted, and that everyone should be in a safe place once thunder is heard, with play resuming only 30 minutes after the last thunder or lightning.",
+    "story_seed": "Thunderstorms are expected in {metro} during the spring sports season — a Weather Company meteorologist on when storms are most likely and when they clear",
     "audiences": [
-      "sports facility venue press",
-      "local sports desks"
+      "local sports desks",
+      "parents and education press",
+      "local news"
     ],
     "seasonality_window": [
       "03-01",
-      "10-31"
+      "05-31"
     ],
-    "base_weight": 1.2
-  },
-  {
-    "id": "SPT-022",
-    "industry": "sports",
-    "entity": "municipal golf courses and country clubs",
-    "condition": {
-      "metric": "humidity_pct",
-      "op": ">=",
-      "value": 85,
-      "consecutive_days": 2
-    },
-    "business_impact": "Sustained high humidity suppresses evaporative cooling, creating dangerous wet-bulb temperatures that trigger mandatory hydration breaks and practice cancellations for outdoor athletics.",
-    "story_seed": "Oppressive humidity in {metro} triggers mandatory safety cancellations for outdoor athletic practices",
-    "audiences": [
-      "youth sports management press",
-      "local health desks"
-    ],
-    "seasonality_window": [
-      "05-01",
-      "09-30"
-    ],
-    "base_weight": 1.15
+    "base_weight": 0.9,
+    "evidence": {
+      "source": "National Federation of State High School Associations, \"Guidelines for Developing Lightning Safety Policies\" (Mettler & Valentine), April 9, 2018",
+      "url": "https://nfhs.org/stories/guidelines-for-developing-lightning-safety-policies"
+    }
   },
   {
     "id": "SPT-023",
     "industry": "sports",
-    "entity": "outdoor endurance sports and marathons",
+    "entity": "outdoor athletes and endurance events",
     "condition": {
       "metric": "uv_index",
       "op": ">=",
-      "value": 10,
+      "value": 11,
       "consecutive_days": 1
     },
-    "business_impact": "Extreme UV index thresholds during midday outdoor endurance events necessitate emergency shade deployments and prompt massive spikes in on-site sun protection sales.",
-    "story_seed": "Extreme UV blast alters {metro} midday athletic endurance events",
+    "business_impact": "A systematic review found that people who play sports outdoors get substantially more ultraviolet exposure than recommended limits allow and have high rates of sunburn, and at an extreme UV index unprotected skin can burn in about 15 minutes.",
+    "story_seed": "An extreme UV index is forecast for {metro} — a Weather Company meteorologist on the hours when the sun is strongest for outdoor games, races and practices",
     "audiences": [
+      "local health desks",
       "endurance sports media",
-      "sports marketing networks"
+      "local sports desks"
     ],
     "seasonality_window": [
-      "05-01",
-      "09-30"
+      "04-15",
+      "09-15"
     ],
-    "base_weight": 1
+    "base_weight": 0.5,
+    "evidence": {
+      "source": "Snyder et al., \"Solar Ultraviolet Exposure in Individuals Who Perform Outdoor Sport Activities,\" Sports Medicine – Open 6:42, 2020",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7471243/"
+    }
   }
 ]
