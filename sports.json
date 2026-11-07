@@ -207,8 +207,8 @@
         "value": 50
       }
     },
-    "business_impact": "Several wet days in a row can cut the number of rounds golf courses host, since golf industry reports find wetter months tend to bring less play.",
-    "story_seed": "Three wet days in a row are forecast for {metro} — a Weather Company meteorologist on when the rain lets up for the weekend",
+    "business_impact": "A study of daily rounds at a golf course found that rain cut play by about a third even at modest amounts, and that a day of steady rain reduced rounds by between a quarter and almost nine-tenths.",
+    "story_seed": "Three wet days in a row are forecast for {metro} — a Weather Company meteorologist on when the rain lets up for a round of golf",
     "audiences": [
       "golf industry trade",
       "local business desks"
@@ -217,7 +217,11 @@
       "03-15",
       "10-31"
     ],
-    "base_weight": 0.5
+    "base_weight": 0.7,
+    "evidence": {
+      "source": "Scott & Jones, \"The Impact of Climate Change on Golf Participation in the Greater Toronto Area (GTA): A Case Study,\" Journal of Leisure Research 38(3):363–380, 2006",
+      "url": "https://www.nrpa.org/globalassets/journals/jlr/2006/volume-38/jlr-volume-38-number-3-pp-363-380.pdf"
+    }
   },
   {
     "id": "SPT-008",
@@ -331,7 +335,7 @@
       }
     },
     "business_impact": "Athletic trainers' cold-safety guidance sets activity planning by wind chill, recommending that organizers consider stopping or rescheduling outdoor activity at a wind chill of 0°F or below, and noting that running and biking add their own wind to the chill.",
-    "story_seed": "Wind chills at or below zero are forecast for {metro} — a Weather Company meteorologist on the coldest hours and what game day and practice times look like",
+    "story_seed": "Wind chills at or below zero are forecast for {metro} — a Weather Company meteorologist on the coldest hours for outdoor games, races and practices",
     "audiences": [
       "local sports desks",
       "local health desks",
@@ -339,7 +343,7 @@
     ],
     "seasonality_window": [
       "12-01",
-      "01-31"
+      "02-28"
     ],
     "base_weight": 0.9,
     "evidence": {
@@ -431,6 +435,204 @@
     "evidence": {
       "source": "Snyder et al., \"Solar Ultraviolet Exposure in Individuals Who Perform Outdoor Sport Activities,\" Sports Medicine – Open 6:42, 2020",
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7471243/"
+    }
+  },
+  {
+    "id": "SPT-024",
+    "industry": "sports",
+    "entity": "endurance events and road races",
+    "condition": {
+      "metric": "temp_anomaly_f",
+      "op": ">=",
+      "value": 20,
+      "consecutive_days": 1,
+      "also": {
+        "metric": "max_temp_f",
+        "op": ">=",
+        "value": 80
+      }
+    },
+    "business_impact": "Unexpectedly hot race days in spring, well above the seasonal average, are linked to more medical cases and more runners failing to finish, because runners who trained through cooler weeks are not acclimatized to the heat.",
+    "story_seed": "An unseasonably hot spell is forecast for {metro} during spring race season — a Weather Company meteorologist on how warm race mornings could get",
+    "audiences": [
+      "endurance sports media",
+      "local health desks",
+      "running industry trade"
+    ],
+    "seasonality_window": [
+      "04-01",
+      "05-15"
+    ],
+    "base_weight": 0.9,
+    "evidence": {
+      "source": "William O. Roberts, \"Determining a 'Do Not Start' Temperature for a Marathon on the Basis of Adverse Outcomes,\" Medicine & Science in Sports & Exercise 42(2):226–232, 2010",
+      "url": "https://experts.umn.edu/en/publications/determining-a-do-not-start-temperature-for-a-marathon-on-the-basi/"
+    }
+  },
+  {
+    "id": "SPT-025",
+    "industry": "sports",
+    "entity": "high school and youth spring sports",
+    "condition": {
+      "metric": "heat_index_f",
+      "op": ">=",
+      "value": 95,
+      "consecutive_days": 1,
+      "also": {
+        "metric": "temp_anomaly_f",
+        "op": ">=",
+        "value": 8
+      }
+    },
+    "business_impact": "National high school sports guidance calls for lighter practices, more rest breaks and closer monitoring of athletes as heat and humidity rise, especially when the weather turns hotter than in the previous few days, as early-season heat often does in spring.",
+    "story_seed": "An early taste of summer heat is forecast for {metro} during the spring sports season — a Weather Company meteorologist on the hottest hours and when it cools off",
+    "audiences": [
+      "local sports desks",
+      "local health desks",
+      "parents and education press"
+    ],
+    "seasonality_window": [
+      "04-15",
+      "06-15"
+    ],
+    "base_weight": 0.8,
+    "evidence": {
+      "source": "National Federation of State High School Associations, Sports Medicine Advisory Committee, \"Heat Acclimatization and Heat Illness Prevention Position Statement,\" April 2022",
+      "url": "https://assets.nfhs.org/umbraco/media/5919613/nfhs-heat-acclimatization-april-2022-final.pdf"
+    }
+  },
+  {
+    "id": "SPT-026",
+    "industry": "sports",
+    "entity": "golf, summer camps and outdoor recreation",
+    "condition": {
+      "metric": "severe_risk",
+      "op": ">=",
+      "value": 40,
+      "consecutive_days": 1
+    },
+    "business_impact": "Athletic trainers' lightning-safety guidance for athletics and recreation says that if thunder can be heard, lightning is close enough to be a hazard and people should get to a safe place immediately, staying there until 30 minutes after the last thunder.",
+    "story_seed": "Thunderstorms are expected in {metro} — a Weather Company meteorologist on when storms are most likely for golfers, campers and anyone playing outdoors",
+    "audiences": [
+      "local news",
+      "golf industry trade",
+      "parents and education press"
+    ],
+    "seasonality_window": [
+      "06-01",
+      "08-14"
+    ],
+    "base_weight": 0.5,
+    "evidence": {
+      "source": "Walsh et al., \"National Athletic Trainers' Association Position Statement: Lightning Safety for Athletics and Recreation,\" Journal of Athletic Training 48(2):258–270, 2013",
+      "url": "https://www.nata.org/sites/default/files/2025-08/lightning_safety_for_athletics_and_recreation.pdf"
+    }
+  },
+  {
+    "id": "SPT-027",
+    "industry": "sports",
+    "entity": "football and outdoor kicking games",
+    "condition": {
+      "metric": "max_wind_mph",
+      "op": ">=",
+      "value": 15,
+      "consecutive_days": 1
+    },
+    "business_impact": "Sustained wind of 15 mph or more can make kicking and long passes harder to control in outdoor football games.",
+    "story_seed": "Sustained winds of 15 mph or more are forecast for {metro} during football season — a Weather Company meteorologist on wind speed, direction and gusts around game time",
+    "audiences": [
+      "local sports desks",
+      "college sports press"
+    ],
+    "seasonality_window": [
+      "09-01",
+      "01-31"
+    ],
+    "base_weight": 0.4
+  },
+  {
+    "id": "SPT-028",
+    "industry": "sports",
+    "entity": "stadiums, raceways and large outdoor events",
+    "condition": {
+      "metric": "severe_risk",
+      "op": ">=",
+      "value": 60,
+      "consecutive_days": 1
+    },
+    "business_impact": "National Weather Service planning guidance for event venues notes that about one storm in ten brings large hail or damaging winds, and advises venues to alert decision makers and staff when storms first appear in the forecast and to consider postponing outdoor events under a severe thunderstorm watch.",
+    "story_seed": "Severe thunderstorms are possible in {metro} — a Weather Company meteorologist on timing, hail and wind risk for outdoor games and events",
+    "audiences": [
+      "stadium and venue trade",
+      "local news",
+      "local sports desks"
+    ],
+    "seasonality_window": [
+      "03-01",
+      "10-31"
+    ],
+    "base_weight": 0.8,
+    "evidence": {
+      "source": "National Weather Service Quad Cities, \"Severe Weather Planning Guide for Special Event Venues,\" 2013",
+      "url": "https://www.weather.gov/media/dvn/NWSDVN_eventplanning_guide.pdf"
+    }
+  },
+  {
+    "id": "SPT-029",
+    "industry": "sports",
+    "entity": "high school playoffs and fall championships",
+    "condition": {
+      "metric": "snow_in",
+      "op": ">=",
+      "value": 4,
+      "consecutive_days": 1
+    },
+    "business_impact": "High school athletic guidelines note that snow can make a field unplayable, and that a game or tournament is postponed if a participating school's local policy does not permit travel, with the contest rescheduled for a date the schools agree on.",
+    "story_seed": "Several inches of snow are forecast for {metro} during high school playoff season — a Weather Company meteorologist on timing, totals and travel conditions",
+    "audiences": [
+      "local sports desks",
+      "parents and education press",
+      "local news"
+    ],
+    "seasonality_window": [
+      "11-01",
+      "12-15"
+    ],
+    "base_weight": 0.7,
+    "evidence": {
+      "source": "Michigan High School Athletic Association, \"Weather Guidelines\"",
+      "url": "https://my.mhsaa.com/LinkClick.aspx?link=491&tabid=110"
+    }
+  },
+  {
+    "id": "SPT-030",
+    "industry": "sports",
+    "entity": "golf courses",
+    "condition": {
+      "metric": "max_wind_mph",
+      "op": ">=",
+      "value": 15,
+      "consecutive_days": 1,
+      "also": {
+        "metric": "max_temp_f",
+        "op": ">=",
+        "value": 55
+      }
+    },
+    "business_impact": "A study of daily rounds at a golf course found that play peaked when wind was under about 13 mph and fell as wind speeds rose, though the windiest days in that study were often stormy ones.",
+    "story_seed": "A windy day is forecast for {metro} — a Weather Company meteorologist on sustained winds and gusts for anyone heading to the golf course",
+    "audiences": [
+      "golf industry trade",
+      "local business desks"
+    ],
+    "seasonality_window": [
+      "04-01",
+      "10-31"
+    ],
+    "base_weight": 0.5,
+    "evidence": {
+      "source": "Scott & Jones, \"The Impact of Climate Change on Golf Participation in the Greater Toronto Area (GTA): A Case Study,\" Journal of Leisure Research 38(3):363–380, 2006",
+      "url": "https://www.nrpa.org/globalassets/journals/jlr/2006/volume-38/jlr-volume-38-number-3-pp-363-380.pdf"
     }
   }
 ]
