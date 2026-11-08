@@ -154,7 +154,7 @@
       "09-15",
       "11-15"
     ],
-    "base_weight": 1.0,
+    "base_weight": 1,
     "evidence": {
       "source": "William O. Roberts, \"Determining a 'Do Not Start' Temperature for a Marathon on the Basis of Adverse Outcomes,\" Medicine & Science in Sports & Exercise 42(2):226–232, 2010",
       "url": "https://experts.umn.edu/en/publications/determining-a-do-not-start-temperature-for-a-marathon-on-the-basi/"
@@ -281,7 +281,7 @@
       "07-20",
       "09-30"
     ],
-    "base_weight": 1.0,
+    "base_weight": 1,
     "evidence": {
       "source": "National Federation of State High School Associations, Sports Medicine Advisory Committee, \"Heat Acclimatization and Heat Illness Prevention Position Statement,\" April 2022",
       "url": "https://assets.nfhs.org/umbraco/media/5919613/nfhs-heat-acclimatization-april-2022-final.pdf"
