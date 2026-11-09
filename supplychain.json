@@ -2,165 +2,120 @@
   {
     "id": "SUP-001",
     "industry": "supplychain",
-    "entity": "cold-chain and grocery refrigerated logistics",
+    "entity": "refrigerated trucking and the food cold chain",
     "condition": {
       "metric": "max_temp_f",
       "op": ">=",
-      "value": 95,
-      "consecutive_days": 1
+      "value": 100,
+      "consecutive_days": 1,
+      "also": {
+        "metric": "temp_anomaly_f",
+        "op": ">=",
+        "value": 8
+      }
     },
-    "business_impact": "Second-order effect: Extreme holiday heat waves cause massive thermal load spikes on vehicle cooling units, driving reefer mechanical failures and instant cargo spoilage right before peak holiday cookouts.",
-    "story_seed": "July 4th heat wave strains {metro} cold-chain networks, sparking logistics spoilage warnings",
+    "business_impact": "The federal government's guide to shipping perishable food by truck says heat conducted through a refrigerated trailer's walls rises with the gap between outside and inside temperatures, that sun and warm air leaking in add to the load, that refrigeration units are rated at 100°F outside, and that in hot weather precooling trailers reduces the chance of overloading the refrigeration system.",
+    "story_seed": "Triple-digit heat, well above normal for the time of year, is forecast for {metro} — a Weather Company meteorologist on the hottest hours for refrigerated trucks and loading docks",
     "audiences": [
-      "logistics and supply chain press",
-      "grocery retail trade media",
-      "national economy desks"
+      "food logistics trade press",
+      "cold chain trade press",
+      "local business desks"
     ],
     "seasonality_window": [
-      "06-25",
-      "07-05"
+      "03-15",
+      "11-15"
     ],
-    "base_weight": 1.2
+    "base_weight": 0.7,
+    "evidence": {
+      "source": "U.S. Department of Agriculture, Agricultural Marketing Service, Agriculture Handbook 669, \"Protecting Perishable Foods During Transport by Truck,\" 1995 (rev. 1999)",
+      "url": "https://ageconsearch.umn.edu/record/321862/files/AH669rev.pdf"
+    }
   },
   {
     "id": "SUP-002",
     "industry": "supplychain",
-    "entity": "last-mile courier and holiday parcel networks",
+    "entity": "parcel and last-mile delivery networks",
     "condition": {
       "metric": "snow_in",
       "op": ">=",
       "value": 2,
       "consecutive_days": 1
     },
-    "business_impact": "Calendar-aware: Early season winter systems blanketing high-density metro centers cause rapid drop-shipping center bottlenecks right as Black Friday and Cyber Monday volumes peak.",
-    "story_seed": "Cyber Week snow disruptions in {metro} threaten to delay high-volume holiday parcel sorting",
+    "business_impact": "A major parcel carrier reports that its express package volumes rise in late November and December, and that shipment levels, operating costs and earnings can be hurt by inclement weather, particularly severe winter weather from December through February.",
+    "story_seed": "Snow is in the {metro} forecast during the peak and winter shipping season — a Weather Company meteorologist on how much, when it falls and how quickly roads recover",
     "audiences": [
-      "e-commerce shipping press",
-      "retail supply chain trade",
+      "logistics and supply chain press",
+      "e-commerce and retail trade press",
       "local business desks"
     ],
     "seasonality_window": [
-      "11-20",
-      "11-30"
+      "11-15",
+      "02-28"
     ],
-    "base_weight": 1.25
-  },
-  {
-    "id": "SUP-003",
-    "industry": "supplychain",
-    "entity": "freight forwarding and cross-dock distribution centers",
-    "condition": {
-      "metric": "max_wind_mph",
-      "op": ">=",
-      "value": 40,
-      "consecutive_days": 1
-    },
-    "business_impact": "Streak trigger: High regional wind gusts force open-air freight cross-docks to lock down trailer loading activities, freezing peak autumn inventory replenishment flows.",
-    "story_seed": "Labor Day wind barriers force {metro} freight hubs to freeze terminal distribution loops",
-    "audiences": [
-      "industrial logistics press",
-      "freight transport media"
-    ],
-    "seasonality_window": [
-      "08-25",
-      "09-07"
-    ],
-    "base_weight": 1.1
+    "base_weight": 0.8,
+    "evidence": {
+      "source": "FedEx Corporation, Form 10-K for the fiscal year ended May 31, 2025 (Seasonality of Business; Risk Factors)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1048911/000104891125000011/fdx-20250531.htm"
+    }
   },
   {
     "id": "SUP-004",
     "industry": "supplychain",
-    "entity": "air freight carriers and premium cargo hubs",
+    "entity": "air cargo and airport ground operations",
     "condition": {
-      "metric": "min_temp_f",
-      "op": "<=",
-      "value": 5,
-      "consecutive_days": 2
+      "metric": "ice_in",
+      "op": ">=",
+      "value": 0.01,
+      "consecutive_days": 1
     },
-    "business_impact": "Anomaly trigger: Sustained sub-zero multi-day freezes freeze hydraulic airport sorting systems and tarmac support vehicles during the absolute final cutoff window for holiday delivery guarantees.",
-    "story_seed": "Polar vortex locks up air cargo machinery at {metro} hubs during peak holiday shipping countdown",
+    "business_impact": "Federal aviation rules bar takeoff when ice may adhere to an aircraft unless an approved deicing program is followed, and federal deicing guidance gives the least relief for freezing rain: it offers no holdover times for moderate or heavy freezing rain and does not approve takeoff in it.",
+    "story_seed": "Freezing rain is in the {metro} forecast — a Weather Company meteorologist on when ice could arrive and how long it may last, for air cargo hubs that plan deicing around it",
     "audiences": [
-      "air cargo transport press",
-      "national business press",
-      "supply chain executive media"
+      "air cargo trade press",
+      "logistics and supply chain press",
+      "local business desks"
     ],
     "seasonality_window": [
-      "12-15",
-      "12-24"
+      "10-15",
+      "04-15"
     ],
-    "base_weight": 1.35
+    "base_weight": 0.7,
+    "evidence": {
+      "source": "Federal Aviation Administration, \"Ground Deicing Program General Information,\" Issue 4, August 11, 2026",
+      "url": "https://www.faa.gov/other_visit/aviation_industry/airline_operators/airline_safety/deicing/26-27_FAA_General_Information_Document.pdf"
+    }
   },
   {
     "id": "SUP-005",
     "industry": "supplychain",
-    "entity": "urban grocery delivery fleets and food wholesalers",
+    "entity": "trucking and delivery fleets",
     "condition": {
-      "metric": "precip_in",
+      "metric": "ice_in",
       "op": ">=",
-      "value": 0.5,
+      "value": 0.01,
       "consecutive_days": 1
     },
-    "business_impact": "Calendar-aware: Heavy downpours or freezing rain networks on New Year's Eve delay urban box-truck fleets, stranding inventory and breaking localized retail shelf restock arrays.",
-    "story_seed": "New Year's Eve deluge gridlocks wholesale grocery transit across {metro} corridors",
-    "audiences": [
-      "wholesale food trade press",
-      "local city business editors"
-    ],
-    "seasonality_window": [
-      "12-26",
-      "01-02"
-    ],
-    "base_weight": 1.05
-  },
-  {
-    "id": "SUP-006",
-    "industry": "supplychain",
-    "entity": "heavy overland trucking and regional flatbed carriers",
-    "condition": {
-      "metric": "precip_in",
-      "op": ">=",
-      "value": 0.25,
-      "consecutive_days": 5
-    },
-    "business_impact": "Streak trigger: 5+ consecutive days of rain trigger spring thaw road subgrade saturations, forcing local jurisdictions to enact immediate heavy-axle freight weight restrictions.",
-    "story_seed": "Persistent five-day rain streak prompts regional trucking weight limits around {metro}",
+    "business_impact": "The federal rule for commercial truck drivers requires extreme caution and reduced speed when ice, sleet, snow or rain affect traction or visibility, and says trucks must stop if conditions become dangerous enough; freezing rain can leave roads icy, one of the conditions it names.",
+    "story_seed": "Freezing rain is in the {metro} forecast — a Weather Company meteorologist on when roads could ice over and when temperatures climb back above freezing",
     "audiences": [
       "trucking industry trade press",
-      "infrastructure logistics media"
+      "logistics and supply chain press",
+      "local business desks"
     ],
     "seasonality_window": [
-      "03-01",
-      "04-30"
+      "10-15",
+      "04-15"
     ],
-    "base_weight": 0.85
-  },
-  {
-    "id": "SUP-007",
-    "industry": "supplychain",
-    "entity": "maritime container ports and intermodal terminals",
-    "condition": {
-      "metric": "max_wind_mph",
-      "op": ">=",
-      "value": 45,
-      "consecutive_days": 1
-    },
-    "business_impact": "High wind thresholds instantly halt ship-to-shore gantry crane container operations, sparking widespread drayage container queue backlogs at major oceanic gateways.",
-    "story_seed": "High wind velocities ground port gantry crane operations at {metro} marine terminals",
-    "audiences": [
-      "maritime shipping trade press",
-      "global supply chain groups",
-      "national macroeconomics desks"
-    ],
-    "seasonality_window": [
-      "09-01",
-      "11-15"
-    ],
-    "base_weight": 1.2
+    "base_weight": 0.7,
+    "evidence": {
+      "source": "49 CFR 392.14, \"Hazardous conditions; extreme caution\" (Federal Motor Carrier Safety Regulations)",
+      "url": "https://www.govinfo.gov/content/pkg/CFR-2025-title49-vol5/pdf/CFR-2025-title49-vol5-sec392-14.pdf"
+    }
   },
   {
     "id": "SUP-008",
     "industry": "supplychain",
-    "entity": "intermodal rail networks and bulk class-1 carriers",
+    "entity": "freight and intermodal rail",
     "condition": {
       "metric": "temp_anomaly_f",
       "op": ">=",
@@ -172,357 +127,400 @@
         "value": 90
       }
     },
-    "business_impact": "Anomaly trigger: Severe unseasonable summer heat anomalies trigger extreme steel rail expansions, causing high risks of track buckling and forcing mandatory freight rail speed reductions.",
-    "story_seed": "Severe heat wave anomaly forces immediate train speed caps across {metro} rail networks",
+    "business_impact": "Federal rail safety research says railroads commonly impose speed restrictions in hot weather because heat raises the risk of track buckling, and that these decisions are often based on the day's air temperature, even though rails in the sun can run more than 30°F hotter than the air.",
+    "story_seed": "A stretch of unusual heat, well above normal for {metro}, is in the forecast — a Weather Company meteorologist on how hot and how long, for railroads that watch for heat-related track problems",
     "audiences": [
-      "rail transportation trade",
-      "industrial industrial media"
+      "rail and freight trade press",
+      "logistics and supply chain press",
+      "local business desks"
     ],
     "seasonality_window": [
-      "06-01",
-      "08-31"
+      "05-01",
+      "09-30"
     ],
-    "base_weight": 1.15
+    "base_weight": 0.8,
+    "evidence": {
+      "source": "Federal Railroad Administration, Office of Research and Development, Research Results RR08-06, \"Development of Rail Temperature Prediction Model,\" June 2008",
+      "url": "https://railroads.dot.gov/sites/fra.dot.gov/files/fra_net/2085/rr0806.pdf"
+    }
   },
   {
     "id": "SUP-009",
     "industry": "supplychain",
-    "entity": "fulfillment center fulfillment infrastructure and warehouse operations",
+    "entity": "warehouses, distribution and fulfillment centers",
     "condition": {
       "metric": "max_temp_f",
       "op": ">=",
-      "value": 98,
-      "consecutive_days": 3
+      "value": 95,
+      "consecutive_days": 1,
+      "also": {
+        "metric": "temp_anomaly_f",
+        "op": ">=",
+        "value": 10
+      }
     },
-    "business_impact": "Streak trigger: 3+ days of intense triple-digit heat runs strain localized warehouse HVAC systems, triggering safety-mandated shift pacing drops and slower box sorting throughput.",
-    "story_seed": "Extended midsummer heat block degrades fulfillment center processing speeds in {metro}",
+    "business_impact": "Research on California workers' compensation claims found that hotter days raise workplace injuries, including in indoor workplaces such as warehousing, with a day in the 95–100°F range raising injuries by roughly 10 to 15 percent in indoor industries compared with a mild day.",
+    "story_seed": "Heat in the mid-90s or hotter, well above normal, is forecast for {metro} — a Weather Company meteorologist on the hottest days ahead for warehouse and distribution center crews",
     "audiences": [
-      "e-commerce logistics media",
-      "occupational safety trade press"
+      "occupational safety trade press",
+      "logistics and supply chain press",
+      "local business desks"
     ],
     "seasonality_window": [
-      "07-01",
-      "08-31"
+      "04-15",
+      "10-15"
     ],
-    "base_weight": 1
-  },
-  {
-    "id": "SUP-010",
-    "industry": "supplychain",
-    "entity": "inland river barge operators and agricultural shippers",
-    "condition": {
-      "metric": "humidity_pct",
-      "op": ">=",
-      "value": 90,
-      "consecutive_days": 3
-    },
-    "business_impact": "Streak trigger: Prolonged dense morning humidity loops trap heavy river fog configurations, blinding barge towboats and completely halting grain river movements for days.",
-    "story_seed": "Persistent autumn fog corridors halt river barge traffic, trapping grain freight near {metro}",
-    "audiences": [
-      "agricultural shipping press",
-      "inland maritime trade columns"
-    ],
-    "seasonality_window": [
-      "10-01",
-      "12-31"
-    ],
-    "base_weight": 0.9
-  },
-  {
-    "id": "SUP-011",
-    "industry": "supplychain",
-    "entity": "perishable produce distributors and cold-storage operations",
-    "condition": {
-      "metric": "humidity_pct",
-      "op": ">=",
-      "value": 85,
-      "consecutive_days": 2
-    },
-    "business_impact": "Calendar-aware: High ambient humidity during Memorial Day peak distribution weeks accelerates fungal spore propagation in fresh produce cross-docks, causing instant scrap rate peaks.",
-    "story_seed": "Memorial Day produce staging hit by high humidity arrays, spiking cross-dock scrap metrics around {metro}",
-    "audiences": [
-      "fresh produce industry news",
-      "food logistics trade press"
-    ],
-    "seasonality_window": [
-      "05-20",
-      "05-31"
-    ],
-    "base_weight": 0.95
-  },
-  {
-    "id": "SUP-012",
-    "industry": "supplychain",
-    "entity": "regional less-than-truckload (LTL) carriers",
-    "condition": {
-      "metric": "severe_risk",
-      "op": ">=",
-      "value": 80,
-      "consecutive_days": 1
-    },
-    "business_impact": "Calendar-aware: High-severity convective storm fronts over Juneteenth halt terminal cross-dock operations, splitting regional multi-stop freight consolidation schedules.",
-    "story_seed": "Juneteenth severe weather fronts freeze LTL freight sorting matrices across {metro} hubs",
-    "audiences": [
-      "trucking logistics press",
-      "local industrial distribution desks"
-    ],
-    "seasonality_window": [
-      "06-12",
-      "06-20"
-    ],
-    "base_weight": 1
-  },
-  {
-    "id": "SUP-013",
-    "industry": "supplychain",
-    "entity": "consumer electronic component supply chains",
-    "condition": {
-      "metric": "max_wind_mph",
-      "op": ">=",
-      "value": 35,
-      "consecutive_days": 1
-    },
-    "business_impact": "Calendar-aware: Unexpected high wind gust lines during peak Back-to-School restocking weeks ground precision air freight feeder loops, delaying electronics distribution.",
-    "story_seed": "Back-to-school component pipelines disrupted by high wind lines sweeping {metro} airport networks",
-    "audiences": [
-      "consumer tech supply trade",
-      "aviation commerce press"
-    ],
-    "seasonality_window": [
-      "08-01",
-      "08-31"
-    ],
-    "base_weight": 0.8
+    "base_weight": 0.6,
+    "evidence": {
+      "source": "R. Jisung Park, Nora Pankratz and A. Patrick Behrer, \"Temperature, Workplace Safety, and Labor Market Inequality,\" IZA Discussion Paper 14560, 2021 (working paper)",
+      "url": "https://docs.iza.org/dp14560.pdf"
+    }
   },
   {
     "id": "SUP-014",
     "industry": "supplychain",
-    "entity": "fresh poultry and protein distributors",
+    "entity": "livestock trucking",
     "condition": {
-      "metric": "temp_anomaly_f",
+      "metric": "min_temp_f",
       "op": "<=",
-      "value": -15,
-      "consecutive_days": 2,
+      "value": 10,
+      "consecutive_days": 1,
       "also": {
-        "metric": "min_temp_f",
+        "metric": "temp_anomaly_f",
         "op": "<=",
-        "value": 28
+        "value": -15
       }
     },
-    "business_impact": "Calendar-aware: Unseasonable freezing anomalies right before Thanksgiving freeze poultry transport livestock vehicle routes, throwing massive delivery curveballs at processing operations.",
-    "story_seed": "Historic pre-Thanksgiving arctic blast disrupts livestock transport lanes into {metro}",
+    "business_impact": "The pork industry's transport handbook calls freezing temperatures and wind chill very dangerous for pigs in transit, says frostbitten pigs can be rejected or trimmed at the packing plant, and recommends the heaviest bedding and most closed-in trailer setup when the air temperature is 10°F or colder.",
+    "story_seed": "A low of 10°F or colder, during an unusually cold spell, is forecast for {metro} — a Weather Company meteorologist on the coldest hours and the wind, for livestock haulers setting up trailers",
     "audiences": [
-      "meat industry trade journals",
-      "agricultural business press"
+      "agricultural trade press",
+      "livestock and meat industry trade press",
+      "local business desks"
     ],
     "seasonality_window": [
-      "11-15",
-      "11-25"
+      "10-15",
+      "04-15"
     ],
-    "base_weight": 1.15
+    "base_weight": 0.7,
+    "evidence": {
+      "source": "National Pork Board, \"Transport Quality Assurance (TQA) Handbook,\" Version 8, December 2022",
+      "url": "https://www.porkcdn.com/sites/lms/TQA/TQA_V8_Handbook_12.08.22_Final.pdf"
+    }
   },
   {
     "id": "SUP-015",
     "industry": "supplychain",
-    "entity": "bulk commercial fuel transport providers",
+    "entity": "diesel truck fleets and fuel delivery",
     "condition": {
       "metric": "min_temp_f",
       "op": "<=",
-      "value": 0,
-      "consecutive_days": 2
+      "value": 20,
+      "consecutive_days": 1,
+      "also": {
+        "metric": "temp_anomaly_f",
+        "op": "<=",
+        "value": -20
+      }
     },
-    "business_impact": "Calendar-aware: Extreme sub-zero temperatures over MLK Day weekend lead to diesel fuel gelling in delivery fleets, stranding critical heating fuel transport networks.",
-    "story_seed": "MLK holiday freeze triggers fleet fuel gelling risks, delaying bulk transit around {metro}",
+    "business_impact": "Winter diesel is blended for the cold that is typical where and when it is sold, so a cold snap well beyond the usual for a place can push temperatures below what the local fuel is made for and may cause cold-weather fuel problems for trucks and delivery fleets.",
+    "story_seed": "An unusually deep cold snap is forecast for {metro} — a Weather Company meteorologist on how cold the nights get compared with a typical winter there",
     "audiences": [
-      "energy transport logistics press",
-      "petroleum marketing media"
+      "trucking industry trade press",
+      "energy and fuel trade press",
+      "local business desks"
     ],
     "seasonality_window": [
-      "01-10",
-      "01-22"
+      "11-01",
+      "03-31"
     ],
-    "base_weight": 1.2
+    "base_weight": 0.5
   },
   {
     "id": "SUP-016",
     "industry": "supplychain",
-    "entity": "intermodal rail and shipping line networks",
+    "entity": "freight and intermodal rail",
     "condition": {
       "metric": "snow_in",
       "op": ">=",
       "value": 4,
-      "consecutive_days": 2
+      "consecutive_days": 1
     },
-    "business_impact": "Calendar-aware: Heavy multi-day snow accumulations over Presidents' Day long weekend freeze track switching systems, gridlocking intermodal rail-to-truck container transfers.",
-    "story_seed": "Presidents' Day multi-day snow dump gridlocks rail yards and container transfer spaces in {metro}",
+    "business_impact": "A federal transportation research center's analysis of railroad accident reports found that from December through March most weather-related rail accidents come from snow and ice buildup, which can cause switch malfunctions and derailments, and that snow and ice can cause regional delays.",
+    "story_seed": "Four inches or more of snow is in the {metro} forecast — a Weather Company meteorologist on how much accumulates and how cold it stays afterward, for rail yards and switches",
     "audiences": [
-      "intermodal transport media",
-      "railway operations press"
+      "rail and freight trade press",
+      "logistics and supply chain press",
+      "local business desks"
     ],
     "seasonality_window": [
-      "02-10",
-      "02-22"
+      "10-15",
+      "04-30"
     ],
-    "base_weight": 1.1
+    "base_weight": 0.7,
+    "evidence": {
+      "source": "Michael A. Rossetti, \"Analysis of Weather Events on U.S. Railroads,\" USDOT Volpe National Transportation Systems Center, American Meteorological Society conference paper 4A.2, 2006",
+      "url": "https://ams.confex.com/ams/pdfpapers/118791.pdf"
+    }
   },
   {
     "id": "SUP-017",
     "industry": "supplychain",
-    "entity": "overland regional parcel freight carriers",
+    "entity": "trucking and delivery on regional highways",
     "condition": {
       "metric": "precip_in",
       "op": ">=",
       "value": 1,
-      "consecutive_days": 1
+      "consecutive_days": 1,
+      "also": {
+        "metric": "max_temp_f",
+        "op": ">=",
+        "value": 45
+      }
     },
-    "business_impact": "Calendar-aware: Flash flooding downpours over Columbus Day close major interstate freight lanes, cutting off regional sorting centers from outbound hub transfers.",
-    "story_seed": "Columbus Day torrential flash flooding severs key trucking corridors feeding {metro} hubs",
+    "business_impact": "Federal road weather research says heavy rain can cut freeway speeds by up to 16 percent and freeway capacity by 10 to 30 percent, and that rain causes more delay than snow, ice or fog because it happens far more often; adverse weather affects freight traffic about 4.6 percent of the time nationally.",
+    "story_seed": "An inch or more of rain is in the {metro} forecast — a Weather Company meteorologist on when the heaviest rain falls and whether it lines up with rush hour",
     "audiences": [
-      "overland freight trade press",
-      "local business shipping logs"
+      "trucking industry trade press",
+      "logistics and supply chain press",
+      "local business desks"
     ],
     "seasonality_window": [
-      "10-05",
-      "10-15"
+      "01-01",
+      "12-31"
     ],
-    "base_weight": 1
+    "base_weight": 0.6,
+    "evidence": {
+      "source": "Federal Highway Administration, Road Weather Management Program, \"How Do Weather Events Affect Roads?\"",
+      "url": "https://ops.fhwa.dot.gov/weather/q1_roadimpact.htm"
+    }
   },
   {
     "id": "SUP-018",
     "industry": "supplychain",
-    "entity": "pharmaceutical and clinical product logistics",
+    "entity": "pharmaceutical and vaccine distribution",
     "condition": {
-      "metric": "temp_anomaly_f",
+      "metric": "min_temp_f",
       "op": "<=",
-      "value": -10,
-      "consecutive_days": 2,
+      "value": 32,
+      "consecutive_days": 1,
       "also": {
-        "metric": "min_temp_f",
+        "metric": "temp_anomaly_f",
         "op": "<=",
-        "value": 32
+        "value": -15
       }
     },
-    "business_impact": "Calendar-aware: Early season winter blast anomalies during Veterans Day break sensitive temperature envelopes inside last-mile medical transport networks, forcing vaccine batch line scraps.",
-    "story_seed": "Early winter blast anomaly breaches pharmaceutical transit temperature parameters across {metro}",
+    "business_impact": "Federal vaccine handling guidance says a single exposure to freezing temperatures can destroy the potency of refrigerated vaccines without any visible sign, and warns that poorly insulated containers and vehicle trunks are affected by outdoor temperatures during transport.",
+    "story_seed": "A freezing night during an unusual cold spell is forecast for {metro} — a Weather Company meteorologist on how cold and for how long, for clinics and couriers moving temperature-sensitive medicines",
     "audiences": [
-      "pharmaceutical supply chain trade",
-      "biotech logistics press"
+      "pharmaceutical supply chain trade press",
+      "healthcare trade press",
+      "local health desks"
     ],
     "seasonality_window": [
-      "11-04",
-      "11-11"
+      "10-01",
+      "04-15"
     ],
-    "base_weight": 1.25
-  },
-  {
-    "id": "SUP-019",
-    "industry": "supplychain",
-    "entity": "reverse logistics portals and product return infrastructure",
-    "condition": {
-      "metric": "snow_in",
-      "op": ">=",
-      "value": 3,
-      "consecutive_days": 1
-    },
-    "business_impact": "Second-order effect: Massive post-Christmas snowstorms jam reverse logistics loops, delaying holiday return inventories from reaching warehouse resale classification status.",
-    "story_seed": "Post-holiday return loop paralyzed by heavy winter weather dumping on {metro} sorting nodes",
-    "audiences": [
-      "reverse logistics trade press",
-      "retail retail inventory managers",
-      "social"
-    ],
-    "seasonality_window": [
-      "12-26",
-      "01-15"
-    ],
-    "base_weight": 0.95
-  },
-  {
-    "id": "SUP-020",
-    "industry": "supplychain",
-    "entity": "agricultural milling supply and grain bulk transport",
-    "condition": {
-      "metric": "severe_risk",
-      "op": ">=",
-      "value": 60,
-      "consecutive_days": 3
-    },
-    "business_impact": "Streak trigger: 3+ days of severe weather convective risks damage silo elevators and halt loading arrays during critical early summer harvest shipping rushes.",
-    "story_seed": "Three-day severe storm cluster breaks early grain harvest bulk loading speeds near {metro}",
-    "audiences": [
-      "agricultural milling trade",
-      "bulk transport business press"
-    ],
-    "seasonality_window": [
-      "04-01",
-      "06-30"
-    ],
-    "base_weight": 1
+    "base_weight": 0.5,
+    "evidence": {
+      "source": "Centers for Disease Control and Prevention, \"Vaccine Storage and Handling Toolkit,\" July 2026",
+      "url": "https://www.cdc.gov/vaccines/hcp/downloads/storage-handling-toolkit.pdf"
+    }
   },
   {
     "id": "SUP-021",
     "industry": "supplychain",
-    "entity": "last-mile delivery logistics",
+    "entity": "trucking and delivery on regional highways",
     "condition": {
       "metric": "severe_risk",
       "op": ">=",
       "value": 60,
       "consecutive_days": 1
     },
-    "business_impact": "Severe convective storms disrupt last-mile routing, delaying intermodal freight transfers and forcing drivers off the road due to zero-visibility and hail threats.",
-    "story_seed": "Severe storms threaten last-mile delivery networks across {metro}",
+    "business_impact": "A federal study of truck travel times on major freight highways found that weather events, including thunderstorm wind, hail and heavy rain, can significantly slow freight traffic, with the biggest slowdowns in the first hour of a storm and during the evening rush when afternoon thunderstorms hit.",
+    "story_seed": "Severe thunderstorms are possible in the {metro} forecast — a Weather Company meteorologist on when storms could reach the highways and how long they may last",
     "audiences": [
-      "logistics trade press",
-      "supply chain analysts"
+      "logistics and supply chain press",
+      "trucking industry trade press",
+      "local business desks"
+    ],
+    "seasonality_window": [
+      "01-01",
+      "12-31"
+    ],
+    "base_weight": 0.8,
+    "evidence": {
+      "source": "Federal Highway Administration, \"Regional Assessment of Weather Impacts on Freight,\" FHWA-HOP-16-044, February 2016",
+      "url": "https://ops.fhwa.dot.gov/publications/fhwahop16044/fhwahop16044.pdf"
+    }
+  },
+  {
+    "id": "SUP-023",
+    "industry": "supplychain",
+    "entity": "warehouse, dock, yard and delivery workers",
+    "condition": {
+      "metric": "heat_index_f",
+      "op": ">=",
+      "value": 95,
+      "consecutive_days": 1,
+      "also": {
+        "metric": "temp_anomaly_f",
+        "op": ">=",
+        "value": 8
+      }
+    },
+    "business_impact": "Federal workplace safety guidance grades a forecast heat index of 95°F or higher as \"danger\", says serious heat illness becomes more frequent among workers doing heavy lifting, carrying and pushing loads, especially when they are not acclimatized, and lists warehousing, freight trucking, couriers and local delivery among the industries most likely to face heat hazards.",
+    "story_seed": "A heat index in the danger range is forecast for {metro}, hotter than usual for the time of year — a Weather Company meteorologist on the hottest hours for warehouse, dock and delivery crews and when relief arrives",
+    "audiences": [
+      "occupational safety trade press",
+      "logistics and supply chain press",
+      "local business desks"
+    ],
+    "seasonality_window": [
+      "03-15",
+      "11-15"
+    ],
+    "base_weight": 0.9,
+    "evidence": {
+      "source": "U.S. Occupational Safety and Health Administration, CPL 03-00-024, \"National Emphasis Program – Outdoor and Indoor Heat-Related Hazards,\" effective April 10, 2026",
+      "url": "https://www.osha.gov/sites/default/files/enforcement/directives/CPL_03-00-024_0.pdf"
+    }
+  },
+  {
+    "id": "SUP-024",
+    "industry": "supplychain",
+    "entity": "trucking: high-profile and lightly loaded trailers",
+    "condition": {
+      "metric": "max_gust_mph",
+      "op": ">=",
+      "value": 40,
+      "consecutive_days": 1
+    },
+    "business_impact": "One windy state's highway department classes gusts of 40 mph as a strong-wind condition that calls for extra caution on any road, and aims its blow-over warnings at moving vans, small trailers and lightly loaded commercial trucks, the vehicles most easily pushed off the road by wind.",
+    "story_seed": "Gusts of 40 mph or more are in the {metro} forecast — a Weather Company meteorologist on when the strongest gusts hit and which direction they come from, for drivers of empty and high-sided trailers",
+    "audiences": [
+      "trucking industry trade press",
+      "logistics and supply chain press",
+      "local business desks"
+    ],
+    "seasonality_window": [
+      "01-01",
+      "12-31"
+    ],
+    "base_weight": 0.6,
+    "evidence": {
+      "source": "Wyoming Department of Transportation, WYDOT Travel Information Service, \"Definitions\" (Strong Wind; Extreme Blow Over Risk; Weight-Based Wind Closure)",
+      "url": "https://www.wyoroad.info/Highway/definitions.html"
+    }
+  },
+  {
+    "id": "SUP-025",
+    "industry": "supplychain",
+    "entity": "outdoor freight crews: docks, yards, ramps and delivery",
+    "condition": {
+      "metric": "severe_risk",
+      "op": ">=",
+      "value": 40,
+      "consecutive_days": 1
+    },
+    "business_impact": "Federal workplace safety and weather agencies treat lightning as a job hazard and advise employers to check the forecast before outdoor work and consider rescheduling, so thunder in the forecast can mean stop-and-shelter time for crews working outdoors at docks, yards, airport ramps and on delivery routes.",
+    "story_seed": "Thunderstorms are expected in the {metro} forecast — a Weather Company meteorologist on the likely timing, for crews working outdoors at docks, yards and airport ramps",
+    "audiences": [
+      "occupational safety trade press",
+      "logistics and supply chain press",
+      "local business desks"
     ],
     "seasonality_window": [
       "03-01",
       "11-30"
     ],
-    "base_weight": 1.3
+    "base_weight": 0.5
   },
   {
-    "id": "SUP-022",
+    "id": "SUP-026",
     "industry": "supplychain",
-    "entity": "cold chain and warehousing",
+    "entity": "warehouse, dock, yard and delivery workers in hot climates",
     "condition": {
-      "metric": "humidity_pct",
+      "metric": "heat_index_f",
       "op": ">=",
-      "value": 90,
-      "consecutive_days": 3
+      "value": 110,
+      "consecutive_days": 1
     },
-    "business_impact": "Prolonged high humidity heavily strains cold-chain logistics and warehouse climate control systems, risking perishable spoilage and spiking facility energy costs.",
-    "story_seed": "Sustained high humidity tests cold chain resilience in {metro}",
+    "business_impact": "A heat index of 110°F or more is well inside the range federal safety guidance grades as danger, and research on workers' compensation claims suggests hot days may be more harmful for outdoor workers in places where such heat is common, not less, so even routine extreme heat can be a risk for logistics crews.",
+    "story_seed": "A heat index of 110°F or higher is in the {metro} forecast — a Weather Company meteorologist on the hottest hours for warehouse, dock and delivery crews",
     "audiences": [
-      "cold chain trade press",
-      "food logistics reporters"
+      "occupational safety trade press",
+      "logistics and supply chain press",
+      "local business desks"
     ],
     "seasonality_window": [
-      "05-01",
-      "09-30"
+      "04-15",
+      "10-15"
     ],
-    "base_weight": 1.2
+    "base_weight": 0.5
   },
   {
-    "id": "SUP-023",
+    "id": "SUP-027",
     "industry": "supplychain",
-    "entity": "open-air intermodal yards",
+    "entity": "freight and intermodal rail",
     "condition": {
-      "metric": "uv_index",
-      "op": ">=",
+      "metric": "min_temp_f",
+      "op": "<",
       "value": 10,
-      "consecutive_days": 2
+      "consecutive_days": 1,
+      "also": {
+        "metric": "temp_anomaly_f",
+        "op": "<=",
+        "value": -15
+      }
     },
-    "business_impact": "Extreme UV indexes over consecutive days trigger mandatory heat-safety breaks for outdoor loading crews, slowing drayage turnaround and intermodal transfers.",
-    "story_seed": "Extreme UV and heat-safety protocols slow shipping turnaround at {metro} intermodal yards",
+    "business_impact": "Federal rail safety rules define cold weather for train operations as air temperatures below 10°F and require every railroad to follow written procedures for operating safely in it, tailored to its equipment and territory.",
+    "story_seed": "A low below 10°F, during an unusually cold spell, is in the {metro} forecast — a Weather Company meteorologist on how cold the nights get and how long the cold lasts, for railroads working under cold-weather rules",
     "audiences": [
-      "freight transport media",
-      "occupational safety trade press"
+      "rail and freight trade press",
+      "logistics and supply chain press",
+      "local business desks"
     ],
     "seasonality_window": [
-      "05-01",
-      "09-30"
+      "10-01",
+      "04-30"
     ],
-    "base_weight": 1.05
+    "base_weight": 0.6,
+    "evidence": {
+      "source": "49 CFR 232.107(e), \"Air source requirements and cold weather operations\" (Federal Railroad Administration)",
+      "url": "https://www.ecfr.gov/current/title-49/subtitle-B/chapter-II/part-232/subpart-B/section-232.107"
+    }
+  },
+  {
+    "id": "SUP-028",
+    "industry": "supplychain",
+    "entity": "freight and intermodal rail",
+    "condition": {
+      "metric": "precip_in",
+      "op": ">=",
+      "value": 2,
+      "consecutive_days": 1,
+      "also": {
+        "metric": "max_temp_f",
+        "op": ">=",
+        "value": 45
+      }
+    },
+    "business_impact": "A federal transportation research center's analysis of railroad accident reports found that heavy rain, flooding and runoff, which can saturate roadbeds and wash out track, bridges and culverts, are the second most common weather cause of rail accidents after extreme temperatures.",
+    "story_seed": "Two inches or more of rain is in the {metro} forecast — a Weather Company meteorologist on where the heaviest totals fall and how fast, for railroads watching for flooding and washouts",
+    "audiences": [
+      "rail and freight trade press",
+      "logistics and supply chain press",
+      "local business desks"
+    ],
+    "seasonality_window": [
+      "01-01",
+      "12-31"
+    ],
+    "base_weight": 0.6,
+    "evidence": {
+      "source": "Michael A. Rossetti, \"Analysis of Weather Events on U.S. Railroads,\" USDOT Volpe National Transportation Systems Center, American Meteorological Society conference paper 4A.2, 2006",
+      "url": "https://ams.confex.com/ams/pdfpapers/118791.pdf"
+    }
   }
 ]
