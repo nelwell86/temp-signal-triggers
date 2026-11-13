@@ -1,521 +1,426 @@
 [
   {
-    "id": "TRV-001",
-    "industry": "travel",
-    "entity": "airlines and commercial aviation hubs",
-    "condition": {
-      "metric": "severe_risk",
-      "op": ">=",
-      "value": 80,
-      "consecutive_days": 1
-    },
-    "business_impact": "Second-order effect: Severe thunderstorm risks during peak summer holiday weekends result in rolling tarmac delays and immediate hub-and-spoke routing cancellations.",
-    "story_seed": "Holiday travel rush gridlocked in {metro} as severe storm threats trigger rolling airport cancellations",
-    "audiences": [
-      "aviation travel press",
-      "national business press",
-      "local news desks"
-    ],
-    "seasonality_window": [
-      "05-20",
-      "07-06"
-    ],
-    "base_weight": 1.3
-  },
-  {
     "id": "TRV-002",
     "industry": "travel",
-    "entity": "hotels and regional drive-to tourism",
+    "entity": "drivers and road travelers",
     "condition": {
       "metric": "precip_in",
       "op": ">=",
-      "value": 0.75,
-      "consecutive_days": 3
+      "value": 1.0,
+      "consecutive_days": 1,
+      "also": {
+        "metric": "max_temp_f",
+        "op": ">=",
+        "value": 50
+      }
     },
-    "business_impact": "Streak trigger: Relentless holiday weekend washouts completely kill drive-to regional leisure tourism, driving immediate motel and short-term rental cancellation peaks.",
-    "story_seed": "Labor Day weekend washout anchors travelers at home, denting {metro} tourism revenue",
+    "business_impact": "Federal highway data show that wet pavement is present in about 70 percent of weather-related crashes and 76 percent of weather-related traffic deaths, and that wet pavement can cut speeds on city arterial roads by 10 to 25 percent.",
+    "story_seed": "A soaking day of an inch or more of precipitation is forecast for {metro} — a Weather Company meteorologist on when it is heaviest and when roads should dry, for people with trips planned",
     "audiences": [
-      "hospitality trade press",
-      "local economy desks",
-      "social"
+      "local news",
+      "consumer travel reporters",
+      "auto and mobility press"
     ],
     "seasonality_window": [
-      "08-25",
-      "09-07"
+      "01-01",
+      "12-31"
     ],
-    "base_weight": 0.9
+    "base_weight": 0.6,
+    "evidence": {
+      "source": "Federal Highway Administration, Road Weather Management Program, \"How Do Weather Events Impact Roads?\"",
+      "url": "https://ops.fhwa.dot.gov/weather/q1_roadimpact.htm"
+    }
   },
   {
     "id": "TRV-003",
     "industry": "travel",
-    "entity": "intercity rail networks and interstate transit",
-    "condition": {
-      "metric": "snow_in",
-      "op": ">=",
-      "value": 4,
-      "consecutive_days": 1
-    },
-    "business_impact": "Calendar-aware: Major pre-Thanksgiving winter storms paralyze regional rail and road networks during the absolute heaviest travel transit days of the year.",
-    "story_seed": "Pre-Thanksgiving snow disaster threatens to freeze regional rail corridors out of {metro}",
-    "audiences": [
-      "national news platforms",
-      "transportation trade press"
-    ],
-    "seasonality_window": [
-      "11-18",
-      "11-28"
-    ],
-    "base_weight": 1.4
-  },
-  {
-    "id": "TRV-004",
-    "industry": "travel",
-    "entity": "rideshare platforms and city transport",
-    "condition": {
-      "metric": "precip_in",
-      "op": ">=",
-      "value": 0.5,
-      "consecutive_days": 1
-    },
-    "business_impact": "Calendar-aware: Heavy rainfall or freezing drizzle on New Year's Eve breaks urban walking profiles, spiking localized rideshare demand and surge multi-pricing to records.",
-    "story_seed": "NYE downpour in {metro} triggers historic rideshare price surges as partygoers flee the streets",
-    "audiences": [
-      "tech press",
-      "local urban lifestyle desks",
-      "social"
-    ],
-    "seasonality_window": [
-      "12-29",
-      "01-01"
-    ],
-    "base_weight": 1.1
-  },
-  {
-    "id": "TRV-005",
-    "industry": "travel",
-    "entity": "ski resorts and alpine mountain lodging",
-    "condition": {
-      "metric": "snow_in",
-      "op": ">=",
-      "value": 6,
-      "consecutive_days": 2
-    },
-    "business_impact": "Calendar-aware: A massive multi-day powder layout right before Presidents' Day weekend triggers an immediate surge in premium ski chalet bookings and equipment rentals.",
-    "story_seed": "Perfect Presidents' Day powder dump sets up {metro} mountain resorts for record revenues",
-    "audiences": [
-      "travel lifestyle press",
-      "regional tourism boards"
-    ],
-    "seasonality_window": [
-      "02-08",
-      "02-22"
-    ],
-    "base_weight": 1.05
-  },
-  {
-    "id": "TRV-006",
-    "industry": "travel",
-    "entity": "theme parks and outdoor attractions",
-    "condition": {
-      "metric": "max_temp_f",
-      "op": ">=",
-      "value": 95,
-      "consecutive_days": 3
-    },
-    "business_impact": "Streak trigger: Prolonged triple-digit midsummer heat waves hit outdoor theme park attendance thresholds, forcing operators to pivot to indoor theater promotions.",
-    "story_seed": "Three-day extreme heat block deflates {metro} outdoor theme park traffic",
-    "audiences": [
-      "amusement industry trade",
-      "consumer travel desks"
-    ],
-    "seasonality_window": [
-      "06-15",
-      "08-15"
-    ],
-    "base_weight": 0.8
-  },
-  {
-    "id": "TRV-007",
-    "industry": "travel",
-    "entity": "business travel booking platforms",
-    "condition": {
-      "metric": "temp_anomaly_f",
-      "op": "<=",
-      "value": -15,
-      "consecutive_days": 2,
-      "also": {
-        "metric": "min_temp_f",
-        "op": "<=",
-        "value": 15
-      }
-    },
-    "business_impact": "Anomaly trigger: Severe unseasonable deep freezes trigger immediate cancellations of corporate flights, freezing Q1 regional sales conventions.",
-    "story_seed": "Historic midwinter temperature anomaly cancels {metro} corporate conventions, freezing business travel",
-    "audiences": [
-      "corporate travel networks",
-      "national business columns"
-    ],
-    "seasonality_window": [
-      "12-01",
-      "02-28"
-    ],
-    "base_weight": 1.15
-  },
-  {
-    "id": "TRV-008",
-    "industry": "travel",
-    "entity": "beachfront resorts and coastal rentals",
-    "condition": {
-      "metric": "max_wind_mph",
-      "op": ">=",
-      "value": 40,
-      "consecutive_days": 1
-    },
-    "business_impact": "High late-summer tropical wind gust thresholds force beach closures, prompting immediate premature checkouts and localized resort revenue losses.",
-    "story_seed": "High wind boundaries force early beach checkout peak, disrupting coastal {metro} lodgings",
-    "audiences": [
-      "hospitality business press",
-      "regional real estate desks"
-    ],
-    "seasonality_window": [
-      "08-01",
-      "10-15"
-    ],
-    "base_weight": 0.95
-  },
-  {
-    "id": "TRV-009",
-    "industry": "travel",
-    "entity": "car rental agencies and road trip providers",
-    "condition": {
-      "metric": "temp_anomaly_f",
-      "op": ">=",
-      "value": 15,
-      "consecutive_days": 3,
-      "also": {
-        "metric": "max_temp_f",
-        "op": ">=",
-        "value": 85
-      }
-    },
-    "business_impact": "Anomaly trigger: Severe pre-summer heat deviations prompt an unseasonably early surge in regional rental bookings and premium convertible/SUV fleet upgrades.",
-    "story_seed": "Pre-summer heat anomaly triggers unprecedented road trip car rental run across {metro}",
-    "audiences": [
-      "automotive travel trade",
-      "consumer finance press"
-    ],
-    "seasonality_window": [
-      "05-01",
-      "06-15"
-    ],
-    "base_weight": 0.85
-  },
-  {
-    "id": "TRV-010",
-    "industry": "travel",
-    "entity": "cruise lines and port operators",
-    "condition": {
-      "metric": "max_wind_mph",
-      "op": ">=",
-      "value": 35,
-      "consecutive_days": 2
-    },
-    "business_impact": "Sustained high wind vectors across key shipping lanes force cruise operators into immediate, high-cost itinerary changes and missed port stops.",
-    "story_seed": "Persistent autumn wind fronts force emergency cruise re-routing out of {metro} ports",
-    "audiences": [
-      "cruise industry press",
-      "maritime business news"
-    ],
-    "seasonality_window": [
-      "09-01",
-      "11-15"
-    ],
-    "base_weight": 1
-  },
-  {
-    "id": "TRV-011",
-    "industry": "travel",
-    "entity": "eco-tourism and national park lodgings",
-    "condition": {
-      "metric": "precip_in",
-      "op": ">=",
-      "value": 0.25,
-      "consecutive_days": 5
-    },
-    "business_impact": "Streak trigger: 5+ days of relentless rain saturation ruins trail networks, instantly shifting weekend traveler volume to urban museum ticketing arrays.",
-    "story_seed": "Five-day rain saturation sidelines {metro} trail networks, shifts tourist dollars indoors",
-    "audiences": [
-      "outdoor recreation press",
-      "local tourism boards"
-    ],
-    "seasonality_window": [
-      "04-01",
-      "05-31"
-    ],
-    "base_weight": 0.75
-  },
-  {
-    "id": "TRV-012",
-    "industry": "travel",
-    "entity": "urban boutique hotels and weekend city tours",
-    "condition": {
-      "metric": "max_temp_f",
-      "op": ">=",
-      "value": 90,
-      "consecutive_days": 1
-    },
-    "business_impact": "Calendar-aware: High heat profiles over the Juneteenth holiday completely stop walking tour profiles, funneling booking traffic directly into air-conditioned hospitality indoor footprints.",
-    "story_seed": "Juneteenth holiday heat wave alters {metro} tourist traffic patterns toward indoor properties",
-    "audiences": [
-      "local urban travel desks",
-      "hospitality trade press"
-    ],
-    "seasonality_window": [
-      "06-12",
-      "06-20"
-    ],
-    "base_weight": 0.95
-  },
-  {
-    "id": "TRV-013",
-    "industry": "travel",
-    "entity": "corporate retreat venues and conference properties",
+    "entity": "holiday drivers and travelers",
     "condition": {
       "metric": "snow_in",
       "op": ">=",
       "value": 1,
       "consecutive_days": 1
     },
-    "business_impact": "Calendar-aware: MLK Day weekend early snowfalls completely derail executive retreats, forcing corporate hospitality properties to issue instant virtual event re-bookings.",
-    "story_seed": "MLK holiday weekend winter storm shifts {metro} corporate summits to virtual arrays",
+    "business_impact": "Federal highway data show that snowy or slushy pavement can cut speeds on city arterial roads by 30 to 40 percent and that snow, sleet and freezing rain are present in about 18 percent of weather-related crashes.",
+    "story_seed": "Snow is forecast for {metro} during Thanksgiving travel — a Weather Company meteorologist on timing and road conditions for people heading out or coming home",
     "audiences": [
-      "corporate events industry",
-      "business travel press"
+      "local news",
+      "consumer travel reporters",
+      "national news platforms"
     ],
     "seasonality_window": [
-      "01-10",
-      "01-22"
+      "11-20",
+      "12-02"
     ],
-    "base_weight": 0.8
+    "anchor": {
+      "holiday": "thanksgiving",
+      "days": [
+        -2,
+        3
+      ]
+    },
+    "base_weight": 1.0,
+    "evidence": {
+      "source": "Federal Highway Administration, Road Weather Management Program, \"How Do Weather Events Impact Roads?\"",
+      "url": "https://ops.fhwa.dot.gov/weather/q1_roadimpact.htm"
+    }
+  },
+  {
+    "id": "TRV-004",
+    "industry": "travel",
+    "entity": "ride-hailing riders and city trips",
+    "condition": {
+      "metric": "precip_in",
+      "op": ">=",
+      "value": 0.75,
+      "consecutive_days": 1,
+      "also": {
+        "metric": "max_temp_f",
+        "op": ">=",
+        "value": 50
+      }
+    },
+    "business_impact": "One study of New York City found that ride-hailing trips were about 8 percent higher on rainy days and about 18 percent higher in rainy hours, while taxi trips rose far less.",
+    "story_seed": "A wet day is forecast for {metro} — a Weather Company meteorologist on when rain is most likely, for people deciding how to get around",
+    "audiences": [
+      "local news",
+      "tech and mobility press",
+      "consumer reporters"
+    ],
+    "seasonality_window": [
+      "01-01",
+      "12-31"
+    ],
+    "base_weight": 0.5,
+    "evidence": {
+      "source": "Brodeur and Nield, \"Has Uber Made It Easier to Get a Ride in the Rain?\" working paper (2017), presented at the American Economic Association annual meeting, 2018",
+      "url": "https://www.aeaweb.org/conference/2018/preliminary/paper/QbB68d7d"
+    }
+  },
+  {
+    "id": "TRV-006",
+    "industry": "travel",
+    "entity": "theme parks and outdoor attractions",
+    "condition": {
+      "metric": "heat_index_f",
+      "op": ">=",
+      "value": 103,
+      "consecutive_days": 2
+    },
+    "business_impact": "A large theme-park operator reports that because most of its attractions are outdoors, attendance can be reduced by continuous bad or extreme weather and even by forecasts of it, and that excessive heat was among the conditions that lowered attendance at its parks in 2025.",
+    "story_seed": "A heat index of 103°F or more is forecast for {metro} for at least two days in a row — a Weather Company meteorologist on the hottest hours and any relief, for theme parks and families planning a visit",
+    "audiences": [
+      "travel and leisure press",
+      "local business desks",
+      "consumer travel reporters"
+    ],
+    "seasonality_window": [
+      "04-15",
+      "10-31"
+    ],
+    "base_weight": 0.6,
+    "evidence": {
+      "source": "Six Flags Entertainment Corporation, Form 10-K for fiscal year 2025, Item 1A Risk Factors",
+      "url": "https://www.sec.gov/Archives/edgar/data/1999001/000199900126000048/fun-20251231.htm"
+    }
+  },
+  {
+    "id": "TRV-013",
+    "industry": "travel",
+    "entity": "drivers and road travelers",
+    "condition": {
+      "metric": "snow_in",
+      "op": ">=",
+      "value": 2,
+      "consecutive_days": 1
+    },
+    "business_impact": "Federal highway data show that snowy or slushy pavement can cut speeds on city arterial roads by 30 to 40 percent, that snow on freeways reduces average speeds and capacity, and that snow, sleet and freezing rain are present in about 18 percent of weather-related crashes.",
+    "story_seed": "Snow is forecast for {metro} — a Weather Company meteorologist on when it starts, how much may fall and what it means for roads during the trips people have planned",
+    "audiences": [
+      "local news",
+      "consumer travel reporters",
+      "auto and mobility press"
+    ],
+    "seasonality_window": [
+      "10-15",
+      "04-30"
+    ],
+    "base_weight": 0.6,
+    "evidence": {
+      "source": "Federal Highway Administration, Road Weather Management Program, \"How Do Weather Events Impact Roads?\"",
+      "url": "https://ops.fhwa.dot.gov/weather/q1_roadimpact.htm"
+    }
   },
   {
     "id": "TRV-014",
     "industry": "travel",
-    "entity": "campground networks and RV rental operators",
+    "entity": "campers and RV travelers",
     "condition": {
       "metric": "min_temp_f",
       "op": "<=",
-      "value": 40,
-      "consecutive_days": 2
+      "value": 32,
+      "consecutive_days": 1
     },
-    "business_impact": "Calendar-aware: Sudden freeze lines over the Columbus/Indigenous Peoples' Day long weekend prompt mass cancellations of outdoor recreational site and glamping reservations.",
-    "story_seed": "Holiday weekend frost line triggers mass cancellations across {metro} RV and campground sites",
+    "business_impact": "A night at or below freezing can be hard on people camping or sleeping in RVs, and park safety guidance warns that hypothermia can occur well above freezing, especially in wind or rain.",
+    "story_seed": "A freezing night is forecast for {metro} — a Weather Company meteorologist on how cold it may get and when, for people camping or heading out in an RV",
     "audiences": [
-      "outdoor hospitality press",
-      "consumer leisure trends"
+      "outdoor recreation press",
+      "local news",
+      "consumer travel reporters"
     ],
     "seasonality_window": [
-      "10-05",
-      "10-15"
+      "09-15",
+      "10-31"
     ],
-    "base_weight": 0.85
+    "base_weight": 0.5
   },
   {
     "id": "TRV-015",
     "industry": "travel",
-    "entity": "airport parking structures and valet logistics",
+    "entity": "air travelers and airlines",
     "condition": {
-      "metric": "snow_in",
+      "metric": "ice_in",
       "op": ">=",
-      "value": 3,
+      "value": 0.01,
       "consecutive_days": 1
     },
-    "business_impact": "Calendar-aware: High-volume pre-Christmas winter storms block open-air airport parking structures, trapping outbound vehicles and gridlocking holiday shuttle operations.",
-    "story_seed": "Pre-Christmas snow dump traps vehicles, paralyzes {metro} airport parking logistics",
+    "business_impact": "Federal aviation rules bar takeoff when ice may adhere to an aircraft unless an approved deicing program is followed, and federal deicing guidance gives the least relief for freezing rain: it offers no holdover times for moderate or heavy freezing rain and does not approve takeoff in it.",
+    "story_seed": "Freezing rain is in the {metro} forecast — a Weather Company meteorologist on when ice could arrive and how long it may last, for travelers with flights that day",
     "audiences": [
-      "aviation logistics trade",
-      "local transport news"
+      "consumer travel reporters",
+      "aviation trade press",
+      "local news"
     ],
     "seasonality_window": [
-      "12-18",
-      "12-25"
+      "10-15",
+      "04-15"
     ],
-    "base_weight": 1.1
-  },
-  {
-    "id": "TRV-016",
-    "industry": "travel",
-    "entity": "luggage retailers and premium travel accessories",
-    "condition": {
-      "metric": "temp_anomaly_f",
-      "op": ">=",
-      "value": 10,
-      "consecutive_days": 2
-    },
-    "business_impact": "Anomaly trigger: Sustained unseasonable winter warm spells trigger rapid consumer daydreams, provoking a premature spike in spring-break resort bookings and luggage gear sales.",
-    "story_seed": "Midwinter warm anomaly sparks early Spring Break travel booking wave across {metro}",
-    "audiences": [
-      "consumer retail trends",
-      "travel accessories trade",
-      "social"
-    ],
-    "seasonality_window": [
-      "01-15",
-      "02-28"
-    ],
-    "base_weight": 0.9
-  },
-  {
-    "id": "TRV-017",
-    "industry": "travel",
-    "entity": "casino resorts and destination complexes",
-    "condition": {
-      "metric": "precip_in",
-      "op": ">=",
-      "value": 0.5,
-      "consecutive_days": 2
-    },
-    "business_impact": "Calendar-aware: Continuous rainy weather over Veterans Day weekend ruins outdoor civic observations, funneling holiday foot traffic directly into casino floors.",
-    "story_seed": "Veterans Day weather washouts steer drive-to crowds straight onto {metro} resort floors",
-    "audiences": [
-      "gaming hospitality trade",
-      "local entertainment desks"
-    ],
-    "seasonality_window": [
-      "11-04",
-      "11-11"
-    ],
-    "base_weight": 1
+    "base_weight": 0.7,
+    "evidence": {
+      "source": "Federal Aviation Administration, \"Ground Deicing Program General Information,\" Issue 4, August 11, 2026",
+      "url": "https://www.faa.gov/other_visit/aviation_industry/airline_operators/airline_safety/deicing/26-27_FAA_General_Information_Document.pdf"
+    }
   },
   {
     "id": "TRV-018",
     "industry": "travel",
-    "entity": "summer camp networks and youth group tours",
+    "entity": "summer day and overnight camps",
     "condition": {
-      "metric": "humidity_pct",
+      "metric": "heat_index_f",
       "op": ">=",
-      "value": 80,
-      "consecutive_days": 3
-    },
-    "business_impact": "Streak trigger: Continuous oppressive summer humidity metrics launch mandatory heat-safety activity freezes, forcing operators to pivot to costly indoor entertainment alternatives.",
-    "story_seed": "Oppressive midsummer humidity streak forces {metro} youth tours completely indoors",
-    "audiences": [
-      "youth travel management",
-      "consumer safety columns"
-    ],
-    "seasonality_window": [
-      "07-15",
-      "08-10"
-    ],
-    "base_weight": 0.85
-  },
-  {
-    "id": "TRV-019",
-    "industry": "travel",
-    "entity": "staycation hotel operators and city retreats",
-    "condition": {
-      "metric": "precip_in",
-      "op": ">=",
-      "value": 0.3,
-      "consecutive_days": 4
-    },
-    "business_impact": "Streak trigger: Unrelenting spring rain blocks regional flight infrastructure, driving a massive local run on high-end urban staycation hotel booking packages.",
-    "story_seed": "Persistent spring rains drive record local 'staycation' luxury room bookings in {metro}",
-    "audiences": [
-      "hospitality marketing press",
-      "local lifestyle editors"
-    ],
-    "seasonality_window": [
-      "04-01",
-      "05-15"
-    ],
-    "base_weight": 0.9
-  },
-  {
-    "id": "TRV-020",
-    "industry": "travel",
-    "entity": "holiday tour companies and booking portals",
-    "condition": {
-      "metric": "max_wind_mph",
-      "op": ">=",
-      "value": 45,
+      "value": 103,
       "consecutive_days": 1
     },
-    "business_impact": "Calendar-aware: High pre-Christmas wind velocity limits hit primary air corridors, instantly triggering global connecting flight failures and emergency hotel re-booking spikes.",
-    "story_seed": "Pre-Christmas high wind front fractures national flight corridors out of {metro} hub",
+    "business_impact": "A state health department warns that children, especially physically active children, are at higher-than-average risk of heat-related illness, and advises camps on extremely hot days to shift to lower-energy, water-based or air-conditioned indoor activities and to schedule strenuous activity for the cooler parts of the day.",
+    "story_seed": "A heat index of 103°F or more is forecast for {metro} during camp season — a Weather Company meteorologist on the hottest hours and when it eases, for camps planning the day",
     "audiences": [
-      "aviation industry analysts",
-      "national consumer press"
+      "parents and family desks",
+      "local news",
+      "camp and youth program trade"
     ],
     "seasonality_window": [
-      "12-15",
-      "12-24"
+      "06-01",
+      "08-20"
     ],
-    "base_weight": 1.25
+    "base_weight": 0.6,
+    "evidence": {
+      "source": "New Jersey Department of Health, \"Preventing Heat-Related Illness at Youth Camps\" fact sheet (2025)",
+      "url": "https://www.nj.gov/health/ceohs/public-health-tracking/climate-change/FactSheets/Youth_camp_HRI_Final.pdf"
+    }
   },
   {
     "id": "TRV-021",
     "industry": "travel",
-    "entity": "airlines and regional transit",
+    "entity": "air travelers and airports",
     "condition": {
       "metric": "severe_risk",
       "op": ">=",
-      "value": 80,
+      "value": 60,
       "consecutive_days": 1
     },
-    "business_impact": "High-confidence severe storm outbreaks threaten major regional airport hubs, causing preemptive ground stops and cascading flight cancellations.",
-    "story_seed": "Severe storm outbreak threatens major flight disruptions through {metro}",
+    "business_impact": "Federal aviation officials say weather causes about three-quarters of significant air traffic delays, that thunderstorms at or near an airport can put arriving flights into holding patterns or divert them, and that during large-scale storms air traffic managers can use ground delay programs to hold departures bound for the affected area; how large the delays become depends on how close to capacity the airport is operating.",
+    "story_seed": "Severe thunderstorms are possible in {metro} — a Weather Company meteorologist on when the strongest storms are most likely, for travelers flying in or out that day",
     "audiences": [
-      "travel trade press",
-      "consumer travel reporters"
+      "consumer travel reporters",
+      "aviation trade press",
+      "local news"
     ],
     "seasonality_window": [
-      "03-01",
-      "10-31"
+      "01-01",
+      "12-31"
     ],
-    "base_weight": 1.4
-  },
-  {
-    "id": "TRV-022",
-    "industry": "travel",
-    "entity": "theme parks and outdoor tourism",
-    "condition": {
-      "metric": "humidity_pct",
-      "op": ">=",
-      "value": 85,
-      "consecutive_days": 3
-    },
-    "business_impact": "Stifling multi-day humidity severely depresses outdoor walking tours and theme park day-pass sales, forcing operators to aggressively pivot marketing to indoor/water attractions.",
-    "story_seed": "Oppressive humidity forces {metro} tourism operators to pivot to indoor attractions",
-    "audiences": [
-      "hospitality trade press"
-    ],
-    "seasonality_window": [
-      "05-01",
-      "09-30"
-    ],
-    "base_weight": 1.1
+    "base_weight": 1.0,
+    "evidence": {
+      "source": "Federal Aviation Administration, NextGen Weather, \"FAQ: Weather Delay\" (last updated March 5, 2025)",
+      "url": "https://www.faa.gov/nextgen/programs/weather/faq"
+    }
   },
   {
     "id": "TRV-023",
     "industry": "travel",
-    "entity": "beachfront resorts and outdoor excursions",
+    "entity": "travelers outdoors at beaches, pools and attractions",
     "condition": {
       "metric": "uv_index",
       "op": ">=",
-      "value": 10,
-      "consecutive_days": 2
+      "value": 11,
+      "consecutive_days": 1
     },
-    "business_impact": "Extreme UV indexes over consecutive days force travel operators to limit midday outdoor excursions and increase complimentary shade/hydration amenities, straining operational budgets.",
-    "story_seed": "Extreme UV index blast alters {metro} midday tourist excursions",
+    "business_impact": "Federal travel-health guidance says travelers who spend time outdoors are often exposed to more ultraviolet radiation than usual, that sand and water reflect UV and add to exposure, and that travelers should avoid direct sun between 10 a.m. and 4 p.m., when UV is strongest.",
+    "story_seed": "A UV index of 11 or higher is forecast for {metro} — a Weather Company meteorologist on the hours when the sun is strongest for visitors at beaches, pools and outdoor attractions",
     "audiences": [
-      "hospitality trade press",
-      "travel lifestyle press"
+      "travel lifestyle press",
+      "local health desks",
+      "consumer travel reporters"
+    ],
+    "seasonality_window": [
+      "04-15",
+      "09-15"
+    ],
+    "base_weight": 0.5,
+    "evidence": {
+      "source": "Fivenson and Norton, \"Sun Exposure in Travelers,\" CDC Yellow Book 2026: Health Information for International Travel",
+      "url": "https://www.cdc.gov/yellow-book/hcp/environmental-hazards-risks/sun-exposure-in-travelers.html"
+    }
+  },
+  {
+    "id": "TRV-024",
+    "industry": "travel",
+    "entity": "drivers and road travelers",
+    "condition": {
+      "metric": "ice_in",
+      "op": ">=",
+      "value": 0.01,
+      "consecutive_days": 1
+    },
+    "business_impact": "Federal highway data show that icy pavement is present in about 156,000 crashes and more than 500 traffic deaths a year, about 13 percent of weather-related crashes.",
+    "story_seed": "Freezing rain is in the {metro} forecast — a Weather Company meteorologist on when roads could ice up and when it should end, for people with trips planned",
+    "audiences": [
+      "local news",
+      "consumer travel reporters",
+      "auto and mobility press"
+    ],
+    "seasonality_window": [
+      "10-15",
+      "04-15"
+    ],
+    "base_weight": 0.7,
+    "evidence": {
+      "source": "Federal Highway Administration, Road Weather Management Program, \"How Do Weather Events Impact Roads?\"",
+      "url": "https://ops.fhwa.dot.gov/weather/q1_roadimpact.htm"
+    }
+  },
+  {
+    "id": "TRV-025",
+    "industry": "travel",
+    "entity": "travelers outdoors in transit",
+    "condition": {
+      "metric": "wind_chill_f",
+      "op": "<=",
+      "value": -20,
+      "consecutive_days": 1
+    },
+    "business_impact": "Federal weather guidance says wind chill is how cold people feel when outside, and that at a wind chill near -19°F exposed skin can freeze in 30 minutes.",
+    "story_seed": "A wind chill of -20°F or colder is forecast for {metro} — a Weather Company meteorologist on the coldest hours, for travelers waiting outside for rides, buses and trains or heading out on the road",
+    "audiences": [
+      "local news",
+      "consumer travel reporters",
+      "national news platforms"
+    ],
+    "seasonality_window": [
+      "11-01",
+      "03-31"
+    ],
+    "base_weight": 0.7,
+    "evidence": {
+      "source": "National Weather Service, \"Understanding Wind Chill\"",
+      "url": "https://www.weather.gov/safety/cold-wind-chill-chart"
+    }
+  },
+  {
+    "id": "TRV-026",
+    "industry": "travel",
+    "entity": "hikers, sightseers and active travelers",
+    "condition": {
+      "metric": "heat_index_f",
+      "op": ">=",
+      "value": 95,
+      "consecutive_days": 1,
+      "also": {
+        "metric": "temp_anomaly_f",
+        "op": ">=",
+        "value": 10
+      }
+    },
+    "business_impact": "Unusual heat can catch out visitors who are hiking, touring on foot or doing other strenuous activity, especially people who have come from cooler places and have not adjusted to the heat.",
+    "story_seed": "Unusual heat is forecast for {metro}, well above normal for the time of year — a Weather Company meteorologist on the hottest hours, for visitors planning hikes, walking tours and other outdoor activity",
+    "audiences": [
+      "travel lifestyle press",
+      "outdoor recreation press",
+      "local news"
+    ],
+    "seasonality_window": [
+      "04-15",
+      "10-15"
+    ],
+    "base_weight": 0.5
+  },
+  {
+    "id": "TRV-027",
+    "industry": "travel",
+    "entity": "passenger rail riders",
+    "condition": {
+      "metric": "temp_anomaly_f",
+      "op": ">=",
+      "value": 15,
+      "consecutive_days": 2,
+      "also": {
+        "metric": "max_temp_f",
+        "op": ">=",
+        "value": 90
+      }
+    },
+    "business_impact": "Federal rail safety research says railroads commonly impose speed restrictions in hot weather because heat raises the risk of track buckling, so trains can run slower during a heat wave.",
+    "story_seed": "A stretch of unusual heat, well above normal for {metro}, is in the forecast — a Weather Company meteorologist on how hot and how long, for train travelers planning trips",
+    "audiences": [
+      "consumer travel reporters",
+      "local news",
+      "transportation press"
     ],
     "seasonality_window": [
       "05-01",
       "09-30"
     ],
-    "base_weight": 1
+    "base_weight": 0.5,
+    "evidence": {
+      "source": "Federal Railroad Administration, Office of Research and Development, Research Results RR08-06, \"Development of Rail Temperature Prediction Model,\" June 2008",
+      "url": "https://railroads.dot.gov/sites/fra.dot.gov/files/fra_net/2085/rr0806.pdf"
+    }
+  },
+  {
+    "id": "TRV-028",
+    "industry": "travel",
+    "entity": "beachgoers, boaters and campers",
+    "condition": {
+      "metric": "severe_risk",
+      "op": ">=",
+      "value": 40,
+      "consecutive_days": 1
+    },
+    "business_impact": "A national analysis of U.S. lightning deaths from 2006 to 2024 found that almost two-thirds happened to people enjoying outdoor leisure activities, led by fishing, beach outings, boating and camping, and that more than 72 percent happened in June, July and August.",
+    "story_seed": "Thunderstorms are expected in {metro} — a Weather Company meteorologist on when lightning is most likely, for people heading to the beach, the lake or a campsite",
+    "audiences": [
+      "travel lifestyle press",
+      "outdoor recreation press",
+      "local news"
+    ],
+    "seasonality_window": [
+      "06-01",
+      "08-31"
+    ],
+    "base_weight": 0.5,
+    "evidence": {
+      "source": "Jensenius, \"A Detailed Analysis of Lightning Deaths in the United States from 2006 through 2024,\" National Lightning Safety Council, January 2025",
+      "url": "http://lightningsafetycouncil.org/Documents/A%20Detailed%20Analysis%20Of%20Lightning%20Deaths%20in%20the%20United%20States%20From%202006%20through%202024.pdf"
+    }
   }
 ]
