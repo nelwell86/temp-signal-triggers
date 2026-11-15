@@ -105,7 +105,7 @@
     ],
     "seasonality_window": [
       "06-01",
-      "10-15"
+      "10-31"
     ],
     "base_weight": 0.55,
     "evidence": {
@@ -171,5 +171,105 @@
       "source": "Park et al., \"Associations of Emergency Department Visits for Asthma with Precipitation and Temperature on Thunderstorm Days: A Time-Series Analysis of Data from Louisiana, USA, 2010–2012,\" Environmental Health Perspectives 130(8), 2022",
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9347901/"
     }
+  },
+  {
+    "id": "HLT-024",
+    "industry": "health",
+    "entity": "households using generators and fuel-burning heaters after ice storms",
+    "condition": {
+      "metric": "ice_in",
+      "op": ">=",
+      "value": 0.25,
+      "consecutive_days": 1
+    },
+    "business_impact": "A federal and state investigation of a 2009 Kentucky ice storm found that carbon monoxide poisonings from generators and kerosene and propane heaters followed the storm's power outages, peaking two to four days afterward while temperatures stayed below freezing, with the highest rates where the most ice had accumulated.",
+    "story_seed": "A quarter inch or more of freezing rain is forecast for {metro} — a Weather Company meteorologist on how much ice, when it ends and how cold the days after will be, for households that may turn to generators or fuel-burning heaters",
+    "audiences": [
+      "local health desks",
+      "local news",
+      "emergency preparedness press"
+    ],
+    "seasonality_window": [
+      "10-15",
+      "04-15"
+    ],
+    "base_weight": 0.6,
+    "evidence": {
+      "source": "Lutterloh et al., \"Carbon Monoxide Poisoning After an Ice Storm in Kentucky, 2009,\" Public Health Reports 126(Suppl 1), 2011",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3072909/"
+    }
+  },
+  {
+    "id": "HLT-025",
+    "industry": "health",
+    "entity": "people shoveling snow, especially those with heart disease or heart risk factors",
+    "condition": {
+      "metric": "snow_in",
+      "op": ">=",
+      "value": 8.0,
+      "consecutive_days": 1
+    },
+    "business_impact": "A national heart-health organization says the exertion of shoveling heavy snow may raise the risk of a heart attack or sudden cardiac arrest, citing a study in Canada in which about 7 to 8 inches of snow was linked to higher odds of men being hospitalized with or dying from a heart attack, and says people with heart disease or heart risk factors should take particular care.",
+    "story_seed": "Eight inches or more of snow is forecast for {metro} — a Weather Company meteorologist on how much, how heavy and wet, and when it ends, for people planning to clear driveways and sidewalks",
+    "audiences": [
+      "local health desks",
+      "health and medical press",
+      "local news"
+    ],
+    "seasonality_window": [
+      "10-15",
+      "04-30"
+    ],
+    "base_weight": 0.6,
+    "evidence": {
+      "source": "American Heart Association, \"Snow shoveling can be hazardous to your heart\" (news release, Dec. 15, 2022)",
+      "url": "https://newsroom.heart.org/news/snow-shoveling-can-be-hazardous-to-your-heart"
+    }
+  },
+  {
+    "id": "HLT-026",
+    "industry": "health",
+    "entity": "pedestrians and older adults on icy sidewalks",
+    "condition": {
+      "metric": "ice_in",
+      "op": ">=",
+      "value": 0.01,
+      "consecutive_days": 1
+    },
+    "business_impact": "Freezing rain can glaze sidewalks, steps and driveways, making slips and falls more likely for anyone who has to walk outside.",
+    "story_seed": "Freezing rain is in the {metro} forecast — a Weather Company meteorologist on when it starts and stops and how long temperatures stay below freezing afterward, for people who need to walk outside",
+    "audiences": [
+      "local health desks",
+      "local news",
+      "aging and caregiving press"
+    ],
+    "seasonality_window": [
+      "10-15",
+      "04-15"
+    ],
+    "base_weight": 0.5
+  },
+  {
+    "id": "HLT-027",
+    "industry": "health",
+    "entity": "older adults and mobile-home residents in severe-storm country",
+    "condition": {
+      "metric": "severe_risk",
+      "op": ">=",
+      "value": 100,
+      "consecutive_days": 1
+    },
+    "business_impact": "The highest severe-thunderstorm risk level is in the forecast, and storms at that level can produce tornadoes; older adults and people in mobile homes may need more time and help to reach a safe room, so knowing where to shelter ahead of time matters.",
+    "story_seed": "The highest severe-storm risk level is forecast for {metro} — a Weather Company meteorologist on when the strongest storms arrive, especially if they come after dark, for families helping older relatives and neighbors in mobile homes plan where to shelter",
+    "audiences": [
+      "local health desks",
+      "aging and caregiving press",
+      "local news"
+    ],
+    "seasonality_window": [
+      "01-01",
+      "12-31"
+    ],
+    "base_weight": 0.5
   }
 ]
