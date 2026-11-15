@@ -6,7 +6,7 @@
     "condition": {
       "metric": "precip_in",
       "op": ">=",
-      "value": 1.0,
+      "value": 1,
       "consecutive_days": 1,
       "also": {
         "metric": "max_temp_f",
@@ -59,7 +59,7 @@
         3
       ]
     },
-    "base_weight": 1.0,
+    "base_weight": 1,
     "evidence": {
       "source": "Federal Highway Administration, Road Weather Management Program, \"How Do Weather Events Impact Roads?\"",
       "url": "https://ops.fhwa.dot.gov/weather/q1_roadimpact.htm"
@@ -249,7 +249,7 @@
       "01-01",
       "12-31"
     ],
-    "base_weight": 1.0,
+    "base_weight": 1,
     "evidence": {
       "source": "Federal Aviation Administration, NextGen Weather, \"FAQ: Weather Delay\" (last updated March 5, 2025)",
       "url": "https://www.faa.gov/nextgen/programs/weather/faq"
