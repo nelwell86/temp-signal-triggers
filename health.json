@@ -1,519 +1,175 @@
 [
   {
-    "id": "HLT-001",
-    "industry": "health",
-    "entity": "pharmacies and over-the-counter brands",
-    "condition": {
-      "metric": "min_temp_f",
-      "op": "<=",
-      "value": 32,
-      "consecutive_days": 3
-    },
-    "business_impact": "Second-order effect: Sustained freezing temperatures drive people indoors, causing a rapid acceleration in viral transmission and a run on OTC cold/flu treatments.",
-    "story_seed": "Three-day freeze in {metro} accelerates winter virus transmission, strains pharmacy inventory",
-    "audiences": [
-      "health medical press",
-      "retail pharmacy trade",
-      "local TV business desks"
-    ],
-    "seasonality_window": [
-      "11-01",
-      "03-15"
-    ],
-    "base_weight": 1.1
-  },
-  {
-    "id": "HLT-002",
-    "industry": "health",
-    "entity": "physical therapy and orthopedic clinics",
-    "condition": {
-      "metric": "precip_in",
-      "op": ">=",
-      "value": 0.25,
-      "consecutive_days": 3
-    },
-    "business_impact": "Sustained damp conditions and sudden pressure drops aggravate chronic joint inflammation, leading to a measurable spike in immediate physical therapy inquiries.",
-    "story_seed": "Relentless rainy stretch in {metro} triggers measurable surge in chronic joint pain complaints",
-    "audiences": [
-      "medical trade press",
-      "local health lifestyle desks"
-    ],
-    "seasonality_window": [
-      "09-01",
-      "05-31"
-    ],
-    "base_weight": 0.85
-  },
-  {
     "id": "HLT-003",
     "industry": "health",
-    "entity": "urgent care centers and emergency rooms",
+    "entity": "older adults, young children, people with chronic illness and households without air conditioning",
     "condition": {
-      "metric": "max_temp_f",
+      "metric": "heat_index_f",
       "op": ">=",
-      "value": 98,
+      "value": 103,
       "consecutive_days": 2
     },
-    "business_impact": "Streak trigger: Consecutive days of extreme heat push vulnerable urban populations past heat-index coping thresholds, causing severe heat exhaustion spikes.",
-    "story_seed": "Dangerous heat streak in {metro} pushes urgent care facilities into emergency staffing protocols",
+    "business_impact": "Federal weather guidance says young children and infants, older adults, people with chronic medical conditions and pregnant women are particularly vulnerable to heat, and advises checking in on friends and relatives in these groups, especially if they do not have air conditioning.",
+    "story_seed": "A heat index of 103°F or higher is forecast for {metro} on two or more days in a row — a Weather Company meteorologist on how hot, how long and whether nights cool off, for families checking on older relatives, young children and neighbors without air conditioning",
     "audiences": [
-      "national health press",
-      "local news emergency desks"
+      "local health desks",
+      "health and medical press",
+      "local news",
+      "aging and caregiving press"
     ],
     "seasonality_window": [
-      "06-01",
-      "09-05"
+      "05-01",
+      "09-30"
     ],
-    "base_weight": 1.05
-  },
-  {
-    "id": "HLT-004",
-    "industry": "health",
-    "entity": "respiratory clinics and inhaler manufacturers",
-    "condition": {
-      "metric": "humidity_pct",
-      "op": ">=",
-      "value": 85,
-      "consecutive_days": 2
-    },
-    "business_impact": "Sustained high humidity combined with stagnant summer air traps airborne molds and particulates, driving emergency respiratory treatments.",
-    "story_seed": "Stagnant humidity blanket over {metro} triggers dangerous atmospheric triggers for asthma sufferers",
-    "audiences": [
-      "medical trade press",
-      "consumer health advocates"
-    ],
-    "seasonality_window": [
-      "06-15",
-      "08-31"
-    ],
-    "base_weight": 1
-  },
-  {
-    "id": "HLT-005",
-    "industry": "health",
-    "entity": "dermatology practices and skincare brands",
-    "condition": {
-      "metric": "uv_index",
-      "op": ">=",
-      "value": 9,
-      "consecutive_days": 1
-    },
-    "business_impact": "Extreme UV thresholds reached early in the season catch consumers unprotected, leading to immediate spikes in acute sunburn clinic visits.",
-    "story_seed": "Extreme UV index blast in {metro} catches outdoor enthusiasts unprotected, spiking skin safety alerts",
-    "audiences": [
-      "lifestyle health desks",
-      "consumer press",
-      "social"
-    ],
-    "seasonality_window": [
-      "04-15",
-      "08-30"
-    ],
-    "base_weight": 0.9
-  },
-  {
-    "id": "HLT-006",
-    "industry": "health",
-    "entity": "telehealth mental health platforms",
-    "condition": {
-      "metric": "precip_in",
-      "op": ">=",
-      "value": 0.1,
-      "consecutive_days": 5
-    },
-    "business_impact": "Streak trigger: 5+ days of relentless overcast or precipitation severely curtails outdoor movement, causing a sharp rise in virtual mental health visits.",
-    "story_seed": "Five days of grey skies in {metro} drives measurable surge in digital mental health consultations",
-    "audiences": [
-      "mental health advocacy press",
-      "tech health press"
-    ],
-    "seasonality_window": [
-      "10-01",
-      "04-30"
-    ],
-    "base_weight": 0.95
-  },
-  {
-    "id": "HLT-007",
-    "industry": "health",
-    "entity": "allergy specialists and immunotherapy brands",
-    "condition": {
-      "metric": "temp_anomaly_f",
-      "op": ">=",
-      "value": 12,
-      "consecutive_days": 3
-    },
-    "business_impact": "Anomaly trigger: Severe unseasonable spring warmth prompts vegetation to bloom prematurely, dropping an immediate pollen bomb on residents.",
-    "story_seed": "Unseasonable spring heat anomaly drops an early, aggressive pollen bomb on {metro}",
-    "audiences": [
-      "medical trade press",
-      "local TV news health desks"
-    ],
-    "seasonality_window": [
-      "03-01",
-      "04-30"
-    ],
-    "base_weight": 1.15
-  },
-  {
-    "id": "HLT-008",
-    "industry": "health",
-    "entity": "cardiology departments and stroke centers",
-    "condition": {
-      "metric": "temp_anomaly_f",
-      "op": "<=",
-      "value": -15,
-      "consecutive_days": 2,
-      "also": {
-        "metric": "min_temp_f",
-        "op": "<=",
-        "value": 25
-      }
-    },
-    "business_impact": "Anomaly trigger: Extreme sudden temperature drops cause immediate peripheral vasoconstriction, measurably raising acute cardiac event rates.",
-    "story_seed": "Sudden temperature crash in {metro} puts regional cardiology units on high advisory alert",
-    "audiences": [
-      "cardiovascular medical journals",
-      "national health press"
-    ],
-    "seasonality_window": [
-      "12-01",
-      "02-28"
-    ],
-    "base_weight": 1.2
+    "base_weight": 0.7,
+    "evidence": {
+      "source": "National Weather Service, \"Heat Safety Tips and Resources\"",
+      "url": "https://www.weather.gov/safety/heat"
+    }
   },
   {
     "id": "HLT-009",
     "industry": "health",
-    "entity": "orthopedic emergency surgery units",
+    "entity": "pedestrians, older adults and emergency departments",
     "condition": {
       "metric": "snow_in",
       "op": ">=",
-      "value": 0.5,
+      "value": 1.0,
       "consecutive_days": 1
     },
-    "business_impact": "Even a light dusting of snow or freezing drizzle creating black ice results in immediate, severe surges in slip-and-fall fracture presentations.",
-    "story_seed": "Slick winter road surfaces in {metro} trigger immediate surge in emergency orthopedic surgeries",
+    "business_impact": "A study by a city health department in Philadelphia found that snow was the weather condition most associated with days of unusually high emergency department visits for falls, with the snow typically a couple of days before, and that many of those falls happened in the morning, apparently on the way to work.",
+    "story_seed": "An inch or more of snow is forecast for {metro} — a Weather Company meteorologist on when it falls and how much, for people walking to work and school over the next few mornings",
     "audiences": [
-      "hospital management media",
-      "local traffic and emergency news"
+      "local health desks",
+      "local news",
+      "aging and caregiving press"
     ],
     "seasonality_window": [
-      "11-15",
-      "03-31"
+      "10-15",
+      "04-30"
     ],
-    "base_weight": 1.25
+    "base_weight": 0.55,
+    "evidence": {
+      "source": "Gevitz et al., \"Risk of Fall-Related Injury due to Adverse Weather Events, Philadelphia, Pennsylvania, 2006-2011,\" Public Health Reports 132(1 Suppl), 2017",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5676509/"
+    }
   },
   {
     "id": "HLT-010",
     "industry": "health",
-    "entity": "pediatric practices and family clinics",
+    "entity": "older adults, people with chronic illness and households without air conditioning in places where heat is unusual",
     "condition": {
-      "metric": "max_temp_f",
+      "metric": "heat_index_f",
       "op": ">=",
-      "value": 92,
-      "consecutive_days": 4
+      "value": 95,
+      "consecutive_days": 2,
+      "also": {
+        "metric": "temp_anomaly_f",
+        "op": ">=",
+        "value": 10
+      }
     },
-    "business_impact": "Streak trigger: Extended stagnant heat locks urban air quality into dangerous ozone compliance bands, driving pediatric asthma interventions.",
-    "story_seed": "Four-day stagnation heat block in {metro} drives alarming spike in pediatric respiratory admissions",
+    "business_impact": "A study of hospital admissions in 22 states found that heat-related admissions begin to rise at moderately hot heat index values, defined for each county by its own summer climate, which in some cooler regions were below the levels then used for heat alerts, and its authors flag people in cooler places without air conditioning as a particular concern.",
+    "story_seed": "A spell of heat well above normal for {metro}, with a heat index of 95°F or more on two or more days, is in the forecast — a Weather Company meteorologist on how hot, how long and whether nights cool off, for people checking on older relatives and neighbors without air conditioning",
     "audiences": [
-      "environmental health press",
-      "parenting health media"
+      "local health desks",
+      "local news",
+      "aging and caregiving press"
     ],
     "seasonality_window": [
-      "06-01",
-      "08-31"
+      "05-01",
+      "09-30"
     ],
-    "base_weight": 1.05
-  },
-  {
-    "id": "HLT-011",
-    "industry": "health",
-    "entity": "chiropractic and medical wellness clinics",
-    "condition": {
-      "metric": "min_temp_f",
-      "op": "<=",
-      "value": 15,
-      "consecutive_days": 1
-    },
-    "business_impact": "Calendar-aware (New Year's Day): Bitter holiday cold snaps disrupt outdoor fitness resolutions, causing immediate runs on indoor treatment plans.",
-    "story_seed": "Frigid New Year's launch across {metro} pushes health and wellness consumer metrics completely indoors",
-    "audiences": [
-      "wellness industry press",
-      "social"
-    ],
-    "seasonality_window": [
-      "12-28",
-      "01-05"
-    ],
-    "base_weight": 0.8
-  },
-  {
-    "id": "HLT-012",
-    "industry": "health",
-    "entity": "sports medicine and urgent trauma units",
-    "condition": {
-      "metric": "snow_in",
-      "op": ">=",
-      "value": 4,
-      "consecutive_days": 1
-    },
-    "business_impact": "Calendar-aware (MLK Day): Heavy snowfall during the long weekend triggers widespread acute holiday recreational and winter sports injury spikes.",
-    "story_seed": "MLK holiday weekend snow dumps correlate with immediate surge in regional sports trauma triage",
-    "audiences": [
-      "sports medicine press",
-      "regional health authorities"
-    ],
-    "seasonality_window": [
-      "01-10",
-      "01-22"
-    ],
-    "base_weight": 0.9
-  },
-  {
-    "id": "HLT-013",
-    "industry": "health",
-    "entity": "allergy clinics and telemedicine providers",
-    "condition": {
-      "metric": "temp_anomaly_f",
-      "op": ">=",
-      "value": 10,
-      "consecutive_days": 2
-    },
-    "business_impact": "Calendar-aware (Presidents' Day): Unseasonably mild holiday weekend weather draws people outdoors early, initiating winter tree pollen misery spikes.",
-    "story_seed": "Mild Presidents' Day weekend anomaly accelerates tree pollen reactions across {metro}",
-    "audiences": [
-      "clinical allergy press",
-      "telehealth business trends"
-    ],
-    "seasonality_window": [
-      "02-10",
-      "02-22"
-    ],
-    "base_weight": 0.85
+    "base_weight": 0.55,
+    "evidence": {
+      "source": "Vaidyanathan et al., \"Assessment of extreme heat and hospitalizations to inform early warning systems,\" Proceedings of the National Academy of Sciences 116(12), 2019",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6431221/"
+    }
   },
   {
     "id": "HLT-014",
     "industry": "health",
-    "entity": "travel clinics and vector-borne illness groups",
+    "entity": "people at risk of mosquito-borne illness and local health departments",
     "condition": {
       "metric": "precip_in",
       "op": ">=",
-      "value": 0.5,
+      "value": 2.0,
       "consecutive_days": 1
     },
-    "business_impact": "Calendar-aware (Memorial Day): Wet, warm holiday baseline parameters exponentially expand standing water configurations, triggering severe tick and mosquito warnings.",
-    "story_seed": "Rainy Memorial Day baseline setup in {metro} accelerates seasonal vector-borne disease parameters",
+    "business_impact": "A study of more than 16,000 West Nile virus cases reported to federal health authorities in 17 states found that a week with at least one day of 50 mm (about 2 inches) or more of rain was followed by a higher incidence of reported West Nile infection that week and over the next two weeks.",
+    "story_seed": "A day with 2 inches or more of rain is forecast for {metro} during mosquito season — a Weather Company meteorologist on how much falls and where water may stand afterward, for health departments and families thinking about mosquito bites in the weeks ahead",
     "audiences": [
-      "infectious disease trade media",
-      "public safety columns"
+      "local health desks",
+      "health and medical press",
+      "local news"
     ],
     "seasonality_window": [
-      "05-20",
-      "05-31"
+      "06-01",
+      "10-15"
     ],
-    "base_weight": 0.95
-  },
-  {
-    "id": "HLT-015",
-    "industry": "health",
-    "entity": "occupational health and industrial clinics",
-    "condition": {
-      "metric": "max_temp_f",
-      "op": ">=",
-      "value": 95,
-      "consecutive_days": 1
-    },
-    "business_impact": "Calendar-aware (Juneteenth): High extreme heat boundaries hit community celebration workforces, prompting emergency field hydration interventions.",
-    "story_seed": "Juneteenth outdoor event grids in {metro} put under immediate critical heat-stress safety protocols",
-    "audiences": [
-      "occupational health safety media",
-      "local community desks"
-    ],
-    "seasonality_window": [
-      "06-12",
-      "06-20"
-    ],
-    "base_weight": 1
-  },
-  {
-    "id": "HLT-016",
-    "industry": "health",
-    "entity": "emergency medical dispatch systems",
-    "condition": {
-      "metric": "max_temp_f",
-      "op": ">=",
-      "value": 88,
-      "consecutive_days": 1
-    },
-    "business_impact": "Calendar-aware (July 4th): High baseline temperatures mixed with alcohol over Independence Day spikes acute heat stroke calls to localized emergency response grids.",
-    "story_seed": "July 4th beach and party grids in {metro} place immediate high strain on ambulance dispatch systems",
-    "audiences": [
-      "public health emergency services",
-      "local news desks"
-    ],
-    "seasonality_window": [
-      "06-25",
-      "07-05"
-    ],
-    "base_weight": 1.2
-  },
-  {
-    "id": "HLT-017",
-    "industry": "health",
-    "entity": "pediatric networks and clinical care groups",
-    "condition": {
-      "metric": "precip_in",
-      "op": ">=",
-      "value": 0.4,
-      "consecutive_days": 2
-    },
-    "business_impact": "Calendar-aware (Back-to-School): Rainy, chilly late summer setups during school reopening weeks lock students indoors, causing an unseasonably early spike in school respiratory spreads.",
-    "story_seed": "Back-to-school rainy washout in {metro} triggers early surge in classroom viral transmission metrics",
-    "audiences": [
-      "pediatric healthcare journals",
-      "parent consumer networks"
-    ],
-    "seasonality_window": [
-      "08-15",
-      "09-10"
-    ],
-    "base_weight": 0.9
-  },
-  {
-    "id": "HLT-018",
-    "industry": "health",
-    "entity": "hydration brands and beach health management",
-    "condition": {
-      "metric": "max_temp_f",
-      "op": ">=",
-      "value": 90,
-      "consecutive_days": 2
-    },
-    "business_impact": "Calendar-aware (Labor Day): Last-gasp summer heat wave hitting packed holiday travel outdoor venues exhausts water safety infrastructure arrays.",
-    "story_seed": "Labor Day heat wave in {metro} stresses outdoor venue cooling arrays, spikes hydration demand",
-    "audiences": [
-      "consumer product trade press",
-      "local public safety desks"
-    ],
-    "seasonality_window": [
-      "08-25",
-      "09-07"
-    ],
-    "base_weight": 1.1
-  },
-  {
-    "id": "HLT-019",
-    "industry": "health",
-    "entity": "senior care facilities and clinical networks",
-    "condition": {
-      "metric": "min_temp_f",
-      "op": "<=",
-      "value": 25,
-      "consecutive_days": 2
-    },
-    "business_impact": "Calendar-aware (Thanksgiving Holiday): Early severe holiday cold snaps severely impact multi-generational travelers, spiking elder clinical assistance requests.",
-    "story_seed": "Pre-Thanksgiving holiday deep freeze in {metro} hits high-risk senior travelers, forcing clinic alerts",
-    "audiences": [
-      "geriatric care trade media",
-      "national health platforms"
-    ],
-    "seasonality_window": [
-      "11-18",
-      "11-28"
-    ],
-    "base_weight": 1.15
-  },
-  {
-    "id": "HLT-020",
-    "industry": "health",
-    "entity": "hospital bed management and telemetry groups",
-    "condition": {
-      "metric": "temp_anomaly_f",
-      "op": "<=",
-      "value": -12,
-      "consecutive_days": 3,
-      "also": {
-        "metric": "min_temp_f",
-        "op": "<=",
-        "value": 25
-      }
-    },
-    "business_impact": "Calendar-aware (Christmas Holiday): Severe multi-day cold anomaly blocks holiday discharge capabilities, driving maximum healthcare facility optimization issues.",
-    "story_seed": "Severe pre-Christmas arctic anomaly across {metro} forces critical containment protocols in local clinics",
-    "audiences": [
-      "hospital systems business trade",
-      "national news healthcare columns"
-    ],
-    "seasonality_window": [
-      "12-15",
-      "12-25"
-    ],
-    "base_weight": 1.2
+    "base_weight": 0.55,
+    "evidence": {
+      "source": "Soverow et al., \"Infectious Disease in a Warming World: How Weather Influenced West Nile Virus in the United States (2001–2005),\" Environmental Health Perspectives 117(7), 2009",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2717128/"
+    }
   },
   {
     "id": "HLT-021",
     "industry": "health",
-    "entity": "home health networks",
+    "entity": "people who rely on electricity-dependent medical equipment at home",
     "condition": {
       "metric": "severe_risk",
       "op": ">=",
       "value": 80,
       "consecutive_days": 1
     },
-    "business_impact": "Imminent severe weather and high power outage risk forces home health networks to rapidly evacuate or secure electrically-dependent and oxygen-dependent patients.",
-    "story_seed": "High outage risk from severe storms forces patient relocations in {metro}",
+    "business_impact": "Federal health preparedness guidance says power outages caused by a major emergency can last longer and be life-threatening for people who depend on home-use medical devices, and advises identifying backup power sources for medical equipment and keeping chargers and power banks for home-use devices ready.",
+    "story_seed": "Severe thunderstorms are likely in the {metro} forecast — a Weather Company meteorologist on when the strongest storms arrive and how long they last, for people who use home oxygen, home dialysis or other powered medical equipment and are checking their backup power",
     "audiences": [
-      "healthcare administration press",
+      "local health desks",
+      "disability and aging press",
       "local news"
     ],
     "seasonality_window": [
-      "03-01",
-      "11-30"
+      "01-01",
+      "12-31"
     ],
-    "base_weight": 1.5
+    "base_weight": 0.6,
+    "evidence": {
+      "source": "Centers for Disease Control and Prevention, Prepare Your Health, \"Power Sources\" (2024)",
+      "url": "https://www.cdc.gov/prepare-your-health/take-action/power-sources.html"
+    }
   },
   {
     "id": "HLT-022",
     "industry": "health",
-    "entity": "urgent care centers",
+    "entity": "people with asthma and emergency departments",
     "condition": {
-      "metric": "humidity_pct",
+      "metric": "severe_risk",
       "op": ">=",
-      "value": 90,
-      "consecutive_days": 2
+      "value": 40,
+      "consecutive_days": 1,
+      "also": {
+        "metric": "precip_in",
+        "op": ">=",
+        "value": 1.0
+      }
     },
-    "business_impact": "Sustained extreme humidity spikes wet-bulb temperatures, triggering severe respiratory distress and asthma exacerbations at local urgent cares.",
-    "story_seed": "Extreme humidity drives respiratory emergencies in {metro}",
+    "business_impact": "A study in Louisiana found that on thunderstorm days emergency department visits for asthma rose with heavier rain, mainly among children and adults under 65, and its authors suggest people with asthma consider precautions during thunderstorms and emergency departments consider preparing for forecast thunderstorm days.",
+    "story_seed": "Thunderstorms with an inch or more of precipitation are forecast for {metro} — a Weather Company meteorologist on when the storms arrive and how long they last, for people with asthma and local emergency departments",
     "audiences": [
-      "medical trade press",
-      "local health reporters"
+      "local health desks",
+      "health and medical press",
+      "local news"
     ],
     "seasonality_window": [
-      "05-01",
-      "09-30"
+      "01-01",
+      "12-31"
     ],
-    "base_weight": 1.25
-  },
-  {
-    "id": "HLT-023",
-    "industry": "health",
-    "entity": "dermatology and primary care",
-    "condition": {
-      "metric": "uv_index",
-      "op": ">=",
-      "value": 11,
-      "consecutive_days": 2
-    },
-    "business_impact": "Consecutive days of extreme UV index 11+ trigger an influx of severe sunburn, sun poisoning, and localized dehydration cases at walk-in clinics.",
-    "story_seed": "Consecutive days of Extreme UV 11+ in {metro} prompts health warnings",
-    "audiences": [
-      "local news health desks"
-    ],
-    "seasonality_window": [
-      "05-01",
-      "08-31"
-    ],
-    "base_weight": 1.15
+    "base_weight": 0.6,
+    "evidence": {
+      "source": "Park et al., \"Associations of Emergency Department Visits for Asthma with Precipitation and Temperature on Thunderstorm Days: A Time-Series Analysis of Data from Louisiana, USA, 2010–2012,\" Environmental Health Perspectives 130(8), 2022",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9347901/"
+    }
   }
 ]
