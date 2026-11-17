@@ -271,5 +271,92 @@
       "12-31"
     ],
     "base_weight": 0.5
+  },
+  {
+    "id": "HLT-H01",
+    "industry": "health",
+    "entity": "people experiencing homelessness, outreach teams and households without heat",
+    "condition": {
+      "metric": "min_temp_below_p05_f",
+      "op": ">=",
+      "value": 0,
+      "consecutive_days": 1
+    },
+    "business_impact": "A study by the New York City health department found that most cold-related deaths happened outdoors, many among people experiencing homelessness, and that about a third occurred on or just after the coldest nights of the season for the city, while indoor cold deaths occurred in homes without heat.",
+    "story_seed": "One of the coldest nights of the season for {metro} is in the forecast — a Weather Company meteorologist on how cold, how long and when it eases, for shelters, outreach teams and people checking on neighbors without heat",
+    "audiences": [
+      "local health desks",
+      "local news",
+      "social services and nonprofit press"
+    ],
+    "seasonality_window": [
+      "11-01",
+      "03-31"
+    ],
+    "base_weight": 0.65,
+    "evidence": {
+      "source": "Lane et al. 2018, New York City Department of Health and Mental Hygiene, \"Burden and Risk Factors for Cold-Related Illness and Death in New York City\"",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5923674/"
+    }
+  },
+  {
+    "id": "HLT-H04",
+    "industry": "health",
+    "entity": "older adults, especially in high-poverty neighborhoods and homes without air conditioning",
+    "condition": {
+      "metric": "min_temp_z",
+      "op": ">=",
+      "value": 2.5,
+      "consecutive_days": 2
+    },
+    "business_impact": "A study of more than 73 million older Medicare beneficiaries found that runs of nights much warmer than usual for the area were linked to more deaths that year from heart, lung and brain conditions, especially in high-poverty neighborhoods.",
+    "story_seed": "Two or more nights far warmer than normal for {metro} are in the forecast — a Weather Company meteorologist on how warm the nights stay and when relief arrives, for people checking on older relatives without air conditioning",
+    "audiences": [
+      "local health desks",
+      "health and medical press",
+      "local news",
+      "aging and caregiving press"
+    ],
+    "seasonality_window": [
+      "06-01",
+      "08-31"
+    ],
+    "base_weight": 0.65,
+    "evidence": {
+      "source": "Healy et al. 2026, \"Heat waves and annual mortality among older adults (aged ≥65 years) in the USA\", Lancet Planetary Health",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13024048/"
+    }
+  },
+  {
+    "id": "HLT-H08",
+    "industry": "health",
+    "entity": "people prone to kidney stones and the clinicians who treat them",
+    "condition": {
+      "metric": "tmean_f",
+      "op": ">=",
+      "value": 86,
+      "consecutive_days": 2,
+      "also": {
+        "metric": "tmean_above_p95_f",
+        "op": ">=",
+        "value": 0
+      }
+    },
+    "business_impact": "A study of kidney stone visits in five US cities found that hot days, with average temperatures around 86°F, were followed within a few days by more people seeking care for kidney stones than on mild days.",
+    "story_seed": "A run of very warm days and nights, unusually hot even for {metro}, is in the forecast — a Weather Company meteorologist on how hot and for how long, for people prone to kidney stones and the clinicians who treat them",
+    "audiences": [
+      "health and medical press",
+      "local health desks",
+      "local news"
+    ],
+    "seasonality_window": [
+      "05-15",
+      "09-30"
+    ],
+    "base_weight": 0.5,
+    "evidence": {
+      "source": "Tasian et al. 2014, \"Daily Mean Temperature and Clinical Kidney Stone Presentation in Five U.S. Metropolitan Areas\", Environmental Health Perspectives",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25009122/"
+    }
   }
 ]
