@@ -1,538 +1,206 @@
 [
   {
-    "id": "INS-001",
-    "industry": "insurance",
-    "entity": "auto and comprehensive physical damage underwriters",
-    "condition": {
-      "metric": "severe_risk",
-      "op": ">=",
-      "value": 80,
-      "consecutive_days": 1
-    },
-    "business_impact": "Second-order effect: Severe convective storms dropping large hail over high-density metropolitan areas during peak holiday travel windows trigger immediate, historic spikes in comprehensive auto claims.",
-    "story_seed": "Holiday storm front sweeps {metro}, triggering catastrophic comprehensive auto claim spikes",
-    "audiences": [
-      "insurance risk trade press",
-      "automotive consumer desks",
-      "local TV consumer advocates"
-    ],
-    "seasonality_window": [
-      "05-20",
-      "07-06"
-    ],
-    "base_weight": 1.25
-  },
-  {
-    "id": "INS-002",
-    "industry": "insurance",
-    "entity": "residential property insurers and catastrophe response teams",
-    "condition": {
-      "metric": "min_temp_f",
-      "op": "<=",
-      "value": 15,
-      "consecutive_days": 2
-    },
-    "business_impact": "Sustained sub-freezing temperatures occurring when families leave homes vacant for extended holiday travel cause widespread pipe bursts, leading to an immediate surge in severe residential water damage filings.",
-    "story_seed": "Holiday deep freeze catches uninsulated {metro} homes vacant, setting up massive property damage claims",
-    "audiences": [
-      "property insurance press",
-      "consumer risk protection outlets",
-      "national real estate columns"
-    ],
-    "seasonality_window": [
-      "11-18",
-      "12-28"
-    ],
-    "base_weight": 1.3
-  },
-  {
     "id": "INS-003",
     "industry": "insurance",
-    "entity": "commercial casualty firms and retail liability underwriters",
+    "entity": "workers' compensation insurers, employers and risk managers, especially in transportation, warehousing and delivery",
     "condition": {
       "metric": "precip_in",
       "op": ">=",
-      "value": 0.2,
+      "value": 0.5,
       "consecutive_days": 1,
       "also": {
-        "metric": "min_temp_f",
+        "metric": "max_temp_f",
         "op": "<=",
-        "value": 32
+        "value": 40
       }
     },
-    "business_impact": "Calendar-aware: Freezing drizzle or light ice glaze on high-volume Black Friday shopping mornings triggers a severe cluster of slip-and-fall commercial liability claims in crowded retail parking matrices.",
-    "story_seed": "Black Friday freezing drizzle triggers holiday shopping parking footprint liability claims across {metro}",
+    "business_impact": "An insurance industry study of 22 years of workers' compensation claims in 35 states found that claims rise much more on cold, wet days than on cold, dry days: on wet days with highs between 25 and 40°F there were 7 to 10 percent more injury claims than on mild, dry days, against 1 to 3 percent on dry days at the same temperatures, mainly from slips and falls and secondarily from vehicle crashes. Transportation and warehousing saw the largest cold-day effects.",
+    "story_seed": "A cold, wet day with rain, snow or a wintry mix is forecast for {metro} — a Weather Company meteorologist on timing, temperatures and how long surfaces stay slick, for employers and workers' comp insurers thinking about slips, falls and work-vehicle crashes",
     "audiences": [
-      "commercial risk trade press",
-      "retail operations media",
+      "insurance trade press",
+      "workplace safety and HR press",
       "local business desks"
     ],
     "seasonality_window": [
-      "11-22",
-      "11-30"
+      "10-15",
+      "04-30"
     ],
-    "base_weight": 1.1
+    "base_weight": 0.6,
+    "evidence": {
+      "source": "Coate, Scott and Colón, \"Adverse Weather and Workers Compensation Claims,\" NCCI research brief, October 2024 (pp. 7, 9-10; Tables 2-3)",
+      "url": "https://www.ncci.com/Articles/Documents/Adverse-Weather-and-Workers-Compensation-Claims.pdf"
+    }
   },
   {
     "id": "INS-004",
     "industry": "insurance",
-    "entity": "auto underwriting lines and collision risk analysts",
+    "entity": "auto insurers, claims teams and drivers",
     "condition": {
       "metric": "snow_in",
       "op": ">=",
       "value": 3,
       "consecutive_days": 1
     },
-    "business_impact": "The first major accumulating winter storm of the season catches motorists unaccustomed to slick surfaces, triggering widespread multi-car accidents and overwhelming local claims adjustments.",
-    "story_seed": "First winter storm layout in {metro} catches drivers unprepared, spiking auto collision claims",
+    "business_impact": "A national study of crashes across 17 states found property-damage-only crashes were about 45 percent more frequent on snow days than on dry days, and injury crashes about 23 percent more frequent, after adjusting for state, season and recent rain; fatal crashes were slightly less frequent.",
+    "story_seed": "Three inches or more of snow is forecast for {metro} — a Weather Company meteorologist on when it falls and how long roads stay snow-covered, for a story on fender-benders, collision claims and what drivers should record after a crash",
     "audiences": [
-      "automotive consumer press",
-      "local traffic and transit channels",
-      "insurance trade journals"
+      "consumer finance and insurance reporters",
+      "local news",
+      "auto and mobility press"
     ],
     "seasonality_window": [
-      "11-01",
-      "12-15"
+      "10-15",
+      "04-30"
     ],
-    "base_weight": 1.2
-  },
-  {
-    "id": "INS-005",
-    "industry": "insurance",
-    "entity": "inland marine insurers and cargo risk underwriters",
-    "condition": {
-      "metric": "precip_in",
-      "op": ">=",
-      "value": 1,
-      "consecutive_days": 1
-    },
-    "business_impact": "Calendar-aware: Torrential tropical downpours during Juneteenth travel peaks flood regional transport underpasses, damaging stranded freight trailers and spiking inland marine cargo claims.",
-    "story_seed": "Juneteenth flash flooding severs logistics corridors in {metro}, spiking cargo damage filings",
-    "audiences": [
-      "logistics and cargo trade media",
-      "marine insurance press",
-      "national supply chain logs"
-    ],
-    "seasonality_window": [
-      "06-12",
-      "06-22"
-    ],
-    "base_weight": 1.05
-  },
-  {
-    "id": "INS-006",
-    "industry": "insurance",
-    "entity": "crop reinsurance providers and agricultural underwriters",
-    "condition": {
-      "metric": "temp_anomaly_f",
-      "op": "<=",
-      "value": -10,
-      "consecutive_days": 2,
-      "also": {
-        "metric": "min_temp_f",
-        "op": "<=",
-        "value": 32
-      }
-    },
-    "business_impact": "Anomaly trigger: Severe unseasonable spring freeze anomalies hitting vulnerable regional crops post-budding trigger immediate multi-million dollar crop reinsurance payouts.",
-    "story_seed": "Late spring hard freeze anomaly devastates agricultural zones surrounding {metro}, triggering reinsurance alerts",
-    "audiences": [
-      "agribusiness trade journals",
-      "reinsurance market analysts",
-      "national commodities press"
-    ],
-    "seasonality_window": [
-      "04-01",
-      "05-15"
-    ],
-    "base_weight": 1.4
-  },
-  {
-    "id": "INS-007",
-    "industry": "insurance",
-    "entity": "marine and luxury yacht underwriters",
-    "condition": {
-      "metric": "max_wind_mph",
-      "op": ">=",
-      "value": 40,
-      "consecutive_days": 1
-    },
-    "business_impact": "Calendar-aware: High wind boundaries intersecting congested waterways over Memorial Day weekend spark a dramatic surge in recreational boating collisions and hull damage claims.",
-    "story_seed": "Memorial Day weekend wind squalls trigger high hull damage and boating accident claims across {metro}",
-    "audiences": [
-      "marine transport media",
-      "recreational boating press",
-      "local emergency news"
-    ],
-    "seasonality_window": [
-      "05-20",
-      "05-31"
-    ],
-    "base_weight": 1.15
+    "base_weight": 0.6,
+    "evidence": {
+      "source": "Eisenberg and Warner, \"Effects of Snowfalls on Motor Vehicle Collisions, Injuries, and Fatalities,\" American Journal of Public Health 95(1), 2005 (Table 2)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1449863/"
+    }
   },
   {
     "id": "INS-008",
     "industry": "insurance",
-    "entity": "workers compensation providers and risk managers",
-    "condition": {
-      "metric": "max_temp_f",
-      "op": ">=",
-      "value": 95,
-      "consecutive_days": 4
-    },
-    "business_impact": "Streak trigger: 4+ days of unrelenting extreme summer heat zones spike acute thermal stress and heat stroke incidents among outdoor construction workers, driving workers' comp liability claims.",
-    "story_seed": "Four-day extreme heat block spikes outdoor occupational injury and workers comp claims around {metro}",
-    "audiences": [
-      "occupational health and safety media",
-      "construction industry trade",
-      "labor risk platforms"
-    ],
-    "seasonality_window": [
-      "06-15",
-      "08-15"
-    ],
-    "base_weight": 1.1
-  },
-  {
-    "id": "INS-009",
-    "industry": "insurance",
-    "entity": "small business interruption underwriters",
+    "entity": "workers' compensation insurers, employers and risk managers, especially in construction, landscaping and other outdoor work",
     "condition": {
       "metric": "max_temp_f",
       "op": ">=",
       "value": 100,
-      "consecutive_days": 3
+      "consecutive_days": 1,
+      "also": {
+        "metric": "temp_anomaly_f",
+        "op": ">=",
+        "value": 8
+      }
     },
-    "business_impact": "Streak trigger: Extended triple-digit heat blocks overload regional power grids, forcing rolling brownouts that fry commercial refrigeration assets and trigger massive business interruption claims.",
-    "story_seed": "Extended three-day heat block triggers grid failures, spiking commercial business interruption lines in {metro}",
+    "business_impact": "An insurance industry study of 22 years of workers' compensation claims in 35 states found injury claims rise steadily with the day's high temperature, with the largest increases on hot days in outdoor sectors such as construction, natural resources and landscaping. It also estimated that a summer with more hot days than a city is used to would raise claims by a similar amount in warmer and cooler cities.",
+    "story_seed": "A high of 100°F or more, well above normal, is forecast for {metro} — a Weather Company meteorologist on which days and hours are hottest, for employers and workers' comp insurers planning for outdoor crews",
     "audiences": [
-      "commercial real estate press",
-      "small business advocacy media",
-      "national business columns"
+      "insurance trade press",
+      "workplace safety and HR press",
+      "construction trade press"
     ],
     "seasonality_window": [
-      "07-01",
-      "08-31"
+      "05-01",
+      "09-30"
     ],
-    "base_weight": 1.2
+    "base_weight": 0.6,
+    "evidence": {
+      "source": "Coate, Scott and Colón, \"Adverse Weather and Workers Compensation Claims,\" NCCI research brief, October 2024 (pp. 7-8, 13, 16; Table 1)",
+      "url": "https://www.ncci.com/Articles/Documents/Adverse-Weather-and-Workers-Compensation-Claims.pdf"
+    }
   },
   {
-    "id": "INS-010",
+    "id": "INS-009",
     "industry": "insurance",
-    "entity": "homeowners insurance lines and fire underwriters",
+    "entity": "homeowners, renters and their insurers in ice-storm country",
     "condition": {
-      "metric": "severe_risk",
+      "metric": "ice_in",
       "op": ">=",
-      "value": 60,
-      "consecutive_days": 3
+      "value": 0.25,
+      "consecutive_days": 1
     },
-    "business_impact": "Streak trigger: Multiple days of convective storm networks dropping lightning strikes over dry urban fringes spike residential power surge and localized wildfire lightning damage claims.",
-    "story_seed": "Three-day severe storm cluster sparks structural power surge and lightning damage claims in {metro}",
+    "business_impact": "State insurance regulators' national homeowners insurance guide lists food spoilage and other damage from a power outage among the things to check a policy for, along with what the policy does not cover, and whether that coverage can be bought if it is not included.",
+    "story_seed": "A quarter inch or more of ice is in the {metro} forecast — a Weather Company meteorologist on when the freezing rain starts and ends and how cold it stays afterward, for households checking what their home insurance says about power outages before the ice arrives",
     "audiences": [
-      "property underwriting trade",
-      "local consumer protection logs",
-      "social"
+      "consumer finance and insurance reporters",
+      "local news",
+      "real estate and home press"
     ],
     "seasonality_window": [
-      "06-01",
-      "08-31"
+      "10-15",
+      "04-15"
     ],
-    "base_weight": 0.95
+    "base_weight": 0.6,
+    "evidence": {
+      "source": "National Association of Insurance Commissioners, \"A Shopping Tool for Homeowners Insurance\" (consumer guide, 2023), p. 11",
+      "url": "https://content.naic.org/sites/default/files/committees_c_trans_read_wg_related_shopping_tool_singles.pdf"
+    }
   },
   {
     "id": "INS-011",
     "industry": "insurance",
-    "entity": "travel insurance carriers and premium benefit platforms",
-    "condition": {
-      "metric": "severe_risk",
-      "op": ">=",
-      "value": 80,
-      "consecutive_days": 2
-    },
-    "business_impact": "Calendar-aware: Convective thunderstorm blocks lingering over Fourth of July travel corridors prompt widespread flight cancellations, spiking travel insurance trip-interruption claims.",
-    "story_seed": "July 4th thunderstorm clusters trigger unprecedented wave of travel interruption insurance claims in {metro}",
-    "audiences": [
-      "travel hospitality press",
-      "consumer finance media",
-      "national travel columns"
-    ],
-    "seasonality_window": [
-      "06-28",
-      "07-07"
-    ],
-    "base_weight": 1.2
-  },
-  {
-    "id": "INS-012",
-    "industry": "insurance",
-    "entity": "builders risk underwriters and construction insurers",
-    "condition": {
-      "metric": "max_wind_mph",
-      "op": ">=",
-      "value": 45,
-      "consecutive_days": 2
-    },
-    "business_impact": "Sustained spring windstorms battering exposed open-air structural framing trigger immediate structural scaffolding collapses and major builders' risk property claims.",
-    "story_seed": "Sustained spring wind front causes structural damage at {metro} construction sites, hitting builders risk lines",
-    "audiences": [
-      "construction logistics media",
-      "commercial property underwriting",
-      "industrial real estate logs"
-    ],
-    "seasonality_window": [
-      "03-15",
-      "05-31"
-    ],
-    "base_weight": 1
-  },
-  {
-    "id": "INS-013",
-    "industry": "insurance",
-    "entity": "commercial property underwriters and roof damage analysts",
-    "condition": {
-      "metric": "precip_in",
-      "op": ">=",
-      "value": 1.5,
-      "consecutive_days": 1
-    },
-    "business_impact": "Torrential late-summer downpours from decaying tropical systems overwhelm aging commercial flat-roof drainage systems, triggering extensive interior asset damage claims.",
-    "story_seed": "Tropical cloudburst strains commercial roofing infrastructure across {metro}, spiking asset claims",
-    "audiences": [
-      "commercial building management trade",
-      "property underwriting journals",
-      "local corporate real estate logs"
-    ],
-    "seasonality_window": [
-      "08-15",
-      "10-31"
-    ],
-    "base_weight": 1.15
-  },
-  {
-    "id": "INS-014",
-    "industry": "insurance",
-    "entity": "commercial fleet auto insurers",
-    "condition": {
-      "metric": "min_temp_f",
-      "op": "<=",
-      "value": 25,
-      "consecutive_days": 2
-    },
-    "business_impact": "Calendar-aware: Frigid black ice profiles over MLK Day holiday weekend catch local distribution fleets unawares, accelerating commercial delivery collision and liability filings.",
-    "story_seed": "MLK holiday weekend freeze triggers fleet accident surge and auto liability claims across {metro}",
-    "audiences": [
-      "commercial fleet logistics media",
-      "fleet auto underwriting trade",
-      "local transit news"
-    ],
-    "seasonality_window": [
-      "01-10",
-      "01-22"
-    ],
-    "base_weight": 1.1
-  },
-  {
-    "id": "INS-015",
-    "industry": "insurance",
-    "entity": "event cancellation insurance carriers",
-    "condition": {
-      "metric": "precip_in",
-      "op": ">=",
-      "value": 0.5,
-      "consecutive_days": 2
-    },
-    "business_impact": "Calendar-aware: Continuous rainy washouts over Juneteenth holiday weekend force the cancellation of high-ticket outdoor festivals, activating immediate event liability payouts.",
-    "story_seed": "Juneteenth holiday weekend washouts trigger major outdoor event cancellation insurance claims in {metro}",
-    "audiences": [
-      "event entertainment trade press",
-      "hospitality business media",
-      "social"
-    ],
-    "seasonality_window": [
-      "06-15",
-      "06-21"
-    ],
-    "base_weight": 1.05
-  },
-  {
-    "id": "INS-016",
-    "industry": "insurance",
-    "entity": "auto physical damage lines and mountain transit insurers",
+    "entity": "travelers with upcoming trips, travel insurance sellers and consumer finance reporters",
     "condition": {
       "metric": "snow_in",
       "op": ">=",
       "value": 6,
       "consecutive_days": 1
     },
-    "business_impact": "Calendar-aware: Heavy single-day snow dumps over Presidents' Day weekend catch holiday travelers on mountain passes, forcing an immediate spike in recreational collision filings.",
-    "story_seed": "Presidents' Day weekend winter system triggers ski travel collision claims near {metro} corridors",
+    "business_impact": "State insurance regulators' consumer guidance says travel insurance is meant for sudden and unforeseen events, that buying at the last moment ahead of predicted severe weather isn't likely to help, and that typically, if you buy travel insurance after a winter or tropical storm is named, the plan won't provide coverage for claims related to that event.",
+    "story_seed": "Six inches or more of snow is in the {metro} forecast — a Weather Company meteorologist on what the forecast shows and how far ahead, for travelers with trips planned, on why regulators say the time to buy trip insurance is early, not at the last minute or after a storm is named",
     "audiences": [
-      "automotive travel columns",
-      "regional tourism safety logs",
-      "claims management media"
+      "consumer finance and insurance reporters",
+      "consumer travel reporters",
+      "local news"
     ],
     "seasonality_window": [
-      "02-10",
-      "02-22"
+      "10-15",
+      "04-30"
     ],
-    "base_weight": 0.9
-  },
-  {
-    "id": "INS-017",
-    "industry": "insurance",
-    "entity": "residential property underwriters and hydrologic risk firms",
-    "condition": {
-      "metric": "temp_anomaly_f",
-      "op": ">=",
-      "value": 15,
-      "consecutive_days": 3
-    },
-    "business_impact": "Anomaly trigger: Severe unseasonable late-winter warmth anomalies cause rapid frozen ground snowmelt, forcing extensive hydrostatic basement seepage and water damage claims.",
-    "story_seed": "Unseasonable winter melt anomaly triggers severe residential water seepage claims around {metro}",
-    "audiences": [
-      "residential underwriting press",
-      "homeowners protection columns",
-      "local real estate boards"
-    ],
-    "seasonality_window": [
-      "03-01",
-      "04-15"
-    ],
-    "base_weight": 1.2
-  },
-  {
-    "id": "INS-018",
-    "industry": "insurance",
-    "entity": "logistics liability and transit insurers",
-    "condition": {
-      "metric": "max_wind_mph",
-      "op": ">=",
-      "value": 50,
-      "consecutive_days": 1
-    },
-    "business_impact": "Calendar-aware: High pre-Christmas wind thresholds across key shipping lanes cause tractor-trailer blowovers, triggering extensive multi-vehicle collision and cargo liability claims.",
-    "story_seed": "Pre-Christmas high wind front severs transit lanes, triggering fleet property damage claims in {metro}",
-    "audiences": [
-      "overland logistics transport press",
-      "commercial auto insurance journals",
-      "national shipping infrastructure columns"
-    ],
-    "seasonality_window": [
-      "12-15",
-      "12-24"
-    ],
-    "base_weight": 1.3
+    "base_weight": 0.5,
+    "evidence": {
+      "source": "National Association of Insurance Commissioners, \"Taking a Trip? Information About Travel Insurance You Should Know Before You Hit the Road,\" Consumer Insight (updated 2025)",
+      "url": "https://content.naic.org/article/consumer-insight-taking-trip-information-about-travel-insurance-you-should-know-you-hit-road"
+    }
   },
   {
     "id": "INS-019",
     "industry": "insurance",
-    "entity": "municipal risk pools and public liability underwriters",
+    "entity": "homeowners, renters and flood insurance buyers",
     "condition": {
       "metric": "precip_in",
       "op": ">=",
       "value": 2,
-      "consecutive_days": 1
+      "consecutive_days": 1,
+      "also": {
+        "metric": "max_temp_f",
+        "op": ">=",
+        "value": 50
+      }
     },
-    "business_impact": "Severe single-day cloudbursts overwhelm city storm sewers, causing widespread street backups that prompt a wave of public liability property claims against municipal risk pools.",
-    "story_seed": "Severe cloudburst saturates {metro} drainage arrays, prompting municipal liability claim spikes",
+    "business_impact": "Federal flood insurance guidance says standard homeowners policies do not, as a rule, cover flooding, and that many homeowners don't realize it until it is too late. Flood coverage can be bought at any time, but there is generally a 30-day waiting period after applying and paying before the policy takes effect.",
+    "story_seed": "Two inches or more of rain is in the {metro} forecast — a Weather Company meteorologist on when the heaviest rain falls, for a story on why flood insurance has to be bought weeks before a storm, not when it is in the forecast",
     "audiences": [
-      "public management trade journals",
-      "municipal risk pool logs",
-      "local government news"
+      "consumer finance and insurance reporters",
+      "local news",
+      "real estate and home press"
     ],
     "seasonality_window": [
-      "07-15",
-      "09-15"
+      "01-01",
+      "12-31"
     ],
-    "base_weight": 1.1
-  },
-  {
-    "id": "INS-020",
-    "industry": "insurance",
-    "entity": "retail commercial property underwriters",
-    "condition": {
-      "metric": "humidity_pct",
-      "op": ">=",
-      "value": 85,
-      "consecutive_days": 2
-    },
-    "business_impact": "Sustained high summer humidity blocks indoor inventory moisture thresholds in coastal warehouse footprints, triggering immediate commercial property mold and spoilage claim lines.",
-    "story_seed": "Sustained midsummer humidity waves compromise retail warehouse spaces in {metro}, driving asset claims",
-    "audiences": [
-      "commercial underwriting platforms",
-      "retail property operations logs",
-      "industrial safety trade"
-    ],
-    "seasonality_window": [
-      "07-01",
-      "08-31"
-    ],
-    "base_weight": 0.85
+    "base_weight": 0.7,
+    "evidence": {
+      "source": "Federal Emergency Management Agency, \"Myths and Facts About Flood Insurance\" (fact sheet, November 2020)",
+      "url": "https://www.fema.gov/print/txt/node/603385"
+    }
   },
   {
     "id": "INS-021",
     "industry": "insurance",
-    "entity": "commercial fleet and trucking underwriters",
+    "entity": "homeowners, renters and their insurers",
     "condition": {
       "metric": "severe_risk",
       "op": ">=",
       "value": 80,
       "consecutive_days": 1
     },
-    "business_impact": "High severe storm probabilities trigger immediate alerts for commercial fleet rerouting, sparking pre-claim advisories for trucking underwriters.",
-    "story_seed": "Severe storm risks force commercial fleets to reroute across {metro}, elevating transit liability alerts",
+    "business_impact": "State insurance regulators' storm guidance tells people to make a list of their belongings before severe weather, with brand names and both electronic and paper copies, and to move loose items like lawn furniture inside ahead of the storms; after a storm, an accurate account of the damage helps when filing a claim.",
+    "story_seed": "Severe storms are likely in the {metro} forecast — a Weather Company meteorologist on when they arrive, for a story on what homeowners and renters can do before the storms to make an insurance claim easier",
     "audiences": [
-      "commercial auto insurance journals",
-      "logistics liability press"
+      "consumer finance and insurance reporters",
+      "local news",
+      "real estate and home press"
     ],
     "seasonality_window": [
-      "03-01",
-      "10-31"
+      "01-01",
+      "12-31"
     ],
-    "base_weight": 1.15
-  },
-  {
-    "id": "INS-022",
-    "industry": "insurance",
-    "entity": "residential mold and water damage underwriters",
-    "condition": {
-      "metric": "humidity_pct",
-      "op": ">=",
-      "value": 90,
-      "consecutive_days": 3
-    },
-    "business_impact": "Sustained extreme humidity without relief accelerates residential mold growth and HVAC condensation failures, prompting a spike in water damage claims.",
-    "story_seed": "Relentless humidity forces {metro} HVAC systems to fail, driving a wave of residential water damage claims",
-    "audiences": [
-      "property underwriting trade",
-      "residential risk analysts"
-    ],
-    "seasonality_window": [
-      "05-01",
-      "09-30"
-    ],
-    "base_weight": 1.1
-  },
-  {
-    "id": "INS-023",
-    "industry": "insurance",
-    "entity": "workers compensation and occupational risk managers",
-    "condition": {
-      "metric": "uv_index",
-      "op": ">=",
-      "value": 10,
-      "consecutive_days": 2
-    },
-    "business_impact": "Consecutive days of extreme UV exposure for outdoor laborers significantly raises the risk of acute radiation burns and heat syncope, driving workers comp claims.",
-    "story_seed": "Extreme UV conditions trigger safety protocols for outdoor workers in {metro} as comp claims rise",
-    "audiences": [
-      "occupational health media",
-      "labor risk platforms"
-    ],
-    "seasonality_window": [
-      "05-01",
-      "09-30"
-    ],
-    "base_weight": 1.05
+    "base_weight": 0.6,
+    "evidence": {
+      "source": "National Association of Insurance Commissioners, \"What to Do Before and After a Storm,\" Consumer Insight, June 3, 2024",
+      "url": "https://content.naic.org/article/what-do-and-after-storm"
+    }
   }
 ]
