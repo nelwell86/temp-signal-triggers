@@ -81,8 +81,8 @@
       "construction trade press"
     ],
     "seasonality_window": [
-      "05-01",
-      "09-30"
+      "04-01",
+      "10-31"
     ],
     "base_weight": 0.6,
     "evidence": {
