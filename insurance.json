@@ -256,5 +256,37 @@
       "source": "National Association of Insurance Commissioners, \"Assignment of Benefits: Consumer Beware,\" Consumer Insight, September 2023",
       "url": "https://content.naic.org/article/consumer-insight-assignment-benefits-consumer-beware"
     }
+  },
+  {
+    "id": "INS-026",
+    "industry": "insurance",
+    "entity": "homeowners and renters, especially with basements, and their insurers",
+    "condition": {
+      "metric": "precip_in",
+      "op": ">=",
+      "value": 3,
+      "consecutive_days": 1,
+      "also": {
+        "metric": "max_temp_f",
+        "op": ">=",
+        "value": 50
+      }
+    },
+    "business_impact": "State insurance regulators' national homeowners insurance guide lists water damage from a sewer, drain or sump pump backup among the things to check a policy for, along with what the policy does not cover, and whether that coverage can be bought if it is not included.",
+    "story_seed": "Three inches or more of rain is in the {metro} forecast — a Weather Company meteorologist on when the heaviest rain falls, for homeowners and renters checking whether their policy covers sewer and drain backups",
+    "audiences": [
+      "consumer finance and insurance reporters",
+      "local news",
+      "real estate and home press"
+    ],
+    "seasonality_window": [
+      "01-01",
+      "12-31"
+    ],
+    "base_weight": 0.5,
+    "evidence": {
+      "source": "National Association of Insurance Commissioners, \"A Shopping Tool for Homeowners Insurance\" (consumer guide, 2023), p. 11",
+      "url": "https://content.naic.org/sites/default/files/committees_c_trans_read_wg_related_shopping_tool_singles.pdf"
+    }
   }
 ]
