@@ -202,5 +202,32 @@
       "source": "National Association of Insurance Commissioners, \"What to Do Before and After a Storm,\" Consumer Insight, June 3, 2024",
       "url": "https://content.naic.org/article/what-do-and-after-storm"
     }
+  },
+  {
+    "id": "INS-024",
+    "industry": "insurance",
+    "entity": "owners and managers of buildings with flat and low-slope roofs, homeowners, and property insurers",
+    "condition": {
+      "metric": "snow_in",
+      "op": ">=",
+      "value": 12,
+      "consecutive_days": 1
+    },
+    "business_impact": "Federal snow-load guidance for building owners says a foot of fresh snow can weigh from about 3 pounds per square foot when light and dry to 21 when wet and heavy, that rain on snow can add to the load, and that when snow already on a roof is near its capacity and more snow is forecast, removal by a licensed, insured roofing contractor is prudent. It also warns that snow on the ground is not a measure of the load on a roof.",
+    "story_seed": "A foot or more of snow is forecast for {metro} — a Weather Company meteorologist on how much, how wet it will be and whether rain or more snow follows, for building owners and managers keeping an eye on flat and low-slope roofs",
+    "audiences": [
+      "commercial real estate and facilities press",
+      "insurance trade press",
+      "local news"
+    ],
+    "seasonality_window": [
+      "10-15",
+      "04-30"
+    ],
+    "base_weight": 0.5,
+    "evidence": {
+      "source": "Federal Emergency Management Agency, \"Snow Load Safety Guide,\" FEMA P-957, January 2013 (pp. 2-3, 2-6, 4-3, ch. 5)",
+      "url": "https://nibs-s3-wbdg3-production.s3.us-east-1.amazonaws.com/FFC/DHS/femap957.pdf"
+    }
   }
 ]
