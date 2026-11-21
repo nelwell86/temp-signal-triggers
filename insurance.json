@@ -229,5 +229,32 @@
       "source": "Federal Emergency Management Agency, \"Snow Load Safety Guide,\" FEMA P-957, January 2013 (pp. 2-3, 2-6, 4-3, ch. 5)",
       "url": "https://nibs-s3-wbdg3-production.s3.us-east-1.amazonaws.com/FFC/DHS/femap957.pdf"
     }
+  },
+  {
+    "id": "INS-025",
+    "industry": "insurance",
+    "entity": "homeowners and renters in storm country, and consumer reporters",
+    "condition": {
+      "metric": "severe_risk",
+      "op": ">=",
+      "value": 100,
+      "consecutive_days": 1
+    },
+    "business_impact": "State insurance regulators warn that home repair fraud is common after storms that damage many homes, with contractors coming into hard-hit areas to take advantage of storm victims. Their guidance says no one is required to sign an assignment of benefits, which lets a roofer or other contractor deal with the insurer and collect payment directly, to get repairs done; it advises using local or trusted companies, getting more than one bid, photographing damage first and contacting the insurer as soon as possible.",
+    "story_seed": "The {metro} forecast is at The Weather Company's highest level for severe storms — a Weather Company meteorologist on when the storms arrive and what kinds of damage forecasters are watching for, for a story on what homeowners should know before signing anything with a contractor afterward",
+    "audiences": [
+      "consumer finance and insurance reporters",
+      "local news",
+      "real estate and home press"
+    ],
+    "seasonality_window": [
+      "01-01",
+      "12-31"
+    ],
+    "base_weight": 0.5,
+    "evidence": {
+      "source": "National Association of Insurance Commissioners, \"Assignment of Benefits: Consumer Beware,\" Consumer Insight, September 2023",
+      "url": "https://content.naic.org/article/consumer-insight-assignment-benefits-consumer-beware"
+    }
   }
 ]
