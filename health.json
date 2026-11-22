@@ -21,7 +21,7 @@
       "05-01",
       "09-30"
     ],
-    "base_weight": 0.7,
+    "base_weight": 0.75,
     "evidence": {
       "source": "National Weather Service, \"Heat Safety Tips and Resources\"",
       "url": "https://www.weather.gov/safety/heat"
@@ -34,7 +34,7 @@
     "condition": {
       "metric": "snow_in",
       "op": ">=",
-      "value": 1.0,
+      "value": 1,
       "consecutive_days": 1
     },
     "business_impact": "A study by a city health department in Philadelphia found that snow was the weather condition most associated with days of unusually high emergency department visits for falls, with the snow typically a couple of days before, and that many of those falls happened in the morning, apparently on the way to work.",
@@ -93,7 +93,7 @@
     "condition": {
       "metric": "precip_in",
       "op": ">=",
-      "value": 2.0,
+      "value": 2,
       "consecutive_days": 1
     },
     "business_impact": "A study of more than 16,000 West Nile virus cases reported to federal health authorities in 17 states found that a week with at least one day of 50 mm (about 2 inches) or more of rain was followed by a higher incidence of reported West Nile infection that week and over the next two weeks.",
@@ -152,7 +152,7 @@
       "also": {
         "metric": "precip_in",
         "op": ">=",
-        "value": 1.0
+        "value": 1
       }
     },
     "business_impact": "A study in Louisiana found that on thunderstorm days emergency department visits for asthma rose with heavier rain, mainly among children and adults under 65, and its authors suggest people with asthma consider precautions during thunderstorms and emergency departments consider preparing for forecast thunderstorm days.",
@@ -206,7 +206,7 @@
     "condition": {
       "metric": "snow_in",
       "op": ">=",
-      "value": 8.0,
+      "value": 8,
       "consecutive_days": 1
     },
     "business_impact": "A national heart-health organization says the exertion of shoveling heavy snow may raise the risk of a heart attack or sudden cardiac arrest, citing a study in Canada in which about 7 to 8 inches of snow was linked to higher odds of men being hospitalized with or dying from a heart attack, and says people with heart disease or heart risk factors should take particular care.",
