@@ -205,5 +205,64 @@
       "source": "U.S. Consumer Product Safety Commission, \"CPSC Warns of Generator, Carbon Monoxide and Fire Hazards Ahead of Hurricane Season,\" news release 26-519, May 27, 2026",
       "url": "https://www.cpsc.gov/Newsroom/News-Releases/2026/CPSC-Warns-of-Generator-Carbon-Monoxide-and-Fire-Hazards-Ahead-of-Hurricane-Season"
     }
+  },
+  {
+    "id": "CON-024",
+    "industry": "consumer",
+    "entity": "households heating with space heaters, fireplaces and wood stoves, and consumer and local reporters",
+    "condition": {
+      "metric": "min_temp_below_p05_f",
+      "op": ">=",
+      "value": 0,
+      "consecutive_days": 3,
+      "also": {
+        "metric": "min_temp_f",
+        "op": "<=",
+        "value": 32
+      }
+    },
+    "business_impact": "Federal fire officials report that heating was the second leading cause of home fires in 2021, with an estimated 32,200 home heating fires and 190 deaths, and that portable heaters caused only 3% of home heating fires in 2017–2019 but 41% of the fatal ones. They advise keeping anything that can burn at least 3 feet from heat sources, never heating a home with an oven, and turning space heaters off when leaving the room or going to bed.",
+    "story_seed": "Three nights in a row among the coldest of the winter for {metro} are in the forecast — a Weather Company meteorologist on how cold the nights get and when the cold breaks, for a story on heating safely with space heaters, fireplaces and wood stoves",
+    "audiences": [
+      "consumer reporters",
+      "local news",
+      "home and lifestyle press"
+    ],
+    "seasonality_window": [
+      "11-01",
+      "03-31"
+    ],
+    "base_weight": 0.5,
+    "evidence": {
+      "source": "U.S. Fire Administration (FEMA), \"Heating Fire Safety\" (page last reviewed May 4, 2023)",
+      "url": "https://www.usfa.fema.gov/prevention/home-fires/prevent-fires/heating/"
+    }
+  },
+  {
+    "id": "CON-025",
+    "industry": "consumer",
+    "entity": "households facing repairs and cleanup after ice storms, and consumer and local reporters",
+    "condition": {
+      "metric": "ice_in",
+      "op": ">=",
+      "value": 0.25,
+      "consecutive_days": 1
+    },
+    "business_impact": "Federal consumer protection guidance on scams after weather emergencies warns that scammers may claim they don't need to be licensed, ask to be paid for everything up front, or insist on payment by wire transfer, gift card, payment app, cryptocurrency or cash. It advises hiring only licensed and insured contractors, asking for a written agreement, paying by credit card or check, not making the final payment until the work is done, and never signing an insurance check over to a contractor; it also notes that federal emergency aid does not charge application fees.",
+    "story_seed": "A quarter inch or more of ice is in the {metro} forecast — a Weather Company meteorologist on when the freezing rain starts and ends and how long it stays below freezing afterward, for a story on avoiding repair and cleanup scams after a winter storm",
+    "audiences": [
+      "consumer reporters",
+      "local news",
+      "consumer finance reporters"
+    ],
+    "seasonality_window": [
+      "10-15",
+      "04-15"
+    ],
+    "base_weight": 0.5,
+    "evidence": {
+      "source": "Federal Trade Commission, \"How To Avoid Scams After Weather Emergencies and Natural Disasters\" (consumer advice, September 2025)",
+      "url": "https://consumer.ftc.gov/articles/how-avoid-scams-after-weather-emergencies-and-natural-disasters"
+    }
   }
 ]
