@@ -18,7 +18,7 @@
     ],
     "seasonality_window": [
       "05-01",
-      "09-30"
+      "10-31"
     ],
     "base_weight": 0.5,
     "evidence": {
@@ -263,6 +263,99 @@
     "evidence": {
       "source": "Federal Trade Commission, \"How To Avoid Scams After Weather Emergencies and Natural Disasters\" (consumer advice, September 2025)",
       "url": "https://consumer.ftc.gov/articles/how-avoid-scams-after-weather-emergencies-and-natural-disasters"
+    }
+  },
+  {
+    "id": "CON-026",
+    "industry": "consumer",
+    "entity": "households hosting and attending Fourth of July cookouts, and food, consumer and local reporters",
+    "condition": {
+      "metric": "max_temp_f",
+      "op": ">",
+      "value": 90,
+      "consecutive_days": 1
+    },
+    "business_impact": "Federal food safety guidance says never to leave food out of refrigeration for more than 2 hours, and not more than 1 hour when the temperature is above 90°F, because bacteria grow most rapidly between 40°F and 140°F, doubling in number in as little as 20 minutes. It advises keeping cold food at or below 40°F, in containers on ice, and hot food at or above 140°F.",
+    "story_seed": "A high above 90°F is in the {metro} forecast for the Fourth of July — a Weather Company meteorologist on how hot the afternoon gets and when it cools off, for a story on the one-hour rule for food left out at cookouts",
+    "audiences": [
+      "food and consumer reporters",
+      "local news",
+      "lifestyle reporters"
+    ],
+    "seasonality_window": [
+      "07-04",
+      "07-04"
+    ],
+    "anchor": {
+      "holiday": "independence_day",
+      "days": [
+        0,
+        0
+      ]
+    },
+    "base_weight": 0.5,
+    "evidence": {
+      "source": "U.S. Department of Agriculture, Food Safety and Inspection Service, \"Danger Zone (40°F-140°F)\" (last updated June 28, 2023)",
+      "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/danger-zone-40f-140f"
+    }
+  },
+  {
+    "id": "CON-027",
+    "industry": "consumer",
+    "entity": "home gardeners, and home, garden and local reporters",
+    "condition": {
+      "metric": "min_temp_f",
+      "op": "<=",
+      "value": 28,
+      "consecutive_days": 1,
+      "also": {
+        "metric": "temp_anomaly_f",
+        "op": "<=",
+        "value": -10
+      }
+    },
+    "business_impact": "University extension guidance describes a light freeze, 29 to 32°F, as cold enough to kill young and frost-tender plants, and a moderate freeze, 25 to 28°F, as cold enough to damage most plants. It advises covers that reach the ground and are anchored to trap heat from the soil, removed as soon as temperatures return to 32°F; sheets, towels, blankets and cardboard can be used in a pinch, and plastic should be avoided unless a frame holds it off the plants.",
+    "story_seed": "A fall freeze of 28°F or colder, with highs well below normal for the time of year, is in the {metro} forecast — a Weather Company meteorologist on how cold the night gets and how long it stays below freezing, for a story on protecting or harvesting garden plants before the cold",
+    "audiences": [
+      "home and garden reporters",
+      "local news",
+      "consumer reporters"
+    ],
+    "seasonality_window": [
+      "09-15",
+      "11-15"
+    ],
+    "base_weight": 0.5,
+    "evidence": {
+      "source": "University of Georgia Cooperative Extension, \"Cold protection options for growing fruit and vegetables throughout the winter,\" CAES Field Report, January 11, 2023",
+      "url": "https://newswire.caes.uga.edu/story/10123/cold-protection-options.html"
+    }
+  },
+  {
+    "id": "CON-028",
+    "industry": "consumer",
+    "entity": "airline passengers with upcoming flights, and consumer travel and local reporters",
+    "condition": {
+      "metric": "severe_risk",
+      "op": ">=",
+      "value": 80,
+      "consecutive_days": 1
+    },
+    "business_impact": "Federal airline rules require a full and prompt refund of the airfare, including taxes and fees, to a passenger holding a nonrefundable ticket on a flight to, from or within the US when the flight is cancelled or significantly delayed or changed, such as a domestic departure or arrival moved by three hours or more, and the passenger chooses not to take the changed flight, a rebooking, or a voucher or credit. The rules define a prompt refund as within 7 business days for credit card purchases and 20 calendar days for other payments.",
+    "story_seed": "Severe thunderstorms are likely in the {metro} forecast — a Weather Company meteorologist on when the storms reach the area, for a story on what airline passengers are owed if a flight is cancelled or delayed by three hours or more",
+    "audiences": [
+      "consumer travel reporters",
+      "consumer finance reporters",
+      "local news"
+    ],
+    "seasonality_window": [
+      "01-01",
+      "12-31"
+    ],
+    "base_weight": 0.5,
+    "evidence": {
+      "source": "14 CFR Part 260, \"Refunds for Airline Fare and Ancillary Service Fees,\" §§ 260.2 and 260.6 (U.S. Department of Transportation, 89 FR 32832, April 26, 2024, as amended)",
+      "url": "https://www.ecfr.gov/current/title-14/chapter-II/subchapter-A/part-260"
     }
   }
 ]
