@@ -357,5 +357,107 @@
       "source": "14 CFR Part 260, \"Refunds for Airline Fare and Ancillary Service Fees,\" §§ 260.2 and 260.6 (U.S. Department of Transportation, 89 FR 32832, April 26, 2024, as amended)",
       "url": "https://www.ecfr.gov/current/title-14/chapter-II/subchapter-A/part-260"
     }
+  },
+  {
+    "id": "CON-H01",
+    "industry": "consumer",
+    "entity": "households served by retail electric providers in Texas's competitive market, and consumer and energy reporters",
+    "condition": {
+      "metric": "max_temp_f",
+      "op": "<=",
+      "value": 32,
+      "consecutive_days": 2
+    },
+    "business_impact": "Texas's customer protection rules say a retail electric provider must not authorize a disconnection for nonpayment in a county during an extreme weather emergency, which includes a day when the previous day's high did not exceed 32 degrees and the temperature is predicted to stay at or below that level for the next 24 hours, according to the nearest federal weather service reports. Providers must also offer residential customers a deferred payment plan, on request, for bills that come due during the emergency.",
+    "story_seed": "Highs at or below freezing two days running are in the {metro} forecast, the temperature Texas's extreme-weather disconnection rule names — a Weather Company meteorologist on how long the freeze lasts, for a story on what the state's rule says about shut-offs and payment plans",
+    "audiences": [
+      "consumer and personal finance reporters",
+      "energy reporters",
+      "local news"
+    ],
+    "seasonality_window": [
+      "11-01",
+      "03-31"
+    ],
+    "base_weight": 0.6,
+    "evidence": {
+      "source": "Public Utility Commission of Texas, 16 Tex. Admin. Code §25.483(j), \"Disconnection during extreme weather\" (effective July 19, 2023)",
+      "url": "https://www.puc.texas.gov/agency/rulesnlaws/subrules/electric/25.483/25.483.pdf"
+    },
+    "metros": [
+      "Dallas-Ft. Worth",
+      "Houston"
+    ]
+  },
+  {
+    "id": "CON-H02",
+    "industry": "consumer",
+    "entity": "residential customers of Oregon's regulated electric and gas utilities, and consumer and energy reporters",
+    "condition": {
+      "metric": "min_temp_f",
+      "op": "<=",
+      "value": 32,
+      "consecutive_days": 1,
+      "also": {
+        "metric": "max_temp_f",
+        "op": "<=",
+        "value": 60
+      }
+    },
+    "business_impact": "Oregon's utility rules call a day from May 1 through October 31 a severe off-season cold event when the forecast low is 32 degrees or below and the high is 60 degrees or below, and say electric and gas utilities may not disconnect residential service for nonpayment starting when such an event is forecast to occur; the pause stays in effect for 48 hours after the event ends.",
+    "story_seed": "A freeze outside the winter season is in the {metro} forecast, with a low at or below 32°F and a high no warmer than 60°F, the conditions Oregon's off-season cold rule names — a Weather Company meteorologist on how cold the nights get and for how long, for a story on what the state's rule says about utility shut-offs",
+    "audiences": [
+      "consumer and personal finance reporters",
+      "energy reporters",
+      "local news"
+    ],
+    "seasonality_window": [
+      "05-01",
+      "10-31"
+    ],
+    "base_weight": 0.6,
+    "evidence": {
+      "source": "Oregon Public Utility Commission, OAR 860-021-0008(13) and OAR 860-021-0407(1)(c) and (3) (amended effective December 30, 2025)",
+      "url": "https://secure.sos.state.or.us/oard/displayDivisionRules.action?selectedDivision=4035"
+    },
+    "metros": [
+      "Portland"
+    ]
+  },
+  {
+    "id": "CON-H03",
+    "industry": "consumer",
+    "entity": "home gardeners, and home, garden and local reporters",
+    "condition": {
+      "metric": "min_temp_f",
+      "op": "<=",
+      "value": 28,
+      "consecutive_days": 1,
+      "also": {
+        "metric": "temp_anomaly_f",
+        "op": "<=",
+        "value": -10
+      }
+    },
+    "business_impact": "University extension guidance describes a light freeze, 29 to 32°F, as cold enough to kill young and frost-tender plants, and a moderate freeze, 25 to 28°F, as cold enough to damage most plants. It advises covers that reach the ground and are anchored to trap heat from the soil, removed as soon as temperatures return to 32°F; sheets, towels, blankets and cardboard can be used in a pinch, and plastic should be avoided unless a frame holds it off the plants.",
+    "story_seed": "A late-winter freeze of 28°F or colder, with highs well below normal, is in the {metro} forecast — a Weather Company meteorologist on how cold the night gets and how long it stays below freezing, for a story on protecting early garden plants and blooms",
+    "audiences": [
+      "home and garden reporters",
+      "local news",
+      "consumer reporters"
+    ],
+    "seasonality_window": [
+      "03-01",
+      "03-31"
+    ],
+    "base_weight": 0.5,
+    "evidence": {
+      "source": "University of Georgia Cooperative Extension, \"Cold protection options for growing fruit and vegetables throughout the winter,\" CAES Field Report, January 11, 2023",
+      "url": "https://newswire.caes.uga.edu/story/10123/cold-protection-options.html"
+    },
+    "regions": [
+      "Southeast",
+      "Southern Plains"
+    ]
   }
 ]
