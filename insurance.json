@@ -288,5 +288,38 @@
       "source": "National Association of Insurance Commissioners, \"A Shopping Tool for Homeowners Insurance\" (consumer guide, 2023), p. 11",
       "url": "https://content.naic.org/sites/default/files/committees_c_trans_read_wg_related_shopping_tool_singles.pdf"
     }
+  },
+  {
+    "id": "INS-H04",
+    "industry": "insurance",
+    "entity": "homeowners and renters in places where hard freezes are rare, and their insurers",
+    "condition": {
+      "metric": "min_temp_f",
+      "op": "<=",
+      "value": 20,
+      "consecutive_days": 1
+    },
+    "business_impact": "One state's insurance regulator says home and renters policies cover sudden and accidental water damage from burst pipes, that flood insurance does not, and that a policy might not pay for frozen-pipe damage if the owner didn't take steps to protect the pipes, such as keeping the heat on; it advises wrapping pipes days before a freeze and shutting off the water before leaving home.",
+    "story_seed": "A hard freeze is in the {metro} forecast — a Weather Company meteorologist on how cold and for how long, for homeowners and renters on protecting pipes in attics and outside walls and what home insurance expects of them",
+    "audiences": [
+      "consumer finance and insurance reporters",
+      "local news",
+      "real estate and home press"
+    ],
+    "seasonality_window": [
+      "11-01",
+      "03-31"
+    ],
+    "base_weight": 0.6,
+    "evidence": {
+      "source": "Texas Department of Insurance, \"Winter safety\" (consumer tips, updated April 2025)",
+      "url": "https://tdi.texas.gov/tips/winter-safety.html"
+    },
+    "regions": [
+      "Southeast",
+      "Southern Plains",
+      "Pacific Northwest",
+      "West Coast"
+    ]
   }
 ]
