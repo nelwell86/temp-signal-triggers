@@ -358,5 +358,36 @@
       "source": "Tasian et al. 2014, \"Daily Mean Temperature and Clinical Kidney Stone Presentation in Five U.S. Metropolitan Areas\", Environmental Health Perspectives",
       "url": "https://pubmed.ncbi.nlm.nih.gov/25009122/"
     }
+  },
+  {
+    "id": "HLT-H03",
+    "industry": "health",
+    "entity": "older adults and the families who check on them, early in the summer",
+    "condition": {
+      "metric": "first_heatwave_day",
+      "op": ">=",
+      "value": 1,
+      "consecutive_days": 1
+    },
+    "business_impact": "A study of 43 US cities found that deaths rose more during the first heat wave of the summer than during later ones, with the largest difference in the Northeast.",
+    "story_seed": "The first heat wave of the season is in the forecast for {metro} — a Weather Company meteorologist on how hot, how long and how much it cools at night, for families checking on older relatives before people have adjusted to the heat",
+    "audiences": [
+      "local health desks",
+      "health and medical press",
+      "local news",
+      "aging and caregiving press"
+    ],
+    "seasonality_window": [
+      "05-01",
+      "09-30"
+    ],
+    "base_weight": 0.65,
+    "evidence": {
+      "source": "Anderson & Bell 2011, \"Heat Waves in the United States: Mortality Risk during Heat Waves and Effect Modification by Heat Wave Characteristics in 43 U.S. Communities\", Environmental Health Perspectives",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3040608/"
+    },
+    "exclude_regions": [
+      "Midwest"
+    ]
   }
 ]
