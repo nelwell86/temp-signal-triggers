@@ -587,7 +587,7 @@
       "value": 4,
       "consecutive_days": 1
     },
-    "business_impact": "High school athletic guidelines note that snow can make a field unplayable, and that a game or tournament is postponed if a participating school's local policy does not permit travel, with the contest rescheduled for a date the schools agree on.",
+    "business_impact": "High school athletic guidelines say rain or snow can make a field unplayable, and that a postponed contest is rescheduled on a date the schools agree on.",
     "story_seed": "Several inches of snow are forecast for {metro} during high school playoff season — a Weather Company meteorologist on timing, totals and travel conditions",
     "audiences": [
       "local sports desks",
@@ -600,7 +600,7 @@
     ],
     "base_weight": 0.7,
     "evidence": {
-      "source": "Michigan High School Athletic Association, \"Weather Guidelines\"",
+      "source": "Michigan High School Athletic Association, \"Weather Guidelines\" (Contest Suspension Guidelines, Inclement Weather)",
       "url": "https://my.mhsaa.com/LinkClick.aspx?link=491&tabid=110"
     }
   },
